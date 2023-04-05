@@ -6,6 +6,7 @@ import TopSection from "@/LandingPage/topSection/topSection";
 
 export default function PartnerLandingPage() {
     const width = getScreenX();
+    console.log(width);
 
     const partnerChild = useMemo(()=>{
         return (

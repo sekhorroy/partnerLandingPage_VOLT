@@ -16,6 +16,14 @@
     line-height: 40px;
     color: #1D2939;
 }
+.topSectionMobFont1Web {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #1D2939;
+}
 .topSectionMobFont2 {
     font-family: 'Poppins';
     font-style: normal;
@@ -24,12 +32,28 @@
     line-height: 40px;
     color: #109648;
 }
+.topSectionMobFont2Web {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #109648;
+}
 .topSectionMobFont3 {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+    color: #667085;
+}
+.topSectionMobFont3Web {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
     color: #667085;
 }
 .topSectionMobBtn {
@@ -60,6 +84,8 @@
     font-size: 14px;
     line-height: 20px;
     color: #667085;
+    position: relative;
+    top: 10px;
 }
 .topSectionHelpContainer1 {
     background-color: #1434CB;
@@ -73,6 +99,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.topSectionHelpContainer1Web {
+    background-color: #1434CB;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.topSectionHelpContainer2Web {
+    background-color: #1434CB;
+    width: 100%;
+    max-width: 1024px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.topSectionHelpContainer2WebLeft {
+    flex: 1;
+}
+.topSectionHelpContainer2WebRight {
+
 }
 .topSectionHelpContainerChild1 {
     font-family: 'Poppins';
@@ -95,4 +149,42 @@
     text-align: center;
     color: #FFFFFF;
 }
+.topSectionHelpContainerChild1Web{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+.topSectionHelpContainerChild2Web{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.topSectionWeb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1024px;
 
+}
+.topSectionWebLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 16px;
+}
+.topSectionWebRight {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 21px;
+}

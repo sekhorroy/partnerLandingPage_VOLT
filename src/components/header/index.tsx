@@ -12,7 +12,8 @@ export default function Header() {
         <>
             <div className={_isMobile ? styles.header : styles.headerWeb}>
                 <div className={styles.headerContent}>
-                    <div className={styles.headerLeft}>
+                    <div className={styles.headerLeft} style={{
+                    }}>
                         <Image
                             priority
                             src="/images/VoltPartnerLogo.svg"

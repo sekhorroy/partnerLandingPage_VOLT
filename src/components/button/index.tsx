@@ -3,7 +3,7 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./button.module.css";
 import Image from "next/image";
 
@@ -29,32 +29,41 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           paddingLeft: 0,
         }
       : {
+          width: 'fit-content',
           paddingRight: 40,
           paddingLeft: 40,
         };
-  return (
-    <>
-      <div className={styleType} onClick={handleClick} style={_style}>
-        {leftIcon ? (
-          <div style={{
-              paddingRight: 9,
-              display: 'flex',
-              flexDirection: "row",
-              alignItems: 'center',
-              justifyContent: 'center'
-          }}>
-            <Image
-              src={leftIcon.url}
-              alt={leftIcon.alt || "test"}
-              width={leftIcon.width}
-              height={leftIcon.height}
-            />
-          </div>
-        ) : (
-          <></>
-        )}
-        {label}
-      </div>
-    </>
+
+  const _child = useMemo(
+    () => (
+      <>
+        <div className={styleType} onClick={handleClick} style={_style}>
+          {leftIcon ? (
+            <div
+              style={{
+                paddingRight: 9,
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                src={leftIcon.url}
+                alt={leftIcon.alt || "test"}
+                width={leftIcon.width}
+                height={leftIcon.height}
+              />
+            </div>
+          ) : (
+            <></>
+          )}
+          {label}
+        </div>
+      </>
+    ),
+    [type, width, label, leftIcon]
   );
+
+  return _child;
 };
