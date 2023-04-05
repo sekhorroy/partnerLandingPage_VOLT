@@ -1,0 +1,62 @@
+.tabComponent {
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.tabHeader {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tabBody {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tabHeader1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 192px;
+}
+
+.tabHeaderT1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #667085;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tabHeaderT1_active {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1434CB;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.tabDivider {
+    background-color: #E4E7EC;
+    height: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.tabDivider_active {
+    background-color: #1434CB;
+    height: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -16,8 +16,10 @@ export const isMobile: () => boolean = () => {
 //@ts-ignore
 export const getScreenX: () => number = () => {
   const screen = UseWindowSize();
-  if(screen) {
+  if(screen &&
+      screen.width) {
     return screen.width;
+  } else {
+    return 360
   }
-  return Breakpoints.WEB
 }
