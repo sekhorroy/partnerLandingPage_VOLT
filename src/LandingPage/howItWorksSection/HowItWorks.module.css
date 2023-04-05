@@ -1,0 +1,45 @@
+.howItWorksContainer {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.howItWorksContainer1 {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.howItWorksContainerT1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+    text-transform: uppercase;
+
+    /* Grey / Charcoal */
+
+    color: #667085;
+}
+
+.howItWorksContainerT2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+
+    text-align: center;
+
+    /* Grey/Night */
+
+    color: #1D2939;
+}

@@ -4,7 +4,8 @@ import { getScreenX } from "@/configs/utils";
 import { useMemo } from "react";
 import TopSection from "@/LandingPage/topSection/topSection";
 import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
-import HowItWorksSection from "@/LandingPage/howItWorksSection/howItWorksSection";
+import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
+import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
 
 export default function PartnerLandingPage() {
   const width = getScreenX();
@@ -21,7 +22,8 @@ export default function PartnerLandingPage() {
         <Header />
         <TopSection />
         <PartnerSection />
-        <HowItWorksSection />
+        <VoltBenefit />
+        <HowItWorks />
       </div>
     );
   }, [width]);

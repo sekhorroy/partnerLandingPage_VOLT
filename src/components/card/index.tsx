@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export const Card: React.FunctionComponent<CardProps> = ({
   leftIcon= null ,
-  type = CardTypes.HOW_IT_WORKS,
+  type = CardTypes.VOLT_BENEFIT,
   title,
   subTitle,
 }) => {

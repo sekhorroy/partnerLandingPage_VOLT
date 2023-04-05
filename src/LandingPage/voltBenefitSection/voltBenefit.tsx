@@ -1,5 +1,5 @@
 import { isMobile } from "@/configs/utils";
-import styles from "./howItWorkdsSection.module.css";
+import styles from "./voltBenefit.module.css";
 import { useMemo } from "react";
 import { TabComponent } from "@/components/tabComponent";
 import { TabComponentOptions } from "@/components/tabComponent/type";
@@ -112,7 +112,7 @@ const clientsCards: CardProps[] = [
   },
 ];
 
-export default function HowItWorksSection() {
+export default function VoltBenefit() {
   const _isMobile: boolean = isMobile();
   console.log("_isMobile: ", _isMobile);
 
