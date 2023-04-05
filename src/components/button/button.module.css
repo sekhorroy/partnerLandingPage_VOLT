@@ -1,0 +1,38 @@
+.buttonPrimaryLarge {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    color: #FFFFFF;
+
+    border-width: 1px;
+    border-radius: 100px;
+    border-color: #1434CB;
+    background-color: #1434CB;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.buttonOutlineLarge {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px solid #1434CB;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+    color: #1434CB;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
