@@ -23,6 +23,18 @@
     color: #667085;
 }
 
+.howItWorksContainerText1Web {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    text-align: center;
+    text-transform: uppercase;
+    color: #667085;
+}
+
 .howItWorksContainerBtnContainer {
     padding-top: 20px;
     display: flex;
@@ -30,9 +42,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 16px;
-    border: 1px solid red;
 }
 
 .test {
-    border: 1px solid red;
 }

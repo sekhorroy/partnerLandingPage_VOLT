@@ -224,7 +224,7 @@ export default function HowItWorksSection() {
           paddingBottom: _isMobile ? 32 : 80,
         }}
       >
-        <div className={styles.howItWorksContainerText1}>
+        <div className={_isMobile ? styles.howItWorksContainerText1 : styles.howItWorksContainerText1Web}>
           Benefits with voltmoney
         </div>
         <div style={{}}>

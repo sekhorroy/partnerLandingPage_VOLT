@@ -29,8 +29,8 @@ export const TabComponent: React.FunctionComponent<TabComponentProps> = ({
                           <div
                               className={
                                   _activeId === index
-                                      ? styles.tabHeaderT1_active
-                                      : styles.tabHeaderT1
+                                      ? _isMobile ? styles.tabHeaderT1_active : styles.tabHeaderT1_active_Web
+                                      : _isMobile ? styles.tabHeaderT1 : styles.tabHeaderT1Web
                               }
                           >
                               <h4>{item?.label}</h4>
@@ -62,7 +62,7 @@ export const TabComponent: React.FunctionComponent<TabComponentProps> = ({
         </div>
       </>
     );
-  }, [_activeId, reactChildren]);
+  }, [_activeId, reactChildren, _isMobile]);
 
   return (
     <>
