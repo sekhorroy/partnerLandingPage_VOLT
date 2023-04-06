@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useMemo, useState } from "react";
 import styles from "./carousal.module.css";
-import {useSwipeable} from "react-swipeable";
+import { useSwipeable } from "react-swipeable";
 
 //@ts-ignore
 export const CarousalItem = ({ children, width }) => {
@@ -12,29 +12,33 @@ export const CarousalItem = ({ children, width }) => {
 };
 
 //@ts-ignore
-export const Carousal = ({ children, data }) => {
+export const Carousal = ({ children, data, showIndicator = true }) => {
   const [_activeId, setActiveId] = useState(0);
 
-  const updateActiveId = (index: number, direction?:string) => {
-      if(direction) {
-          if(direction && direction === 'right') {
-              if(_activeId < data.length - 1) {
-                  setActiveId(index);
-              }
-          } else if (direction && direction === 'left') {
-              if(_activeId > 0) {
-                  setActiveId(index);
-              }
-          }
-      } else {
+  const updateActiveId = (index: number, direction?: string) => {
+    if (direction) {
+      if (direction && direction === "right") {
+        if (_activeId < data.length - 1) {
           setActiveId(index);
+        } else if (_activeId === data.length - 1) {
+              setActiveId(0);
+          }
+      } else if (direction && direction === "left") {
+        if (_activeId > 0) {
+          setActiveId(index);
+        } else if (_activeId === 0) {
+              setActiveId(data.length-1);
+          }
       }
+    } else {
+      setActiveId(index);
+    }
   };
 
   const handlers = useSwipeable({
-      onSwipedLeft: () => updateActiveId(_activeId + 1, 'right'),
-      onSwipedRight: () => updateActiveId(_activeId - 1, 'left')
-  })
+    onSwipedLeft: () => updateActiveId(_activeId + 1, "right"),
+    onSwipedRight: () => updateActiveId(_activeId - 1, "left"),
+  });
 
   return (
     <div className={styles.carousal} {...handlers}>
@@ -54,7 +58,8 @@ export const Carousal = ({ children, data }) => {
       >
         {
           //@ts-ignore
-          data &&
+          showIndicator &&
+            data &&
             //@ts-ignore
             data.map((item, index) => {
               return (
