@@ -6,6 +6,7 @@ import TopSection from "@/LandingPage/topSection/topSection";
 import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
 import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
 import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
+import Footer from './footer/footer';
 
 export default function PartnerLandingPage() {
   const width = getScreenX();
@@ -24,6 +25,7 @@ export default function PartnerLandingPage() {
         <PartnerSection />
         <VoltBenefit />
         <HowItWorks />
+        <Footer />
       </div>
     );
   }, [width]);

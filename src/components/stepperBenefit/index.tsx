@@ -7,18 +7,20 @@ import { StepperBenefitProps } from "@/components/stepperBenefit/type";
 export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
   activeId = 0,
   data,
+    setActive,
 }) => {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(activeId);
 
-  const handleClick = async (index: number) => {
+  const handleClick =  async (index: number) => {
+    setActive && await setActive(index);
     await setActiveId(index);
   };
 
   const _child = useMemo(() => {
     return (
       <>
-        <div className={styles.stepperBenefitContainer} style={{}}>
+        <div className={styles.stepperBenefitContainer} style={_isMobile ? {maxWidth: 400} : {}}>
           {data &&
             data.map((item, index) => {
               return (
@@ -30,9 +32,7 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
                       : styles.stepperBenefitC1
                   }
                   style={{
-                    paddingTop: 16,
                     paddingLeft: 16,
-                    paddingBottom: 16,
                     paddingRight: 16
                   }}
                   onClick={() => handleClick(index)}
@@ -42,19 +42,29 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
                       <div
                         className={styles.verticalLine}
                         style={
-                          _activeId === index
+                        _isMobile && _activeId === index
                             ? {
                                 height: 20,
                                 position: "relative",
                                 top: 90,
                                 left: 22,
                               }
-                            : {
-                                height: 55,
+                            : _isMobile && _activeId !== index ? {
+                                height: 50,
                                 position: "relative",
                                 top: 50,
                                 left: 22,
-                              }
+                              } : _activeId === index ? {
+                              height: 22,
+                              position: "relative",
+                              top: 95,
+                              left: 22,
+                            } : {
+                              height: 55,
+                              position: "relative",
+                              top: 50,
+                              left: 22,
+                            }
                         }
                       ></div>
                     ) : (
@@ -69,10 +79,10 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
                       {index + 1}
                     </div>
                     <div className={styles.stepperBenefitChildC2}>
-                      <div className={styles.stepperBenefitChildC2T1}>
+                      <div className={_isMobile ? styles.stepperBenefitChildC2T1 : styles.stepperBenefitChildC2T1Web}>
                         {item.title}
                       </div>
-                      <div className={styles.stepperBenefitChildC2T2}>
+                      <div className={_isMobile ? styles.stepperBenefitChildC2T2 : styles.stepperBenefitChildC2T2Web}>
                         {item.subTitle}
                       </div>
                     </div>
@@ -83,7 +93,7 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
         </div>
       </>
     );
-  }, [_activeId]);
+  }, [_activeId, _isMobile]);
 
   return (
     <>

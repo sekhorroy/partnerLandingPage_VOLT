@@ -5,5 +5,6 @@ export type StepperBenefitData = {
 
 export type StepperBenefitProps = {
     activeId: number,
-    data: StepperBenefitData[]
+    data: StepperBenefitData[],
+    setActive?: (cb:any) => void;
 }
