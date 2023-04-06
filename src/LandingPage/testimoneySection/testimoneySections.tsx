@@ -3,9 +3,9 @@ import styles from "./testimoney.module.css";
 import {useEffect, useMemo, useState} from "react";
 import {Card} from "@/components/card";
 import {CardProps, CardTypes} from "@/components/card/types";
-import {Carousal} from "@/components/carousal";
+import {Carousal, CarousalItem} from "@/components/carousal";
 import {number} from "prop-types";
-import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
+// import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
 
 const customerData:CardProps[] = [{
     type: CardTypes.TESTIMONY,
@@ -58,34 +58,6 @@ export default function TestimoneySection() {
     const [_activeId, setActiveId] = useState(0);
 
 
-    const renderCards = () => {
-        return (
-            <>
-                <CarouselComponent>
-                    {
-                        customerData.map((item, index) => (
-                            <>
-                                <CarouselItem width={'100%'}>
-                                    <Card type={CardTypes.TESTIMONY} leftIcon={item.leftIcon} subTitle={item.subTitle} title={item.title}
-                                          name={item.name}/>
-                                </CarouselItem>
-                            </>
-                        ))
-                    }
-                </CarouselComponent>
-            </>
-        )
-    }
-
-    const updateActiveId = (id : number) => {
-
-        setActiveId(id)
-    }
-
-    useEffect(()=>{
-        console.log(" Herqer 1212 ");
-    }, [_activeId])
-
     const _child = useMemo(() => {
         return (
             <div
@@ -107,14 +79,20 @@ export default function TestimoneySection() {
                     <div style={{
                         paddingTop: 24
                     }}>
+                        <Carousal data={customerData}>
                             {
                                 customerData.map((item, index) => (
-                                    <>
-                                        <Card type={CardTypes.TESTIMONY} leftIcon={item.leftIcon} subTitle={item.subTitle} title={item.title}
-                                              name={item.name}/>
-                                    </>
+                                    <CarousalItem key={index} width={'100%'}>
+                                        <div style={{
+                                            minWidth: 323,
+                                        }}>
+                                            <Card type={CardTypes.TESTIMONY} leftIcon={item.leftIcon} subTitle={item.subTitle} title={item.title}
+                                                  name={item.name}/>
+                                        </div>
+                                    </CarousalItem>
                                 ))
                             }
+                        </Carousal>
                     </div>
                 </div>
             </div>

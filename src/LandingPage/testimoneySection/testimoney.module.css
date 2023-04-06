@@ -14,7 +14,7 @@
     max-width: 1024px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .testimoneyContainerT1 {
