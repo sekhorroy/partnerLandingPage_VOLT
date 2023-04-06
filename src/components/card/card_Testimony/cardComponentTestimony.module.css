@@ -1,0 +1,61 @@
+.cardContainer {
+    width: 100%;
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #F1F3F5;
+}
+
+.cardContainerImage {
+    width: 56px;
+    height: 56px;
+}
+
+.cardContainer1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Grey/Night */
+    color: #1D2939;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cardContainer2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+    /* Grey / Charcoal */
+    color: #667085;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cardContainer3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    /* Grey/Night */
+    color: #1D2939;
+
+    width: 100%;
+    box-sizing: border-box;
+    background: #F9FAFB;
+
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -1,47 +1,41 @@
 import { isMobile } from "@/configs/utils";
-import { TabComponentProps } from "@/components/tabComponent/type";
-import { useCallback, useMemo, useState } from "react";
-import styles from "./cardComponent.module.css";
+import { useMemo } from "react";
 import { CardProps, CardTypes } from "@/components/card/types";
-import Image from "next/image";
+import { BenefitCard } from "@/components/card/card_Benefits/card_Benefits";
+import { TestimonyCard } from "@/components/card/card_Testimony/card_Testimony";
+import {name} from "next/dist/telemetry/ci-info";
 
 export const Card: React.FunctionComponent<CardProps> = ({
-  leftIcon= null ,
+  leftIcon = null,
   type = CardTypes.VOLT_BENEFIT,
   title,
   subTitle,
+    name
 }) => {
   const _isMobile: boolean = isMobile();
 
   const _child = useMemo(() => {
-    return (
-      <>
-        <div className={styles.cardContainer}>
-          <div className={styles.cardContainerLeft}>
-              {
-                  leftIcon ? (
-                      <Image
-                          priority
-                          src={leftIcon.url}
-                          height={leftIcon.height}
-                          width={leftIcon.width}
-                          alt={leftIcon.alt ? leftIcon.alt : ''}
-                      />
-              ) : (<></>)
-              }
-          </div>
-          <div className={styles.cardContainerRight}>
-              <div className={styles.cardContainerRightT1}>
-                  {title}
-              </div>
-              <div className={styles.cardContainerRightT2}>
-                  {subTitle}
-              </div>
-          </div>
-        </div>
-      </>
-    );
-  }, [type]);
+    if (type === CardTypes.TESTIMONY) {
+      return (
+        <TestimonyCard
+          type={CardTypes.TESTIMONY}
+          title={title}
+          subTitle={subTitle}
+          leftIcon={leftIcon || undefined}
+          name={name ? name : ''}
+        />
+      );
+    } else {
+      return (
+        <BenefitCard
+          type={CardTypes.VOLT_BENEFIT}
+          title={title}
+          subTitle={subTitle}
+          leftIcon={leftIcon || undefined}
+        />
+      );
+    }
+  }, [type, subTitle, title, leftIcon, name]);
 
   return (
     <>

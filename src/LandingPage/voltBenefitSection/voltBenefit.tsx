@@ -19,7 +19,7 @@ const partnerCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Stop redemptions",
     subTitle:
       "Help your clients retain their investments and deliver better outcomes.",
@@ -31,7 +31,7 @@ const partnerCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Secure & paperless",
     subTitle:
       "Say goodbye to the hassle of physical documents and enjoy our secure & digital loans.",
@@ -43,7 +43,7 @@ const partnerCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Boost your earnings",
     subTitle:
       "Acquire more clients by offering investors the new option to leverage investments.",
@@ -55,7 +55,7 @@ const partnerCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Dedicated support.",
     subTitle:
       "Our dedicated support team is always ready to assist you with any questions or concern.",
@@ -70,7 +70,7 @@ const clientsCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Interest rates starting at 9%",
     subTitle: "Borrow from trusted banks or NBFCs at low interest rates.",
   },
@@ -81,7 +81,7 @@ const clientsCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Withdraw flexibly",
     subTitle:
       "Withdraw as per your need, and pay only as per usage. No hidden charges.",
@@ -93,7 +93,7 @@ const clientsCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Repay easily",
     subTitle:
       "Make monthly interest only payments & repay principal as per convenience. ",
@@ -105,7 +105,7 @@ const clientsCards: CardProps[] = [
       height: 64,
       alt: "image1",
     },
-    type: CardTypes.HOW_IT_WORKS,
+    type: CardTypes.VOLT_BENEFIT,
     title: "Secure & paperless",
     subTitle:
       "Hassle free usage from mobile phone. We ensure safety through secure integrations.",
@@ -145,7 +145,7 @@ export default function VoltBenefit() {
           {partnerCards.map((item, index) => (
             <Card
               key={index}
-              type={CardTypes.HOW_IT_WORKS}
+              type={CardTypes.VOLT_BENEFIT}
               leftIcon={item.leftIcon}
               title={item.title}
               subTitle={item.subTitle}
@@ -189,7 +189,7 @@ export default function VoltBenefit() {
           {clientsCards.map((item, index) => (
             <Card
               key={index}
-              type={CardTypes.HOW_IT_WORKS}
+              type={CardTypes.VOLT_BENEFIT}
               leftIcon={item.leftIcon}
               title={item.title}
               subTitle={item.subTitle}
