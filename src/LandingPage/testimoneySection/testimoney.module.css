@@ -12,9 +12,6 @@
     width: 100%;
     box-sizing: border-box;
     max-width: 1024px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .testimoneyContainerT1 {
@@ -25,7 +22,6 @@
     line-height: 24px;
     /* identical to box height, or 171% */
     color: #667085;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -37,9 +33,27 @@
     line-height: 32px;
     /* identical to box height, or 133% */
 
-    text-align: center;
-
     /* Grey/Night */
-
     color: #1D2939;
+}
+
+.buttonActive {
+    background-color: #F1F3F5;
+    border-radius: 50px;
+}
+
+.buttonNotActive {
+    background-color: #F9FAFB;
+    border-radius: 50px;
+}
+
+.testimoneyContainerWebContainer1 {
+    display: flex;
+    flex-direction: row;
+
+    overflow: scroll;
+    gap: 32px;
+    scroll-behavior: smooth;
+    padding-left: 16px;
+
 }
