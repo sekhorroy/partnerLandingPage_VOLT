@@ -95,7 +95,7 @@ export default function TopSection() {
           >
             <Image
               priority
-              src="/images/topSectionImage1.svg"
+              src="/images/hero_section_image.png"
               height={287}
               width={326}
               alt="top section image"
@@ -213,10 +213,10 @@ export default function TopSection() {
           <div className={styles.topSectionWebRight}>
             <div>
               <Image
-                src={"/images/topSectionImage1.svg"}
+                src={"/images/hero_section_image.png"}
                 alt={"top section image"}
                 width={544}
-                height={516}
+                height={468}
               />
             </div>
           </div>
