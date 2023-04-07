@@ -1,0 +1,10 @@
+.body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.hello {
+   font-family: 'Inter', sans-serif;
+   font-weight: 200;
+   font-size: 24px;
+}

@@ -21,7 +21,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({ type }) =>
             : styles.headerWeb
         }
         style={{
-            width: width
+            width: width,
+            position: 'sticky',
+            top: 0,
+            left: 0,
+            right: 0
         }}
       >
         <div className={type === HeaderType.CONTACT_US ? styles.headerContentContactUs : styles.headerContent}>

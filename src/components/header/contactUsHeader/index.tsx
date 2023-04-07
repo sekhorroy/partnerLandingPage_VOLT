@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import { isMobile } from "@/configs/utils";
+import {getScreenX, isMobile} from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
@@ -9,7 +9,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
   type,
 }) => {
   const _isMobile: boolean = isMobile();
-
+    const width = getScreenX();
   return (
     <>
       <div
@@ -22,6 +22,9 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             ? styles.headerWebContactUs
             : styles.headerWeb
         }
+        style={{
+            width: width
+        }}
       >
         <div
           className={

@@ -1,0 +1,13 @@
+.topSectionContactOuter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topSectionContactInner {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1024px;
+}
+.topSectionContactInnerT1 {
+
+}
