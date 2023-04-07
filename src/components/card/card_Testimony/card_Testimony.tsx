@@ -22,8 +22,12 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
   const _child = useMemo(() => {
     return (
       <>
-        <div className={styles.cardContainer} style={{
+        <div className={styles.cardContainer} style={_isMobile ? {
           paddingTop: 16,
+            minHeight: 414
+        }: {
+            paddingTop: 16,
+            minHeight: 323
         }}>
           <div
             className={styles.cardContainerImage}
