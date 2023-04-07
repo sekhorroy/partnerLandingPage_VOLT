@@ -75,28 +75,31 @@ export default function TestimoneySection() {
   const [scrolEnd, setscrolEnd] = useState(false);
 
   const handleClick = (direction: string) => {
-      console.log("handle Click")
-      if(direction === 'left') {
-          slide(-150)
-      }
-      if (direction === 'right') {
-          slide(150)
-      }
+    console.log("handle Click");
+    if (direction === "left") {
+      slide(-150);
+    }
+    if (direction === "right") {
+      slide(150);
+    }
   };
 
-    //@ts-ignore
+  //@ts-ignore
   const slide = (shift) => {
-      //@ts-ignore
+    //@ts-ignore
     if (scrollRef && scrollRef.current) {
-        //@ts-ignore
+      //@ts-ignore
       scrollRef.current.scrollLeft += shift;
       setscrollX(scrollX + shift);
 
       if (
-          //@ts-ignore
-        Math.floor(scrollRef.current.scrollWidth - scrollRef.current.scrollLeft) <=
-          //@ts-ignore
-          scrollRef.current.offsetWidth
+        //@ts-ignore
+        Math.floor(
+            //@ts-ignore
+          scrollRef.current.scrollWidth - scrollRef.current.scrollLeft
+        ) <=
+        //@ts-ignore
+        scrollRef.current.offsetWidth
       ) {
         setscrolEnd(true);
       } else {
@@ -134,10 +137,17 @@ export default function TestimoneySection() {
                 ? {
                     display: "flex",
                     flexDirection: "row",
-                    justifyContent: "center",
+                    fontFamily: "Inter",
+                    fontWeight: "400",
+                    fontStyle: "normal",
+                    fontSize: 14,
                   }
                 : {
                     paddingLeft: 16,
+                    fontFamily: "Inter",
+                    fontWeight: "500",
+                    fontStyle: "normal",
+                    fontSize: 16,
                   }
             }
           >
@@ -162,7 +172,17 @@ export default function TestimoneySection() {
                   }
             }
           >
-            <div>What our partners say</div>
+            <div style={_isMobile ? {
+                fontFamily: 'Poppins',
+                fontStyle: 'normal',
+                fontWeight: '700',
+                fontSize: 24,
+            } : {
+                fontFamily: 'Poppins',
+                fontStyle: 'normal',
+                fontWeight: '700',
+                fontSize: 32,
+            }}>What our partners say</div>
             {!_isMobile ? (
               <div
                 style={{
@@ -181,7 +201,7 @@ export default function TestimoneySection() {
                     height: 56,
                   }}
                   className={styles.buttonNotActive}
-                  onClick={() => handleClick('left')}
+                  onClick={() => handleClick("left")}
                 >
                   <Image
                     src={"/images/leftGrey.svg"}
@@ -200,7 +220,7 @@ export default function TestimoneySection() {
                     height: 56,
                   }}
                   className={styles.buttonActive}
-                  onClick={() => handleClick('right')}
+                  onClick={() => handleClick("right")}
                 >
                   <Image
                     src={"/images/rigthBlack.svg"}

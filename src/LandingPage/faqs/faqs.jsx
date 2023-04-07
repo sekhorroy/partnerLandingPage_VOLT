@@ -1,5 +1,6 @@
 import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
+import { isMobile } from "@/configs/utils";
 
 const faqsItem = [
   {
@@ -37,7 +38,8 @@ const faqsItem = [
             </li>
             <li>
               You should hold Mutual Funds approved with CAMS & Kfintech (RTAs).
-              Debt & ELSS funds (units held less than 3 years) are also eligible.
+              Debt & ELSS funds (units held less than 3 years) are also
+              eligible.
             </li>
             <li>Joint mutual fund holders are not eligible for loan.</li>
             <li>You should be an Indian resident.</li>
@@ -204,10 +206,48 @@ const faqsItem = [
 ];
 
 function Faqs() {
+  const _isMobile = isMobile();
+
   return (
     <div className={styles.Faqs_Container}>
-      <div className={styles.Faqs_ContainerTitle}>Have any doubts?</div>
-      <h2 className={styles.Faqs_ContainerSubTitle}>
+      <div
+        className={styles.Faqs_ContainerTitle}
+        style={
+          !_isMobile
+            ? {
+                fontFamily: "Inter",
+                fontWeight: "500",
+                fontStyle: "normal",
+                fontSize: 16,
+              }
+            : {
+                fontFamily: "Inter",
+                fontWeight: "400",
+                fontStyle: "normal",
+                fontSize: 14,
+              }
+        }
+      >
+        Have any doubts?
+      </div>
+      <h2
+        className={styles.Faqs_ContainerSubTitle}
+        style={
+          _isMobile
+            ? {
+                fontFamily: "Poppins",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: 24,
+              }
+            : {
+                fontFamily: "Poppins",
+                fontStyle: "normal",
+                fontWeight: "700",
+                fontSize: 32,
+              }
+        }
+      >
         Frequently asked questions
       </h2>
       <div className={styles.Faqs_ContainerQuestionItemsContainer}>

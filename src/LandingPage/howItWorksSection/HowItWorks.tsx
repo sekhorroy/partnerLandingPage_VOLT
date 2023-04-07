@@ -50,16 +50,56 @@ export default function HowItWorks() {
       <>
         <div
           className={styles.howItWorksContainer}
-          style={{ paddingTop: 48, paddingLeft: 16, paddingRight: 16 }}
+          style={_isMobile ? { paddingTop: 48, paddingLeft: 16, paddingRight: 16 } : { paddingTop: 80, paddingLeft: 16, paddingRight: 16 }}
         >
           <div className={styles.howItWorksContainer1}>
-            <div className={styles.howItWorksContainerT1}>HOW IT WORKS</div>
             <div
-              style={{
+              className={styles.howItWorksContainerT1}
+              style={
+                !_isMobile
+                  ? {
+                      fontFamily: "Inter",
+                      fontWeight: "500",
+                      fontStyle: "normal",
+                      fontSize: 16,
+                      lineHeight: 24,
+                    }
+                  : {
+                      fontFamily: "Inter",
+                      fontWeight: "400",
+                      fontStyle: "normal",
+                      fontSize: 14,
+                      lineHeight: 24,
+                    }
+              }
+            >
+              HOW IT WORKS
+            </div>
+            <div
+              style={_isMobile ? {
                 paddingTop: 8,
+              } : {
+                  paddingTop: 16
               }}
             >
-              <h2 className={styles.howItWorksContainerT2}>
+              <h2
+                className={styles.howItWorksContainerT2}
+                style={
+                  _isMobile
+                    ? {
+                        fontFamily: "Poppins",
+                        fontStyle: "normal",
+                        fontWeight: "700",
+                        fontSize: 24,
+                      }
+                    : {
+                        fontFamily: "Poppins",
+                        fontStyle: "normal",
+                        fontWeight: "700",
+                        fontSize: 32,
+                      }
+                }
+              >
                 How does the Volt partner program work?
               </h2>
             </div>

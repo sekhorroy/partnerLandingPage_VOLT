@@ -14,18 +14,13 @@
     justify-content: center;
 }
 .howItWorksContainerT1 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
     /* identical to box height, or 171% */
 
-    text-align: center;
-    text-transform: uppercase;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* Grey / Charcoal */
-
+    height: 24px;
     color: #667085;
 }
 
