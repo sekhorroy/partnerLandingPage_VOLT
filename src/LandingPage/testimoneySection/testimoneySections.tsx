@@ -6,6 +6,9 @@ import { CardProps, CardTypes } from "@/components/card/types";
 import { Carousal, CarousalItem } from "@/components/carousal";
 import { number } from "prop-types";
 import Image from "next/image";
+import axios from "axios";
+import { Simulate } from "react-dom/test-utils";
+import load = Simulate.load;
 // import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
 
 const customerData: CardProps[] = [
@@ -73,6 +76,8 @@ export default function TestimoneySection() {
   const scrollRef = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
+  const [_data, setData] = useState<CardProps[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const handleClick = (direction: string) => {
     console.log("handle Click");
@@ -95,7 +100,7 @@ export default function TestimoneySection() {
       if (
         //@ts-ignore
         Math.floor(
-            //@ts-ignore
+          //@ts-ignore
           scrollRef.current.scrollWidth - scrollRef.current.scrollLeft
         ) <=
         //@ts-ignore
@@ -108,8 +113,40 @@ export default function TestimoneySection() {
     }
   };
 
+  const getData = async () => {
+    await setLoading(true);
+    const response = await axios.get(
+      "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+    );
+    const  Data = response.data.data;
+    console.log("response: ", Data);
+    let dataTransform: CardProps[] = []
+      //@ts-ignore
+      Data.map((item, index) => {
+        dataTransform.push({
+            type: CardTypes.TESTIMONY,
+            name: item?.name,
+            title: item?.bio,
+            subTitle: item?.message,
+            leftIcon: {
+                url: item?.image,
+                width: 56,
+                height: 56,
+                alt: "customer image 1",
+            },
+        })
+    })
+      console.log("dataTransform : ", dataTransform);
+    await setData(dataTransform);
+    await setLoading(false);
+  };
+
+  useEffect(() => {
+    console.log("get data : ", getData());
+  }, []);
+
   const _child = useMemo(() => {
-    return (
+    return !loading ? (
       <div
         className={styles.testimoneyContainer}
         style={{
@@ -172,17 +209,25 @@ export default function TestimoneySection() {
                   }
             }
           >
-            <div style={_isMobile ? {
-                fontFamily: 'Poppins',
-                fontStyle: 'normal',
-                fontWeight: '700',
-                fontSize: 24,
-            } : {
-                fontFamily: 'Poppins',
-                fontStyle: 'normal',
-                fontWeight: '700',
-                fontSize: 32,
-            }}>What our partners say</div>
+            <div
+              style={
+                _isMobile
+                  ? {
+                      fontFamily: "Poppins",
+                      fontStyle: "normal",
+                      fontWeight: "700",
+                      fontSize: 24,
+                    }
+                  : {
+                      fontFamily: "Poppins",
+                      fontStyle: "normal",
+                      fontWeight: "700",
+                      fontSize: 32,
+                    }
+              }
+            >
+              What our partners say
+            </div>
             {!_isMobile ? (
               <div
                 style={{
@@ -241,7 +286,7 @@ export default function TestimoneySection() {
           >
             {_isMobile ? (
               <Carousal data={customerData}>
-                {customerData.map((item, index) => (
+                {_data.map((item, index) => (
                   <CarousalItem key={index} width={"100%"}>
                     <div
                       style={{
@@ -264,7 +309,7 @@ export default function TestimoneySection() {
                 ref={scrollRef}
                 className={styles.testimoneyContainerWebContainer1}
               >
-                {customerData.map((item, index) => (
+                {_data.map((item, index) => (
                   <div
                     key={index}
                     style={{
@@ -286,8 +331,10 @@ export default function TestimoneySection() {
           </div>
         </div>
       </div>
+    ) : (
+      <></>
     );
-  }, [_isMobile, _activeId]);
+  }, [_isMobile, _activeId, loading]);
 
-  return _child;
+  return !loading ? _child : <></>;
 }

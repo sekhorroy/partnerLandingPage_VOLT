@@ -33,8 +33,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
             }}
           >
             {leftIcon ? (
-              <Image
-                priority
+              <img
                 src={leftIcon.url}
                 height={leftIcon.height}
                 width={leftIcon.width}
