@@ -20,6 +20,8 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   const styleType =
     type === ButtonTypeTokens.PRIMARY_LARGE
       ? styles.buttonPrimaryLarge
+      : type === ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE
+      ? styles.buttonOutlineTransparentLarge
       : styles.buttonOutlineLarge;
   const _style =
     width === ButtonWidthTypeTokens.FULL
@@ -29,7 +31,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           paddingLeft: 0,
         }
       : {
-          width: 'fit-content',
+          width: "fit-content",
           paddingRight: 40,
           paddingLeft: 40,
         };

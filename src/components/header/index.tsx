@@ -1,55 +1,23 @@
-import styles from './header.module.css';
-import Image from "next/image";
-import {isMobile} from "@/configs/utils";
-import {ButtonComponent} from "@/components/button";
-import {ButtonTypeTokens} from "@/components/button/type";
+import { isMobile } from "@/configs/utils";
+import { useMemo } from "react";
+import { CardProps, CardTypes } from "@/components/card/types";
+import { ContactUsHeader } from "@/components/header/contactUsHeader";
+import { PartnerHeader } from "@/components/header/partnerHeader";
+import { HeaderProps, HeaderType } from "@/components/header/type";
 
-export default function Header() {
+export const Header: React.FunctionComponent<HeaderProps> = ({ type }) => {
 
-    const _isMobile:boolean = isMobile();
+  const _child = useMemo(() => {
+    if (type === HeaderType.CONTACT_US) {
+      return <ContactUsHeader type={HeaderType.CONTACT_US} />;
+    } else {
+      return <PartnerHeader type={HeaderType.DEFAULT} />;
+    }
+  }, [type]);
 
-    return (
-        <>
-            <div className={_isMobile ? styles.header : styles.headerWeb}>
-                <div className={styles.headerContent}>
-                    <div className={styles.headerLeft} style={{
-                    }}>
-                        <Image
-                            priority
-                            src="/images/VoltPartnerLogo.svg"
-                            height={_isMobile ? 20 : 29}
-                            width={120}
-                            alt="Volt partner logo"
-                        />
-                    </div>
-                    <div className={styles.headerRight}>
-                        {
-                            _isMobile ? (
-                                    <div>
-                                        <Image
-                                            priority
-                                            src="/images/ThreeBar.svg"
-                                            height={12}
-                                            width={18}
-                                            alt="Volt partner logo"
-                                        />
-                                    </div>
-                                ) : (<></>)
-                        }
-                        {
-                            !_isMobile ? (
-                                <div className={styles.headerRightWebContent}>
-                                    <div>About us</div>
-                                    <div>FAQs</div>
-                                    <div>
-                                        <ButtonComponent label='Get Started' type={ButtonTypeTokens.OUTLINE_LARGE}/>
-                                    </div>
-                                </div>
-                            ) : (<></>)
-                        }
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div>{_child}</div>
+    </>
+  );
+};
