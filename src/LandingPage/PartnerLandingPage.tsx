@@ -7,6 +7,8 @@ import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
 import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
 import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
 import Footer from './footer/footer';
+import Faq from './faqs/faqs';
+
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 
 export default function PartnerLandingPage() {
@@ -27,7 +29,8 @@ export default function PartnerLandingPage() {
         <VoltBenefit />
         <HowItWorks />
         <TestimoneySection />
-        {/*<Footer />*/}
+        <Faq />
+        <Footer />
       </div>
     );
   }, [width]);
