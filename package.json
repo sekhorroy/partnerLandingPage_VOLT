@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "aws s3 sync out/ s3://testbucket22330",
+    "prod": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@types/node": "18.15.11",
