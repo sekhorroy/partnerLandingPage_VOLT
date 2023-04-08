@@ -1,9 +1,9 @@
 import styles from "./footer.module.css";
 import React, { location } from "react";
 import { EXTERNAL_URLS } from "../../configs/config";
-import { privacyLink } from "../../configs/links";
+import {Links, privacyLink} from "../../configs/links";
 import Image from "next/image";
-import { isMobile } from "@/configs/utils";
+import {handleOurPartnerLinks, isMobile} from "@/configs/utils";
 
 function Footer() {
   const _isMobile = isMobile();
@@ -37,7 +37,7 @@ function Footer() {
         }}>
           <div className={styles.FollowUsTextContainer}>Follow us</div>
           <div>
-            <a>
+            <a className={styles.shareAnchorContainer}>
               <Image
                 src={"/images/twitter.svg"}
                 alt="twitter icon"
@@ -47,7 +47,7 @@ function Footer() {
             </a>
           </div>
           <div>
-            <a>
+            <a className={styles.shareAnchorContainer}>
               <img
                 src={"/images/Instagram.svg"}
                 alt="instagram icon"
@@ -57,9 +57,9 @@ function Footer() {
             </a>
           </div>
           <div>
-            <a href={EXTERNAL_URLS.LINKEDIN} target="_blank" rel="noreferrer">
+            <a href={EXTERNAL_URLS.LINKEDIN} target="_blank" rel="noreferrer" className={styles.shareAnchorContainer} >
               <img
-                src={"/images/Instagram.svg"}
+                src={"/images/LinkedIn.svg"}
                 alt="linkedIn icon"
                 width={32}
                 height={32}
@@ -77,36 +77,46 @@ function Footer() {
                       paddingRight: 16
                     }}
                   >
+                    <div onClick={()=>handleOurPartnerLinks(Links.STARTUP_INDIA)}>
                       <Image
                           src={"/images/startUpIndia.svg"}
                           alt={"start up india"}
                           width={152}
                           height={59}
                       />
+                    </div>
+                    <div onClick={()=>handleOurPartnerLinks(Links.DPIIT)}>
                       <Image
                           src={"/images/startUpRegistration.svg"}
                           alt={"start up registration"}
                           width={152}
                           height={59}
                       />
+                    </div>
                   </div>
               ) : (<></>)
           }
       </div>
       {_isMobile ? (
         <div className={styles.FooterContainer_Bottom1}>
-          <Image
-            src={"/images/startUpIndia.svg"}
-            alt={"start up india"}
-            width={152}
-            height={59}
-          />
-          <Image
-            src={"/images/startUpRegistration.svg"}
-            alt={"start up registration"}
-            width={152}
-            height={59}
-          />
+          <div
+              onClick={()=>handleOurPartnerLinks(Links.STARTUP_INDIA)}
+          >
+            <Image
+                src={"/images/startUpIndia.svg"}
+                alt={"start up india"}
+                width={152}
+                height={59}
+            />
+          </div>
+          <div onClick={()=>handleOurPartnerLinks(Links.DPIIT)}>
+            <Image
+                src={"/images/startUpRegistration.svg"}
+                alt={"start up registration"}
+                width={152}
+                height={59}
+            />
+          </div>
         </div>
       ) : (
         <></>

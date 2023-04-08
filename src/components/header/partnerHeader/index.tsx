@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import {getScreenX, isMobile} from "@/configs/utils";
+import {getScreenX, isMobile, redirectToFaq, redirectToPartner} from "@/configs/utils";
 import {ButtonComponent} from "@/components/button";
 import {ButtonTypeTokens} from "@/components/button/type";
 import {HeaderProps, HeaderType} from "@/components/header/type";
@@ -58,9 +58,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({ type }) =>
             )}
             {!_isMobile ? (
               <div className={styles.headerRightWebContent}>
-                <div>About us</div>
-                <div>FAQs</div>
-                <div>
+                <div className={styles.headerLinksContainer}>About us</div>
+                <div className={styles.headerLinksContainer} onClick={redirectToFaq}>FAQs</div>
+                <div className={styles.headerLinksContainer} onClick={redirectToPartner}>
                   <ButtonComponent
                     label="Get Started"
                     type={ButtonTypeTokens.OUTLINE_LARGE}

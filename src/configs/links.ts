@@ -5,7 +5,9 @@ export const Links = {
     NSDL : 'https://nsdl.co.in/',
     CDSL : 'https://www.cdslindia.com/',
     CERSAI: 'https://www.cersai.org.in/CERSAI/home.prg',
-    DIGILOCKER: 'https://www.digilocker.gov.in/'
+    DIGILOCKER: 'https://www.digilocker.gov.in/',
+    STARTUP_INDIA: 'https://www.startupindia.gov.in/',
+    DPIIT: 'https://dpiit.gov.in/'
 }
 
 

@@ -1,5 +1,6 @@
 import { Breakpoints } from "@/configs/config";
 import { UseWindowSize } from "@/configs/windowSizeHook";
+import {AppLink, PartnerLink, WhatsAppLink} from "@/configs/constants";
 
 export const isMobile: () => boolean = () => {
   const screen = UseWindowSize();
@@ -32,4 +33,20 @@ export const getScreenY: () => number = () => {
   } else {
     return 360
   }
+}
+
+export const redirectToFaq = () => {
+  window.open(`${PartnerLink}faq`, '_blank');
+};
+export const redirectToPartner = () => {
+  window.open(`${PartnerLink}`, '_blank');
+};
+export const redirectToVoltApp = () => {
+  window.open(`${AppLink}`, '_blank');
+};
+export const handleWhatAppClick = () => {
+  window.open(WhatsAppLink.help, '_blank' )
+}
+export const handleOurPartnerLinks = (Link: string) => {
+  window.open(Link, '_blank' );
 }

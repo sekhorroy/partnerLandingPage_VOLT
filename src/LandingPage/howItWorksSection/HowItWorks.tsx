@@ -1,4 +1,4 @@
-import { isMobile } from "@/configs/utils";
+import {isMobile, redirectToPartner} from "@/configs/utils";
 import styles from "./HowItWorks.module.css";
 import { useMemo, useState } from "react";
 import { StepperBenefit } from "@/components/stepperBenefit";
@@ -194,6 +194,7 @@ export default function HowItWorks() {
                         ? ButtonWidthTypeTokens.FULL
                         : ButtonWidthTypeTokens.CONTENT
                     }
+                    onClick={()=>redirectToPartner()}
                   />
                 </div>
               </div>

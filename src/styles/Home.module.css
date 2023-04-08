@@ -285,3 +285,12 @@
     /*width: 100%;*/
     /*border: 1px solid black;*/
 }
+
+.whatAppStickyMobileContainerHeader {
+    display: inline;
+    height: 0px;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    cursor: pointer;
+}

@@ -15,6 +15,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   leftIcon = undefined,
 }) => {
   const handleClick = () => {
+      console.log("click: ")
     onClick && onClick();
   };
   const styleType =

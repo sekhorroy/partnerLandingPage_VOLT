@@ -1,4 +1,4 @@
-import { isMobile } from "@/configs/utils";
+import {isMobile, redirectToPartner, redirectToVoltApp} from "@/configs/utils";
 import styles from "./voltBenefit.module.css";
 import { useMemo } from "react";
 import { TabComponent } from "@/components/tabComponent";
@@ -164,6 +164,7 @@ export default function VoltBenefit() {
               label={"Onboard your customers now"}
               type={ButtonTypeTokens.PRIMARY_LARGE}
               width={ButtonWidthTypeTokens.FULL}
+              onClick={()=>redirectToPartner()}
             />
           </div>
         </div>
@@ -208,6 +209,7 @@ export default function VoltBenefit() {
               label={"Get Started"}
               type={ButtonTypeTokens.PRIMARY_LARGE}
               width={ButtonWidthTypeTokens.FULL}
+              onClick={()=>redirectToVoltApp()}
             />
           </div>
         </div>

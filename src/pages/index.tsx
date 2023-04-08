@@ -3,11 +3,15 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import PartnerLandingPage from "@/LandingPage/PartnerLandingPage";
-import { isMobile } from "@/configs/utils";
+import {handleWhatAppClick, isMobile} from "@/configs/utils";
+import {WhatsAppLink} from "@/configs/constants";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -17,6 +21,9 @@ export default function Home() {
       </Head>
       <main className={styles.body}>
         <PartnerLandingPage />
+          <div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>
+              <Image width = {75} height = {75}  src={'./images/whatappSticky.svg'} alt="whatapp sticky mobile"/>
+          </div>
       </main>
     </>
   );

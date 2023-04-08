@@ -1,4 +1,4 @@
-import {getScreenY, isMobile} from "@/configs/utils";
+import {getScreenY, handleWhatAppClick, isMobile, redirectToPartner} from "@/configs/utils";
 import styles from "./topSection.module.css";
 import { ButtonComponent } from "@/components/button";
 import {
@@ -47,6 +47,7 @@ export default function TopSection() {
                         label={"EMPANEL NOW"}
                         type={ButtonTypeTokens.PRIMARY_LARGE}
                         width={ButtonWidthTypeTokens.FULL}
+                        onClick={()=>redirectToPartner()}
                     />
                 </div>
                 <div
@@ -136,6 +137,7 @@ export default function TopSection() {
               width: 20,
               height: 20,
             }}
+            onClick={()=>handleWhatAppClick()}
           />
         </div>
       </>
@@ -171,6 +173,7 @@ export default function TopSection() {
                 label={"EMPANEL NOW"}
                 type={ButtonTypeTokens.PRIMARY_LARGE}
                 width={ButtonWidthTypeTokens.CONTENT}
+                onClick={()=>redirectToPartner()}
               />
             </div>
             <div
@@ -258,6 +261,7 @@ export default function TopSection() {
                         width: 20,
                         height: 20,
                     }}
+                    onClick={()=>handleWhatAppClick()}
                 />
             </div>
 

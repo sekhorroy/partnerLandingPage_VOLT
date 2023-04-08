@@ -16,6 +16,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 
@@ -35,6 +37,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .buttonOutlineTransparentLarge {
@@ -52,4 +56,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }

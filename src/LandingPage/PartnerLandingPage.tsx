@@ -1,7 +1,7 @@
 import styles from "./PartnerLandingPage.module.css";
 import {Header} from "@/components/header";
 import { getScreenX } from "@/configs/utils";
-import { useMemo } from "react";
+import {useMemo, useRef} from "react";
 import TopSection from "@/LandingPage/topSection/topSection";
 import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
 import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
@@ -15,6 +15,13 @@ export default function PartnerLandingPage() {
   const width = getScreenX();
   console.log(width);
 
+  const ref_Header = useRef();
+  const ref_Partner = useRef();
+  const ref_HIW = useRef();
+  const ref_Benefits = useRef();
+  const ref_Faq = useRef();
+  const ref_ContactUs = useRef();
+
   const partnerChild = useMemo(() => {
     return (
       <div
@@ -23,7 +30,10 @@ export default function PartnerLandingPage() {
           width: width,
         }}
       >
-        <Header />
+        <div>
+          <Header />
+        </div>
+
         <TopSection />
         <PartnerSection />
         <VoltBenefit />
