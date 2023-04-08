@@ -64,7 +64,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 <div>
                   <ButtonComponent
                     label="Get Started"
-                    type={ButtonTypeTokens.OUTLINE_LARGE}
+                    type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
                   />
                 </div>
               </div>
