@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .Faqs_ContainerTitle {
@@ -59,25 +61,18 @@
     /* Grey / White */
     background: #FFFFFF;
     /* Primary/100 */
-    
     border: 1px solid #1434CB;
     border-radius: 1000px;
-    margin-top: 24px;
-    margin-bottom: 72px;
-
     /* Mobile/Body/Normal/B1/Bold */
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 22px;
     /* identical to box height, or 157% */
     text-align: center;
     /* Primary/100 */
     color: #1434CB;
-
-
 }
 
 .Faqs_ContainerQuestionItemsContainer {

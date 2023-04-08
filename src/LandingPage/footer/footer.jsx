@@ -23,9 +23,6 @@ function Footer() {
         </div>
         <div className={styles.FooterHelpSectionContainer}>
           <a className={styles.FooterHelpSectionContainerAnchor}>Home</a>
-          <a className={styles.FooterHelpSectionContainerAnchor}>
-            Help & support
-          </a>
           <a className={styles.FooterHelpSectionContainerAnchor}>Contact</a>
           <a className={styles.FooterHelpSectionContainerAnchor}>About us</a>
         </div>
@@ -88,11 +85,6 @@ function Footer() {
                   </div>
               ) : (<></>)
           }
-        {/*<div className={styles.VoltLegalContainer}>*/}
-        {/*    <div style={{color: 'white'}} href={privacyLink.TermsAndConditions} target='_blank' rel="noreferrer">*/}
-        {/*        ©2023 SALTER TECHNOLOGIES PRIVATE LIMITED  |  Legal   |  Privacy*/}
-        {/*    </div>*/}
-        {/*</div>*/}
       </div>
       {_isMobile ? (
         <div className={styles.FooterContainer_Bottom1}>
