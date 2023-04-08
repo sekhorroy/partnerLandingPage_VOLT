@@ -13,7 +13,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
   name,
 }) => {
   const _isMobile: boolean = isMobile();
-  const [_hide, setHide] = useState(false);
+  const [_hide, setHide] = useState(true);
 
   const paddingStyle = _isMobile ? {
     paddingLeft: 16,
