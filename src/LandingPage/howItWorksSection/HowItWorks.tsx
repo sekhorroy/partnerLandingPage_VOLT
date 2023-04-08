@@ -133,14 +133,14 @@ export default function HowItWorks() {
                         <Image
                           src={item.url}
                           alt={"image1"}
-                          width={332}
-                          height={332}
+                          width={_isMobile ? 0 : 0}
+                          height={_isMobile ? 0 : 0}
                         />
                       </FadeInOut>
                     </>
                   ) : (
                     <>
-                      <FadeInOut show={true} duration={750}>
+                      <FadeInOut show={true} duration={500}>
                         <Image
                           src={item.url}
                           alt={"image1"}
