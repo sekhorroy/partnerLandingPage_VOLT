@@ -1,21 +1,29 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import {
-  getScreenX,
-  isMobile,
-  redirectTo,
-  redirectToFaq,
-  redirectToPartner,
+    getScreenX,
+    isMobile,
+    redirectTo,
+    redirectToFaq,
+    redirectToPartner, redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
+import { useState } from "react";
+import { Divider } from "@/components/divider";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
 }) => {
+  const [open, setOpen] = useState(false);
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
+
+  const handleMenuOpenClose = () => {
+    open ? setOpen(false) : setOpen(true);
+  };
+
   return (
     <>
       <div
@@ -72,7 +80,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             }
           >
             {_isMobile ? (
-              <div>
+              <div onClick={handleMenuOpenClose}>
                 <Image
                   priority
                   src="/images/ThreeBar.svg"
@@ -114,6 +122,54 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
           </div>
         </div>
       </div>
+      {open ? (
+        <div
+          className={styles.menuContainer}
+          style={{
+            position: "absolute",
+            top: 44,
+            width: width,
+          }}
+        >
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectTo("/aboutus")}
+          >
+            About us
+          </div>
+          <Divider />
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectToFaq()}
+          >
+            FAQs
+          </div>
+          <Divider />
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectToPartner()}
+          >
+            Get started
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 };
