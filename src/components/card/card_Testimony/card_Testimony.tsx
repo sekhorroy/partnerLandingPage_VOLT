@@ -87,7 +87,6 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
                   height: 125,
                   overflow: 'hidden'
               }: {
-                  height: 125,
               }}>
                   {subTitle ? subTitle : ""}
               </div>
