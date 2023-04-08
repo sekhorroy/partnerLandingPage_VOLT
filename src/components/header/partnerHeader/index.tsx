@@ -29,7 +29,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({ type }) =>
         }}
       >
         <div className={type === HeaderType.CONTACT_US ? styles.headerContentContactUs : styles.headerContent}>
-          <div className={styles.headerLeft} style={{}}>
+          <div className={styles.headerLeft} style={_isMobile ? {
+              paddingLeft: 0
+          }:{}}>
             <Image
               priority
               src="/images/VoltPartnerLogo.svg"
@@ -38,7 +40,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({ type }) =>
               alt="Volt partner logo"
             />
           </div>
-          <div className={styles.headerRight}>
+          <div className={styles.headerRight} style={_isMobile ? {
+              paddingRight: 16
+          } : {}}>
             {_isMobile ? (
               <div>
                 <Image

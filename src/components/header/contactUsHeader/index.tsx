@@ -33,7 +33,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
               : styles.headerContent
           }
         >
-          <div className={styles.headerLeft} style={{}}>
+          <div className={styles.headerLeft} style={_isMobile ? {paddingLeft: 0} : {paddingLeft: 16}}>
             <Image
               priority
               src="/images/VoltPartnerLogo.svg"

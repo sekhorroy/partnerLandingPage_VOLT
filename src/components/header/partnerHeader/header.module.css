@@ -44,13 +44,13 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    padding-left: 16px;
 }
 .headerRight {
     flex: 2;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 19px;
 }
 
 .headerWeb {
