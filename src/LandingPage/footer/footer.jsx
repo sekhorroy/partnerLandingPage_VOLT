@@ -10,9 +10,12 @@ function Footer() {
 
   return (
     <div className={styles.FooterContainer} style={{
-      paddingTop: 40
+      paddingTop: 40,
     }}>
-      <div className={styles.FooterContainer_Top}>
+      <div className={styles.FooterContainer_Top} style={{
+        paddingLeft: 16,
+        paddingRight: 16
+      }}>
         <div className={styles.VoltLogoContainer}>
           <img
             src={"/images/VoltIcon.svg"}
@@ -28,7 +31,10 @@ function Footer() {
         </div>
       </div>
       <div className={styles.FooterContainer_Bottom}>
-        <div className={styles.FooterFollowUsContainer}>
+        <div className={styles.FooterFollowUsContainer} style={{
+          paddingLeft: 16,
+          paddingRight: 16
+        }}>
           <div className={styles.FollowUsTextContainer}>Follow us</div>
           <div>
             <a>
@@ -67,7 +73,8 @@ function Footer() {
                     style={{
                       width: '50%',
                       justifyContent: 'flex-end',
-                      paddingBottom: 0
+                      paddingBottom: 0,
+                      paddingRight: 16
                     }}
                   >
                       <Image

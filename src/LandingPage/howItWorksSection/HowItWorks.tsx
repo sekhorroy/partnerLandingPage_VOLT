@@ -10,6 +10,7 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
+import {Divider} from "@/components/divider";
 
 export default function HowItWorks() {
   const _isMobile: boolean = isMobile();
@@ -50,7 +51,7 @@ export default function HowItWorks() {
       <>
         <div
           className={styles.howItWorksContainer}
-          style={_isMobile ? { paddingTop: 48, paddingLeft: 16, paddingRight: 16 } : { paddingTop: 80, paddingLeft: 16, paddingRight: 16 }}
+          style={_isMobile ? { paddingTop: 48, paddingLeft: 16, paddingRight: 16, paddingBottom: 48 } : { paddingTop: 80, paddingLeft: 16, paddingRight: 16, paddingBottom: 40 }}
         >
           <div className={styles.howItWorksContainer1}>
             <div
@@ -198,6 +199,7 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
+            <Divider />
         </div>
       </>
     );

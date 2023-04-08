@@ -32,7 +32,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
             minHeight: 323
         }: {
             paddingTop: 16,
-            minHeight: 323
+            minHeight: 296
         }}>
           <div
             className={styles.cardContainerImage}
@@ -87,6 +87,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
                   height: 125,
                   overflow: 'hidden'
               }: {
+                  height: 125,
               }}>
                   {subTitle ? subTitle : ""}
               </div>
