@@ -43,7 +43,7 @@
 }
 
 .cardContainer3 {
-    font-family: 'Inter';
+    font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -51,12 +51,13 @@
     /* or 150% */
     /* Grey/Night */
     color: #1D2939;
-
-    width: 100%;
-    flex: 1;
     box-sizing: border-box;
     background: #F9FAFB;
 
     width: 100%;
     box-sizing: border-box;
+}
+
+.readMoreContainer {
+
 }

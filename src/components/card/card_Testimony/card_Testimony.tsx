@@ -13,18 +13,23 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
   name,
 }) => {
   const _isMobile: boolean = isMobile();
+  const [_hide, setHide] = useState(false);
 
   const paddingStyle = _isMobile ? {
     paddingLeft: 16,
     paddingRight: 16,
   } : {}
 
+  const handleClick = () => {
+      setHide(!_hide);
+  }
+
   const _child = useMemo(() => {
     return (
       <>
         <div className={styles.cardContainer} style={_isMobile ? {
           paddingTop: 16,
-            minHeight: 414
+            minHeight: 323
         }: {
             paddingTop: 16,
             minHeight: 323
@@ -74,15 +79,27 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
               paddingLeft: 16,
               paddingRight: 16,
               paddingTop: 16,
-              paddingBottom: 16
+              paddingBottom: 16,
+
             }}
           >
-            {subTitle ? subTitle : ""}
+              <div style={_hide ? {
+                  height: 125,
+                  overflow: 'hidden'
+              }: {
+              }}>
+                  {subTitle ? subTitle : ""}
+              </div>
+              <div style={{
+                  color: '#1434CB'
+              }} onClick={handleClick}>
+                  {_hide ?  'Read More' : 'Read less'}
+              </div>
           </div>
         </div>
       </>
     );
-  }, [type]);
+  }, [type, _hide]);
 
   return (
     <>

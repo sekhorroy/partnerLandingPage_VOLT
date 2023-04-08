@@ -23,3 +23,13 @@ export const getScreenX: () => number = () => {
     return 360
   }
 }
+//@ts-ignore
+export const getScreenY: () => number = () => {
+  const screen = UseWindowSize();
+  if(screen &&
+      screen.height) {
+    return screen.height;
+  } else {
+    return 360
+  }
+}
