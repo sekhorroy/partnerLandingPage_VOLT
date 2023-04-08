@@ -50,3 +50,6 @@ export const handleWhatAppClick = () => {
 export const handleOurPartnerLinks = (Link: string) => {
   window.open(Link, '_blank' );
 }
+export const redirectTo = (url: string) =>{
+  window.open(url, '_self');
+}

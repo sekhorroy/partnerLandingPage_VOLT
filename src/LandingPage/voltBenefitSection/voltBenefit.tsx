@@ -112,7 +112,8 @@ const clientsCards: CardProps[] = [
   },
 ];
 
-export default function VoltBenefit() {
+//@ts-ignore
+export default function VoltBenefit({ref}) {
   const _isMobile: boolean = isMobile();
   console.log("_isMobile: ", _isMobile);
 
@@ -131,6 +132,7 @@ export default function VoltBenefit() {
     () => (
       <>
         <div
+          ref={ref}
           style={{
             paddingTop: 24,
             display: "flex",

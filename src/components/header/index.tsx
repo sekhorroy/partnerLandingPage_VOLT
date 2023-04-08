@@ -5,7 +5,7 @@ import { ContactUsHeader } from "@/components/header/contactUsHeader";
 import { PartnerHeader } from "@/components/header/partnerHeader";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 
-export const Header: React.FunctionComponent<HeaderProps> = ({ type }) => {
+export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
 
   const _child = useMemo(() => {
     if (type === HeaderType.CONTACT_US) {

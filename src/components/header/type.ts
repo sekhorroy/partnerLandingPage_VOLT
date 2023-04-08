@@ -5,4 +5,5 @@ export enum HeaderType {
 
 export type HeaderProps = {
     type?: HeaderType
+    ref?: React.RefObject<HTMLInputElement>
 }
