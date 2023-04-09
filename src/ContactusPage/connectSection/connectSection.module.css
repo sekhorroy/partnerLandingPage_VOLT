@@ -1,0 +1,91 @@
+.connectContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.connectContainerC1 {
+    width: 100%;
+    max-width: 450px;
+}
+
+.connectContainerC1T1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    /* identical to box height, or 144% */
+    /* Grey/Night */
+    color: #1D2939;
+
+    margin-top: 0px;
+    margin-bottom: 4px;
+
+    text-align: center;
+}
+
+.connectContainerC1T2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    /* or 143% */
+
+    text-align: center;
+
+    /* Grey / Charcoal */
+
+    color: #667085;
+}
+
+.connectContainerC1T3 {
+    /* Web/Heading/H4/Bold */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    /* identical to box height, or 144% */
+
+
+    margin-top: 0px;
+    margin-bottom: 4px;
+   text-align: center;
+
+    color: #1D2939;
+
+    mix-blend-mode: normal;
+
+}
+
+.connectContainerC1T4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+
+    text-align: center;
+
+    /* Grey / Charcoal */
+
+    color: #667085;
+}
+
+.shareIconsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.getDirection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1434CB;
+}

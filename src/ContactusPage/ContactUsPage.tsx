@@ -6,6 +6,7 @@ import {HeaderType} from "@/components/header/type";
 import TopSectionContactUs from "@/ContactusPage/topSection/topSection";
 import Faqs from "@/LandingPage/faqs/faqs";
 import Footer from "@/LandingPage/footer/footer";
+import ConnectSection from "./connectSection/connectSection";
 
 export default function ContactUsPage() {
   const width = getScreenX();
@@ -21,6 +22,7 @@ export default function ContactUsPage() {
       >
         <Header type={HeaderType.CONTACT_US}/>
         <TopSectionContactUs />
+        <ConnectSection />
         <Faqs />
         <Footer />
       </div>
