@@ -22,5 +22,6 @@ export type ButtonProps = {
     onClick?: () => void,
     type: ButtonTypeTokens,
     width?: ButtonWidthTypeTokens,
-    leftIcon?: ImageProps | null
+    leftIcon?: ImageProps | null,
+    imageUrl?: string
 }

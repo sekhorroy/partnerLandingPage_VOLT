@@ -25,7 +25,7 @@ export default function TopSection() {
   const _child = useMemo(() => {
     return _isMobile ? (
       <>
-        <div className={styles.topSectionMob} style={_style}>
+        <div className={styles.topSectionMob}>
             <div className={styles.topSectionMobC1}>
                 <div
                     className={styles.topSectionMobFont1}
@@ -104,7 +104,7 @@ export default function TopSection() {
             <div
                 className={styles.lendingPartnerContainer1}
                 style={{
-                    paddingTop: 8,
+                    paddingTop: 20,
                 }}
             >
                 <Image
@@ -136,14 +136,10 @@ export default function TopSection() {
             We are available Monday through Saturday from 9:30 AM to 6:30 PM.
           </div>
           <ButtonComponent
-            label={"Chat with us WhatsApp"}
+            label={"Chat with us"}
             type={ButtonTypeTokens.OUTLINE_LARGE}
             width={ButtonWidthTypeTokens.FULL}
-            leftIcon={{
-              url: "/images/whatsapp.svg",
-              width: 20,
-              height: 20,
-            }}
+            imageUrl="/images/Whatsapp.svg"
             onClick={()=>handleWhatAppClick()}
           />
         </div>
@@ -256,18 +252,14 @@ export default function TopSection() {
                             paddingTop: 12
                         }}
                     >
-                        We are available Monday through Saturday from 9:30 AM to 6:30 PM.
+                        We are available Monday through Saturday from 9:30 AM to 8 PM.
                     </div>
                 </div>
                 <ButtonComponent
                     label={"Chat with us"}
                     type={ButtonTypeTokens.OUTLINE_LARGE}
                     width={ButtonWidthTypeTokens.CONTENT}
-                    leftIcon={{
-                        url: "/images/whatsapp.svg",
-                        width: 20,
-                        height: 20,
-                    }}
+                    imageUrl="/images/Whatsapp.svg"
                     onClick={()=>handleWhatAppClick()}
                 />
             </div>

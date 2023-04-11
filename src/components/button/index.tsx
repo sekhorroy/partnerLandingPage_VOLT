@@ -13,10 +13,10 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   onClick,
   width = ButtonWidthTypeTokens.CONTENT,
   leftIcon = undefined,
-
+  imageUrl,
 }) => {
   const handleClick = () => {
-      console.log("click: ")
+    console.log("click: ");
     onClick && onClick();
   };
   const styleType =
@@ -58,6 +58,21 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
                 width={leftIcon.width}
                 height={leftIcon.height}
               />
+            </div>
+          ) : (
+            <></>
+          )}
+          {imageUrl ? (
+            <div
+              style={{
+                paddingRight: 9,
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image src={imageUrl} alt={"button"} width={24} height={24} />
             </div>
           ) : (
             <></>

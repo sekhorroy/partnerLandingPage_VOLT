@@ -155,7 +155,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingBottom: 16,
             }}
           >
-            FAQs
+              <a style={{
+                  textDecoration: 'none'
+              }} href="#faq">FAQs</a>
           </div>
           <Divider />
           <div

@@ -210,7 +210,7 @@ export default function VoltBenefit() {
               label={"Get Started"}
               type={ButtonTypeTokens.PRIMARY_LARGE}
               width={ButtonWidthTypeTokens.FULL}
-              onClick={()=>redirectToVoltApp()}
+              onClick={()=>redirectToPartner()}
             />
           </div>
         </div>
