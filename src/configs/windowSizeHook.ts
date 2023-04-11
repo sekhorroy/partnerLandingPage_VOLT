@@ -19,10 +19,14 @@ export function UseWindowSize(): WindowSize {
             })
         }
 
-        window.addEventListener('resize', handleResize)
-        handleResize()
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
+        handleResize();
 
-        return () => window.removeEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleResize);
+        }
     }, [])
 
     return windowSize

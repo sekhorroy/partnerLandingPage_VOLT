@@ -17,7 +17,10 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
 
   return (
     <>
-      <div>{_child}</div>
+      <div style={{
+        width: '100%',
+        boxSizing: 'border-box'
+      }}>{_child}</div>
     </>
   );
 };

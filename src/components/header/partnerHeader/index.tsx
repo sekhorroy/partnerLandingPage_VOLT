@@ -1,11 +1,12 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import {
-    getScreenX,
-    isMobile,
-    redirectTo,
-    redirectToFaq,
-    redirectToPartner, redirectToVoltApp,
+  getScreenX,
+  isMobile,
+  redirectTo,
+  redirectToFaq,
+  redirectToPartner,
+  redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
@@ -18,7 +19,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const _isMobile: boolean = isMobile();
-  const width = getScreenX();
+  // const width = getScreenX();
 
   const handleMenuOpenClose = () => {
     open ? setOpen(false) : setOpen(true);
@@ -37,7 +38,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             : styles.headerWeb
         }
         style={{
-          width: width,
+          width: "100%",
           position: "sticky",
           top: 0,
           left: 0,
@@ -128,7 +129,8 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
           style={{
             position: "absolute",
             top: 44,
-            width: width,
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           <div

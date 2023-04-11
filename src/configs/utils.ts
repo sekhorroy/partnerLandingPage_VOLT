@@ -1,6 +1,7 @@
 import { Breakpoints } from "@/configs/config";
 import { UseWindowSize } from "@/configs/windowSizeHook";
 import {AppLink, PartnerLink, WhatsAppLink} from "@/configs/constants";
+import {useEffect} from "react";
 
 export const isMobile: () => boolean = () => {
   const screen = UseWindowSize();
