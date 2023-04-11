@@ -104,9 +104,10 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={redirectToFaq}
                 >
-                  FAQs
+                  <a style={{
+                      textDecoration: 'none'
+                  }} href="#faq">FAQs</a>
                 </div>
                 <div
                   className={styles.headerLinksContainer}
@@ -153,7 +154,6 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToFaq()}
           >
             FAQs
           </div>

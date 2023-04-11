@@ -37,8 +37,13 @@ export default function PartnerLandingPage() {
         <PartnerSection />
         <VoltBenefit/>
         <HowItWorks />
-        {/*<TestimoneySection />*/}
-        <Faq />
+        <TestimoneySection />
+        <div id='faq' style={{
+          width: '100%'
+        }}>
+          <Faq/>
+        </div>
+
         <Footer />
       </div>
     );

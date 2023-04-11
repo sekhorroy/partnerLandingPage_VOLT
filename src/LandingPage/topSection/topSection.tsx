@@ -14,10 +14,10 @@ export default function TopSection() {
     const [_style, setStyle] = useState({});
 
     useEffect(()=>{
-        console.log("height 123: ", window.innerHeight - 44);
-        if(window.innerHeight) {
+        console.log("height 123: ", screen.height - 44);
+        if(screen && screen.height) {
             setStyle({
-                height: (window.innerHeight - 44)
+                height: (screen.height - 44 - 50)
             })
         }
     }, []);
