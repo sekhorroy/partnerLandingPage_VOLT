@@ -10,7 +10,7 @@ import { Divider } from "@/components/divider";
 import {useEffect, useMemo, useState} from "react";
 
 export default function TopSection() {
-    const _isMobile = getScreenY();
+    const _isMobile = isMobile()
     const [_style, setStyle] = useState({});
 
     useEffect(()=>{
