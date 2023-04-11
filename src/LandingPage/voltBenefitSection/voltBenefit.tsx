@@ -113,7 +113,7 @@ const clientsCards: CardProps[] = [
 ];
 
 //@ts-ignore
-export default function VoltBenefit({ref}) {
+export default function VoltBenefit() {
   const _isMobile: boolean = isMobile();
   console.log("_isMobile: ", _isMobile);
 
@@ -132,7 +132,6 @@ export default function VoltBenefit({ref}) {
     () => (
       <>
         <div
-          ref={ref}
           style={{
             paddingTop: 24,
             display: "flex",
@@ -228,7 +227,9 @@ export default function VoltBenefit({ref}) {
           paddingBottom: _isMobile ? 32 : 80,
         }}
       >
-        <div className={_isMobile ? styles.howItWorksContainerText1 : styles.howItWorksContainerText1Web}>
+        <div className={_isMobile ? styles.howItWorksContainerText1 : styles.howItWorksContainerText1Web} style={{
+          paddingBottom: _isMobile ? 24 : 30
+        }}>
           Benefits with voltmoney
         </div>
         <div style={{}}>

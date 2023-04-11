@@ -13,6 +13,8 @@ import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import { useState } from "react";
 import { Divider } from "@/components/divider";
+import voltPartnerLogo from "../../../../public/images/VoltPartnerLogo.svg";
+
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -82,8 +84,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
           >
             {_isMobile ? (
               <div onClick={handleMenuOpenClose}>
-                <Image
-                  priority
+                <img
                   src="/images/ThreeBar.svg"
                   height={12}
                   width={18}

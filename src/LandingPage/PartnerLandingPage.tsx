@@ -13,9 +13,6 @@ import Faq from "./faqs/faqs";
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 
 export default function PartnerLandingPage() {
-  let width = getScreenX();
-  console.log(width);
-
   const ref_Header = createRef();
   const ref_Partner = createRef();
   const ref_HIW = createRef();
@@ -23,27 +20,6 @@ export default function PartnerLandingPage() {
   const ref_Faq = createRef();
   const ref_ContactUs = createRef();
 
-
-  // useEffect(()=>{
-  //   if (window &&
-  //       window.location &&
-  //       window.location.hash &&
-  //       window.location.hash !== '') {
-  //     if(window.location.hash === '#faq') {
-  //       //@ts-ignore
-  //       ref_Faq.current.scrollIntoView();
-  //     } else if(window.location.hash === '#how_it_works') {
-  //       //@ts-ignore
-  //       ref_HIW.current.scrollIntoView();
-  //     } else if(window.location.hash === '#volt_benefits') {
-  //       //@ts-ignore
-  //       ref_Benefits.current.scrollIntoView();
-  //     } else if(window.location.hash === '#footer') {
-  //       //@ts-ignore
-  //       ref_ContactUs.current.scrollIntoView();
-  //     }
-  //   }
-  // }, []);
 
   const partnerChild = useMemo(() => {
     return (
@@ -59,14 +35,14 @@ export default function PartnerLandingPage() {
         <Header />
         <TopSection />
         <PartnerSection />
-        <VoltBenefit ref={ref_Benefits as React.RefObject<HTMLDivElement>}/>
+        <VoltBenefit/>
         <HowItWorks />
-        <TestimoneySection />
+        {/*<TestimoneySection />*/}
         <Faq />
         <Footer />
       </div>
     );
-  }, [width]);
+  }, []);
 
   return partnerChild;
 }

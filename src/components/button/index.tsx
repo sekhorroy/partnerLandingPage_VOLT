@@ -13,6 +13,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   onClick,
   width = ButtonWidthTypeTokens.CONTENT,
   leftIcon = undefined,
+
 }) => {
   const handleClick = () => {
       console.log("click: ")

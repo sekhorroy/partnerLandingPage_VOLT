@@ -29,8 +29,8 @@ export const getScreenX: () => number = () => {
 export const getScreenY: () => number = () => {
   const screen = UseWindowSize();
   if(screen &&
-      screen.height) {
-    return screen.height;
+      screen.width) {
+    return screen.width;
   } else {
     return 360
   }

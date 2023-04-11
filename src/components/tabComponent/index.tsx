@@ -32,6 +32,7 @@ export const TabComponent: React.FunctionComponent<TabComponentProps> = ({
                                       ? _isMobile ? styles.tabHeaderT1_active : styles.tabHeaderT1_active_Web
                                       : _isMobile ? styles.tabHeaderT1 : styles.tabHeaderT1Web
                               }
+                              style={_isMobile ? {paddingBottom: 16}:{paddingBottom: 12}}
                           >
                               <h4>{item?.label}</h4>
                           </div>

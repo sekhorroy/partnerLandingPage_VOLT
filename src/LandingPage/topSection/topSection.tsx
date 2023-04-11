@@ -7,18 +7,25 @@ import {
 } from "@/components/button/type";
 import Image from "next/image";
 import { Divider } from "@/components/divider";
-import { useMemo } from "react";
+import {useEffect, useMemo, useState} from "react";
 
 export default function TopSection() {
-  const _isMobile: boolean = isMobile();
-    const height = getScreenY();
+    const _isMobile = getScreenY();
+    const [_style, setStyle] = useState({});
+
+    useEffect(()=>{
+        console.log("height 123: ", window.innerHeight - 44);
+        if(window.innerHeight) {
+            setStyle({
+                height: (window.innerHeight - 44)
+            })
+        }
+    }, []);
 
   const _child = useMemo(() => {
     return _isMobile ? (
       <>
-        <div className={styles.topSectionMob} style={{
-            height: height - 44
-        }}>
+        <div className={styles.topSectionMob} style={_style}>
             <div className={styles.topSectionMobC1}>
                 <div
                     className={styles.topSectionMobFont1}
@@ -108,7 +115,7 @@ export default function TopSection() {
                     alt="top section image"
                 />
             </div>
-            </div>
+        </div>
         <div className={styles.topSectionHelpContainer1}>
           <h3
             className={styles.topSectionHelpContainerChild1}
@@ -268,7 +275,7 @@ export default function TopSection() {
         </div>
       </>
     );
-  }, [_isMobile, height]);
+  }, [_isMobile, _style]);
 
   return _child;
 }
