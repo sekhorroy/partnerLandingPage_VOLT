@@ -17,7 +17,7 @@ export default function TopSectionContactUs() {
         <div
           className={styles.topSectionContactOuter}
           style={{
-            width: width,
+            width: '100%',
           }}
         >
           <div className={styles.topSectionContactInner} style={{

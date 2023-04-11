@@ -17,7 +17,7 @@ export default function ContactUsPage() {
       <div
         className={styles.body}
         style={{
-          width: width,
+          width: '100%',
         }}
       >
         <Header type={HeaderType.CONTACT_US}/>

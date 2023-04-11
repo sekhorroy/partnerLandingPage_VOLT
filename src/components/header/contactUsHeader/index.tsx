@@ -23,7 +23,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             : styles.headerWeb
         }
         style={{
-            width: width
+            width: '100%'
         }}
       >
         <div

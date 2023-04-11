@@ -14,7 +14,7 @@ export default function ConnectSection() {
         <div
           className={styles.connectContainer}
           style={{
-            width: width,
+            width: '100%',
           }}
         >
           <div
