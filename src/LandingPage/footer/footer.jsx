@@ -1,7 +1,7 @@
 import styles from "./footer.module.css";
 import React, { location } from "react";
 import { EXTERNAL_URLS } from "../../configs/config";
-import { Links, privacyLink } from "../../configs/links";
+import { Links, privacyLink } from "../../configs/constants";
 import Image from "next/image";
 import { handleOurPartnerLinks, isMobile, redirectTo } from "@/configs/utils";
 import Link from "next/link";
@@ -68,16 +68,18 @@ function Footer() {
                 alt="twitter icon"
                 width={32}
                 height={32}
+                onClick={()=>handleOurPartnerLinks(Links.Twitter)}
               />
             </a>
           </div>
           <div>
-            <a className={styles.shareAnchorContainer}>
+            <a>
               <img
                 src={"/images/Instagram.svg"}
                 alt="instagram icon"
                 width={32}
                 height={32}
+                onClick={()=>handleOurPartnerLinks(Links.Instagram)}
               />
             </a>
           </div>
@@ -93,6 +95,7 @@ function Footer() {
                 alt="linkedIn icon"
                 width={32}
                 height={32}
+                onClick={()=>handleOurPartnerLinks(Links.Linkedin)}
               />
             </a>
           </div>
