@@ -57,7 +57,7 @@ const partnerCards: CardProps[] = [
       alt: "image1",
     },
     type: CardTypes.VOLT_BENEFIT,
-    title: "Dedicated support.",
+    title: "Dedicated support",
     subTitle:
       "Our dedicated support team is always ready to assist you with any questions or concern.",
   },

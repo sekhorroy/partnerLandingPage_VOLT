@@ -1,4 +1,4 @@
-import {isMobile, redirectToPartner} from "@/configs/utils";
+import { isMobile, redirectToPartner } from "@/configs/utils";
 import styles from "./HowItWorks.module.css";
 import { useMemo, useState } from "react";
 import { StepperBenefit } from "@/components/stepperBenefit";
@@ -10,13 +10,13 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import {Divider} from "@/components/divider";
-import {useRouter} from "next/router";
+import { Divider } from "@/components/divider";
+import { useRouter } from "next/router";
 
 export default function HowItWorks() {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
-    const url = useRouter().asPath;
+  const url = useRouter().asPath;
 
   const stepperData: StepperBenefitData[] = [
     {
@@ -30,14 +30,14 @@ export default function HowItWorks() {
         "Get your customized referral link and share it with your clients or MFDs",
     },
     {
-      title: "Client signed up on Volt Money.",
+      title: "Client signed up on Volt Money",
       subTitle:
-        "Receive instant rewards when your clients or MFDs sign up through your referral link.",
+        "Receive instant rewards when your clients or MFDs sign up through your referral link",
     },
     {
       title: "Track client’s status",
       subTitle:
-        "Track your clients activities and earnings on our user-friendly dashboard.",
+        "Track your clients activities and earnings on our user-friendly dashboard",
     },
   ];
 
@@ -53,7 +53,21 @@ export default function HowItWorks() {
       <>
         <div
           className={styles.howItWorksContainer}
-          style={_isMobile ? { paddingTop: 48, paddingLeft: 16, paddingRight: 16, paddingBottom: 48 } : { paddingTop: 80, paddingLeft: 16, paddingRight: 16, paddingBottom: 40 }}
+          style={
+            _isMobile
+              ? {
+                  paddingTop: 48,
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  paddingBottom: 48,
+                }
+              : {
+                  paddingTop: 80,
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  paddingBottom: 40,
+                }
+          }
         >
           <div className={styles.howItWorksContainer1}>
             <div
@@ -79,11 +93,15 @@ export default function HowItWorks() {
               HOW IT WORKS
             </div>
             <div
-              style={_isMobile ? {
-                paddingTop: 8,
-              } : {
-                  paddingTop: 16
-              }}
+              style={
+                _isMobile
+                  ? {
+                      paddingTop: 8,
+                    }
+                  : {
+                      paddingTop: 16,
+                    }
+              }
             >
               <h2
                 className={styles.howItWorksContainerT2}
@@ -196,13 +214,13 @@ export default function HowItWorks() {
                         ? ButtonWidthTypeTokens.FULL
                         : ButtonWidthTypeTokens.CONTENT
                     }
-                    onClick={()=>redirectToPartner(url)}
+                    onClick={() => redirectToPartner(url)}
                   />
                 </div>
               </div>
             </div>
           </div>
-            <Divider />
+          <Divider />
         </div>
       </>
     );
