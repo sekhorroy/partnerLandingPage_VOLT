@@ -107,6 +107,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
                     paddingTop: 16,
                     paddingBottom: 16,
                     height: "fit-content",
+                    minHeight: 131
                   }
             }
           >
@@ -132,7 +133,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
               }}
               onClick={handleClick}
             >
-              {_hide ? "Read more" : "Read less"}
+              {subTitle?.length < max_WordLength ? "" : _hide ? "Read more" : "Read less" }
             </div>
           </div>
         </div>
