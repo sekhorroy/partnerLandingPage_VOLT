@@ -31,3 +31,17 @@ export const Links = {
     DIGILOCKER: 'https://www.digilocker.gov.in/',
     STARTUP_INDIA: 'https://www.startupindia.gov.in/'
 }
+
+export enum StoreKey {
+    UTM_PARAMS = 'UTM_PARAMS'
+}
+
+export const UTM_expiry_days = 28
+
+export enum GoogleUtmParams {
+    UTM_CAMPAIGN = 'utm_campaign',
+    UTM_CONTENT = 'utm_content',
+    UTM_ID = 'utm_id',
+    UTM_MEDIUM = 'utm_medium',
+    UTM_SOURCE = 'utm_source',
+}

@@ -11,10 +11,12 @@ import {
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
 import {Divider} from "@/components/divider";
+import {useRouter} from "next/router";
 
 export default function HowItWorks() {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
+    const url = useRouter().asPath;
 
   const stepperData: StepperBenefitData[] = [
     {
@@ -194,7 +196,7 @@ export default function HowItWorks() {
                         ? ButtonWidthTypeTokens.FULL
                         : ButtonWidthTypeTokens.CONTENT
                     }
-                    onClick={()=>redirectToPartner()}
+                    onClick={()=>redirectToPartner(url)}
                   />
                 </div>
               </div>

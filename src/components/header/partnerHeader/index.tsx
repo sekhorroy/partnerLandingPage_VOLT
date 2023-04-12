@@ -1,12 +1,13 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import {
-  getScreenX,
-  isMobile,
-  redirectTo,
-  redirectToFaq,
-  redirectToPartner,
-  redirectToVoltApp,
+    getParamsLink,
+    getScreenX,
+    isMobile,
+    redirectTo,
+    redirectToFaq,
+    redirectToPartner,
+    redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
@@ -14,6 +15,7 @@ import { HeaderProps, HeaderType } from "@/components/header/type";
 import { useState } from "react";
 import { Divider } from "@/components/divider";
 import voltPartnerLogo from "../../../../public/images/VoltPartnerLogo.svg";
+import {useRouter} from "next/router";
 
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
@@ -22,6 +24,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   const [open, setOpen] = useState(false);
   const _isMobile: boolean = isMobile();
   // const width = getScreenX();
+  const url = useRouter().asPath;
 
   const handleMenuOpenClose = () => {
     open ? setOpen(false) : setOpen(true);
@@ -111,7 +114,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={redirectToPartner}
+                  onClick={()=>redirectToPartner(url)}
                 >
                   <ButtonComponent
                     label="Get Started"
@@ -167,7 +170,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner()}
+            onClick={() => redirectToPartner(url)}
           >
             Get started
           </div>

@@ -8,10 +8,12 @@ import {
 import Image from "next/image";
 import { Divider } from "@/components/divider";
 import {useEffect, useMemo, useState} from "react";
+import {useRouter} from "next/router";
 
 export default function TopSection() {
     const _isMobile = isMobile()
     const [_style, setStyle] = useState({});
+    const url = useRouter().asPath;
 
     useEffect(()=>{
         console.log("height 123: ", screen.height - 44);
@@ -54,7 +56,7 @@ export default function TopSection() {
                         label={"EMPANEL NOW"}
                         type={ButtonTypeTokens.PRIMARY_LARGE}
                         width={ButtonWidthTypeTokens.FULL}
-                        onClick={()=>redirectToPartner()}
+                        onClick={()=>redirectToPartner(url)}
                     />
                 </div>
                 <div
@@ -176,7 +178,7 @@ export default function TopSection() {
                 label={"EMPANEL NOW"}
                 type={ButtonTypeTokens.PRIMARY_LARGE}
                 width={ButtonWidthTypeTokens.CONTENT}
-                onClick={()=>redirectToPartner()}
+                onClick={()=>redirectToPartner(url)}
               />
             </div>
             <div

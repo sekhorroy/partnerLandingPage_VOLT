@@ -1,14 +1,17 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import PartnerLandingPage from "@/LandingPage/PartnerLandingPage";
-import {handleWhatAppClick, isMobile} from "@/configs/utils";
+import {getParamsLink, handleWhatAppClick, isMobile} from "@/configs/utils";
 import Image from "next/image";
-
-const inter = Inter({ subsets: ["latin"] });
+import {useRouter} from "next/router";
 
 
 export default function Home() {
+
+    const router = useRouter();
+    console.log("router: ", router);
+
+    console.log(getParamsLink(router.asPath));
   return (
     <>
       <Head>

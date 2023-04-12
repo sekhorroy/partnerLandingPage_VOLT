@@ -10,6 +10,7 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
+import {useRouter} from "next/router";
 
 const partnerCards: CardProps[] = [
   {
@@ -116,6 +117,7 @@ const clientsCards: CardProps[] = [
 export default function VoltBenefit() {
   const _isMobile: boolean = isMobile();
   console.log("_isMobile: ", _isMobile);
+  const url = useRouter().asPath;
 
   const tabOptions: TabComponentOptions[] = [
     {
@@ -165,7 +167,7 @@ export default function VoltBenefit() {
               label={"Onboard your customers now"}
               type={ButtonTypeTokens.PRIMARY_LARGE}
               width={ButtonWidthTypeTokens.FULL}
-              onClick={()=>redirectToPartner()}
+              onClick={()=>redirectToPartner(url)}
             />
           </div>
         </div>
@@ -210,7 +212,7 @@ export default function VoltBenefit() {
               label={"Get Started"}
               type={ButtonTypeTokens.PRIMARY_LARGE}
               width={ButtonWidthTypeTokens.FULL}
-              onClick={()=>redirectToPartner()}
+              onClick={()=>redirectToPartner(url)}
             />
           </div>
         </div>
