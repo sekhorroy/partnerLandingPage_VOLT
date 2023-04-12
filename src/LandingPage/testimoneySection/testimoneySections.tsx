@@ -76,16 +76,17 @@ export default function TestimoneySection() {
   const scrollRef = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
+  const [scrollLeftEnd, setScrollLeftEnd] = useState(true);
   const [_data, setData] = useState<CardProps[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleClick = (direction: string) => {
     console.log("handle Click");
     if (direction === "left") {
-      slide(-150);
+      slide(-250);
     }
     if (direction === "right") {
-      slide(150);
+      slide(250);
     }
   };
 
@@ -95,8 +96,17 @@ export default function TestimoneySection() {
     if (scrollRef && scrollRef.current) {
       //@ts-ignore
       scrollRef.current.scrollLeft += shift;
+
       setscrollX(scrollX + shift);
 
+      if (scrollRef.current.scrollLeft === 0) {
+        setScrollLeftEnd(true);
+      } else {
+        setScrollLeftEnd(false);
+      }
+
+      // console.log("scrollRef.current.scrollWidth: ", scrollRef.current.scrollWidth - scrollRef.current.scrollLeft);
+      // console.log("scrollRef.current.offsetWidth: ", scrollRef.current.offsetWidth);
       if (
         //@ts-ignore
         Math.floor(
@@ -107,8 +117,10 @@ export default function TestimoneySection() {
         scrollRef.current.offsetWidth
       ) {
         setscrolEnd(true);
+        console.log("setscrolEnd: ", scrolEnd);
       } else {
         setscrolEnd(false);
+        console.log("setscrolEnd: ", scrolEnd);
       }
     }
   };
@@ -117,27 +129,27 @@ export default function TestimoneySection() {
     await setLoading(true);
     const response = await axios.get(
       // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
-        "https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=partner_testimonials"
+      "https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=partner_testimonials"
     );
-    const  Data = response.data.data;
+    const Data = response.data.data;
     console.log("response: ", Data);
-    let dataTransform: CardProps[] = []
-      //@ts-ignore
-      Data.map((item, index) => {
-        dataTransform.push({
-            type: CardTypes.TESTIMONY,
-            name: item?.name,
-            title: item?.bio,
-            subTitle: item?.message,
-            leftIcon: {
-                url: item?.image,
-                width: 56,
-                height: 56,
-                alt: "customer image 1",
-            },
-        })
-    })
-      console.log("dataTransform : ", dataTransform);
+    let dataTransform: CardProps[] = [];
+    //@ts-ignore
+    Data.map((item, index) => {
+      dataTransform.push({
+        type: CardTypes.TESTIMONY,
+        name: item?.name,
+        title: item?.bio,
+        subTitle: item?.message,
+        leftIcon: {
+          url: item?.image,
+          width: 56,
+          height: 56,
+          alt: "customer image 1",
+        },
+      });
+    });
+    console.log("dataTransform : ", dataTransform);
     await setData(dataTransform);
     await setLoading(false);
   };
@@ -145,6 +157,106 @@ export default function TestimoneySection() {
   useEffect(() => {
     console.log("get data : ", getData());
   }, []);
+
+  const _scrollButton = useMemo(() => {
+    return (
+      <>
+        {!_isMobile ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: 24,
+            }}
+          >
+            {scrollLeftEnd ? (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 56,
+                  height: 56,
+                }}
+                className={styles.buttonNotActive}
+              >
+                <Image
+                  src={"/images/leftGrey.svg"}
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 56,
+                  height: 56,
+                }}
+                className={styles.buttonActive}
+                onClick={() => handleClick("left")}
+              >
+                <Image
+                  src={"/images/leftBlack.svg"}
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
+              </div>
+            )}
+
+            {scrolEnd ? (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 56,
+                  height: 56,
+                }}
+                className={styles.buttonNotActive}
+              >
+                <Image
+                  src={"/images/rightGrey.svg"}
+                  alt={"right"}
+                  width={32}
+                  height={32}
+                />
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 56,
+                  height: 56,
+                }}
+                className={styles.buttonActive}
+                onClick={() => handleClick("right")}
+              >
+                <Image
+                  src={"/images/rigthBlack.svg"}
+                  alt={"right"}
+                  width={32}
+                  height={32}
+                />
+              </div>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
+      </>
+    );
+  }, [scrollRef, scrollLeftEnd, scrolEnd]);
 
   const _child = useMemo(() => {
     return !loading ? (
@@ -229,56 +341,7 @@ export default function TestimoneySection() {
             >
               What our partners say
             </div>
-            {!_isMobile ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  gap: 24,
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: 56,
-                    height: 56,
-                  }}
-                  className={styles.buttonNotActive}
-                  onClick={() => handleClick("left")}
-                >
-                  <Image
-                    src={"/images/leftGrey.svg"}
-                    alt={"arrow"}
-                    width={32}
-                    height={32}
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: 56,
-                    height: 56,
-                  }}
-                  className={styles.buttonActive}
-                  onClick={() => handleClick("right")}
-                >
-                  <Image
-                    src={"/images/rigthBlack.svg"}
-                    alt={"right"}
-                    width={32}
-                    height={32}
-                  />
-                </div>
-              </div>
-            ) : (
-              <></>
-            )}
+            {_scrollButton}
           </div>
           <div
             style={{
@@ -335,7 +398,7 @@ export default function TestimoneySection() {
     ) : (
       <></>
     );
-  }, [_isMobile, _activeId, loading]);
+  }, [_isMobile, _activeId, loading, scrollLeftEnd]);
 
   return !loading ? _child : <></>;
 }
