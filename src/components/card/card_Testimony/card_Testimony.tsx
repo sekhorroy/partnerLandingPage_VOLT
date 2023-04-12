@@ -129,7 +129,8 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
             <div
               style={{
                 color: "#1434CB",
-                  fontSize: 14
+                  fontSize: 14,
+                  cursor: 'pointer'
               }}
               onClick={handleClick}
             >
