@@ -15,25 +15,36 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
   const _isMobile: boolean = isMobile();
   const [_hide, setHide] = useState(true);
 
-  const paddingStyle = _isMobile ? {
-    paddingLeft: 16,
-    paddingRight: 16,
-  } : {}
+  const paddingStyle = _isMobile
+    ? {
+        paddingLeft: 16,
+        paddingRight: 16,
+      }
+    : {};
 
   const handleClick = () => {
-      setHide(!_hide);
-  }
+    setHide(!_hide);
+  };
+
+  const max_WordLength = 182;
 
   const _child = useMemo(() => {
     return (
       <>
-        <div className={styles.cardContainer} style={_isMobile ? {
-          paddingTop: 16,
-            minHeight: 323
-        }: {
-            paddingTop: 16,
-            minHeight: 296
-        }}>
+        <div
+          className={styles.cardContainer}
+          style={
+            _isMobile
+              ? {
+                  paddingTop: 16,
+                  height: "fit-content",
+                }
+              : {
+                  paddingTop: 16,
+                  height: 'fit-content',
+                }
+          }
+        >
           <div
             className={styles.cardContainerImage}
             style={{
@@ -57,44 +68,71 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
             style={{
               paddingLeft: 16,
               paddingRight: 16,
-              paddingTop: 12
+              paddingTop: 12,
             }}
           >
             {name ? name : ""}
           </div>
           <div
             className={styles.cardContainer2}
-            style={{
+            style={_isMobile ? {
               paddingLeft: 16,
               paddingRight: 16,
               paddingBottom: 16,
-              paddingTop: 4
+              paddingTop: 4,
+            } : {
+                paddingLeft: 16,
+                paddingRight: 16,
+                paddingBottom: 16,
+                paddingTop: 4,
+                minHeight: 60
             }}
           >
             {title ? title : ""}
           </div>
           <div
             className={styles.cardContainer3}
-            style={{
-              paddingLeft: 16,
-              paddingRight: 16,
-              paddingTop: 16,
-              paddingBottom: 16,
-
-            }}
+            style={
+              _isMobile
+                ? {
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    paddingTop: 16,
+                    paddingBottom: 16,
+                    height: 'fit-content',
+                  }
+                : {
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    paddingTop: 16,
+                    paddingBottom: 16,
+                    height: "fit-content",
+                  }
+            }
           >
-              <div style={_hide ? {
-                  height: 125,
-                  overflow: 'hidden'
-              }: {
-              }}>
-                  {subTitle ? subTitle : ""}
-              </div>
-              <div style={{
-                  color: '#1434CB'
-              }} onClick={handleClick}>
-                  {_hide ?  'Read More' : 'Read less'}
-              </div>
+            <div
+              className={styles.readMoreContainer}
+              style={
+                _hide
+                  ? {
+                      height: 75,
+                      overflow: "hidden",
+                    }
+                  : {
+                        height: 'fit-content'
+                    }
+              }
+            >
+              {subTitle ? subTitle : ""}
+            </div>
+            <div
+              style={{
+                color: "#1434CB",
+              }}
+              onClick={handleClick}
+            >
+              {_hide ? "Read More" : "Read less"}
+            </div>
           </div>
         </div>
       </>

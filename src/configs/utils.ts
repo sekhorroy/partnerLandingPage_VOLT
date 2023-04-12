@@ -65,7 +65,6 @@ export const addDaysToEpochTime = (epochTime: number, days: number) => {
 
 
 
-
 export const isGoogleUTMParams: (param: string) => boolean = param => {
   if (
       param === GoogleUtmParams.UTM_SOURCE ||

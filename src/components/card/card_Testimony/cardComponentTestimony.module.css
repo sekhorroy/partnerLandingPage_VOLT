@@ -1,6 +1,5 @@
 .cardContainer {
     width: 100%;
-    height: fit-content;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -59,5 +58,5 @@
 }
 
 .readMoreContainer {
-
+    box-sizing: border-box;
 }
