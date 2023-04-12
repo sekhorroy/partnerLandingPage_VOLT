@@ -1,6 +1,14 @@
 import {Breakpoints, UTM_expiry_days} from "@/configs/config";
 import { UseWindowSize } from "@/configs/windowSizeHook";
-import {AppLink, GoogleUtmParams, PartnerLink, StoreKey, WhatsAppLink} from "@/configs/constants";
+import {
+  AppLink,
+  BUILD_TYPE,
+  getBuildType,
+  GoogleUtmParams,
+  PartnerLink,
+  StoreKey,
+  WhatsAppLink
+} from "@/configs/constants";
 import {useEffect} from "react";
 import {useRouter} from "next/router";
 
@@ -86,9 +94,10 @@ export const getParameters: (url: string) => {
   console.log('test param string', paramString)
   const queryString = new URLSearchParams(paramString)
   console.log('test query', queryString)
+  //@ts-ignore
   for (const pair of queryString.entries()) {
-    params[pair[0].includes('/') ? pair[0].split('/')[1] : pair[0]] =
-        pair[1].includes('/') ? pair[1].split('/')[0] : pair[1]
+    //@ts-ignore
+    params[pair[0].includes('/') ? pair[0].split('/')[1] : pair[0]] = pair[1].includes('/') ? pair[1].split('/')[0] : pair[1]
   }
   return params
 }
