@@ -99,6 +99,7 @@ export default function TestimoneySection() {
 
       setscrollX(scrollX + shift);
 
+      //@ts-ignore
       if (scrollRef.current.scrollLeft === 0) {
         setScrollLeftEnd(true);
       } else {

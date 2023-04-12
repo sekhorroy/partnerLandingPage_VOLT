@@ -134,7 +134,7 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
               }}
               onClick={handleClick}
             >
-              {subTitle?.length < max_WordLength ? "" : _hide ? "Read more" : "Read less" }
+              { (subTitle && (subTitle.length < max_WordLength)) ? "" : _hide ? "Read more" : "Read less" }
             </div>
           </div>
         </div>
