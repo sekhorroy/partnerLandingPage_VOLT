@@ -113,7 +113,7 @@ function Footer() {
             <div onClick={() => handleOurPartnerLinks(Links.STARTUP_INDIA)}>
               <Image
                 src={"/images/startUpIndia.svg"}
-                alt={"start up india"}
+                alt={"Volt money startup India"}
                 width={152}
                 height={59}
               />
@@ -136,7 +136,7 @@ function Footer() {
           <div onClick={() => handleOurPartnerLinks(Links.STARTUP_INDIA)}>
             <Image
               src={"/images/startUpIndia.svg"}
-              alt={"start up india"}
+              alt={"Volt money startup India"}
               width={152}
               height={59}
             />

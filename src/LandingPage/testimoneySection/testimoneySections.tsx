@@ -145,7 +145,7 @@ export default function TestimoneySection() {
           url: item?.image,
           width: 56,
           height: 56,
-          alt: "customer image 1",
+          alt: "Volt money partners",
         },
       });
     });

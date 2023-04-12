@@ -42,10 +42,10 @@ export default function HowItWorks() {
   ];
 
   const imageData = [
-    { url: "/images/howItWorksImage1.svg" },
-    { url: "/images/howItWorksImage2.svg" },
-    { url: "/images/howItWorksImage3.svg" },
-    { url: "/images/howItWorksImage4.svg" },
+    { url: "/images/howItWorksImage1.svg", alt: 'Empanel with volt money' },
+    { url: "/images/howItWorksImage2.svg", alt: 'Refer client on volt money'},
+    { url: "/images/howItWorksImage3.svg", alt: 'Check credit line on volt money'},
+    { url: "/images/howItWorksImage4.svg", alt: 'Track referral on volt money dashboard' },
   ];
 
   const _child = useMemo(() => {
@@ -153,7 +153,7 @@ export default function HowItWorks() {
                       <FadeInOut show={false} duration={0}>
                         <Image
                           src={item.url}
-                          alt={"image1"}
+                          alt={item.alt}
                           width={_isMobile ? 0 : 0}
                           height={_isMobile ? 0 : 0}
                         />
@@ -164,7 +164,7 @@ export default function HowItWorks() {
                       <FadeInOut show={true} duration={500}>
                         <Image
                           src={item.url}
-                          alt={"image1"}
+                          alt={item.alt}
                           width={_isMobile ? 332 : 524}
                           height={_isMobile ? 332 : 544}
                         />

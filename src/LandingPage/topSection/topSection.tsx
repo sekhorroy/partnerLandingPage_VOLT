@@ -98,7 +98,7 @@ export default function TopSection() {
                         src="/images/BajajFinserv.svg"
                         height={20}
                         width={76}
-                        alt="Baja partner logo"
+                        alt="Volt money lending partner"
                     />
                 </div>
 
@@ -114,7 +114,7 @@ export default function TopSection() {
                     src="/images/hero_section_image.png"
                     height={287}
                     width={326}
-                    alt="top section image"
+                    alt="volt money partner"
                 />
             </div>
         </div>
@@ -221,7 +221,7 @@ export default function TopSection() {
                 src="/images/BajajFinserv.svg"
                 height={20}
                 width={76}
-                alt="Baja partner logo"
+                alt="Volt money lending partner"
               />
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function TopSection() {
             <div>
               <Image
                 src={"/images/hero_section_image.png"}
-                alt={"top section image"}
+                alt={"volt money partner"}
                 width={544}
                 height={468}
               />

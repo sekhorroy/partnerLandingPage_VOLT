@@ -37,7 +37,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/bajajPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
@@ -47,7 +47,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/CamsPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
@@ -57,7 +57,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/KfintechPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
@@ -67,7 +67,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/NsdlPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
@@ -77,7 +77,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/DigilockerPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
@@ -87,7 +87,7 @@ export default function PartnerSection() {
           >
             <Image
                 src="/images/CersaiPartner.svg"
-                alt={"bajaj partner svg"}
+                alt={"Volt money partner"}
                 width={_isMobile ? widthMob : widthWeb}
                 height={_isMobile ? heightMob : heightWeb}
             />
