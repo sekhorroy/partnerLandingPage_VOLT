@@ -116,7 +116,8 @@ export default function TestimoneySection() {
   const getData = async () => {
     await setLoading(true);
     const response = await axios.get(
-      "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+      // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+        "https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=partner_testimonials"
     );
     const  Data = response.data.data;
     console.log("response: ", Data);
