@@ -117,7 +117,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   onClick={()=>redirectToPartner(url)}
                 >
                   <ButtonComponent
-                    label="Get Started"
+                    label="Get started"
                     type={ButtonTypeTokens.OUTLINE_LARGE}
                   />
                 </div>
