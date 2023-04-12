@@ -46,7 +46,7 @@ const customerData: CardProps[] = [
     title:
       "Founder and CEO of Desai Investmenst AMFI Registered mutual fund distributor - Dahod, Gujrat",
     subTitle:
-      "I am grateful for the exceptional service provided by Volt during a time of crisis. My client needed emergency funds for house renovation due to flooding and Volt responded promptly",
+      "I am grateful for the exceptional service provided by Volt during a time of crisis.",
     leftIcon: {
       url: "/images/customerImage1.png",
       width: 56,
@@ -149,7 +149,7 @@ export default function TestimoneySection() {
         },
       });
     });
-    console.log("dataTransform : ", dataTransform);
+
     await setData(dataTransform);
     await setLoading(false);
   };
@@ -256,7 +256,7 @@ export default function TestimoneySection() {
         )}
       </>
     );
-  }, [scrollRef, scrollLeftEnd, scrolEnd]);
+  }, [scrollRef, scrollLeftEnd, scrolEnd, _isMobile]);
 
   const _child = useMemo(() => {
     return !loading ? (
@@ -398,7 +398,7 @@ export default function TestimoneySection() {
     ) : (
       <></>
     );
-  }, [_isMobile, _activeId, loading, scrollLeftEnd]);
+  }, [_isMobile, _activeId, loading, scrollLeftEnd, scrolEnd]);
 
   return !loading ? _child : <></>;
 }
