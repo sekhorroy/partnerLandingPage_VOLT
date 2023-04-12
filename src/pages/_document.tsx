@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-          {/*google tag*/}
+          {/*google tag start*/}
           <script
             dangerouslySetInnerHTML={{
                 __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,8 +14,10 @@ export default function Document() {
                       })(window,document,'script','dataLayer','GTM-TMWSSRS');`
             }}
           />
-          {/*google tag*/}
+          {/*google tag end*/}
 
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <link rel="canonical" href="https://www.voltmoney.in/partner" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
@@ -23,13 +25,14 @@ export default function Document() {
               rel="stylesheet"
           />
           <link rel="icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
 
-          {/*google tag*/}
+          {/*google tag start*/}
           <script dangerouslySetInnerHTML={{__html: `async src="https://www.googletagmanager.com/gtag/js?id=AW-11053018943"`}} />
           <script dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-11053018943');`
           }} />
-          {/*google tag*/}
+          {/*google tag end*/}
       </Head>
       <body>
         <Main />
