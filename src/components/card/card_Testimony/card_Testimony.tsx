@@ -128,10 +128,11 @@ export const TestimonyCard: React.FunctionComponent<CardProps> = ({
             <div
               style={{
                 color: "#1434CB",
+                  fontSize: 14
               }}
               onClick={handleClick}
             >
-              {_hide ? "Read More" : "Read less"}
+              {_hide ? "Read more" : "Read less"}
             </div>
           </div>
         </div>

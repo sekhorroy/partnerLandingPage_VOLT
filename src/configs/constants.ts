@@ -8,8 +8,8 @@ export const getBuildType = () => {
 };
 export const PartnerLink =
   getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
-    ? "https://voltmoney.in/partner/signup"
-    : "https://staging.voltmoney.in/partner/signup";
+    ? "http://voltmoney.in/partner/partner-app/#!/partner/signup"
+    : "http://staging.voltmoney.in/partner/partner-app/#!/partner/signup";
 export const AppLink =
   getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
     ? "https://app.voltmoney.in/?startNew=true"
