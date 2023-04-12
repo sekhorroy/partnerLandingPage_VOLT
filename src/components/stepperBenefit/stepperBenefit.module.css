@@ -6,28 +6,23 @@
 .stepperBenefitC1Selected {
     display: flex;
     flex-direction: row;
-    margin-bottom: 24px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     padding-top: 16px;
     padding-bottom: 16px;
     box-shadow: 0px 6px 12px -6px rgba(24, 39, 75, 0.12), 0px 8px 24px -4px rgba(24, 39, 75, 0.08);
     border-radius: 8px;
-    z-index: 2;
 }
 
 .stepperBenefitC1 {
     display: flex;
     flex-direction: row;
-    margin-bottom: 24px;
     background: #FFFFFF;
-    z-index: 3;
 }
 
 .verticalLine {
     width: 0px;
     background-color: #CFEADA;
     border: 1px solid #CFEADA;
-    z-index: 1;
 }
 .stepperBenefitChildC1 {
     min-width: 40px;
@@ -40,7 +35,6 @@
     align-items: center;
     /* Secondary/100 */
     color: #109648;
-    z-index: 4;
 
     font-family: 'Inter';
     font-style: normal;

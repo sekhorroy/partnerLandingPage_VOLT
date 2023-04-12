@@ -42,10 +42,16 @@ export default function HowItWorks() {
   ];
 
   const imageData = [
-    { url: "/images/howItWorksImage1.svg", alt: 'Empanel with volt money' },
-    { url: "/images/howItWorksImage2.svg", alt: 'Refer client on volt money'},
-    { url: "/images/howItWorksImage3.svg", alt: 'Check credit line on volt money'},
-    { url: "/images/howItWorksImage4.svg", alt: 'Track referral on volt money dashboard' },
+    { url: "/images/howItWorksImage1.svg", alt: "Empanel with volt money" },
+    { url: "/images/howItWorksImage2.svg", alt: "Refer client on volt money" },
+    {
+      url: "/images/howItWorksImage3.svg",
+      alt: "Check credit line on volt money",
+    },
+    {
+      url: "/images/howItWorksImage4.svg",
+      alt: "Track referral on volt money dashboard",
+    },
   ];
 
   const _child = useMemo(() => {
@@ -185,17 +191,24 @@ export default function HowItWorks() {
                     : {}
                 }
               >
-                <StepperBenefit
-                  activeId={0}
-                  data={stepperData}
-                  setActive={setActiveId}
-                />
+                  <div style={{
+                      height: 500,
+                      paddingTop: 24
+                  }}>
+                      <StepperBenefit
+                          activeId={0}
+                          data={stepperData}
+                          setActive={setActiveId}
+                      />
+                  </div>
+
                 <div
                   style={
                     _isMobile
                       ? {
                           maxWidth: 400,
                           width: "100%",
+                          paddingTop: 24
                         }
                       : {
                           width: "100%",
@@ -203,6 +216,7 @@ export default function HowItWorks() {
                           display: "flex",
                           flexDirection: "row",
                           justifyContent: "flex-start",
+                          paddingTop: 24,
                         }
                   }
                 >
@@ -220,7 +234,18 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
-          <Divider />
+            <div style={_isMobile ? {
+                width: '100%',
+                maxWidth: 1024,
+                paddingTop: 20
+            } : {
+                width: '100%',
+                maxWidth: 1024,
+                paddingTop: 48, paddingBottom: 40
+            }}>
+                <Divider />
+            </div>
+
         </div>
       </>
     );

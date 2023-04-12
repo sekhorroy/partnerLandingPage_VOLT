@@ -24,70 +24,72 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
           {data &&
             data.map((item, index) => {
               return (
-                <div
-                  key={index}
-                  className={
-                    _activeId === index
-                      ? styles.stepperBenefitC1Selected
-                      : styles.stepperBenefitC1
-                  }
-                  style={{
-                    paddingLeft: 16,
-                    paddingRight: 16
-                  }}
-                  onClick={() => handleClick(index)}
-                >
                   <>
-                    {index !== data.length - 1 ? (
-                      <div
-                        className={styles.verticalLine}
-                        style={
-                        _isMobile && _activeId === index
-                            ? {
-                                height: 20,
-                                position: "relative",
-                                top: 90,
-                                left: 22,
-                              }
-                            : _isMobile && _activeId !== index ? {
-                                height: 50,
-                                position: "relative",
-                                top: 50,
-                                left: 22,
-                              } : _activeId === index ? {
-                              height: 22,
-                              position: "relative",
-                              top: 95,
-                              left: 22,
-                            } : {
-                              height: 55,
-                              position: "relative",
-                              top: 50,
-                              left: 22,
-                            }
-                        }
-                      ></div>
-                    ) : (
-                      <></>
-                    )}
                     <div
-                      className={styles.stepperBenefitChildC1}
-                      style={{
-                        marginRight: 12,
-                      }}
+                        key={index}
+                        className={
+                          _activeId === index
+                              ? styles.stepperBenefitC1Selected
+                              : styles.stepperBenefitC1
+                        }
+                        style={{
+                          paddingLeft: 16,
+                          paddingRight: 16,
+                        }}
+                        onClick={() => handleClick(index)}
                     >
-                      {index + 1}
+                      <>
+                        <div
+                            className={styles.stepperBenefitChildC1}
+                            style={{
+                              marginRight: 12,
+                            }}
+                        >
+                          {index + 1}
+                        </div>
+                        <div className={styles.stepperBenefitChildC2}>
+                          <div className={_isMobile ? styles.stepperBenefitChildC2T1 : styles.stepperBenefitChildC2T1Web}>
+                            {item.title}
+                          </div>
+                          <div className={_isMobile ? styles.stepperBenefitChildC2T2 : styles.stepperBenefitChildC2T2Web}>
+                            {item.subTitle}
+                          </div>
+                        </div>
+                      </>
                     </div>
-                    <div className={styles.stepperBenefitChildC2}>
-                      <div className={_isMobile ? styles.stepperBenefitChildC2T1 : styles.stepperBenefitChildC2T1Web}>
-                        {item.title}
-                      </div>
-                      <div className={_isMobile ? styles.stepperBenefitChildC2T2 : styles.stepperBenefitChildC2T2Web}>
-                        {item.subTitle}
-                      </div>
-                    </div>
+                    {index !== data.length - 1 ? (
+                        <div
+                            className={styles.verticalLine}
+                            style={
+                              _isMobile && _activeId === index
+                                  ? {
+                                    height: 30,
+                                    position: "relative",
+                                    left: 37,
+                                  }
+                                  : _isMobile && _activeId !== index ? {
+                                    height: 40,
+                                    position: "relative",
+                                    left: 37,
+                                    bottom: 15
+                                  } : _activeId === index ? {
+                                    height: 22,
+                                    position: "relative",
+                                    // top: 95,
+                                    left: 35,
+                                  } : {
+                                    height: 55,
+                                    position: "relative",
+                                    bottom: 20,
+                                    left: 35,
+                                  }
+                            }
+                        ></div>
+                    ) : (
+                        <></>
+                    )}
+
                   </>
-                </div>
               );
             })}
         </div>
