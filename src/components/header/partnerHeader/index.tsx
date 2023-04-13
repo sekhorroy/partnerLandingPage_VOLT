@@ -1,13 +1,13 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import {
-    getParamsLink,
-    getScreenX,
-    isMobile,
-    redirectTo,
-    redirectToFaq,
-    redirectToPartner,
-    redirectToVoltApp,
+  getParamsLink,
+  getScreenX,
+  isMobile,
+  redirectTo,
+  redirectToFaq,
+  redirectToPartner,
+  redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
@@ -15,8 +15,7 @@ import { HeaderProps, HeaderType } from "@/components/header/type";
 import { useState } from "react";
 import { Divider } from "@/components/divider";
 import voltPartnerLogo from "../../../../public/images/VoltPartnerLogo.svg";
-import {useRouter} from "next/router";
-
+import { useRouter } from "next/router";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -67,13 +66,15 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 : {}
             }
           >
-            <Image
-              priority
-              src="/images/VoltPartnerLogo.svg"
-              height={_isMobile ? 20 : 29}
-              width={120}
-              alt="Volt partner logo"
-            />
+            <div onClick={()=>redirectTo('/')}>
+              <Image
+                priority
+                src="/images/VoltPartnerLogo.svg"
+                height={_isMobile ? 20 : 29}
+                width={120}
+                alt="Volt partner logo"
+              />
+            </div>
           </div>
           <div
             className={styles.headerRight}
@@ -105,16 +106,19 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 >
                   About us
                 </div>
-                <div
-                  className={styles.headerLinksContainer}
-                >
-                  <a style={{
-                      textDecoration: 'none'
-                  }} href="#faq">FAQs</a>
+                <div className={styles.headerLinksContainer}>
+                  <a
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    href="#faq"
+                  >
+                    FAQs
+                  </a>
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={()=>redirectToPartner(url)}
+                  onClick={() => redirectToPartner(url)}
                 >
                   <ButtonComponent
                     label="Get started"
@@ -158,9 +162,14 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingBottom: 16,
             }}
           >
-              <a style={{
-                  textDecoration: 'none'
-              }} href="#faq">FAQs</a>
+            <a
+              style={{
+                textDecoration: "none",
+              }}
+              href="#faq"
+            >
+              FAQs
+            </a>
           </div>
           <Divider />
           <div

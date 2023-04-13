@@ -23,7 +23,11 @@ export default function ContactUsPage() {
         <Header type={HeaderType.CONTACT_US}/>
         <TopSectionContactUs />
         <ConnectSection />
-        <Faqs />
+        <div id='faq' style={{
+          width: '100%'
+        }}>
+          <Faqs />
+        </div>
         <Footer />
       </div>
     );
