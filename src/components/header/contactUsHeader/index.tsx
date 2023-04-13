@@ -48,7 +48,9 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             className={styles.headerLeft}
             style={_isMobile ? { paddingLeft: 0 } : { paddingLeft: 16 }}
           >
-            <div onClick={() => redirectTo("/")}>
+            <div onClick={() => redirectTo("/")} style={{
+                cursor: "pointer"
+            }}>
               <Image
                 priority
                 src="/images/VoltPartnerLogo.svg"
@@ -110,18 +112,18 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             boxSizing: "border-box",
           }}
         >
-          <div
-            className={styles.menuItem}
-            style={{
-              paddingLeft: 16,
-              paddingTop: 16,
-              paddingBottom: 16,
-            }}
-            onClick={() => redirectTo("/aboutus")}
-          >
-            About us
-          </div>
-          <Divider />
+          {/*<div*/}
+          {/*  className={styles.menuItem}*/}
+          {/*  style={{*/}
+          {/*    paddingLeft: 16,*/}
+          {/*    paddingTop: 16,*/}
+          {/*    paddingBottom: 16,*/}
+          {/*  }}*/}
+          {/*  onClick={() => redirectTo("/aboutus")}*/}
+          {/*>*/}
+          {/*  About us*/}
+          {/*</div>*/}
+          {/*<Divider />*/}
           <div
             className={styles.menuItem}
             style={{

@@ -66,7 +66,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 : {}
             }
           >
-            <div onClick={()=>redirectTo('/')}>
+            <div onClick={()=>redirectTo('/')} style={{
+                cursor: "pointer"
+            }}>
               <Image
                 priority
                 src="/images/VoltPartnerLogo.svg"
@@ -100,12 +102,12 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             )}
             {!_isMobile ? (
               <div className={styles.headerRightWebContent}>
-                <div
-                  className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("/aboutus")}
-                >
-                  About us
-                </div>
+                {/*<div*/}
+                {/*  className={styles.headerLinksContainer}*/}
+                {/*  onClick={() => redirectTo("/aboutus")}*/}
+                {/*>*/}
+                {/*  About us*/}
+                {/*</div>*/}
                 <div className={styles.headerLinksContainer}>
                   <a
                     style={{
