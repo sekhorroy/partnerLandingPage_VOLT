@@ -53,9 +53,9 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             }}>
               <Image
                 priority
-                src="/images/VoltPartnerLogo.svg"
-                height={_isMobile ? 20 : 29}
-                width={120}
+                src="/images/VoltBlue.svg"
+                height={_isMobile ? 20 : 24}
+                width={64}
                 alt="Volt partner logo"
               />
             </div>
@@ -90,7 +90,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div>
                   <ButtonComponent
-                    label="Get started"
+                    label="Partner with us"
                     type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
                     onClick={() => redirectToPartner()}
                   />
@@ -151,7 +151,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             }}
             onClick={() => redirectToPartner()}
           >
-            Get started
+            Partner with us
           </div>
         </div>
       ) : (
