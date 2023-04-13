@@ -16,7 +16,6 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   imageUrl,
 }) => {
   const handleClick = () => {
-    console.log("click: ");
     onClick && onClick();
   };
   const styleType =

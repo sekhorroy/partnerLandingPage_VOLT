@@ -23,6 +23,8 @@ export const AppLink =
 
 export const helpLineNumberLink = "tel:+919611749295";
 
+export const supportEmail = "mailto:support@voltmoney.in"
+
 export const WhatsAppLink = {
   help: "https://wa.me/919611749295",
 };
@@ -40,6 +42,8 @@ export const Links = {
   Instagram: "https://www.instagram.com/voltmoney_in/",
   Facebook: "https://www.facebook.com/people/Volt-Money/100091543358366/",
   Twitter: "https://twitter.com/voltmoney_in",
+  Youtube: "https://www.youtube.com/@VoltMoney_In",
+  OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7"
 };
 
 export enum StoreKey {

@@ -16,9 +16,16 @@ export const ContactUsCard: React.FunctionComponent<CardProps> = ({
   subTitle,
   cta,
   ctaLabel,
-    imageUrl
+    imageUrl,
+    onClickCta
 }) => {
   const _isMobile: boolean = isMobile();
+
+  const handleClick = () => {
+    console.log("click: test");
+    onClickCta && onClickCta();
+  }
+
   const _child = useMemo(() => {
     return (
       <>
@@ -55,6 +62,7 @@ export const ContactUsCard: React.FunctionComponent<CardProps> = ({
                     label={ctaLabel ? ctaLabel : "Test"}
                     type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
                     width={ButtonWidthTypeTokens.FULL}
+                    onClick={()=>handleClick()}
                 />
               </>
           ) : (

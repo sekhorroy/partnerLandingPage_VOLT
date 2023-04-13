@@ -1,8 +1,9 @@
-import { getScreenX, isMobile } from "@/configs/utils";
+import {getScreenX, isMobile, redirectTo} from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./connectSection.module.css";
 import { Divider } from "@/components/divider";
 import Image from "next/image";
+import {Links} from "@/configs/constants";
 
 export default function ConnectSection() {
   const _isMobile: boolean = isMobile();
@@ -44,30 +45,56 @@ export default function ConnectSection() {
               }}
               className={styles.shareIconsContainer}
             >
-              <Image
-                src={"./images/instagramContactUs.svg"}
-                alt={"contact image 1"}
-                width={48}
-                height={48}
-              />
-              <Image
-                src={"./images/linkedInContactUs.svg"}
-                alt={"contact image 1"}
-                width={48}
-                height={48}
-              />
-              <Image
-                src={"./images/twitterContactUs.svg"}
-                alt={"contact image 1"}
-                width={48}
-                height={48}
-              />
-              <Image
-                src={"./images/youtubeContactUs.svg"}
-                alt={"contact image 1"}
-                width={48}
-                height={48}
-              />
+              <div style={{
+                  cursor: 'pointer'
+                }}
+                   onClick={()=>redirectTo(Links.Instagram)}
+              >
+                <Image
+                    src={"./images/instagramContactUs.svg"}
+                    alt={"contact image 1"}
+                    width={48}
+                    height={48}
+                />
+              </div>
+              <div style={{
+                cursor: 'pointer'
+              }}
+                   onClick={()=>redirectTo(Links.Linkedin)}
+              >
+                <Image
+                    src={"./images/linkedInContactUs.svg"}
+                    alt={"contact image 1"}
+                    width={48}
+                    height={48}
+                />
+              </div>
+              <div
+                  style={{
+                    cursor: 'pointer'
+                  }}
+                  onClick={()=>redirectTo(Links.Twitter)}
+              >
+                <Image
+                    src={"./images/twitterContactUs.svg"}
+                    alt={"contact image 1"}
+                    width={48}
+                    height={48}
+                />
+              </div>
+              <div
+                  style={{
+                    cursor: 'pointer'
+                  }}
+                  onClick={()=>redirectTo(Links.Youtube)}
+              >
+                <Image
+                    src={"./images/youtubeContactUs.svg"}
+                    alt={"contact image 1"}
+                    width={48}
+                    height={48}
+                />
+              </div>
             </div>
             <h4 className={styles.connectContainerC1T3} style={{
               paddingTop: 48
@@ -85,6 +112,7 @@ export default function ConnectSection() {
                 flexDirection: "row",
                 paddingTop: 16
               }}
+              onClick={()=>redirectTo(Links.OfficeLocation, '_blank')}
             >
               {"Get directions >"}
             </div>

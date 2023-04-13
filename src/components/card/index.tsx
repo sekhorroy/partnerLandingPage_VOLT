@@ -5,7 +5,7 @@ import { BenefitCard } from "@/components/card/card_Benefits/card_Benefits";
 import { TestimonyCard } from "@/components/card/card_Testimony/card_Testimony";
 import { name } from "next/dist/telemetry/ci-info";
 import { ContactUsHeader } from "@/components/header/contactUsHeader";
-import {ContactUsCard} from "@/components/card/card_ContactUs/cardContactUs";
+import { ContactUsCard } from "@/components/card/card_ContactUs/cardContactUs";
 
 export const Card: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -15,7 +15,8 @@ export const Card: React.FunctionComponent<CardProps> = ({
   name,
   cta,
   ctaLabel,
-    imageUrl
+  imageUrl,
+  onClickCta,
 }) => {
   const _isMobile: boolean = isMobile();
 
@@ -41,6 +42,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
           cta={cta}
           ctaLabel={ctaLabel}
           imageUrl={imageUrl}
+          onClickCta={onClickCta}
         />
       );
     } else {
@@ -53,7 +55,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
         />
       );
     }
-  }, [type, subTitle, title, leftIcon, name, cta, ctaLabel]);
+  }, [type, subTitle, title, leftIcon, name, cta, ctaLabel, onClickCta]);
 
   return (
     <>

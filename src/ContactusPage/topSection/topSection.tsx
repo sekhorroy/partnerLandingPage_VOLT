@@ -1,4 +1,4 @@
-import { getScreenX, isMobile } from "@/configs/utils";
+import {getScreenX, isMobile, redirectTo} from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./topSection.module.css";
 import { Card } from "@/components/card";
@@ -6,6 +6,7 @@ import { CardTypes } from "@/components/card/types";
 import { ImageProps } from "@/components/button/type";
 import { string } from "prop-types";
 import {Divider} from "@/components/divider";
+import {helpLineNumberLink, supportEmail, WhatsAppLink} from "@/configs/constants";
 
 export default function TopSectionContactUs() {
   const _isMobile: boolean = isMobile();
@@ -71,19 +72,21 @@ export default function TopSectionContactUs() {
                 subTitle={
                   "Our friendly team is here to help, and usually replies within 1-2 hours"
                 }
-                ctaLabel={"Chat with us on WhatsApp"}
+                ctaLabel={"Chat with us"}
                 cta={true}
                 imageUrl={"/images/Whatsapp.svg"}
+                onClickCta={()=>redirectTo(WhatsAppLink.help)}
               />
               <Card
                 type={CardTypes.CONTACT_US}
                 title={"Call us"}
                 subTitle={
-                  "Our experts are available Mon-Sat from 9:30 PM to 6:30 PM"
+                  "Our experts are available Mon-Sat from 9:30 PM to 8 PM"
                 }
                 ctaLabel={"Call us"}
                 cta={true}
                 imageUrl={"/images/call.svg"}
+                onClickCta={()=>redirectTo(helpLineNumberLink, '_self')}
               />
               <Card
                 type={CardTypes.CONTACT_US}
@@ -94,6 +97,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Mail us"}
                 cta={true}
                 imageUrl={"/images/mail.svg"}
+                onClickCta={()=>redirectTo(supportEmail)}
               />
             </div>
             <Divider />

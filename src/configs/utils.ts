@@ -61,8 +61,13 @@ export const handleWhatAppClick = () => {
 export const handleOurPartnerLinks = (Link: string) => {
   window.open(Link, '_blank' );
 }
-export const redirectTo = (url: string) =>{
-  window.open(url, '_self');
+
+export const redirectTo = (url: string, target?: string) =>{
+  if(target) {
+    window.open(url, target);
+  } else {
+    window.open(url, '_blank');
+  }
 }
 
 export const addDaysToEpochTime = (epochTime: number, days: number) => {
