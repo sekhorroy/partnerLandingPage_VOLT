@@ -11,6 +11,7 @@ import Faq from "./faqs/faqs";
 
 
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
+import {useRouter} from "next/router";
 
 export default function PartnerLandingPage() {
   const ref_Header = createRef();
@@ -20,6 +21,8 @@ export default function PartnerLandingPage() {
   const ref_Faq = createRef();
   const ref_ContactUs = createRef();
 
+  const router = useRouter();
+  console.log("router: ", router);
 
   const partnerChild = useMemo(() => {
     return (

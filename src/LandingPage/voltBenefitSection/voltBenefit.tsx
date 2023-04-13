@@ -116,7 +116,6 @@ const clientsCards: CardProps[] = [
 //@ts-ignore
 export default function VoltBenefit() {
   const _isMobile: boolean = isMobile();
-  console.log("_isMobile: ", _isMobile);
   const url = useRouter().asPath;
 
   const tabOptions: TabComponentOptions[] = [

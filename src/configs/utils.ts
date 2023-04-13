@@ -49,6 +49,8 @@ export const redirectToFaq = () => {
   window.open(`${PartnerLink}faq`, '_blank');
 };
 export const redirectToPartner = (url: string) => {
+  console.log("partner link: ", `${PartnerLink}${getParamsLink(url)}`);
+  // window.open(`${PartnerLink}${getParamsLink(url)}`, '_self');
   window.open(`${PartnerLink}${getParamsLink(url)}`, '_blank');
   // window.open(`${PartnerLink}}`, '_blank');
 };
@@ -90,11 +92,10 @@ export const isGoogleUTMParams: (param: string) => boolean = param => {
 export const getParameters: (url: string) => {
   [key in string]: string
 } = (url: string) => {
+  const url2 = window.location.href
   const params = {}
-  const paramString = url.split('?')[1]
-  console.log('test param string', paramString)
+  const paramString = url2.split('?')[1]
   const queryString = new URLSearchParams(paramString)
-  console.log('test query', queryString)
   //@ts-ignore
   for (const pair of queryString.entries()) {
     //@ts-ignore
@@ -107,6 +108,7 @@ export const getParamsLink = (url: string) => {
   let resultString = '';
 
     const params =  getParameters(url);
+
     let localStoredParams = {};
     // check if params exist in localstorage if not present in query string
     const utm_campaign = params?.utm_campaign;
@@ -151,6 +153,9 @@ export const getParamsLink = (url: string) => {
           localStorage.removeItem(StoreKey.UTM_PARAMS);
         }
       }
+      Object.keys(params).forEach(param => {
+        resultString += `${param}=${params[`${param}`]}&`;
+      });
     }
 
     console.log('resultString: ', resultString);

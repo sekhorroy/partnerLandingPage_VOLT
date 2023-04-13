@@ -6,10 +6,16 @@ export const getBuildType = () => {
   const buildType = BUILD_TYPE.PARTNER_STAGING;
   return buildType;
 };
+// export const PartnerLink =
+//   getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
+//     ? "http://voltmoney.in/partner/partner-app/#!/partner/signup"
+//     : "http://staging.voltmoney.in/partner/partner-app/#!/partner/signup";
+
 export const PartnerLink =
-  getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
-    ? "http://voltmoney.in/partner/partner-app/#!/partner/signup"
-    : "http://staging.voltmoney.in/partner/partner-app/#!/partner/signup";
+    getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
+        ? "http://voltmoney.in/partner/signup"
+        : "http://staging.voltmoney.in/partner/signup";
+
 export const AppLink =
   getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
     ? "https://app.voltmoney.in/?startNew=true"
