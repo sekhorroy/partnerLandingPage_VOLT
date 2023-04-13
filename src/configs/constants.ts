@@ -3,7 +3,7 @@ export enum BUILD_TYPE {
   PARTNER_STAGING = "PARTNER_STAGING",
 }
 export const getBuildType = () => {
-  const buildType = BUILD_TYPE.PARTNER_STAGING;
+  const buildType = BUILD_TYPE.PARTNER_PRODUCTION;
   return buildType;
 };
 // export const PartnerLink =
