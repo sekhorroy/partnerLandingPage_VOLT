@@ -66,7 +66,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 : {}
             }
           >
-            <div onClick={()=>redirectTo('/')} style={{
+            <div onClick={()=>redirectTo('/', '_self')} style={{
                 cursor: "pointer"
             }}>
               <Image

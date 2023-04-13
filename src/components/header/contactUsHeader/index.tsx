@@ -48,7 +48,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             className={styles.headerLeft}
             style={_isMobile ? { paddingLeft: 0 } : { paddingLeft: 16 }}
           >
-            <div onClick={() => redirectTo("/")} style={{
+            <div onClick={() => redirectTo("/", '_self')} style={{
                 cursor: "pointer"
             }}>
               <Image

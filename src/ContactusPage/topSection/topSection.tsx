@@ -1,12 +1,16 @@
-import {getScreenX, isMobile, redirectTo} from "@/configs/utils";
+import { getScreenX, isMobile, redirectTo } from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./topSection.module.css";
 import { Card } from "@/components/card";
 import { CardTypes } from "@/components/card/types";
 import { ImageProps } from "@/components/button/type";
 import { string } from "prop-types";
-import {Divider} from "@/components/divider";
-import {helpLineNumberLink, supportEmail, WhatsAppLink} from "@/configs/constants";
+import { Divider } from "@/components/divider";
+import {
+  helpLineNumberLink,
+  supportEmail,
+  WhatsAppLink,
+} from "@/configs/constants";
 
 export default function TopSectionContactUs() {
   const _isMobile: boolean = isMobile();
@@ -18,19 +22,23 @@ export default function TopSectionContactUs() {
         <div
           className={styles.topSectionContactOuter}
           style={{
-            width: '100%',
+            width: "100%",
           }}
         >
-          <div className={styles.topSectionContactInner} style={{
+          <div
+            className={styles.topSectionContactInner}
+            style={{
               paddingLeft: 16,
-              paddingRight: 16
-          }}>
+              paddingRight: 16,
+            }}
+          >
             <h2
               className={styles.topSectionContactInnerT1}
               style={
                 _isMobile
                   ? {
                       paddingTop: 24,
+                      paddingBottom: 24,
                       fontFamily: "Poppins",
                       fontStyle: "normal",
                       fontWeight: 700,
@@ -40,6 +48,7 @@ export default function TopSectionContactUs() {
                     }
                   : {
                       paddingTop: 64,
+                      paddingBottom: 24,
                       fontFamily: "Poppins",
                       fontStyle: "normal",
                       fontWeight: "700",
@@ -51,20 +60,24 @@ export default function TopSectionContactUs() {
               {`Let's connect and get your questions answered`}
             </h2>
             <div
-              style={ _isMobile ? {
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 16,
-                  paddingBottom: 40
-              } : {
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 16,
-                  paddingTop: 24,
-                  paddingBottom: 48
-              }}
+              style={
+                _isMobile
+                  ? {
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: 16,
+                      paddingBottom: 40,
+                    }
+                  : {
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 16,
+                      paddingTop: 24,
+                      paddingBottom: 48,
+                    }
+              }
             >
               <Card
                 type={CardTypes.CONTACT_US}
@@ -75,7 +88,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Chat with us"}
                 cta={true}
                 imageUrl={"/images/Whatsapp.svg"}
-                onClickCta={()=>redirectTo(WhatsAppLink.help)}
+                onClickCta={() => redirectTo(WhatsAppLink.help)}
               />
               <Card
                 type={CardTypes.CONTACT_US}
@@ -86,7 +99,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Call us"}
                 cta={true}
                 imageUrl={"/images/call.svg"}
-                onClickCta={()=>redirectTo(helpLineNumberLink, '_self')}
+                onClickCta={() => redirectTo(helpLineNumberLink, "_self")}
               />
               <Card
                 type={CardTypes.CONTACT_US}
@@ -97,7 +110,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Mail us"}
                 cta={true}
                 imageUrl={"/images/mail.svg"}
-                onClickCta={()=>redirectTo(supportEmail)}
+                onClickCta={() => redirectTo(supportEmail)}
               />
             </div>
             <Divider />
