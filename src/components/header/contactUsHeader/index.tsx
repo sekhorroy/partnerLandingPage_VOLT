@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import {getScreenX, isMobile} from "@/configs/utils";
+import {getScreenX, isMobile, redirectToPartner} from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
@@ -65,6 +65,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                   <ButtonComponent
                     label="Get started"
                     type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
+                    onClick={()=>redirectToPartner()}
                   />
                 </div>
               </div>

@@ -48,11 +48,9 @@ export const getScreenY: () => number = () => {
 export const redirectToFaq = () => {
   window.open(`${PartnerLink}faq`, '_blank');
 };
-export const redirectToPartner = (url: string) => {
-  console.log("partner link: ", `${PartnerLink}${getParamsLink(url)}`);
-  // window.open(`${PartnerLink}${getParamsLink(url)}`, '_self');
-  window.open(`${PartnerLink}${getParamsLink(url)}`, '_blank');
-  // window.open(`${PartnerLink}}`, '_blank');
+export const redirectToPartner = (url?: string) => {
+  // console.log("partner link: ", `${PartnerLink}${getParamsLink()}`);
+  window.open(`${PartnerLink}${getParamsLink()}`, '_blank');
 };
 export const redirectToVoltApp = () => {
   window.open(`${AppLink}`, '_blank');
@@ -89,12 +87,12 @@ export const isGoogleUTMParams: (param: string) => boolean = param => {
   return false;
 };
 
-export const getParameters: (url: string) => {
+export const getParameters: () => {
   [key in string]: string
-} = (url: string) => {
-  const url2 = window.location.href
+} = () => {
+  const url = window.location.href
   const params = {}
-  const paramString = url2.split('?')[1]
+  const paramString = url.split('?')[1]
   const queryString = new URLSearchParams(paramString)
   //@ts-ignore
   for (const pair of queryString.entries()) {
@@ -104,10 +102,10 @@ export const getParameters: (url: string) => {
   return params
 }
 
-export const getParamsLink = (url: string) => {
+export const getParamsLink = (url?: string) => {
   let resultString = '';
 
-    const params =  getParameters(url);
+    const params =  getParameters();
 
     let localStoredParams = {};
     // check if params exist in localstorage if not present in query string
