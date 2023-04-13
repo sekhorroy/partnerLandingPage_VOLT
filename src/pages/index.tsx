@@ -4,12 +4,11 @@ import PartnerLandingPage from "@/LandingPage/PartnerLandingPage";
 import { getParamsLink, handleWhatAppClick, isMobile } from "@/configs/utils";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import {useEffect} from "react";
+import {redirect} from "next/navigation";
 
 export default function Home() {
-  const router = useRouter();
-  console.log("router: ", router);
 
-  console.log(getParamsLink(router.asPath));
   return (
     <>
       <Head>

@@ -50,6 +50,7 @@ export const redirectToFaq = () => {
 };
 export const redirectToPartner = (url: string) => {
   window.open(`${PartnerLink}${getParamsLink(url)}`, '_blank');
+  // window.open(`${PartnerLink}}`, '_blank');
 };
 export const redirectToVoltApp = () => {
   window.open(`${AppLink}`, '_blank');
@@ -105,7 +106,6 @@ export const getParameters: (url: string) => {
 export const getParamsLink = (url: string) => {
   let resultString = '';
 
-  if (typeof window !== 'undefined') {
     const params =  getParameters(url);
     let localStoredParams = {};
     // check if params exist in localstorage if not present in query string
@@ -154,7 +154,6 @@ export const getParamsLink = (url: string) => {
     }
 
     console.log('resultString: ', resultString);
-  }
 
   return `?${resultString}`;
 };
