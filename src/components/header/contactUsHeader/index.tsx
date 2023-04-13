@@ -93,7 +93,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo('/')}
+                  onClick={() => redirectTo('/partner', '_self')}
                 >
                   <a
                     style={{

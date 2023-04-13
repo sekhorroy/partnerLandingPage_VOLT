@@ -40,13 +40,13 @@ function Footer() {
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
-            onClick={() => redirectTo("/contact")}
+            onClick={() => redirectTo("/contact", '_self')}
           >
             Contact
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
-            onClick={() => redirectTo("/about")}
+            onClick={() => redirectTo("/about", '_self')}
           >
             About us
           </div>

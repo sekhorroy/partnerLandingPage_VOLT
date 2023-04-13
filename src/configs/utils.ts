@@ -50,7 +50,7 @@ export const redirectToFaq = () => {
 };
 export const redirectToPartner = (url?: string) => {
   // console.log("partner link: ", `${PartnerLink}${getParamsLink()}`);
-  window.open(`${PartnerLink}${getParamsLink()}`, '_blank');
+  window.open(`${PartnerLink}${getParamsLink()}`, '_self');
 };
 export const redirectToVoltApp = () => {
   window.open(`${AppLink}`, '_blank');
