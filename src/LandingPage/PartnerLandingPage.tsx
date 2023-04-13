@@ -7,7 +7,7 @@ import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
 import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
 import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
 import Footer from "./footer/footer";
-import Faq from "./faqs/faqs";
+import Faq, {FaqType} from "./faqs/faqs";
 
 
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
@@ -44,7 +44,7 @@ export default function PartnerLandingPage() {
         <div id='faq' style={{
           width: '100%'
         }}>
-          <Faq/>
+          <Faq type={FaqType.PARTNER}/>
         </div>
 
         <Footer />

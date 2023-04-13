@@ -26,7 +26,7 @@ function Footer() {
         <div className={styles.VoltLogoContainer}>
           <img
             src={"/images/VoltIcon.svg"}
-            alt="linkedIn icon"
+            alt="Volt money logo"
             width={84}
             height={32}
           />
@@ -34,19 +34,19 @@ function Footer() {
         <div className={styles.FooterHelpSectionContainer}>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
-            onClick={() => redirectTo("/")}
+            onClick={() => redirectTo("/", '_self')}
           >
             Home
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
-            onClick={() => redirectTo("/contactus")}
+            onClick={() => redirectTo("/contact")}
           >
             Contact
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
-            onClick={() => redirectTo("/aboutus")}
+            onClick={() => redirectTo("/about")}
           >
             About us
           </div>
@@ -65,7 +65,7 @@ function Footer() {
             <a className={styles.shareAnchorContainer}>
               <Image
                 src={"/images/twitter.svg"}
-                alt="twitter icon"
+                alt="Volt money twitter icon"
                 width={32}
                 height={32}
                 onClick={()=>handleOurPartnerLinks(Links.Twitter)}
@@ -76,7 +76,7 @@ function Footer() {
             <a>
               <img
                 src={"/images/Instagram.svg"}
-                alt="instagram icon"
+                alt="Volt money instagram icon"
                 width={32}
                 height={32}
                 onClick={()=>handleOurPartnerLinks(Links.Instagram)}
@@ -92,7 +92,7 @@ function Footer() {
             >
               <img
                 src={"/images/LinkedIn.svg"}
-                alt="linkedIn icon"
+                alt="volt money linkedIn icon"
                 width={32}
                 height={32}
                 onClick={()=>handleOurPartnerLinks(Links.Linkedin)}

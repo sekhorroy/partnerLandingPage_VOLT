@@ -96,7 +96,7 @@ export default function TopSectionContactUs() {
                 subTitle={
                   "Our experts are available Mon-Sat from 9:30 PM to 8 PM"
                 }
-                ctaLabel={"Call us"}
+                ctaLabel={"Let's talk"}
                 cta={true}
                 imageUrl={"/images/call.svg"}
                 onClickCta={() => redirectTo(helpLineNumberLink, "_self")}

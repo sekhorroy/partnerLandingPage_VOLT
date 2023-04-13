@@ -48,15 +48,18 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
             className={styles.headerLeft}
             style={_isMobile ? { paddingLeft: 0 } : { paddingLeft: 16 }}
           >
-            <div onClick={() => redirectTo("/", '_self')} style={{
-                cursor: "pointer"
-            }}>
+            <div
+              onClick={() => redirectTo("/", "_self")}
+              style={{
+                cursor: "pointer",
+              }}
+            >
               <Image
                 priority
                 src="/images/VoltBlue.svg"
                 height={_isMobile ? 20 : 24}
                 width={64}
-                alt="Volt partner logo"
+                alt="Volt money logo"
               />
             </div>
           </div>
@@ -88,13 +91,26 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                     FAQs
                   </a>
                 </div>
-                <div>
-                  <ButtonComponent
-                    label="Partner with us"
-                    type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
-                    onClick={() => redirectToPartner()}
-                  />
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectToPartner()}
+                >
+                  <a
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    href="#faq"
+                  >
+                    Partner with us
+                  </a>
                 </div>
+                {/*<div>*/}
+                {/*  <ButtonComponent*/}
+                {/*    label="Partner with us"*/}
+                {/*    type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}*/}
+                {/*    onClick={() => redirectToPartner()}*/}
+                {/*  />*/}
+                {/*</div>*/}
               </div>
             ) : (
               <></>

@@ -1,9 +1,9 @@
-import {getScreenX, isMobile, redirectTo} from "@/configs/utils";
+import { getScreenX, isMobile, redirectTo } from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./connectSection.module.css";
 import { Divider } from "@/components/divider";
 import Image from "next/image";
-import {Links} from "@/configs/constants";
+import { Links } from "@/configs/constants";
 
 export default function ConnectSection() {
   const _isMobile: boolean = isMobile();
@@ -15,90 +15,101 @@ export default function ConnectSection() {
         <div
           className={styles.connectContainer}
           style={{
-            width: '100%',
+            width: "100%",
           }}
         >
           <div
             className={styles.connectContainerC1}
-            style={_isMobile ? {
-              paddingBottom: 48,
-                paddingLeft: 16,
-                paddingRight: 16
-            }: {}}
+            style={
+              _isMobile
+                ? {
+                    paddingBottom: 48,
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                  }
+                : {}
+            }
           >
             {/*<Divider />*/}
-            <h4 className={styles.connectContainerC1T1} style={{
-              paddingTop: 40
-            }}>
+            <h4
+              className={styles.connectContainerC1T1}
+              style={{
+                paddingTop: 40,
+              }}
+            >
               Connect with us on social media!
             </h4>
             <div className={styles.connectContainerC1T2}>
-              Help your clients retain their investments and deliver better
-              outcomes
+              Stay up-to-date with our latest products by following us
             </div>
             <div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 gap: 24,
-                paddingTop: 32
+                paddingTop: 32,
               }}
               className={styles.shareIconsContainer}
             >
-              <div style={{
-                  cursor: 'pointer'
+              <div
+                style={{
+                  cursor: "pointer",
                 }}
-                   onClick={()=>redirectTo(Links.Instagram)}
+                onClick={() => redirectTo(Links.Instagram)}
               >
                 <Image
-                    src={"./images/instagramContactUs.svg"}
-                    alt={"contact image 1"}
-                    width={48}
-                    height={48}
-                />
-              </div>
-              <div style={{
-                cursor: 'pointer'
-              }}
-                   onClick={()=>redirectTo(Links.Linkedin)}
-              >
-                <Image
-                    src={"./images/linkedInContactUs.svg"}
-                    alt={"contact image 1"}
-                    width={48}
-                    height={48}
+                  src={"./images/instagramContactUs.svg"}
+                  alt={"contact image 1"}
+                  width={48}
+                  height={48}
                 />
               </div>
               <div
-                  style={{
-                    cursor: 'pointer'
-                  }}
-                  onClick={()=>redirectTo(Links.Twitter)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => redirectTo(Links.Linkedin)}
               >
                 <Image
-                    src={"./images/twitterContactUs.svg"}
-                    alt={"contact image 1"}
-                    width={48}
-                    height={48}
+                  src={"./images/linkedInContactUs.svg"}
+                  alt={"contact image 1"}
+                  width={48}
+                  height={48}
                 />
               </div>
               <div
-                  style={{
-                    cursor: 'pointer'
-                  }}
-                  onClick={()=>redirectTo(Links.Youtube)}
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => redirectTo(Links.Twitter)}
               >
                 <Image
-                    src={"./images/youtubeContactUs.svg"}
-                    alt={"contact image 1"}
-                    width={48}
-                    height={48}
+                  src={"./images/twitterContactUs.svg"}
+                  alt={"contact image 1"}
+                  width={48}
+                  height={48}
+                />
+              </div>
+              <div
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => redirectTo(Links.Youtube)}
+              >
+                <Image
+                  src={"./images/youtubeContactUs.svg"}
+                  alt={"contact image 1"}
+                  width={48}
+                  height={48}
                 />
               </div>
             </div>
-            <h4 className={styles.connectContainerC1T3} style={{
-              paddingTop: 48
-            }}>
+            <h4
+              className={styles.connectContainerC1T3}
+              style={{
+                paddingTop: 48,
+              }}
+            >
               Come say hello at our office HQ
             </h4>
             <div className={styles.connectContainerC1T4}>
@@ -111,9 +122,9 @@ export default function ConnectSection() {
                 display: "flex",
                 flexDirection: "row",
                 paddingTop: 16,
-                  cursor: 'pointer'
+                cursor: "pointer",
               }}
-              onClick={()=>redirectTo(Links.OfficeLocation, '_blank')}
+              onClick={() => redirectTo(Links.OfficeLocation, "_blank")}
             >
               {"Get directions >"}
             </div>

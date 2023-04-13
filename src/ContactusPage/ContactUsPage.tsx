@@ -4,7 +4,7 @@ import {getScreenX} from "@/configs/utils";
 import {useMemo} from "react";
 import {HeaderType} from "@/components/header/type";
 import TopSectionContactUs from "@/ContactusPage/topSection/topSection";
-import Faqs from "@/LandingPage/faqs/faqs";
+import Faqs, {FaqType} from "@/LandingPage/faqs/faqs";
 import Footer from "@/LandingPage/footer/footer";
 import ConnectSection from "./connectSection/connectSection";
 
@@ -26,7 +26,7 @@ export default function ContactUsPage() {
         <div id='faq' style={{
           width: '100%'
         }}>
-          <Faqs />
+          <Faqs type={FaqType.INVESTOR}/>
         </div>
         <Footer />
       </div>
