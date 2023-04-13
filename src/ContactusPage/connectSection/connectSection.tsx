@@ -110,7 +110,8 @@ export default function ConnectSection() {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                paddingTop: 16
+                paddingTop: 16,
+                  cursor: 'pointer'
               }}
               onClick={()=>redirectTo(Links.OfficeLocation, '_blank')}
             >
