@@ -93,13 +93,12 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartner()}
+                  onClick={() => redirectTo('/')}
                 >
                   <a
                     style={{
                       textDecoration: "none",
                     }}
-                    href="#faq"
                   >
                     Partner with us
                   </a>
