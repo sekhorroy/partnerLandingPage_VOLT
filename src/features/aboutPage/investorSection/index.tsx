@@ -1,9 +1,9 @@
-import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
-import { Card } from "@/components/card";
+import {convertTo2DArray, getScreenX, isMobile} from "@/configs/utils";
+import {Card} from "@/components/card";
 import {CardProps, CardTypes} from "@/components/card/types";
-import { useMemo } from "react";
-import styles from "./teamSection.module.css";
-import { Carousal, CarousalItem } from "@/components/carousal";
+import {useMemo} from "react";
+import styles from "./investorSection.module.css";
+import {Carousal, CarousalItem} from "@/components/carousal";
 
 const TeamData = [
   {
@@ -63,21 +63,21 @@ const TeamData = [
   },
 ];
 
-export default function TeamSection() {
+export default function InvestorSection() {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
 
-  const dataTransform = convertTo2DArray(TeamData, 6);
+  const dataTransform = convertTo2DArray(TeamData, 5);
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (
       <div className={styles.teamContainerC1}>
         {data.map((item, index) => (
-            <div key={index} style={(index > 1) ? {
-                paddingTop: 32
+            <div key={index} style={(index > 0) ? {
+                paddingTop: 18
             }: {}}>
                 <Card
-                    type={CardTypes.TEAM_CARD}
+                    type={CardTypes.INVESTOR_CARD}
                     title={item.title}
                     subTitle={item.subTitle}
                     imageUrl={item.imageUrl}
@@ -92,11 +92,11 @@ export default function TeamSection() {
             <div className={styles.teamContainerC1Web}>
                 {data.map((item, index) => (
                     <div key={index} style={{
-                        paddingLeft: 32,
-                        paddingTop: 0
+                        paddingRight: 32,
+                        paddingTop: 24
                     }}>
                         <Card
-                            type={CardTypes.TEAM_CARD}
+                            type={CardTypes.INVESTOR_CARD}
                             title={item.title}
                             subTitle={item.subTitle}
                             imageUrl={item.imageUrl}
@@ -125,11 +125,11 @@ export default function TeamSection() {
                   paddingBottom: 80,
                 }
           }
-          className={styles.teamSectionMainContainer}
+          className={styles.investorSectionMainContainer}
         >
-          <div className={styles.teamSectionMainContainerC1}>
+          <div className={styles.investorSectionMainContainerC1}>
             <div
-              className={styles.teamSectionMainContainerC1T1}
+              className={styles.investorSectionMainContainerC1T1}
               style={
                 _isMobile
                   ? {
@@ -140,10 +140,10 @@ export default function TeamSection() {
                     }
               }
             >
-              MEET OUR TEAM
+                BACKED BY THE BEST
             </div>
             <div
-              className={styles.teamSectionMainContainerC1T2}
+              className={styles.investorSectionMainContainerC1T2}
               style={
                 _isMobile
                   ? {
@@ -156,12 +156,12 @@ export default function TeamSection() {
                     }
               }
             >
-              The passionate and talented people behind Volt
+                Who believe in our vision
             </div>
-            <div className={styles.teamSectionCardContainer} style={_isMobile ? {
-                paddingTop: 40
+            <div className={styles.investorSectionCardContainer} style={_isMobile ? {
+                paddingTop: 24
             } : {
-                paddingTop: 32
+                paddingTop: 24
             }}>
               {_isMobile ? (
                 <>

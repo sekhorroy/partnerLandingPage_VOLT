@@ -1,0 +1,48 @@
+.cardContainer {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    background: #FFFFFF;
+    /* Grey/Chalk */
+    border: 1px solid #E4E7EC;
+    box-shadow: 0px 4px 8px #F7F8FA;
+    border-radius: 8px;
+}
+
+.cardContainerLeft {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardContainerRight {
+    flex: 1;
+}
+
+.cardContainerT1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Grey/Night */
+    color: #1D2939;
+}
+
+.cardContainerT2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Grey / Charcoal */
+    color: #667085;
+}
