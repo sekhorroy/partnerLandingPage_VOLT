@@ -6,6 +6,7 @@ import { TestimonyCard } from "@/components/card/card_Testimony/card_Testimony";
 import { name } from "next/dist/telemetry/ci-info";
 import { ContactUsHeader } from "@/components/header/contactUsHeader";
 import { ContactUsCard } from "@/components/card/card_ContactUs/cardContactUs";
+import {TeamCard} from "@/components/card/team_Card/teamCard";
 
 export const Card: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -44,6 +45,16 @@ export const Card: React.FunctionComponent<CardProps> = ({
           imageUrl={imageUrl}
           onClickCta={onClickCta}
         />
+      );
+    } else if (type === CardTypes.TEAM_CARD) {
+      return (
+          <TeamCard
+              type={CardTypes.TEAM_CARD}
+              title={title}
+              subTitle={subTitle}
+              imageUrl={imageUrl}
+              onClickCta={onClickCta}
+          />
       );
     } else {
       return (

@@ -25,7 +25,6 @@ export default function AboutTopSection() {
   const _child = useMemo(() => {
     return (
       <>
-        ;
         <div
           style={
             _isMobile
@@ -46,7 +45,7 @@ export default function AboutTopSection() {
               className={styles.topSection1}
               style={
                 _isMobile
-                  ? { paddingTop: 8, paddingBottom: 48 }
+                  ? { paddingTop: 24, paddingBottom: 48 }
                   : { paddingTop: 64, paddingBottom: 64 }
               }
             >

@@ -4,6 +4,7 @@ export enum CardTypes {
     VOLT_BENEFIT = 'VOLT_BENEFIT',
     TESTIMONY = 'TESTIMONY',
     CONTACT_US = 'CONTACT_US',
+    TEAM_CARD = 'TEAM_CARD'
 }
 export type CardProps = {
     type: CardTypes,
