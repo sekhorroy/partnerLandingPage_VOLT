@@ -93,7 +93,7 @@ export default function TeamSection() {
                 {data.map((item, index) => (
                     <div key={index} style={{
                         paddingLeft: 32,
-                        paddingTop: 0
+                        paddingTop: 48
                     }}>
                         <Card
                             type={CardTypes.TEAM_CARD}
@@ -161,7 +161,7 @@ export default function TeamSection() {
             <div className={styles.teamSectionCardContainer} style={_isMobile ? {
                 paddingTop: 40
             } : {
-                paddingTop: 32
+                paddingTop: 0
             }}>
               {_isMobile ? (
                 <>

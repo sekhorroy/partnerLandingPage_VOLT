@@ -92,8 +92,6 @@ export default function InvestorSection() {
             <div className={styles.teamContainerC1Web}>
                 {data.map((item, index) => (
                     <div key={index} style={{
-                        paddingRight: 32,
-                        paddingTop: 24
                     }}>
                         <Card
                             type={CardTypes.INVESTOR_CARD}
