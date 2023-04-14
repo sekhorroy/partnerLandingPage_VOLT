@@ -88,7 +88,7 @@ export default function AboutTopSection() {
                   _hide === false && _isMobile
                     ? {
                         paddingTop: 8,
-                        maxHeight: 150,
+                        maxHeight: 90,
                         maxWidth: 328,
                         overflow: "hidden",
                       }
