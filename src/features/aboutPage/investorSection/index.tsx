@@ -172,7 +172,7 @@ export default function InvestorSection() {
                           style={{
                               minWidth: 323,
                               position: 'relative',
-                              left: 20
+                              left: 30
                           }}
                         >
                           {_renderTeamViewMob(item)}
