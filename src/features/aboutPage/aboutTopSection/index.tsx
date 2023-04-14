@@ -16,7 +16,7 @@ import Image from "next/image";
 export default function AboutTopSection() {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
-  const [_hide, setHide] = useState(true);
+  const [_hide, setHide] = useState(false);
 
   const handleReadMore = () => {
     setHide(!_hide);
@@ -49,13 +49,22 @@ export default function AboutTopSection() {
                   : { paddingTop: 64, paddingBottom: 64 }
               }
             >
-              India’s first app to offer instant online credit line against
-              securities,{" "}
-              <span style={{ color: "#109648" }}>
-                {" "}
-                making credit easily accessible to millions of Indians{" "}
-              </span>
-              right when they need it in under 5 minutes
+              {_isMobile ? (
+                <>
+                  India’s first app to offer instant online credit line against
+                  securities
+                </>
+              ) : (
+                <>
+                  India’s first app to offer instant online credit line against
+                  securities,{" "}
+                  <span style={{ color: "#109648" }}>
+                    {" "}
+                    making credit easily accessible to millions of Indians{" "}
+                  </span>
+                  right when they need it in under 5 minutes
+                </>
+              )}
             </div>
             <div
               className={styles.aboutVoltCardContainer}

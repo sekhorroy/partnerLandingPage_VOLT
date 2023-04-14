@@ -60,6 +60,9 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 height={_isMobile ? 20 : 24}
                 width={64}
                 alt="Volt money logo"
+                style={{
+                  paddingLeft: 16
+                }}
               />
             </div>
           </div>
