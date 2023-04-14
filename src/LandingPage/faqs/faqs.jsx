@@ -532,7 +532,7 @@ const LASItems = [
 
 const AboutVoltMoneyItem = [
   {
-    question: "Tell me more about Volt Money.",
+    question: "Tell me more aboutPage Volt Money.",
     answer: () => {
       return (
         <>

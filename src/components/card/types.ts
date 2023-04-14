@@ -3,7 +3,7 @@ import {ImageProps} from "@/components/button/type";
 export enum CardTypes {
     VOLT_BENEFIT = 'VOLT_BENEFIT',
     TESTIMONY = 'TESTIMONY',
-    CONTACT_US = 'CONTACT_US'
+    CONTACT_US = 'CONTACT_US',
 }
 export type CardProps = {
     type: CardTypes,

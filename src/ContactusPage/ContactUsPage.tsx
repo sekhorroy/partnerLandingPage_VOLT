@@ -26,7 +26,7 @@ export default function ContactUsPage() {
         <div id='faq' style={{
           width: '100%'
         }}>
-          <Faqs type={FaqType.INVESTOR}/>
+        <Faqs type={FaqType.INVESTOR}/>
         </div>
         <Footer />
       </div>
