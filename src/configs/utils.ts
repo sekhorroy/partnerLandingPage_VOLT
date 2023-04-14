@@ -165,3 +165,13 @@ export const getParamsLink = (url?: string) => {
 
   return `?${resultString}`;
 };
+
+export const convertTo2DArray = (data: any, count:number) => {
+  const result = [];
+
+  for (let i = 0; i < data.length; i += count) {
+    result.push(data.slice(i, i + count));
+  }
+
+  return result;
+}

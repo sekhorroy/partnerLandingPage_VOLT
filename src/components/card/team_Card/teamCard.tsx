@@ -1,8 +1,7 @@
 import { isMobile } from "@/configs/utils";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import styles from "./teamComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
-import Image from "next/image";
 
 export const TeamCard: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
