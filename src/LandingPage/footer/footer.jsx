@@ -48,7 +48,7 @@ function Footer() {
             }}
             onClick={() => redirectTo("/contact", '_self')}
           >
-            Contact
+            Contact us
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}

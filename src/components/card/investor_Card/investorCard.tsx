@@ -25,12 +25,15 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
               ? {
                   maxWidth: 290,
                   minWidth: 290,
+                  cursor: "pointer",
                 }
               : {
                   maxWidth: 352,
                   minWidth: 352,
+                  cursor: "pointer",
                 }
           }
+          onClick={() => redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")}
         >
           <div className={styles.cardContainerLeft}>
             {imageUrl && imageUrl != "" ? (
@@ -73,9 +76,6 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
                   left: 50,
                   bottom: 30,
                 }}
-                onClick={() =>
-                  redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")
-                }
               />
             </div>
           </div>

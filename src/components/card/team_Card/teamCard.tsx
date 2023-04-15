@@ -26,13 +26,16 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
                   paddingTop: 16,
                   height: "fit-content",
                   width: 150,
+                  cursor: "pointer",
                 }
               : {
                   paddingTop: 16,
                   height: "fit-content",
                   width: 200,
+                  cursor: "pointer",
                 }
           }
+          onClick={() => redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")}
         >
           <div className={styles.cardContainerImage}>
             {imageUrl && imageUrl != "" ? (
@@ -80,9 +83,6 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
                 left: 30,
                 bottom: 38,
               }}
-              onClick={() =>
-                redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")
-              }
             />
           </div>
           <div
