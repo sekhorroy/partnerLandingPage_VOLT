@@ -66,15 +66,16 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 : {}
             }
           >
-            <div onClick={()=>redirectTo('/', '_self')}
-                 style={{
-                    cursor: "pointer",
-                     display: 'flex',
-                     justifyContent: 'center',
-                     alignItems: 'center',
-                     position: 'relative',
-                     top: 2
-                    }}
+            <div
+              onClick={() => redirectTo("/", "_self")}
+              style={{
+                cursor: "pointer",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                top: 2,
+              }}
             >
               <Image
                 priority
@@ -96,7 +97,16 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             }
           >
             {_isMobile ? (
-              <div onClick={handleMenuOpenClose}>
+              <div
+                onClick={handleMenuOpenClose}
+                style={{
+                  width: 70,
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  cursor: "pointer",
+                }}
+              >
                 <img
                   src="/images/ThreeBar.svg"
                   height={12}
@@ -115,8 +125,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 {/*>*/}
                 {/*  About us*/}
                 {/*</div>*/}
-                <div className={styles.headerLinksContainer} onClick={()=>redirectTo('#faq', '_self')}>
-                    FAQs
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("#faq", "_self")}
+                >
+                  FAQs
                 </div>
                 <div
                   className={styles.headerLinksContainer}
@@ -152,9 +165,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={()=>redirectTo('#faq', '_self')}
+            onClick={() => redirectTo("#faq", "_self")}
           >
-              FAQs
+            FAQs
           </div>
           <Divider />
           <div

@@ -68,7 +68,16 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
           </div>
           <div className={styles.headerRight}>
             {_isMobile ? (
-              <div onClick={handleMenuOpenClose}>
+              <div
+                onClick={handleMenuOpenClose}
+                style={{
+                  width: 70,
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  cursor: "pointer",
+                }}
+              >
                 <Image
                   priority
                   src="/images/ThreeBar.svg"
@@ -91,8 +100,8 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                   Home
                 </div>
                 <div
-                    className={styles.headerLinksContainer}
-                    onClick={() => redirectTo("#faq", "_self")}
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("#faq", "_self")}
                 >
                   FAQs
                 </div>
@@ -100,7 +109,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                   className={styles.headerLinksContainer}
                   onClick={() => redirectTo("/about", "_self")}
                 >
-                    About us
+                  About us
                 </div>
                 {/*<div>*/}
                 {/*  <ButtonComponent*/}
@@ -151,13 +160,13 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
           </div>
           <Divider />
           <div
-              className={styles.menuItem}
-              style={{
-                paddingLeft: 16,
-                paddingTop: 16,
-                paddingBottom: 16,
-              }}
-              onClick={() => redirectTo("#faq", "_self")}
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectTo("#faq", "_self")}
           >
             FAQs
           </div>
@@ -169,7 +178,7 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo('/about', '_self')}
+            onClick={() => redirectTo("/about", "_self")}
           >
             About us
           </div>

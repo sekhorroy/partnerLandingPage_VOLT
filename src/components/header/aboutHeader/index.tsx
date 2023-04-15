@@ -52,7 +52,16 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
           </div>
           <div className={styles.headerRight}>
             {_isMobile ? (
-              <div onClick={handleMenuOpenClose}>
+              <div
+                onClick={handleMenuOpenClose}
+                style={{
+                  width: 70,
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  cursor: "pointer",
+                }}
+              >
                 <Image
                   priority
                   src="/images/ThreeBar.svg"
