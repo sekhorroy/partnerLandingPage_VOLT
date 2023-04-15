@@ -106,8 +106,8 @@ export default function TeamSection() {
               name: item?.name,
               title: item?.role,
               subTitle: item?.bio,
-              imageUrl: item?.image
-
+              imageUrl: item?.image,
+              linkedInUrl: item?.linkedin_url
           });
       });
 
@@ -145,6 +145,7 @@ export default function TeamSection() {
               title={item.title}
               subTitle={item.subTitle}
               imageUrl={item.imageUrl}
+              linkedInUrl={item.linkedInUrl}
             />
           </div>
         ))}
@@ -162,6 +163,7 @@ export default function TeamSection() {
               title={item.title}
               subTitle={item.subTitle}
               imageUrl={item.imageUrl}
+              linkedInUrl={item.linkedInUrl}
             />
           </div>
         ))}

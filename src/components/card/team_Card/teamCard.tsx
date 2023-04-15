@@ -1,4 +1,4 @@
-import { isMobile } from "@/configs/utils";
+import { isMobile, redirectTo } from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./teamComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
@@ -11,6 +11,7 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
   subTitle,
   name,
   imageUrl,
+  linkedInUrl,
 }) => {
   const _isMobile: boolean = isMobile();
 
@@ -79,6 +80,9 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
                 left: 30,
                 bottom: 38,
               }}
+              onClick={() =>
+                redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")
+              }
             />
           </div>
           <div

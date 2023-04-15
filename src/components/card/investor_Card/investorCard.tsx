@@ -1,4 +1,4 @@
-import { isMobile } from "@/configs/utils";
+import { isMobile, redirectTo } from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./investorComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
@@ -11,47 +11,53 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
   subTitle,
   name,
   imageUrl,
+  linkedInUrl,
 }) => {
   const _isMobile: boolean = isMobile();
 
   const _child = useMemo(() => {
     return (
       <>
-        <div className={styles.cardContainer} style={_isMobile ? {
-            maxWidth: 290,
-            minWidth: 290
-        } : {
-            maxWidth: 352,
-            minWidth: 352
-        }}>
+        <div
+          className={styles.cardContainer}
+          style={
+            _isMobile
+              ? {
+                  maxWidth: 290,
+                  minWidth: 290,
+                }
+              : {
+                  maxWidth: 352,
+                  minWidth: 352,
+                }
+          }
+        >
           <div className={styles.cardContainerLeft}>
-              {
-                  imageUrl && imageUrl != '' ? (
-                      <img src={imageUrl} width={80} height={80} />
-                  ) : (
-                      <div
-                          className={styles.noImageContainer}
-                          style={
-                              _isMobile
-                                  ? {
-                                      width: 80,
-                                      height: 80,
-                                  }
-                                  : {
-                                      width: 80,
-                                      height: 80,
-                                  }
-                          }
-                      >
-                          <Image
-                              src={"/images/userGrey.svg"}
-                              alt={"user grey image"}
-                              width={48}
-                              height={48}
-                          />
-                      </div>
-                  )
-              }
+            {imageUrl && imageUrl != "" ? (
+              <img src={imageUrl} width={80} height={80} />
+            ) : (
+              <div
+                className={styles.noImageContainer}
+                style={
+                  _isMobile
+                    ? {
+                        width: 80,
+                        height: 80,
+                      }
+                    : {
+                        width: 80,
+                        height: 80,
+                      }
+                }
+              >
+                <Image
+                  src={"/images/userGrey.svg"}
+                  alt={"user grey image"}
+                  width={48}
+                  height={48}
+                />
+              </div>
+            )}
             <div
               style={{
                 height: 0,
@@ -67,6 +73,9 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
                   left: 50,
                   bottom: 30,
                 }}
+                onClick={() =>
+                  redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")
+                }
               />
             </div>
           </div>

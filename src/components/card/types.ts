@@ -16,5 +16,6 @@ export type CardProps = {
     cta?: boolean
     ctaLabel?: string,
     imageUrl?: string,
-    onClickCta?: ()=>void
+    onClickCta?: ()=>void,
+    linkedInUrl?: string
 }

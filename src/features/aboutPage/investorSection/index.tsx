@@ -94,6 +94,7 @@ export default function InvestorSection() {
         title: item?.name,
         subTitle: item?.bio,
         imageUrl: item?.image,
+        linkedInUrl: item?.linkedin_url,
       });
     });
 
@@ -170,6 +171,7 @@ export default function InvestorSection() {
               title={item.title}
               subTitle={item.subTitle}
               imageUrl={item.imageUrl}
+              linkedInUrl={item.linkedInUrl}
             />
           </div>
         ))}
@@ -192,6 +194,7 @@ export default function InvestorSection() {
               title={item.title}
               subTitle={item.subTitle}
               imageUrl={item.imageUrl}
+              linkedInUrl={item.linkedInUrl}
             />
           </div>
         ))}

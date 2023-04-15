@@ -6,8 +6,8 @@ import { TestimonyCard } from "@/components/card/card_Testimony/card_Testimony";
 import { name } from "next/dist/telemetry/ci-info";
 import { ContactUsHeader } from "@/components/header/contactUsHeader";
 import { ContactUsCard } from "@/components/card/card_ContactUs/cardContactUs";
-import {TeamCard} from "@/components/card/team_Card/teamCard";
-import {InvestorCard} from "@/components/card/investor_Card/investorCard";
+import { TeamCard } from "@/components/card/team_Card/teamCard";
+import { InvestorCard } from "@/components/card/investor_Card/investorCard";
 
 export const Card: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -19,6 +19,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   ctaLabel,
   imageUrl,
   onClickCta,
+  linkedInUrl,
 }) => {
   const _isMobile: boolean = isMobile();
 
@@ -49,24 +50,26 @@ export const Card: React.FunctionComponent<CardProps> = ({
       );
     } else if (type === CardTypes.TEAM_CARD) {
       return (
-          <TeamCard
-              type={CardTypes.TEAM_CARD}
-              title={title}
-              subTitle={subTitle}
-              imageUrl={imageUrl}
-              onClickCta={onClickCta}
-              name={name}
-          />
+        <TeamCard
+          type={CardTypes.TEAM_CARD}
+          title={title}
+          subTitle={subTitle}
+          imageUrl={imageUrl}
+          onClickCta={onClickCta}
+          name={name}
+          linkedInUrl={linkedInUrl}
+        />
       );
     } else if (type === CardTypes.INVESTOR_CARD) {
       return (
-          <InvestorCard
-              type={CardTypes.INVESTOR_CARD}
-              title={title}
-              subTitle={subTitle}
-              imageUrl={imageUrl}
-              onClickCta={onClickCta}
-          />
+        <InvestorCard
+          type={CardTypes.INVESTOR_CARD}
+          title={title}
+          subTitle={subTitle}
+          imageUrl={imageUrl}
+          onClickCta={onClickCta}
+          linkedInUrl={linkedInUrl}
+        />
       );
     } else {
       return (
