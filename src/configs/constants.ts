@@ -46,6 +46,11 @@ export const Links = {
   OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7"
 };
 
+export const api = {
+  teamApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=volt_team',
+  investorApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=volt_investor'
+}
+
 export enum StoreKey {
   UTM_PARAMS = "UTM_PARAMS",
 }

@@ -4,11 +4,6 @@ import { CardProps, CardTypes } from "@/components/card/types";
 import { useMemo } from "react";
 import styles from "./investorSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
-import { ButtonComponent } from "@/components/button";
-import {
-  ButtonTypeTokens,
-  ButtonWidthTypeTokens,
-} from "@/components/button/type";
 
 const TeamData = [
   {

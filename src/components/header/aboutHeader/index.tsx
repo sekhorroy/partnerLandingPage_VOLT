@@ -117,15 +117,9 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
               paddingTop: 16,
               paddingBottom: 16,
             }}
+            onClick={()=>redirectTo('/', '_self')}
           >
-            <a
-              style={{
-                textDecoration: "none",
-              }}
-              href="#faq"
-            >
-              FAQs
-            </a>
+              Home
           </div>
           <Divider />
           <div
@@ -135,9 +129,20 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner()}
+            onClick={()=>redirectTo('/contact', '_self')}
           >
-            Partner with us
+            Contact us
+          </div>
+          <div
+              className={styles.menuItem}
+              style={{
+                paddingLeft: 16,
+                paddingTop: 16,
+                paddingBottom: 16,
+              }}
+              onClick={()=>redirectToVoltApp()}
+          >
+            Check available limit
           </div>
         </div>
       ) : (
