@@ -8,7 +8,7 @@ import InvestorSection from "@/features/aboutPage/investorSection";
 export default function About() {
     return (
         <>
-            <Header type={HeaderType.CONTACT_US}/>
+            <Header type={HeaderType.ABOUT}/>
             <AboutTopSection />
             <TeamSection />
             <InvestorSection />

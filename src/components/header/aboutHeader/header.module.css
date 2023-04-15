@@ -1,0 +1,123 @@
+.header {
+    width: 100%;
+    background-color: #FFFFFF;
+    /*border-bottom: 1px solid #E4E7EC;*/
+    box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerContactUs {
+    width: 100%;
+    background-color: #F3F5FC;
+    /*border-bottom: 1px solid #E4E7EC;*/
+    box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.headerContent {
+    width: 100%;
+    max-width: 1024px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.headerContentContactUs {
+    width: 100%;
+    max-width: 1024px;
+    background-color: #F3F5FC;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.headerLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.headerRight {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 19px;
+}
+
+.headerWeb {
+    width: 100%;
+    background-color: #FFFFFF;
+    /*border-bottom: 1px solid #E4E7EC;*/
+    box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.headerWebContactUs {
+    width: 100%;
+    background-color: #F3F5FC;
+    /*border-bottom: 1px solid #E4E7EC;*/
+    box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+    height: 74px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerContentWeb {
+    width: 100%;
+    max-width: 1024px;
+    background-color: #FFFFFF;
+    display: flex;
+    height: 74px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.headerLeftWeb {
+    flex: 1;
+    display: flex;
+    height: 74px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.headerRightWebContent {
+    display: flex;
+    gap: 32px;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 19px;
+    font-family: 'Inter', sans-serif;
+    height: 74px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20;
+}
+
+.headerLinksContainer {
+    cursor: pointer;
+}
+
+.menuContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #CFEADA;
+}
+
+.menuItem {
+    font-family: 'Inter';
+    font-size: 14px;
+    cursor: pointer;
+}
