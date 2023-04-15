@@ -50,7 +50,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    max-width: 924px;
-    position: relative;
-    left: 24px;
+    max-width: 750px;
+    gap: 60px;
+    padding-top: 48px;
 }

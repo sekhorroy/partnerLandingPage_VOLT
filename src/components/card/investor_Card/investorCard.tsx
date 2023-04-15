@@ -38,7 +38,20 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
             </div>
           </div>
           <div className={styles.cardContainerRight}>
-            <div className={styles.cardContainerT1}>{title}</div>
+            <div
+              className={styles.cardContainerT1}
+              style={
+                _isMobile
+                  ? {
+                      fontSize: 16,
+                    }
+                  : {
+                      fontSize: 18,
+                    }
+              }
+            >
+              {title}
+            </div>
             <div className={styles.cardContainerT2}>{subTitle}</div>
           </div>
         </div>

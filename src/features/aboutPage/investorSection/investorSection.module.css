@@ -56,6 +56,46 @@
     position: relative;
     left: 24px;
 
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     scroll-behavior: smooth;
+}
+
+.BottomContainer {
+
+}
+
+.BottomContainerC1Mob {
+    background: #1434CB;
+    border-radius: 8px;
+    margin-top: 80px;
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.BottomContainerT1Mob {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    text-align: center;
+    color: #FFFFFF;
+}
+.BottomContainerT2Mob {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+
+    text-align: center;
+    color: #FFFFFF;
+}
+.BottomContainerC2Mob {
+
 }

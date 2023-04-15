@@ -92,8 +92,6 @@ export default function TeamSection() {
             <div className={styles.teamContainerC1Web}>
                 {data.map((item, index) => (
                     <div key={index} style={{
-                        paddingLeft: 32,
-                        paddingTop: 48
                     }}>
                         <Card
                             type={CardTypes.TEAM_CARD}

@@ -1,9 +1,14 @@
-import {convertTo2DArray, getScreenX, isMobile} from "@/configs/utils";
-import {Card} from "@/components/card";
-import {CardProps, CardTypes} from "@/components/card/types";
-import {useMemo} from "react";
+import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
+import { Card } from "@/components/card";
+import { CardProps, CardTypes } from "@/components/card/types";
+import { useMemo } from "react";
 import styles from "./investorSection.module.css";
-import {Carousal, CarousalItem} from "@/components/carousal";
+import { Carousal, CarousalItem } from "@/components/carousal";
+import { ButtonComponent } from "@/components/button";
+import {
+  ButtonTypeTokens,
+  ButtonWidthTypeTokens,
+} from "@/components/button/type";
 
 const TeamData = [
   {
@@ -73,37 +78,48 @@ export default function InvestorSection() {
     return (
       <div className={styles.teamContainerC1}>
         {data.map((item, index) => (
-            <div key={index} style={(index > 0) ? {
-                paddingTop: 18
-            }: {}}>
-                <Card
-                    type={CardTypes.INVESTOR_CARD}
-                    title={item.title}
-                    subTitle={item.subTitle}
-                    imageUrl={item.imageUrl}
-                />
-            </div>
+          <div
+            key={index}
+            style={
+              index > 0
+                ? {
+                    paddingTop: 18,
+                  }
+                : {}
+            }
+          >
+            <Card
+              type={CardTypes.INVESTOR_CARD}
+              title={item.title}
+              subTitle={item.subTitle}
+              imageUrl={item.imageUrl}
+            />
+          </div>
         ))}
       </div>
     );
   };
-    const _renderTeamViewWeb = (data: [any]) => {
-        return (
-            <div className={styles.teamContainerC1Web}>
-                {data.map((item, index) => (
-                    <div key={index} style={{
-                    }}>
-                        <Card
-                            type={CardTypes.INVESTOR_CARD}
-                            title={item.title}
-                            subTitle={item.subTitle}
-                            imageUrl={item.imageUrl}
-                        />
-                    </div>
-                ))}
-            </div>
-        );
-    };
+  const _renderTeamViewWeb = (data: [any]) => {
+    return (
+      <div
+        className={styles.teamContainerC1Web}
+        style={{
+          paddingTop: 24,
+        }}
+      >
+        {data.map((item, index) => (
+          <div key={index} style={{}}>
+            <Card
+              type={CardTypes.INVESTOR_CARD}
+              title={item.title}
+              subTitle={item.subTitle}
+              imageUrl={item.imageUrl}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   const _child = useMemo(() => {
     return (
@@ -138,7 +154,7 @@ export default function InvestorSection() {
                     }
               }
             >
-                BACKED BY THE BEST
+              BACKED BY THE BEST
             </div>
             <div
               className={styles.investorSectionMainContainerC1T2}
@@ -154,13 +170,20 @@ export default function InvestorSection() {
                     }
               }
             >
-                Who believe in our vision
+              Who believe in our vision
             </div>
-            <div className={styles.investorSectionCardContainer} style={_isMobile ? {
-                paddingTop: 24
-            } : {
-                paddingTop: 24
-            }}>
+            <div
+              className={styles.investorSectionCardContainer}
+              style={
+                _isMobile
+                  ? {
+                      paddingTop: 24,
+                    }
+                  : {
+                      paddingTop: 24,
+                    }
+              }
+            >
               {_isMobile ? (
                 <>
                   <Carousal data={dataTransform}>
@@ -168,9 +191,9 @@ export default function InvestorSection() {
                       <CarousalItem key={index} width={"100%"}>
                         <div
                           style={{
-                              minWidth: 323,
-                              position: 'relative',
-                              left: 30
+                            minWidth: 323,
+                            position: "relative",
+                            left: 30,
                           }}
                         >
                           {_renderTeamViewMob(item)}
@@ -181,15 +204,44 @@ export default function InvestorSection() {
                 </>
               ) : (
                 <>
-
-                    {
-                        //@ts-ignore
-                        _renderTeamViewWeb(TeamData)
-                    }
+                  {
+                    //@ts-ignore
+                    _renderTeamViewWeb(TeamData)
+                  }
                 </>
               )}
             </div>
           </div>
+          {/*<div className={styles.BottomContainer}>*/}
+          {/*  {_isMobile ? (*/}
+          {/*    <>*/}
+          {/*      <div className={styles.BottomContainerC1Mob}>*/}
+          {/*        <div className={styles.BottomContainerT1Mob}>*/}
+          {/*          DREAM BIG AT VOLT*/}
+          {/*        </div>*/}
+          {/*        <div*/}
+          {/*          className={styles.BottomContainerT2Mob}*/}
+          {/*          style={{*/}
+          {/*            paddingTop: 12,*/}
+          {/*          }}*/}
+          {/*        >*/}
+          {/*          Join us in making loans easier for millions of Indian*/}
+          {/*        </div>*/}
+          {/*        <div style={{*/}
+          {/*            paddingTop: 24*/}
+          {/*        }}>*/}
+          {/*          <ButtonComponent*/}
+          {/*            label={"Check open opportunities"}*/}
+          {/*            type={ButtonTypeTokens.OUTLINE_LARGE}*/}
+          {/*            width={ButtonWidthTypeTokens.FULL}*/}
+          {/*          />*/}
+          {/*        </div>*/}
+          {/*      </div>*/}
+          {/*    </>*/}
+          {/*  ) : (*/}
+          {/*    <></>*/}
+          {/*  )}*/}
+          {/*</div>*/}
         </div>
       </>
     );
