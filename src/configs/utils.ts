@@ -1,7 +1,7 @@
 import {Breakpoints, UTM_expiry_days} from "@/configs/config";
 import { UseWindowSize } from "@/configs/windowSizeHook";
 import {
-  AppLink,
+  AppLink, BaseLink,
   BUILD_TYPE,
   getBuildType,
   GoogleUtmParams,
@@ -61,13 +61,15 @@ export const handleWhatAppClick = () => {
 export const handleOurPartnerLinks = (Link: string) => {
   window.open(Link, '_blank' );
 }
-
 export const redirectTo = (url: string, target?: string) =>{
   if(target) {
     window.open(url, target);
   } else {
     window.open(url, '_blank');
   }
+}
+export const redirectToPrivacy = (Link: string) => {
+  window.open(`${BaseLink}/privacy/`, '_blank' );
 }
 
 export const addDaysToEpochTime = (epochTime: number, days: number) => {

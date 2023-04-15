@@ -3,7 +3,7 @@ import React, { location } from "react";
 import { EXTERNAL_URLS } from "../../configs/config";
 import { Links, privacyLink } from "../../configs/constants";
 import Image from "next/image";
-import { handleOurPartnerLinks, isMobile, redirectTo } from "@/configs/utils";
+import {handleOurPartnerLinks, isMobile, redirectTo, redirectToPrivacy} from "@/configs/utils";
 import Link from "next/link";
 
 function Footer() {
@@ -171,7 +171,7 @@ function Footer() {
             maxWidth: 1024,
           }}
         >
-          <div className={styles.VoltLegalT1}>
+          <div className={styles.VoltLegalT1} style={{cursor: 'pointer'}} onClick={()=>redirectToPrivacy()}>
             ©2023 SALTER TECHNOLOGIES PRIVATE LIMITED | Legal | Privacy
           </div>
           <div className={styles.VoltLegalT2}>CIN: U72200KA2022PTC158631</div>

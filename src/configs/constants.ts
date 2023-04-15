@@ -21,6 +21,11 @@ export const AppLink =
     ? "https://app.voltmoney.in/?startNew=true"
     : "https://app.staging.voltmoney.in/?startNew=true";
 
+export const BaseLink =
+    getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
+        ? "https://voltmoney.in"
+        : "https://staging.voltmoney.in";
+
 export const helpLineNumberLink = "tel:+919611749295";
 
 export const supportEmail = "mailto:support@voltmoney.in"
