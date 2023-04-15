@@ -34,18 +34,27 @@ function Footer() {
         <div className={styles.FooterHelpSectionContainer}>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
+            style={{
+              cursor: 'pointer'
+            }}
             onClick={() => redirectTo("/", '_self')}
           >
             Home
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
+            style={{
+              cursor: 'pointer'
+            }}
             onClick={() => redirectTo("/contact", '_self')}
           >
             Contact
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
+            style={{
+              cursor: 'pointer'
+            }}
             onClick={() => redirectTo("/about", '_self')}
           >
             About us
