@@ -127,6 +127,18 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 {/*</div>*/}
                 <div
                   className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("/contact", "_self")}
+                >
+                  Contact us
+                </div>
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("/about", "_self")}
+                >
+                  About us
+                </div>
+                <div
+                  className={styles.headerLinksContainer}
                   onClick={() => redirectTo("#faq", "_self")}
                 >
                   FAQs
@@ -158,6 +170,30 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             boxSizing: "border-box",
           }}
         >
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectTo("/contact", "_self")}
+          >
+            Contact us
+          </div>
+          <Divider />
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectTo("/about", "_self")}
+          >
+            About us
+          </div>
+          <Divider />
           <div
             className={styles.menuItem}
             style={{
