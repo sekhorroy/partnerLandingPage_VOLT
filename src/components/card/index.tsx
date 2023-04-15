@@ -55,6 +55,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
               subTitle={subTitle}
               imageUrl={imageUrl}
               onClickCta={onClickCta}
+              name={name}
           />
       );
     } else if (type === CardTypes.INVESTOR_CARD) {

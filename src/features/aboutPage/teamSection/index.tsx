@@ -1,64 +1,81 @@
 import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
 import { Card } from "@/components/card";
-import {CardProps, CardTypes} from "@/components/card/types";
+import { CardProps, CardTypes } from "@/components/card/types";
 import { useMemo } from "react";
 import styles from "./teamSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
 
 const TeamData = [
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
   {
-    title: "Lalit Bihani",
-    subTitle: "Co-founder & CEO",
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
+    imageUrl: "/images/team1.svg",
+  },
+  {
+    name: "Lalit Bihani",
+    title: "Co-founder & CEO",
+    subTitle: "Ex: WhiteHatJr, BrowserStack IIT Delhi",
     imageUrl: "/images/team1.svg",
   },
 ];
@@ -71,39 +88,52 @@ export default function TeamSection() {
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (
-      <div className={styles.teamContainerC1}>
+      <div className={styles.teamContainerC1}
+        style={{
+            position: 'relative',
+            right: 20
+        }}
+      >
         {data.map((item, index) => (
-            <div key={index} style={(index > 1) ? {
-                paddingTop: 32
-            }: {}}>
-                <Card
-                    type={CardTypes.TEAM_CARD}
-                    title={item.title}
-                    subTitle={item.subTitle}
-                    imageUrl={item.imageUrl}
-                />
-            </div>
+          <div
+            key={index}
+            style={
+              index > 1
+                ? {
+                    paddingTop: 32,
+                  }
+                : {}
+            }
+          >
+            <Card
+              type={CardTypes.TEAM_CARD}
+              name={item.name}
+              title={item.title}
+              subTitle={item.subTitle}
+              imageUrl={item.imageUrl}
+            />
+          </div>
         ))}
       </div>
     );
   };
-    const _renderTeamViewWeb = (data: [any]) => {
-        return (
-            <div className={styles.teamContainerC1Web}>
-                {data.map((item, index) => (
-                    <div key={index} style={{
-                    }}>
-                        <Card
-                            type={CardTypes.TEAM_CARD}
-                            title={item.title}
-                            subTitle={item.subTitle}
-                            imageUrl={item.imageUrl}
-                        />
-                    </div>
-                ))}
-            </div>
-        );
-    };
+  const _renderTeamViewWeb = (data: [any]) => {
+    return (
+      <div className={styles.teamContainerC1Web}>
+        {data.map((item, index) => (
+          <div key={index} style={{}}>
+            <Card
+              type={CardTypes.TEAM_CARD}
+              name={item.name}
+              title={item.title}
+              subTitle={item.subTitle}
+              imageUrl={item.imageUrl}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   const _child = useMemo(() => {
     return (
@@ -156,11 +186,18 @@ export default function TeamSection() {
             >
               The passionate and talented people behind Volt
             </div>
-            <div className={styles.teamSectionCardContainer} style={_isMobile ? {
-                paddingTop: 40
-            } : {
-                paddingTop: 0
-            }}>
+            <div
+              className={styles.teamSectionCardContainer}
+              style={
+                _isMobile
+                  ? {
+                      paddingTop: 40,
+                    }
+                  : {
+                      paddingTop: 0,
+                    }
+              }
+            >
               {_isMobile ? (
                 <>
                   <Carousal data={dataTransform}>
@@ -168,9 +205,9 @@ export default function TeamSection() {
                       <CarousalItem key={index} width={"100%"}>
                         <div
                           style={{
-                              minWidth: 323,
-                              position: 'relative',
-                              left: 20
+                            minWidth: 323,
+                            position: "relative",
+                            left: 20,
                           }}
                         >
                           {_renderTeamViewMob(item)}
@@ -181,11 +218,10 @@ export default function TeamSection() {
                 </>
               ) : (
                 <>
-
-                    {
-                        //@ts-ignore
-                        _renderTeamViewWeb(TeamData)
-                    }
+                  {
+                    //@ts-ignore
+                    _renderTeamViewWeb(TeamData)
+                  }
                 </>
               )}
             </div>

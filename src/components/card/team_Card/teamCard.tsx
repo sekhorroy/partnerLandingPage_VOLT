@@ -23,10 +23,12 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
               ? {
                   paddingTop: 16,
                   height: "fit-content",
+                width: 150
                 }
               : {
                   paddingTop: 16,
                   height: "fit-content",
+                    width: 200
                 }
           }
         >
@@ -74,7 +76,7 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
             }
             className={styles.cardContainerT1}
           >
-            {title}
+            {name}
           </div>
           <div
             style={
@@ -94,8 +96,35 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
             }
             className={styles.cardContainerT2}
           >
-            {subTitle}
+            {title}
           </div>
+
+          {subTitle ? (
+            <div
+              style={
+                _isMobile
+                  ? {
+                      fontFamily: "Inter",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      fontSize: 14,
+                      paddingTop: 14,
+                    }
+                  : {
+                      fontFamily: "Inter",
+                      fontStyle: "normal",
+                      fontWeight: 400,
+                      fontSize: 16,
+                      paddingTop: 16,
+                    }
+              }
+              className={styles.cardContainerT3}
+            >
+              {subTitle}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </>
     );
