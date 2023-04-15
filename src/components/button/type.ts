@@ -23,5 +23,6 @@ export type ButtonProps = {
     type: ButtonTypeTokens,
     width?: ButtonWidthTypeTokens,
     leftIcon?: ImageProps | null,
-    imageUrl?: string
+    imageUrl?: string,
+    fontSize?: number
 }

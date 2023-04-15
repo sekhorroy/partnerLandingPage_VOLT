@@ -14,6 +14,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   width = ButtonWidthTypeTokens.CONTENT,
   leftIcon = undefined,
   imageUrl,
+    fontSize,
 }) => {
   const handleClick = () => {
     onClick && onClick();
@@ -76,7 +77,13 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           ) : (
             <></>
           )}
-          {label}
+          <div style={fontSize ? {
+              fontSize: fontSize
+          } : {
+              fontSize: 16
+          }}>
+              {label}
+          </div>
         </div>
       </>
     ),

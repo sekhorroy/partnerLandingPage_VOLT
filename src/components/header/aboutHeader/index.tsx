@@ -4,7 +4,8 @@ import {
   getScreenX,
   isMobile,
   redirectTo,
-  redirectToPartner, redirectToVoltApp,
+  redirectToPartner,
+  redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
@@ -46,9 +47,6 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
                 height={_isMobile ? 20 : 24}
                 width={95}
                 alt="Volt money logo"
-                style={{
-                  paddingLeft: 16,
-                }}
               />
             </div>
           </div>
@@ -68,16 +66,23 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
             )}
             {!_isMobile ? (
               <div className={styles.headerRightWebContent}>
-                <div className={styles.headerLinksContainer} onClick={()=>redirectTo('/', '_self')}>
-                    Home
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("/", "_self")}
+                >
+                  Home
                 </div>
-                <div className={styles.headerLinksContainer} onClick={()=>redirectTo('/contact', '_self')}>
-                    Contact us
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("/contact", "_self")}
+                >
+                  Contact us
                 </div>
                 <div>
                   <ButtonComponent
                     label="Check available limit"
                     type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
+                    fontSize={14}
                     onClick={() => redirectToVoltApp()}
                   />
                 </div>
@@ -117,9 +122,9 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={()=>redirectTo('/', '_self')}
+            onClick={() => redirectTo("/", "_self")}
           >
-              Home
+            Home
           </div>
           <Divider />
           <div
@@ -129,18 +134,18 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={()=>redirectTo('/contact', '_self')}
+            onClick={() => redirectTo("/contact", "_self")}
           >
             Contact us
           </div>
           <div
-              className={styles.menuItem}
-              style={{
-                paddingLeft: 16,
-                paddingTop: 16,
-                paddingBottom: 16,
-              }}
-              onClick={()=>redirectToVoltApp()}
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => redirectToVoltApp()}
           >
             Check available limit
           </div>

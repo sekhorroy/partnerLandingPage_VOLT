@@ -66,9 +66,16 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 : {}
             }
           >
-            <div onClick={()=>redirectTo('/', '_self')} style={{
-                cursor: "pointer"
-            }}>
+            <div onClick={()=>redirectTo('/', '_self')}
+                 style={{
+                    cursor: "pointer",
+                     display: 'flex',
+                     justifyContent: 'center',
+                     alignItems: 'center',
+                     position: 'relative',
+                     top: 2
+                    }}
+            >
               <Image
                 priority
                 src="/images/VoltPartnerLogo.svg"
@@ -118,6 +125,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   <ButtonComponent
                     label="Get started"
                     type={ButtonTypeTokens.OUTLINE_LARGE}
+                    fontSize={14}
                   />
                 </div>
               </div>
