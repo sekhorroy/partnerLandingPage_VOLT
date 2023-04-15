@@ -18,7 +18,8 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
     return (
       <>
         <div className={styles.cardContainer} style={_isMobile ? {
-            maxWidth: 290
+            maxWidth: 290,
+            minWidth: 290
         } : {
             maxWidth: 352,
             minWidth: 352
