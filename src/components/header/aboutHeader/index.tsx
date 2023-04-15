@@ -138,6 +138,7 @@ export const AboutHeader: React.FunctionComponent<HeaderProps> = ({ type }) => {
           >
             Contact us
           </div>
+          <Divider />
           <div
             className={styles.menuItem}
             style={{
