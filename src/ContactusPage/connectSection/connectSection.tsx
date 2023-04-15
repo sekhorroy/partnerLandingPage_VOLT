@@ -37,7 +37,7 @@ export default function ConnectSection() {
                 paddingTop: 40,
               }}
             >
-              Connect with us on social media!
+              Connect with us on social media
             </h4>
             <div className={styles.connectContainerC1T2}>
               Stay up-to-date with our latest products by following us

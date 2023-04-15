@@ -108,15 +108,8 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 {/*>*/}
                 {/*  About us*/}
                 {/*</div>*/}
-                <div className={styles.headerLinksContainer}>
-                  <a
-                    style={{
-                      textDecoration: "none",
-                    }}
-                    href="#faq"
-                  >
+                <div className={styles.headerLinksContainer} onClick={()=>redirectTo('#faq', '_self')}>
                     FAQs
-                  </a>
                 </div>
                 <div
                   className={styles.headerLinksContainer}
@@ -151,27 +144,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo("/aboutus")}
+            onClick={()=>redirectTo('#faq', '_self')}
           >
-            About us
-          </div>
-          <Divider />
-          <div
-            className={styles.menuItem}
-            style={{
-              paddingLeft: 16,
-              paddingTop: 16,
-              paddingBottom: 16,
-            }}
-          >
-            <a
-              style={{
-                textDecoration: "none",
-              }}
-              href="#faq"
-            >
               FAQs
-            </a>
           </div>
           <Divider />
           <div

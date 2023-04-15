@@ -58,10 +58,10 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
                 priority
                 src="/images/VoltBlue.svg"
                 height={_isMobile ? 20 : 24}
-                width={64}
+                width={94}
                 alt="Volt money logo"
                 style={{
-                  paddingLeft: 16
+                  paddingLeft: 16,
                 }}
               />
             </div>
@@ -84,27 +84,23 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
               <div className={styles.headerRightWebContent}>
                 {/*<div>About us</div>*/}
                 {/*<div>Blog</div>*/}
-                <div className={styles.headerLinksContainer}>
-                  <a
-                    style={{
-                      textDecoration: "none",
-                    }}
-                    href="#faq"
-                  >
-                    FAQs
-                  </a>
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => redirectTo("/", "_self")}
+                >
+                  Home
+                </div>
+                <div
+                    className={styles.headerLinksContainer}
+                    onClick={() => redirectTo("#faq", "_self")}
+                >
+                  FAQs
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo('/partner', '_self')}
+                  onClick={() => redirectTo("/about", "_self")}
                 >
-                  <a
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    Partner with us
-                  </a>
+                    About us
                 </div>
                 {/*<div>*/}
                 {/*  <ButtonComponent*/}
@@ -149,15 +145,21 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
+            onClick={() => redirectTo("/", "_self")}
           >
-            <a
+            Home
+          </div>
+          <Divider />
+          <div
+              className={styles.menuItem}
               style={{
-                textDecoration: "none",
+                paddingLeft: 16,
+                paddingTop: 16,
+                paddingBottom: 16,
               }}
-              href="#faq"
-            >
-              FAQs
-            </a>
+              onClick={() => redirectTo("#faq", "_self")}
+          >
+            FAQs
           </div>
           <Divider />
           <div
@@ -167,9 +169,9 @@ export const ContactUsHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner()}
+            onClick={() => redirectTo('/about', '_self')}
           >
-            Partner with us
+            About us
           </div>
         </div>
       ) : (
