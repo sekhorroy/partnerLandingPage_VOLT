@@ -1,9 +1,11 @@
 import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
 import { Card } from "@/components/card";
 import { CardProps, CardTypes } from "@/components/card/types";
-import { useMemo } from "react";
+import {useEffect, useMemo, useState} from "react";
 import styles from "./investorSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
+import axios from "axios";
+import {api} from "@/configs/constants";
 
 const TeamData = [
   {
@@ -66,8 +68,37 @@ const TeamData = [
 export default function InvestorSection() {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
+  const [_data, setData] = useState<CardProps[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  const dataTransform = convertTo2DArray(TeamData, 5);
+  const dataTransform = convertTo2DArray(_data, 5);
+
+    const getData = async () => {
+        await setLoading(true);
+        const response = await axios.get(
+            // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+            `${api.investorApi}`
+        );
+        const Data = response.data.data;
+        console.log("response: ", Data);
+        let data: CardProps[] = [];
+        //@ts-ignore
+        Data.map((item, index) => {
+            data.push({
+                type: CardTypes.TEAM_CARD,
+                title: item?.name,
+                subTitle: item?.bio,
+                imageUrl: item?.image
+            });
+        });
+
+        await setData(data);
+        await setLoading(false);
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (
@@ -201,7 +232,7 @@ export default function InvestorSection() {
                 <>
                   {
                     //@ts-ignore
-                    _renderTeamViewWeb(TeamData)
+                    _renderTeamViewWeb(_data)
                   }
                 </>
               )}
@@ -240,7 +271,7 @@ export default function InvestorSection() {
         </div>
       </>
     );
-  }, [_isMobile, width]);
+  }, [_isMobile, width, _data, dataTransform]);
 
   return _child;
 }

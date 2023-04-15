@@ -16,9 +16,18 @@
 
 .cardContainerT2 {
     color: #667085;
+    text-align: center;
 }
 
 .cardContainerT3 {
     color: #667085;
     text-align: center;
+}
+
+.noImageContainer {
+    background-color: #F1F3F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
 }

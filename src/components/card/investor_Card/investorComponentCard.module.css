@@ -45,3 +45,11 @@
     /* Grey / Charcoal */
     color: #667085;
 }
+
+.noImageContainer {
+    background-color: #F1F3F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+}

@@ -2,6 +2,7 @@ import { isMobile } from "@/configs/utils";
 import { useMemo } from "react";
 import styles from "./teamComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
+import Image from "next/image";
 
 export const TeamCard: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -23,21 +24,45 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
               ? {
                   paddingTop: 16,
                   height: "fit-content",
-                width: 150
+                  width: 150,
                 }
               : {
                   paddingTop: 16,
                   height: "fit-content",
-                    width: 200
+                  width: 200,
                 }
           }
         >
           <div className={styles.cardContainerImage}>
-            <img
-              src={imageUrl}
-              width={_isMobile ? 88 : 120}
-              height={_isMobile ? 88 : 120}
-            />
+            {imageUrl && imageUrl != "" ? (
+              <img
+                src={imageUrl}
+                width={_isMobile ? 88 : 120}
+                height={_isMobile ? 88 : 120}
+              />
+            ) : (
+              <div
+                className={styles.noImageContainer}
+                style={
+                  _isMobile
+                    ? {
+                        width: 88,
+                        height: 88,
+                      }
+                    : {
+                        width: 120,
+                        height: 120,
+                      }
+                }
+              >
+                <Image
+                  src={"/images/userGrey.svg"}
+                  alt={"user grey image"}
+                  width={48}
+                  height={48}
+                />
+              </div>
+            )}
           </div>
           <div
             style={{
