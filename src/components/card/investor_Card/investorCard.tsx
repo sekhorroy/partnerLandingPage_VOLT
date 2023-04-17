@@ -33,7 +33,12 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
                   cursor: "pointer",
                 }
           }
-          onClick={() => redirectTo(linkedInUrl ? linkedInUrl : "", "_blank")}
+          onClick={() =>
+            redirectTo(
+              linkedInUrl ? linkedInUrl : "",
+              _isMobile ? "_self" : "_blank"
+            )
+          }
         >
           <div className={styles.cardContainerLeft}>
             {imageUrl && imageUrl != "" ? (
