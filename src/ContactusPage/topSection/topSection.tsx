@@ -7,9 +7,9 @@ import { ImageProps } from "@/components/button/type";
 import { string } from "prop-types";
 import { Divider } from "@/components/divider";
 import {
-  helpLineNumberLink,
-  supportEmail,
-  WhatsAppLink,
+    helpLineNumberLink, partnerHelpLineNumber,
+    supportEmail,
+    WhatsAppLink,
 } from "@/configs/constants";
 
 export default function TopSectionContactUs() {
@@ -88,7 +88,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Chat with us"}
                 cta={true}
                 imageUrl={"/images/Whatsapp.svg"}
-                onClickCta={() => redirectTo(WhatsAppLink.help)}
+                onClickCta={() => redirectTo(WhatsAppLink.default)}
               />
               <Card
                 type={CardTypes.CONTACT_US}
@@ -99,7 +99,7 @@ export default function TopSectionContactUs() {
                 ctaLabel={"Let's talk"}
                 cta={true}
                 imageUrl={"/images/call.svg"}
-                onClickCta={() => redirectTo(helpLineNumberLink, "_self")}
+                onClickCta={() => redirectTo(partnerHelpLineNumber, "_self")}
               />
               <Card
                 type={CardTypes.CONTACT_US}

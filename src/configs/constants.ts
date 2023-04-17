@@ -27,11 +27,13 @@ export const BaseLink =
         : "https://staging.voltmoney.in";
 
 export const helpLineNumberLink = "tel:+919611749295";
+export const partnerHelpLineNumber = "tel:+919611749097";
 
 export const supportEmail = "mailto:support@voltmoney.in"
 
 export const WhatsAppLink = {
   help: "https://wa.me/919611749295",
+  default: "https://wa.me/919611749097"
 };
 
 export const Links = {
@@ -48,7 +50,8 @@ export const Links = {
   Facebook: "https://www.facebook.com/people/Volt-Money/100091543358366/",
   Twitter: "https://twitter.com/voltmoney_in",
   Youtube: "https://www.youtube.com/@VoltMoney_In",
-  OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7"
+  OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7",
+  DPIIT: "https://dpiit.gov.in/"
 };
 
 export const api = {

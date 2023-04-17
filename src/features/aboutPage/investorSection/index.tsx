@@ -85,7 +85,6 @@ export default function InvestorSection() {
       `${api.investorApi}`
     );
     const Data = response.data.data;
-    console.log("response: ", Data);
     let data: CardProps[] = [];
     //@ts-ignore
     Data.map((item, index) => {

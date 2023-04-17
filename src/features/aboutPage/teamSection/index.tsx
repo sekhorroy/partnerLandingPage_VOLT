@@ -97,7 +97,6 @@ export default function TeamSection() {
           `${api.teamApi}`
       );
       const Data = response.data.data;
-      console.log("response: ", Data);
       let data: CardProps[] = [];
       //@ts-ignore
       Data.map((item, index) => {
@@ -110,7 +109,6 @@ export default function TeamSection() {
               linkedInUrl: item?.linkedin_url
           });
       });
-
       await setData(data);
       await setLoading(false);
   };
