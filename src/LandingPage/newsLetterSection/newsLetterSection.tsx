@@ -17,6 +17,7 @@ export default function NewsLetterSection() {
   const _isMobile = isMobile();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(undefined);
 
   const getData = async () => {
     setLoading(true);
