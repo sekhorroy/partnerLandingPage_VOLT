@@ -1,19 +1,34 @@
-import {checkRegexEmail, isMobile} from "@/configs/utils";
+import { checkRegexEmail, isMobile } from "@/configs/utils";
 import styles from "./newsLetter.module.css";
-import {TextInput} from "@/components/input";
-import {ButtonComponent} from "@/components/button";
-import {ButtonTypeTokens, ButtonWidthTypeTokens,} from "@/components/button/type";
-import {useEffect, useState} from "react";
-import {InputColorTokens} from "@/components/input/type";
+import { TextInput } from "@/components/input";
+import { ButtonComponent } from "@/components/button";
+import {
+  ButtonTypeTokens,
+  ButtonWidthTypeTokens,
+} from "@/components/button/type";
+import { useEffect, useState } from "react";
+import { InputColorTokens } from "@/components/input/type";
+import { CardProps, CardTypes } from "@/components/card/types";
+import { api } from "@/configs/constants";
+import axios from "axios";
+import { Loader } from "@/components/loader";
 
 export default function NewsLetterSection() {
   const _isMobile = isMobile();
   const [email, setEmail] = useState("");
-  const [emailState, setEmailState] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setEmailState(checkRegexEmail(email));
-  }, [email]);
+  const getData = async () => {
+    setLoading(true);
+    const response = await axios.get(api.newsLetterApi);
+    const Data = response.data.data;
+    console.log("response api data 123 : ", response);
+    setLoading(false);
+  };
+
+  const handleSubscribe = () => {
+    getData();
+  };
 
   return (
     <div
@@ -117,17 +132,27 @@ export default function NewsLetterSection() {
           <TextInput
             label={"Email address"}
             onChange={setEmail}
-            color={checkRegexEmail(email) ? InputColorTokens.SUCCESS : InputColorTokens.ERROR }
+            color={
+              checkRegexEmail(email)
+                ? InputColorTokens.SUCCESS
+                : InputColorTokens.ERROR
+            }
             // helperText={checkRegexEmail(email) ? '' : 'Please enter a valid email address'}
           />
           <ButtonComponent
             label={"Subscribe"}
-            type={!checkRegexEmail(email) ? ButtonTypeTokens.DISABLED_LARGE : ButtonTypeTokens.PRIMARY_LARGE}
+            type={
+              !checkRegexEmail(email)
+                ? ButtonTypeTokens.DISABLED_LARGE
+                : ButtonTypeTokens.PRIMARY_LARGE
+            }
             width={
               _isMobile
                 ? ButtonWidthTypeTokens.FULL
                 : ButtonWidthTypeTokens.CONTENT
             }
+            onClick={() => handleSubscribe()}
+            loading={loading}
           />
         </div>
       </div>

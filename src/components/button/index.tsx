@@ -6,6 +6,7 @@ import {
 import React, { useMemo } from "react";
 import styles from "./button.module.css";
 import Image from "next/image";
+import { Loader } from "@/components/loader";
 
 export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   label = "Test",
@@ -15,6 +16,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   leftIcon = undefined,
   imageUrl,
   fontSize,
+  loading = false,
 }) => {
   const handleClick = () => {
     if (type !== ButtonTypeTokens.DISABLED_LARGE) {
@@ -96,10 +98,21 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           >
             {label}
           </div>
+          {loading ? (
+            <div
+              style={{
+                paddingLeft: 12,
+              }}
+            >
+              <Loader />
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </>
     ),
-    [type, width, label, leftIcon]
+    [type, width, label, leftIcon, loading]
   );
 
   return _child;

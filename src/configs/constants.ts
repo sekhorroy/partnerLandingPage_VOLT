@@ -56,7 +56,8 @@ export const Links = {
 
 export const api = {
   teamApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=volt_team',
-  investorApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=volt_investor'
+  investorApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=volt_investor',
+  newsLetterApi: 'https://v1.nocodeapi.com/admin8volt/google_sheets/YNFFrqVQVSEtAqjj?tabId=newsletter_email'
 }
 
 export enum StoreKey {
