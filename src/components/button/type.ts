@@ -3,7 +3,8 @@ import {string} from "prop-types";
 export enum ButtonTypeTokens {
     PRIMARY_LARGE = 'PRIMARY_LARGE',
     OUTLINE_LARGE ='OUTLINE_LARGE',
-    OUTLINE_TRANSPARENT_LARGE = 'OUTLINE_TRANSPARENT_LARGE'
+    OUTLINE_TRANSPARENT_LARGE = 'OUTLINE_TRANSPARENT_LARGE',
+    DISABLED_LARGE = 'DISABLED_LARGE'
 }
 export enum ButtonWidthTypeTokens {
     CONTENT = 'CONTENT',

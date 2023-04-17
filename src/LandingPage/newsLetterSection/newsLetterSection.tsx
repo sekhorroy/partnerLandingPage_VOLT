@@ -1,21 +1,19 @@
-import { isMobile } from "@/configs/utils";
+import {checkRegexEmail, isMobile} from "@/configs/utils";
 import styles from "./newsLetter.module.css";
-import { TextInput } from "@/components/input";
-import { ButtonComponent } from "@/components/button";
-import {
-  ButtonTypeTokens,
-  ButtonWidthTypeTokens,
-} from "@/components/button/type";
-import {SyntheticEvent, useState} from "react";
+import {TextInput} from "@/components/input";
+import {ButtonComponent} from "@/components/button";
+import {ButtonTypeTokens, ButtonWidthTypeTokens,} from "@/components/button/type";
+import {useEffect, useState} from "react";
+import {InputColorTokens} from "@/components/input/type";
 
 export default function NewsLetterSection() {
   const _isMobile = isMobile();
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
+  const [emailState, setEmailState] = useState(false);
 
-  const handleEmailInput = (e: any) => {
-      setEmail(e.target.value);
-
-  }
+  useEffect(() => {
+    setEmailState(checkRegexEmail(email));
+  }, [email]);
 
   return (
     <div
@@ -98,10 +96,10 @@ export default function NewsLetterSection() {
                   gap: 8,
                   marginTop: 14,
                   maxWidth: 400,
-                    paddingLeft: 16,
-                    paddingRight: 16,
-                    paddingTop: 16,
-                    paddingBottom: 16,
+                  paddingLeft: 16,
+                  paddingRight: 16,
+                  paddingTop: 16,
+                  paddingBottom: 16,
                 }
               : {
                   display: "flex",
@@ -116,10 +114,15 @@ export default function NewsLetterSection() {
                 }
           }
         >
-          <TextInput label={"Email address"} onChange={(e)=>handleEmailInput(e)}/>
+          <TextInput
+            label={"Email address"}
+            onChange={setEmail}
+            color={checkRegexEmail(email) ? InputColorTokens.SUCCESS : InputColorTokens.ERROR }
+            // helperText={checkRegexEmail(email) ? '' : 'Please enter a valid email address'}
+          />
           <ButtonComponent
             label={"Subscribe"}
-            type={ButtonTypeTokens.PRIMARY_LARGE}
+            type={!checkRegexEmail(email) ? ButtonTypeTokens.DISABLED_LARGE : ButtonTypeTokens.PRIMARY_LARGE}
             width={
               _isMobile
                 ? ButtonWidthTypeTokens.FULL

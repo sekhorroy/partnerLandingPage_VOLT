@@ -56,3 +56,22 @@
 
     cursor: pointer;
 }
+
+.buttonDisabled {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px solid #E4E7EC;
+    border-radius: 100px;
+    background-color: #F9FAFB;
+    color: #667085;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: 24px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}

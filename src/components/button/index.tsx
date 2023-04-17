@@ -14,17 +14,23 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   width = ButtonWidthTypeTokens.CONTENT,
   leftIcon = undefined,
   imageUrl,
-    fontSize,
+  fontSize,
 }) => {
   const handleClick = () => {
-    onClick && onClick();
+    if (type !== ButtonTypeTokens.DISABLED_LARGE) {
+      onClick && onClick();
+    }
   };
+
   const styleType =
-    type === ButtonTypeTokens.PRIMARY_LARGE
+    type === ButtonTypeTokens.DISABLED_LARGE
+      ? styles.buttonDisabled
+      : type === ButtonTypeTokens.PRIMARY_LARGE
       ? styles.buttonPrimaryLarge
       : type === ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE
       ? styles.buttonOutlineTransparentLarge
       : styles.buttonOutlineLarge;
+
   const _style =
     width === ButtonWidthTypeTokens.FULL
       ? {
@@ -77,12 +83,18 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           ) : (
             <></>
           )}
-          <div style={fontSize ? {
-              fontSize: fontSize
-          } : {
-              fontSize: 16
-          }}>
-              {label}
+          <div
+            style={
+              fontSize
+                ? {
+                    fontSize: fontSize,
+                  }
+                : {
+                    fontSize: 16,
+                  }
+            }
+          >
+            {label}
           </div>
         </div>
       </>
