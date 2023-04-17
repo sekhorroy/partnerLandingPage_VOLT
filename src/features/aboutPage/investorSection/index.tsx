@@ -7,6 +7,7 @@ import { Carousal, CarousalItem } from "@/components/carousal";
 import axios from "axios";
 import { api } from "@/configs/constants";
 import Image from "next/image";
+import {TextInput} from "@/components/input";
 
 // const TeamData = [
 //   {
@@ -419,11 +420,7 @@ export default function InvestorSection() {
           {/*        <div style={{*/}
           {/*            paddingTop: 24*/}
           {/*        }}>*/}
-          {/*          <ButtonComponent*/}
-          {/*            label={"Check open opportunities"}*/}
-          {/*            type={ButtonTypeTokens.OUTLINE_LARGE}*/}
-          {/*            width={ButtonWidthTypeTokens.FULL}*/}
-          {/*          />*/}
+          {/*          <TextInput />*/}
           {/*        </div>*/}
           {/*      </div>*/}
           {/*    </>*/}

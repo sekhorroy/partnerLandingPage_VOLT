@@ -12,6 +12,7 @@ import Faq, {FaqType} from "./faqs/faqs";
 
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 import {useRouter} from "next/router";
+import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
 
 export default function PartnerLandingPage() {
   const ref_Header = createRef();
@@ -46,7 +47,7 @@ export default function PartnerLandingPage() {
         }}>
           <Faq type={FaqType.PARTNER}/>
         </div>
-
+        <NewsLetterSection />
         <Footer />
       </div>
     );

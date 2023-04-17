@@ -1,0 +1,42 @@
+.newsLetterSectionMainContainer {
+    width: 100%;
+    background-color: #1434CB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsLetterSectionMainContainerC1 {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsLetterSectionMainContainerC1T1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    /* or 133% */
+    text-align: center;
+    color: #FFFFFF
+}
+
+.newsLetterSectionMainContainerC1T2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* or 150% */
+    text-align: center;
+    /* Grey / White */
+    color: #FFFFFF;
+}
+
+.subscriptionContainer {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    width: 100%;
+}
