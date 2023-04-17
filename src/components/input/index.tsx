@@ -13,7 +13,6 @@ export const TextInput: React.FunctionComponent<InputProps> = ({
 }) => {
   const handleOnChange = (e: any) => {
     value = e?.target?.value;
-    console.log("value 123: ", value);
     onChange && onChange(e?.target?.value);
   };
 

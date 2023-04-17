@@ -8,26 +8,52 @@ import {
 } from "@/components/button/type";
 import { useEffect, useState } from "react";
 import { InputColorTokens } from "@/components/input/type";
-import { CardProps, CardTypes } from "@/components/card/types";
 import { api } from "@/configs/constants";
 import axios from "axios";
-import { Loader } from "@/components/loader";
+import { Alert, Snackbar } from "@mui/material";
 
 export default function NewsLetterSection() {
   const _isMobile = isMobile();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(undefined);
+  const [successToastState, setSuccessToastState] = useState(false);
+  const [failureToastState, setFailureToastState] = useState(false);
+
+  const vertical = "top";
+  const horizontal = "center";
+
+  const openSuccessToast = async () => {
+    await setSuccessToastState(true);
+    setTimeout(async () => {
+      await handleClose();
+    }, 3000);
+  };
+  const openFailureToast = async () => {
+    await setFailureToastState(true);
+    setTimeout(async () => {
+      await handleClose();
+    }, 3000);
+  };
+  const handleClose = async () => {
+    await setSuccessToastState(false);
+    await setFailureToastState(false);
+  };
 
   const getData = async () => {
     setLoading(true);
-    const data = [[email]]
+    const data = [[email]];
     const response = await axios.post(api.newsLetterApi, data, {
-        headers: {
-            'Content-type': 'application/json'
-        }
+      headers: {
+        "Content-type": "application/json",
+      },
     });
     const Data = response.data.data;
+    if (response.status === 200) {
+      console.log("Success");
+      openSuccessToast();
+    } else {
+      openFailureToast();
+    }
     console.log("response api data 123 : ", response);
     setLoading(false);
   };
@@ -36,6 +62,7 @@ export default function NewsLetterSection() {
     getData();
   };
 
+  // @ts-ignore
   return (
     <div
       className={styles.newsLetterSectionMainContainer}
@@ -160,6 +187,34 @@ export default function NewsLetterSection() {
             onClick={() => handleSubscribe()}
             loading={loading}
           />
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={successToastState}
+            onClose={handleClose}
+            key={vertical + horizontal}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Subscribed successfully
+            </Alert>
+          </Snackbar>
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={failureToastState}
+            onClose={handleClose}
+            key={vertical + horizontal}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Something went wrong
+            </Alert>
+          </Snackbar>
         </div>
       </div>
     </div>
