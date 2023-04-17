@@ -21,7 +21,12 @@ export default function NewsLetterSection() {
 
   const getData = async () => {
     setLoading(true);
-    const response = await axios.get(api.newsLetterApi);
+    const data = [[email]]
+    const response = await axios.post(api.newsLetterApi, data, {
+        headers: {
+            'Content-type': 'application/json'
+        }
+    });
     const Data = response.data.data;
     console.log("response api data 123 : ", response);
     setLoading(false);
