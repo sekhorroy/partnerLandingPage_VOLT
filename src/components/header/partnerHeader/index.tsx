@@ -67,7 +67,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             }
           >
             <div
-              onClick={() => redirectTo("/", "_self")}
+              onClick={() => redirectTo("/partner", "_self")}
               style={{
                 cursor: "pointer",
                 display: "flex",
@@ -148,7 +148,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   onClick={() => redirectToPartner(url)}
                 >
                   <ButtonComponent
-                    label="Get started"
+                    label="Login"
                     type={ButtonTypeTokens.OUTLINE_LARGE}
                     fontSize={14}
                   />
@@ -215,7 +215,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             }}
             onClick={() => redirectToPartner(url)}
           >
-            Get started
+            Login
           </div>
         </div>
       ) : (
