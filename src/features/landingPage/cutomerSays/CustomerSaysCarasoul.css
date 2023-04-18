@@ -1,0 +1,37 @@
+.CustomerSaysCarasoulContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.CustomerSaysCarasoulLeftButtonContainer {
+    width: fit-content;
+    max-width: 40px;
+}
+
+.CustomerSaysViewContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 270px;
+}
+
+.CustomerSaysCarasoulRightButtonContainer {
+    width: fit-content;
+    max-width: 40px;
+}
+
+.CustomerSaysCarasoultButtonContainer {
+    width: 24px;
+    height: 24px;
+    background-color: #F1F3F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}

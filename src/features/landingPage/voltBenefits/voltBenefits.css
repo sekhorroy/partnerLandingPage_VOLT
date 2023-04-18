@@ -1,0 +1,354 @@
+.VoltBenfitsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+}
+
+.VoltBenfitsContainerImageContainer {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.VoltBenfitsContainerStepItemDivider {
+    width: 60%;
+    min-width: 328px;
+    max-width: 420px;
+    height: 0px;
+    border: 1px solid #E4E7EC;
+}
+
+.VoltBenfitsContainerLeftContainer {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.VoltBenfitsContainerRightContainerFeatureButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+    height: 48px;
+    max-width: 242px;
+    min-width: 200px;
+    /* Primary/100 */
+    background: #1434CB;
+    border-radius: 1000px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    border: none;
+
+    cursor: pointer;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.VoltBenfitsContainerRightContainer {
+    flex: 1;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.VoltBenfitsContainerRightContainerStepItemsContainer {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 24px;
+    max-width: 380px;
+    margin-left: 16px;
+}
+
+.VoltBenfitsContainerImage {
+    width: 328px;
+    height: 362px;
+    background: url("./assets/groupArrow.png") no-repeat;
+    background-size: contain;
+    background-position: 0px 90px;
+}
+
+.VoltBenfitsContainerLeftAutoDebitImage {
+    position: absolute;
+    top: 142rem;
+    left: 30rem;
+}
+
+.VoltBenfitsContainerLeftSecurePayment {
+    position: absolute;
+    top: 139rem;
+    left: 40rem;    
+}
+
+.VoltBenfitsContainerLeftArrowImage {
+    position: absolute;
+    top: 139rem;
+    left: 40rem;    
+}
+
+.VoltBenfitsContainerRightContainerTitle {
+    width: 122px;
+    height: 24px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-transform: uppercase;
+    /* Secondary/100 */
+    color: #667085;
+
+    margin-top: 48px;
+}
+
+.VoltBenfitsContainerRightContainerSubTitle {
+    width: 328px;
+    height: 80px;
+    /* Mobile/Heading/H1/Bold */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+    text-align: center;
+    /* Grey/Night */
+    color: #1D2939;
+    mix-blend-mode: normal;
+
+    margin-top: 16px;
+}
+
+.VoltBenfitsContainerRightContainerStepItems {
+    display: flex;
+    width: 100%;
+    min-width: 328px;
+    margin-top: 20px;
+  
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.VoltBenfitsContainerStepItemsLeft {
+    background: url("./assets/Circle.svg") no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.VoltBenfitsContainerStepItemsTitle { 
+    width: 100%;
+    height: 26px;
+    /* Web/Heading/H4/Semibold */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 144% */
+    /* Grey/Night */
+    color: #1D2939;
+    margin-bottom: 2px;
+    margin-top: 0px;
+}
+
+.VoltBenfitsContainerStepItemsLeftIcon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    bottom: 3px;
+    margin-top: 5px;
+}
+
+.VoltBenfitsContainerStepItemsSubTitle {
+    width: 100%;
+    height: fit-content;
+    /* Web/Body/B2/Regular */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* Grey / Charcoal */
+    color: #667085;
+    max-width: 290px;
+}
+
+
+@media screen and (min-width: 1023px) {
+    .VoltBenfitsContainer {
+        height: 650px;
+        margin-top: 80px;
+    }
+    .VoltBenfitsContainerLeftContainer{
+        visibility: visible;
+        width: 50%;
+        display: flex;
+        flex-direction: row-reverse;
+        height: 100%;
+        align-items: center;
+    }
+    .VoltBenfitsContainerRightContainer{
+        width: 50%;
+        height: fit-content;
+        align-items: flex-start;
+        padding-left: 32px;
+    }
+    .VoltBenfitsContainerImageContainer {
+        display: none;
+    }
+    .VoltBenfitsContainerImageWeb {
+        width:85%;
+        max-height: 600px;
+        max-width: 544px;
+        min-width: 490px;
+        aspect-ratio: 1/1.15;
+    }
+    .VoltBenfitsContainerImage {
+        width: 600px;
+        height: 600px;
+    }
+    .VoltBenfitsContainerRightContainerStepItemsContainer{
+        padding-left: 0px;
+        margin-top: 0px;
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .VoltBenfitsContainerRightContainerStepItems {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+    }
+    .VoltBenfitsContainerStepItemDivider {
+        display: none;
+    }
+    .VoltBenfitsContainerRightContainerTitle{
+        width: 122px;
+        height: 24px;
+    
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+        text-transform: uppercase;
+        /* Grey / Charcoal */
+        color: #667085;
+        position: relative;
+
+        bottom: 18px;
+    }
+    .VoltBenfitsContainerRightContainerSubTitle {
+        text-align: start;
+        width: 391px;
+        height: 40px;
+        /* Web/Heading/H2/Bold */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        /* identical to box height, or 125% */
+        /* Grey/Night */
+        color: #1D2939;
+
+        margin-top: 0px;
+    }
+    .VoltBenfitsContainerRightContainerFeatureButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        width: 200px;
+        height: 48px;
+        /* Primary/100 */
+        background: #1434CB;
+        border-radius: 1000px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: #FFFFFF;
+
+        border: none;
+
+        cursor: pointer;
+    }
+    .VoltBenfitsContainerStepItemsLeft {
+        display: flex;
+        min-width: 64px;
+        max-width: 64px;
+        min-height: 64px;
+        max-height: 64px;
+    }
+    .VoltBenfitsContainerStepItemsSubTitle {
+        font-size: 14px;
+        max-width: 475px;
+    }
+
+    .VoltBenfitsContainerStepItemsLeftIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .VoltBenfitsContainerStepItemsTitle {
+        width: 100%;
+        height: fit-content;
+        /* Web/Heading/H4/Semibold */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        /* identical to box height, or 144% */
+        /* Grey/Night */
+        color: #1D2939;
+        margin-bottom: 2px;
+
+    }
+
+    .VoltBenfitsContainerStepItemsRight {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+}

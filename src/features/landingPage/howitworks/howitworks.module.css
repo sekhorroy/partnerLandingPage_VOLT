@@ -1,0 +1,273 @@
+.HowItWorksContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.HowItWorksContainerTitleContainer {
+    width: 328px;
+    height: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-top: 48px;
+    color: #667085;
+}
+
+.HowItWorksContainerSubTitleContainer {
+    width: fit-content;
+    height: fit-content;
+    /* Mobile/Heading/H1/Bold */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+    text-align: center;
+    /* Grey/Night */
+    color: #1D2939;
+    mix-blend-mode: normal;
+    margin-top: 16px;
+}
+
+.HowItWorksContainerSubTitleContainerMobile {
+    display: flex;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 0px;
+}   
+.HowItWorksContainerSubTitleContainerWeb {
+    display: flex;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.HowItWorksContainerImageContainer {
+    margin-top: 68px;
+    display: none;
+    width: 90%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    height: fit-content;
+    flex-direction: row;
+    gap: 16px;
+   
+}
+
+.HowItWorksContainerButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    width: fit-content;
+
+    background: #1434CB;
+    border-radius: 1000px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    /* Neutral/White */
+    color: #FFFFFF;
+
+    margin-top: 40px;
+    margin-bottom: 0px;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.HowItWorksContainerImageCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 256px;
+    height: 218px;
+    /* Primary/100 */
+    background: #e9f7ec;
+    border-radius: 10px;
+}
+
+.HowItWorksContainerImageCardTitle {
+    width: 224px;
+    height: 26px;
+    /* Web/Heading/H4/Semibold */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    /* identical to box height, or 144% */
+    text-align: center;
+    opacity: 1;
+    /* Grey/Night */
+    color: #1D2939;
+    margin-top: 12px;
+}
+
+.HowItWorksContainerImageCardSubtitle {
+    width: 224px;
+    height: fit-content;
+    /* Web/Body/B2/Regular */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* or 143% */
+    text-align: center;
+    /* Grey / Charcoal */
+    color: #667085;
+    margin-top: 8px;
+}
+
+.HowItWorksContainerImageCardIconNumber1 {
+    position: relative;
+    right: 95px;
+    top: 10px;
+    opacity: 0.25;
+    height: 0px;
+}
+
+.HowItWorksContainerImageCardIconNumber2 {
+    position: relative;
+    right: 85px;
+    top: 10px;
+    opacity: 0.25;
+    height: 0px;
+}
+
+.HowItWorksContainerImageCardIconNumber3 {
+    position: relative;
+    right: 85px;
+    top: 10px;
+    opacity: 0.25;
+    height: 0px;
+}
+
+.HowItWorksContainerImageCardIconNumber4 {
+    position: relative;
+    right: 83px;
+    top: 10px;
+    opacity: 0.25;
+    height: 0px;
+}
+
+.HowItWorksContainerButtonContainerMobileView {
+    display: flex;
+    gap: 38px;
+    margin-top: 25px;
+}
+
+.HowItWorksContainerImageContainerMob {
+    display: flex;
+}
+
+@media screen and (min-width: 1023px) {
+    .HowItWorksContainerImageContainer {
+        overflow: visible;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+    .HowItWorksContainerImageContainerMob {
+        display: none;
+    }
+    .HowItWorksContainerTitleContainer {
+        margin-top: 70px;
+    }
+
+    .HowItWorksContainerSubTitleContainer {
+        width: fit-content;
+        height: fit-content;
+    }
+    .HowItWorksContainerImageContainer {
+        margin-top: 70px;
+        height: 218px;
+        gap: 32px;
+        width: 100%;
+    }
+
+    .HowItWorksContainerButtonContainerMobileView {
+        display: none;
+    }
+
+    .HowItWorksContainerImageCardIconNumber1{
+        height: 10px;
+        width: 0px;
+        position: relative;
+        right: 50%;
+        opacity: 0.25;
+    }
+
+    .HowItWorksContainerButtonContainer {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: #1434CB;
+        border-radius: 1000px;
+       
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+        text-align: center;
+        /* Neutral/White */
+        color: #FFFFFF;
+
+        margin-top: 64px;
+        margin-bottom: 0px;
+
+        border: none;
+
+        cursor: pointer;
+    }
+    .HowItWorksContainerSubTitleContainerMobile {
+        display: none;
+    }   
+    .HowItWorksContainerSubTitleContainerWeb {
+        display: flex;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .HowItWorksContainerImageCard {
+
+    }
+}

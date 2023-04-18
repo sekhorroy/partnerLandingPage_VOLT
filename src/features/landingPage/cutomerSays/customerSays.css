@@ -1,0 +1,273 @@
+.CustomerSaysContainer {
+    flex-direction: column; 
+    width: 95%;
+    justify-content: center;
+    margin-bottom: 90px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.CustomerSaysTitle {
+    width: 100%;
+    height: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    text-align: center;
+    text-transform: uppercase;
+    /* Grey / Charcoal */
+    color: #667085;
+    margin-top: 60px;
+}
+
+.CustomerSaysSubTitle {
+    width: 100%;
+    height: 80px;
+    /* Mobile/Heading/H1/Bold */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+    text-align: center;
+    /* Grey/Night */
+    color: #1D2939;
+    mix-blend-mode: normal
+}
+
+.CustomerSaysItemContainer {
+    display: none;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    overflow: scroll;
+    margin-top: 24px;
+}
+
+.CustomerSaysItem {
+    width: 259px;
+    height: 336px;
+    display: flex;
+    flex-direction: column;
+
+    background: #F9FAFB;
+    /* Grey/Milk+1 */
+
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #F1F3F5;
+    border-radius: 0px 0px 8px 8px;
+
+    border-radius: 10px;
+}
+
+.CustomerSaysItemTestimony {
+    width: 227px;
+    height: 72px;
+    /* Mobile/Body/Normal/B1/Medium */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+    /* Grey/Night */
+    color: #1D2939;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.CustomerSaysItemImageContainer {
+    width: 100%;
+    height: 50%;
+}
+
+.CustomerSaysItemImage {
+    width: 100%;
+    height: 100%;
+}
+
+.CustomerSaysItemIdentityName {
+    width: 100%;
+    height: 24px;
+    /* Web/Body/B1/Regular */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* Grey/Night */
+    color: #1D2939;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.CustomerSaysItemIdentityPlace {
+    margin-left: 16px;
+    /* Web/Body/B2/Regular */
+    width: 62px;
+    height: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    /* Grey / Charcoal */
+    color: #667085;
+    margin-bottom: 16px;
+    /* Inside auto layout */
+   
+}
+
+.CustomerSaysItemDivider {
+    height: 1px;
+    width: 210px;
+    background: #E4E7EC;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.CustomerSaysContainerMob {
+    display: flex;
+}
+
+.CustomerSaysButtonContainerWeb {
+    display: none;
+}
+
+
+@media screen and (min-width: 1023px) {
+    .CustomerSaysContainer {
+        padding-left: 0px;
+        width: 100%;
+        margin-bottom: 0px;
+        display: flex;
+    }
+    .CustomerSaysContainerMob {
+        display: none;
+    }
+    .CustomerSaysItemContainer {
+        display: flex;
+        margin-left: 80px;
+        gap: 32px;
+        width: 92%;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+    .CustomerSaysItem {
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 0px;
+    }
+    .CustomerSaysItemIdentityPlace {
+        margin-bottom: 24px;
+    }
+    .CustomerSaysTitle {
+        width: 550px;
+        height: fit-content;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+        text-transform: uppercase;
+        /* Grey / Charcoal */
+        color: #667085;
+        /* Inside auto layout */
+        
+        display: flex;
+        align-items: flex-start;
+
+        margin-left: 80px;
+    }
+    .CustomerSaysSubTitle {
+        width: 550px;
+        height: fit-content;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        color: #1D2939;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 80px;
+        margin-top: 16px;
+    }
+
+    .CustomerSaysItemTestimony {
+        width: 304px;
+        height: 78px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        /* or 144% */
+
+
+        /* Grey/Night */
+
+        color: #1D2939;
+    }
+    .CustomerSaysItemIdentity {
+        
+    }
+
+    .CustomerSaysItemDivider {
+        width: 304px;
+    }
+
+    .CustomerSaysSubTitleWebBreaks {
+        display: none;
+    }
+    .CustomerSaysItemImageContainer {
+        width: 352px;
+    }
+    .CustomerSaysItemIdentityName {
+        width: 195px;
+        height: 24px;
+        /* Web/Body/B1/Regular */
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        /* identical to box height, or 150% */
+        /* Grey/Night */
+        color: #1D2939;
+    }
+    .CustomerSaysButtonContainerWeb {
+        display: flex;
+
+    }
+    .CustomerSaysSubTitleContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 80px;
+    }
+    .CustomerSaysImageContainer {
+        background: #F1F3F5;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+    }
+}

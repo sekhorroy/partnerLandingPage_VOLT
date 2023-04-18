@@ -1,0 +1,428 @@
+.PhoneNumberFooterRoot {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+.PhoneNumberFooter_Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    /* Primary/05 */
+    background: #F3F5FC;
+    box-shadow: 0px 30px 70px -20px rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    
+}
+
+.PhoneNumberFooterMobileInputWebContainer {
+    width: 90%;
+    max-width: 333px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PhoneNumberFooterMobileTitle{
+    width: 100%;
+    height: 64px;
+    /* Web/Heading/H3/Semibold */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+    /* Grey/Night */
+    color: #1D2939;
+    mix-blend-mode: normal;
+    text-align: center;
+}
+
+.PhoneNumberFooterMobileInputContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PhoneNumberFooterMobileInput {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PhoneNumberFooterMobileInputText {
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 12px 12px 16px;
+    gap: 16px;
+    width: 90%;
+    height: 48px;
+    /* Grey / White */
+    background: #FFFFFF;
+    /* Grey / Smoke */
+    border: 1px solid #98A2B3;
+    border-radius: 4px;
+    margin-top: 32px;
+}
+
+.PhoneNumberFooterMobileWhatsAppIconContainer {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.PhoneNumberFooterMobileButtonContainer {
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+
+    width: fit-content;
+    height: 40px;
+    /* Grey / White */
+    background: #FFFFFF;
+    /* Primary/100 */
+    border: 1px solid #1434CB;
+    border-radius: 1000px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    /* Primary/100 */
+    color: #1434CB;
+}
+
+.PhoneNumberFooterMobileInputImageContainer {
+    display: flex;
+    height: 240px;
+    width: 380px;
+    justify-content: center;
+    background-image: url('./assets/mobile_illustration.svg');
+    background-repeat: no-repeat;
+    -webkit-background-size: contain; /* For WebKit*/
+    -moz-background-size: contain;    /* Mozilla*/
+    -o-background-size: contain;      /* Opera*/
+    background-size: contain;
+    position: relative;
+
+}
+
+.PhoneNumberFooterMobileInputImageContainer_Image {
+    width: 100%;
+    max-width: 356px;
+    margin-top: 40px;
+}
+
+.PhoneNumberFooterMobileWhatsAppContainerMobileView {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+    width: 153px;
+    height: 40px;
+    /* Grey / White */
+    background: #FFFFFF;
+    /* Primary/100 */
+    border-radius: 1000px;
+
+    /**/
+    position: relative;
+    bottom: 55px;
+    left: 85px;
+
+    padding: 9px 2px;
+   
+    border: 1px solid #1434CB;
+
+    cursor: pointer;
+}
+.PhoneNumberFooterMobileWhatsAppTextContainer {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* Primary/100 */
+    color: #1434CB;
+}
+
+.PhoneNumberFooterMobileWhatsAppTextContainer {
+    width: 150px;
+}
+
+.PhoneNumberFooter_WebContainer {
+    display: none;
+}
+.PhoneNumberFooterWebViewSpan {
+    visibility: hidden;
+    display: none;
+}
+
+@media screen and (min-width: 1023px) {
+    .PhoneNumberFooterRoot {
+        margin-top: 200px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .PhoneNumberFooterMobileWhatsAppContainerMobileView {
+        display: none;
+    }
+    .PhoneNumberFooter_Container {
+        max-width: 1120px;
+        height: 256px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 80px;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: visible;
+    }
+    .PhoneNumberFooter_WebContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+    .PhoneNumberFooter_WebContainer_Left {
+        width: 100%;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:flex-start;
+    }
+    .PhoneNumberFooter_WebContainer_Right {
+        display: flex;
+        justify-content: flex-start;
+        width: 40%;
+        padding-right: 80px;
+        margin-left: 224px;
+    }
+    .PhoneNumberFooterMobileInputContainer {
+        width: 50%;
+        height: 160px;
+        margin-right: 130px;
+    }
+    .PhoneNumberFooterMobileViewSpan {
+        display: none;
+    }
+    .PhoneNumberFooterMobileTitle {
+        width: 453px;
+        height: 80px;
+        /* Web/Heading/H2/Semibold */
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+        /* or 125% */
+        /* Grey/Night */
+        color: #1D2939;
+
+        margin-top: 10px;
+    }
+    .PhoneNumberFooterMobileInput {
+        width: 320px;
+    }
+    .PhoneNumberFooterMobileButtonContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 8px;
+
+        height: 48px;
+        /* Primary/100 */
+
+        background: #1434CB;
+        border-radius: 1000px;
+        color: white;
+
+        position: relative;
+        top: 8px;
+
+        cursor: pointer;
+    }
+    .PhoneNumberFooterMobileInputImageContainer{
+        border-radius: 23px;
+        align-items: center;
+        height: 315px;
+        min-width: 458px;
+        max-width: 400px;
+        background-image: url('./assets/mobile_illustration.svg');
+        background-repeat: no-repeat;
+        -webkit-background-size: contain; /* For WebKit*/
+        -moz-background-size: contain;    /* Mozilla*/
+        -o-background-size: contain;      /* Opera*/
+        background-size: contain;         /* Generic*/
+        position: relative;
+        bottom: 10px;
+        right: 50px;
+    }
+
+    .PhoneNumberFooterMobileInputImageContainer_Image {
+
+    }
+
+
+    .PhoneNumberFooter_WebContainer {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 97%;
+        
+        height: fit-content;
+        /* Grey/Milk */
+        background: #F9FAFB;
+        box-shadow: 0px 30px 70px rgba(0, 0, 0, 0.02);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .PhoneNumberFooter_WebContainer_Title {
+        width: 600px;
+        height: fit-content;
+        /* Web/Heading/H2/Semibold */
+        display: flex;
+        justify-content: flex-start;
+        
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+        /* or 125% */
+        /* Grey/Night */
+        color: #1D2939;
+
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+    .PhoneNumberFooter_WebContainer_SubTitle {
+        width: 600px;
+        height: fit-content;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        /* Grey / Charcoal */
+        color: #667085;
+        
+        margin-top: 16px;
+        margin-bottom: 40px;
+    }
+    .PhoneNumberFooterMobileWhatsAppContainer {
+        box-sizing: border-box;
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 12px 12px;
+        gap: 8px;
+
+        width: 350px;
+        height: fit-content;
+        /* Grey/Milk */
+        background: #F9FAFB;
+        /* Grey / Charcoal */
+        border: 1px solid #667085;
+        border-radius: 1000px;  
+
+        margin-right: 200px;
+
+    }
+    .PhoneNumberFooterMobileWhatsAppTextContainer {
+        width: 150px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+    }
+    .PhoneNumberFooterWebViewSpan {
+        visibility: visible;
+        display: block;
+    }
+
+    .PhoneNumberFooterMobileWhatsAppContainerWeb {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        min-width: 212px;
+        max-width: 212px;
+        width: 100%;
+        height: 48px;
+        /* Grey/Milk */
+        background: #F9FAFB;
+        /* Grey / Charcoal */
+        border: 1px solid #1434CB;
+        border-radius: 1000px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+        /* identical to box height, or 157% */
+        /* Grey/Night */
+        color: #1434CB;
+        cursor: pointer;
+    }
+    .PhoneNumberFooterMobileWhatsAppIconContainerWeb {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .PhoneNumberFooterMobileInputWebContainer {
+        width: 212px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: 17%;
+    }
+}

@@ -1,0 +1,126 @@
+.PartnerContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.OurLendingPartnerContainer {
+    width: 100%;
+    max-width: 731px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 32px;
+    gap: 16px;
+    overflow: scroll;
+}
+
+.OurLendingPartnerContainerWeb {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.OurLendingPartnerContainerBodylogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 36px;
+    background:#F9FAFB;
+    border-radius: 4px;
+}
+
+.OurLendingPartnerContainerBodylogoContainerImage {
+    width: 88px;
+    height: 36px;
+}
+
+.OurLendingPartnerContainerWebBottomContainer {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.OurLendingPartnerContainerWebTopContainer {
+    display: flex;
+    /* Web/Body/B2/Medium */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    justify-content: center;
+    align-items: center;
+    /* identical to box height, or 143% */
+    /* Grey / Charcoal */
+    color: #667085;
+    /* Inside auto layout */
+}
+
+@media screen and (min-width: 1023px) {
+    .PartnerContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .OurLendingPartnerContainer {
+        flex-wrap: nowrap;
+        gap: 32px;
+        margin-top: 40px;
+        display: none;
+    }
+    .OurLendingPartnerContainerBodylogoContainer {
+        width: fit-content;
+        height: fit-content;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    .OurLendingPartnerContainerBodylogoContainerImage {
+        width: 160px;
+        height: 64px;
+    }
+
+    .OurLendingPartnerContainerWeb {
+        display: block;
+        margin-top: 32px;
+        width: fit-content;
+    }
+    .OurLendingPartnerContainerWebTopContainer {
+        display: flex;
+        /* Web/Body/B2/Medium */
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        justify-content: center;
+        align-items: center;
+        /* identical to box height, or 143% */
+        /* Grey / Charcoal */
+        color: #667085;
+        /* Inside auto layout */
+    }
+    .OurLendingPartnerContainerWebBottomContainer {
+        display: flex;
+        gap: 32px;
+        margin-top: 12px;
+    }
+}

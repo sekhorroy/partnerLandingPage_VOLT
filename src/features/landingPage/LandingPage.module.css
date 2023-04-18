@@ -1,0 +1,132 @@
+.header_Container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+
+    position: sticky;
+    z-index: 5;
+    left: 0px;
+    top: 0px;
+}
+
+.phoneNumberHeader_Container {
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.partner_Container {
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.howitworks_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.voltBenefits_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.eligible_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.customerSays_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.Faq_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+.phoneNumberFooter_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.footer_Container {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+}
+
+.whatAppStickyMobileContainerHeader {
+    display: inline;
+    height: 0px;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+}
+
+.whatAppStickyWebContainerHeader {
+    display: none;
+}
+
+@media screen and (min-width: 1023px) {
+    .whatAppStickyMobileContainerHeader {
+        display: flex;
+    }
+    .whatAppStickyWebContainerHeader {
+        display: block;
+        height: 0px;
+        width: fit-content;
+        position: fixed;
+        bottom: 100px;
+        right: 100px;
+    }
+    .PhoneNumberFooterMobileWhatsAppContainerWebHeader {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        border: 1px solid red;
+        width: fit-content;
+        /* Grey/Milk */
+        background: #F9FAFB;
+        justify-content: center;
+        /* Grey / Charcoal */
+        border: 1px solid #1434CB;
+        border-radius: 1000px;
+        /* identical to box height, or 157% */
+        /* Grey/Night */
+        color: #1434CB;
+        cursor: pointer;
+        padding: 12px 16px;
+    }
+    .PhoneNumberFooterMobileWhatsAppIconContainerWebHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .PhoneNumberFooterMobileWhatsAppTextContainerWebHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

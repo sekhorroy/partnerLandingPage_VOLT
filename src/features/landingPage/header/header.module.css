@@ -1,0 +1,250 @@
+.headerContainer {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    background: #F3F5FC;
+    box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+}
+
+.headerLeftContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.a:link{
+    text-decoration: none!important;
+    color: #1D2939;
+}
+.a:visited{
+    text-decoration: none!important;
+    color: #1D2939;
+}
+
+.headerLeftContainerLinks {
+    display: none;
+}
+
+.headerLeftContainerLinksMobileView {
+    position: absolute;
+}
+
+.headerRightContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.headerLeftContainerWebItems {
+    display: none;
+}
+
+.headerRightContainerMobileItems {
+    visibility: visible;
+    height: 18px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltIconContainer {
+    margin-top: 16px;
+    margin-left: 16px;
+    display: flex;
+    justify-content:flex-start;
+
+    position: relative;
+    bottom: 8px;
+
+}
+
+.headerLeftContainerLinksMobileMenu {
+    position: absolute;
+    top: 45px;
+    right: 15px;
+    z-index: 3;
+
+    width: 250px;
+    height: fit-content;
+    
+    background-color: white;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-box-shadow: 4px 10px 54px -28px rgba(0,0,0,0.23);
+    -moz-box-shadow: 4px 10px 54px -28px rgba(0,0,0,0.23);
+    box-shadow: 4px 10px 54px -28px rgba(0,0,0,0.23);
+}
+
+.headerLeftContainerLinksMobileMenuItemsContainer {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    text-align: center;
+    /* Grey/Night */
+    color: #1D2939;
+}
+
+.headerLeftContainerLinksMobileMenuItem {
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+    text-align: start;
+}
+
+.headerLeftContainerLinksMobileMenuItemDivider {
+    width: 100%;
+    border: 1px solid #E4E7EC;
+    opacity: 0.25;
+}
+
+
+/*Web View*/
+@media screen and (min-width: 1023px) {
+    .voltIconContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+
+    }    
+    .voltIconContainerImage {
+
+    }
+    .headerContainer {
+        background: #F3F5FC;
+        box-shadow: 0px 1px 6px rgba(208, 213, 221, 0.25);
+        border-radius: 8px;
+        position: sticky;
+        top: 0px;
+    }
+    .headerLeftContainerLinks {
+        visibility: visible;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        /* Grey/Night */
+        color: #1D2939;
+    }
+    .voltIconContainer {
+        margin-top: 16px;
+        margin-left: 16px;
+    }
+    .headerRightContainerMobileItems {
+        visibility: hidden;
+    }
+    .headerLeftContainerWebItems {
+        visibility: visible;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 16px;
+        margin-top: 16px;
+        gap: 32px;
+    }
+    .headerLeftContainer {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 400px;
+        width: 100%;
+    }
+    .headerRightContainer {
+        margin-right: 16px;
+        justify-content: flex-end;
+        width: 100%;
+        min-width: 600px;
+        max-width: 750px;
+    }
+    .headerRightContainerGetStartedButton {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 8px;
+        width: fit-content;
+        height: 40px;
+        /* Primary/05 */
+        background: #F3F5FC;
+        /* Primary/100 */
+        border: 1px solid #1434CB;
+        border-radius: 1000px;
+        /* Inside auto layout */
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+        /* identical to box height, or 157% */
+        /* Primary/100 */
+        color: #1434CB;
+
+        cursor: pointer;
+    }
+    .headerRightContainerLeftItems {
+        width: 75px;
+        height: 20px;
+        /* Web/Body/B2/Medium */
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        text-align: center;
+        /* Grey/Night */
+        color: #1D2939;
+    }
+    .headerLeftContainerLinks{
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        
+        justify-content: center;
+
+        text-decoration: none;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+        /* Grey/Night */
+        color: #1D2939;
+    }
+    
+}

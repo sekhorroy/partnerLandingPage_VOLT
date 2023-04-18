@@ -1,0 +1,71 @@
+.HowItWorksCarasoulContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+
+    border: 1px solid red;
+}
+
+.HowItWorksCarasoulLeftButtonContainer {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+.HowItWorksCarasoulSaysViewContainer {
+    width: 80%;
+    border: 1px solid red;
+}
+
+.HowItWorksCarasoulRightButtonContainer {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+.HowItWorksCarasoulButtonContainer {
+    width: 24px;
+    height: 24px;
+    background-color: #F1F3F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.HowItWorksContainerImageCard {
+    width: 256px;
+    height: 218px;
+}
+
+.HowItWorksContainerImageCardIconNumber-0 {
+    position: relative;
+    height: 0px;
+    right: 110px;
+    opacity: 0.25;
+}
+.HowItWorksContainerImageCardIconNumber-1 {
+    position: relative;
+    height: 0px;
+    right: 102px;
+    opacity: 0.25;
+}
+.HowItWorksContainerImageCardIconNumber-2 {
+    position: relative;
+    height: 0px;
+    right: 102px;
+    opacity: 0.25;
+}
+.HowItWorksContainerImageCardIconNumber-3 {
+    position: relative;
+    height: 0px;
+    right: 100px;
+    opacity: 0.25;
+}

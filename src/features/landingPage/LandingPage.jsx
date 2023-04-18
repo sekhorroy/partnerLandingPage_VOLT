@@ -1,0 +1,99 @@
+import styles from './LandingPage.module.css';
+import * as React from "react";
+import Header from './header/header';
+import {useEffect, useRef} from "react";
+import {WhatsAppLink} from "@/configs/constants";
+import PhoneNumberHeader from "@/features/landingPage/phoneNumberHeader/PhoneNumberHeader";
+import Partner from "@/LandingPage/partnerSection/partnerSection";
+import Howitworks from "@/features/landingPage/howitworks/howitworks";
+
+function VoltLandingPage() {
+
+    const ref_Header = useRef();
+    const ref_Partner = useRef();
+    const ref_HIW = useRef();
+    const ref_Benefits = useRef();
+    const ref_Faq = useRef();
+    const ref_ContactUs = useRef();
+
+    const handleWhatAppClick = () => {
+        window.open(WhatsAppLink.help, '_blank' )
+    }
+
+    useEffect(()=>{
+        if (window &&
+            window.location &&
+            window.location.hash &&
+            window.location.hash !== '') {
+            if(window.location.hash === '#faq') {
+                ref_Faq.current.scrollIntoView();
+            } else if(window.location.hash === '#how_it_works') {
+                ref_HIW.current.scrollIntoView();
+            } else if(window.location.hash === '#volt_benefits') {
+                ref_Benefits.current.scrollIntoView();
+            } else if(window.location.hash === '#footer') {
+                ref_ContactUs.current.scrollIntoView();
+            }
+        }
+    }, []);
+
+
+    return (
+            <div className="App">
+                <div id="header" ref={ref_Header} className={styles.header_Container}>
+                    <Header />
+                </div>
+                <div id="header" className={styles.phoneNumberHeader_Container}>
+                    <PhoneNumberHeader />
+                </div>
+                <div id="partner" ref={ref_Partner} className={styles.partner_Container}>
+                    <Partner />
+                </div>
+                <div id="how_it_works" ref={ref_HIW} className={styles.howitworks_Container}>
+                    <Howitworks />
+                </div>
+                {/*<div id="volt_benefits" ref={ref_Benefits} className={styles.voltBenefits_Container}>*/}
+                {/*    <VoltBenefits />*/}
+                {/*</div>*/}
+                {/*<div id="eligible" className={styles.eligible_Container}>*/}
+                {/*    <Eligible />*/}
+                {/*</div>*/}
+                {
+                    /*
+                      <div id="customer_testimony" className="customerSays_Container">
+                         <CustomerSays />
+                      </div>
+                    */
+                }
+                {/*<div id="faq" ref={ref_Faq} className={styles.Faq_Container}>*/}
+                {/*    <Faqs />*/}
+                {/*</div>*/}
+                {/*<div id="" className={styles.phoneNumberFooter_Container}>*/}
+                {/*    <PhoneNumberFooter />*/}
+                {/*</div>*/}
+                {/*<div id="footer" ref={ref_ContactUs} className={styles.footer_Container}>*/}
+                {/*    <Footer />*/}
+                {/*</div>*/}
+                {/*<div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>*/}
+                {/*    <img style={{width: 75, height: 75}} src={whatsAppStick} alt="whatapp sticky mobile"/>*/}
+                {/*</div>*/}
+                {
+                    /*
+                    <div className="whatAppStickyWebContainerHeader" onClick={() => handleWhatAppClick()}>
+                        <button className="PhoneNumberFooterMobileWhatsAppContainerWebHeader"
+                                onClick={() => handleWhatAppClick()}>
+                            <div className="PhoneNumberFooterMobileWhatsAppIconContainerWebHeader">
+                                <img src={whatsAppIcon} alt=""/>
+                            </div>
+                            <div className="PhoneNumberFooterMobileWhatsAppTextContainerWebHeader">
+                                Chat with us
+                            </div>
+                        </button>
+                    </div>
+                    */
+                }
+            </div>
+    );
+}
+
+export default VoltLandingPage;
