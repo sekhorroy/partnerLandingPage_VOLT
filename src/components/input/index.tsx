@@ -29,6 +29,7 @@ export const TextInput: React.FunctionComponent<InputProps> = ({
           color={color}
           error={value !== "" ? error : false}
           onChange={(event) => handleOnChange(event)}
+          value={value}
           // helperText={helperText === "" ? "" : helperText}
         />
       </div>

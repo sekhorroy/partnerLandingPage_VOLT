@@ -49,8 +49,8 @@ export default function NewsLetterSection() {
     });
     const Data = response.data.data;
     if (response.status === 200) {
-      console.log("Success");
       openSuccessToast();
+      await setEmail("");
     } else {
       openFailureToast();
     }
@@ -168,8 +168,9 @@ export default function NewsLetterSection() {
             color={
               checkRegexEmail(email)
                 ? InputColorTokens.SUCCESS
-                : InputColorTokens.ERROR
+                : InputColorTokens.PRIMARY
             }
+            value={email}
             // helperText={checkRegexEmail(email) ? '' : 'Please enter a valid email address'}
           />
           <ButtonComponent
