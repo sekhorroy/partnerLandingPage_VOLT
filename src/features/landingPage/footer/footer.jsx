@@ -1,12 +1,6 @@
 import styles from "./footer.module.css";
-import React, { location } from "react";
-import InstagramLogo from './assets/Instagram.svg'
-import TwitterLogo from './assets/twitter.svg'
-import LinkedInLogo from './assets/LinkedIn.svg'
-import VoltLogo from './assets/VoltIcon.svg'
-import StartUp from './assets/startUpIndia.svg'
-import StartUpRegistratin from './assets/startUpRegistration.svg'
-import {isMobile} from "@/configs/utils";
+import React from "react";
+import {isMobile, redirectTo, redirectToPrivacy} from "@/configs/utils";
 import {Links} from "@/configs/constants";
 
 function Footer() {

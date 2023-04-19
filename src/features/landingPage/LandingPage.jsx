@@ -29,6 +29,10 @@ function VoltLandingPage() {
         window.open(WhatsAppLink.help, '_blank' )
     }
 
+    const handleWhatAppClickInvestor = () => {
+        window.open(WhatsAppLink.default, '_blank' )
+    }
+
     useEffect(()=>{
         if (window &&
             window.location &&
@@ -91,7 +95,7 @@ function VoltLandingPage() {
                 <div id="footer" ref={ref_ContactUs} className={styles.footer_Container}>
                     <Footer />
                 </div>
-                <div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>
+                <div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClickInvestor()}>
                     <img style={{width: 75, height: 75}} src={'./images/whatappSticky.svg'} alt="whatapp sticky mobile"/>
                 </div>
                 {
