@@ -51,7 +51,8 @@ export const Links = {
   Twitter: "https://twitter.com/voltmoney_in",
   Youtube: "https://www.youtube.com/@VoltMoney_In",
   OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7",
-  DPIIT: "https://dpiit.gov.in/"
+  DPIIT: "https://dpiit.gov.in/",
+  AppPlayStore : 'https://voltm.app.link/get_volt_money'
 };
 
 export const api = {
