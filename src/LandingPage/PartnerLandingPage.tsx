@@ -1,6 +1,6 @@
 import styles from "./PartnerLandingPage.module.css";
 import { Header } from "@/components/header";
-import { getScreenX } from "@/configs/utils";
+import {getScreenX, handleWhatAppClick} from "@/configs/utils";
 import {createRef, useEffect, useMemo, useRef, useState} from "react";
 import TopSection from "@/LandingPage/topSection/topSection";
 import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
@@ -13,6 +13,7 @@ import Faq, {FaqType} from "./faqs/faqs";
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 import {useRouter} from "next/router";
 import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
+import * as React from "react";
 
 export default function PartnerLandingPage() {
 
@@ -37,6 +38,9 @@ export default function PartnerLandingPage() {
         </div>
         <NewsLetterSection />
         <Footer />
+        <div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>
+          <img style={{width: 75, height: 75}} src={'./images/whatappSticky.svg'} alt="whatapp sticky mobile"/>
+        </div>
       </div>
     );
   }, []);

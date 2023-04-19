@@ -1,5 +1,7 @@
 import Head from "next/head";
 import PartnerLandingPage from "@/LandingPage/PartnerLandingPage";
+import styles from "@/features/landingPage/LandingPage.module.css";
+import * as React from "react";
 
 export default function Contactus() {
     return (

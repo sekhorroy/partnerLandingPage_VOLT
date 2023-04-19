@@ -9,3 +9,10 @@
    font-weight: 200;
    font-size: 24px;
 }
+.whatAppStickyMobileContainerHeader {
+   display: inline;
+   height: 0px;
+   position: fixed;
+   bottom: 90px;
+   right: 20px;
+}
