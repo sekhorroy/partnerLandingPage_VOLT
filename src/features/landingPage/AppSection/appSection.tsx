@@ -13,7 +13,7 @@ export const AppSection = () => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                  paddingTop: 40,
+                paddingTop: 40,
                 paddingLeft: 40,
                 paddingRight: 40,
                 paddingBottom: 22,
@@ -40,9 +40,7 @@ export const AppSection = () => {
             style={
               _isMobile
                 ? { textAlign: "center", paddingTop: 54, fontWeight: 400 }
-                : {
-
-                  }
+                : {}
             }
           >
             Download volt money
@@ -66,7 +64,7 @@ export const AppSection = () => {
                 ? {
                     display: "flex",
                     flexDirection: "row",
-                    gap: 26,
+                    gap: 16,
                     paddingTop: 24,
                     justifyContent: "center",
                   }
@@ -79,13 +77,17 @@ export const AppSection = () => {
             }
           >
             <div>
-              <img src={"./images/getItOnGoogle.svg"} width={166} height={48} />
+              <img
+                src={"./images/getItOnGoogle.svg"}
+                width={_isMobile ? 139 : 166}
+                height={_isMobile ? 40 : 48}
+              />
             </div>
             <div>
               <img
                 src={"./images/downloadOnAppStore.svg"}
-                width={166}
-                height={48}
+                width={_isMobile ? 139 : 166}
+                height={_isMobile ? 40 : 48}
               />
             </div>
           </div>
@@ -131,18 +133,24 @@ export const AppSection = () => {
         ) : (
           <></>
         )}
-        {_isMobile ? (<>
-            <div style={{
-                paddingTop: 12
-            }}>
-                <img
-                    src={"./images/iPhoneDoubleStylizedMockup.svg"}
-                    width={424}
-                    height={400}
-                    className={styles.test}
-                />
+        {_isMobile ? (
+          <>
+            <div
+              style={{
+                paddingTop: 12,
+              }}
+            >
+              <img
+                src={"./images/iPhoneDoubleStylizedMockup.svg"}
+                width={300}
+                height={283}
+                className={styles.test}
+              />
             </div>
-        </>) : (<></>)}
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
