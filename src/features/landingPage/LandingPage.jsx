@@ -10,7 +10,7 @@ import VoltBenefits from "@/features/landingPage/voltBenefits/voltBenefits";
 import Eligible from "@/features/landingPage/eligible/eligible";
 import Faqs from "@/LandingPage/faqs/faqs";
 import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNumberFooter";
-import Footer from "@/LandingPage/footer/footer";
+import Footer from "@/features/landingPage/footer/footer";
 
 function VoltLandingPage() {
 

@@ -1,75 +1,73 @@
-import "./footer.css";
+import styles from "./footer.module.css";
 import React, { location } from "react";
-import {EXTERNAL_URLS, redirectToPrivacy} from "../../configs/config";
-import {isMobile, redirectTo} from "../../configs/utils";
-import {Links} from "../../configs/constant";
-
 import InstagramLogo from './assets/Instagram.svg'
 import TwitterLogo from './assets/twitter.svg'
 import LinkedInLogo from './assets/LinkedIn.svg'
 import VoltLogo from './assets/VoltIcon.svg'
 import StartUp from './assets/startUpIndia.svg'
 import StartUpRegistratin from './assets/startUpRegistration.svg'
+import {isMobile} from "@/configs/utils";
+import {Links} from "@/configs/constants";
 
 function Footer() {
     const _isMobile = isMobile();
 
     return (
         <div
-            className="FooterContainer"
+            className={styles.FooterContainer}
             style={{
                 paddingTop: 40,
             }}
         >
             <div
-                className="FooterContainer_Top"
+                className={styles.FooterContainer_Top}
                 style={{
                     paddingLeft: 16,
                     paddingRight: 16,
                 }}
             >
-                <div className="VoltLogoContainer">
+                <div className={styles.VoltLogoContainer}>
                     <img
-                        src={VoltLogo}
+                        src={"/images/VoltIcon.svg"}
                         alt="linkedIn icon"
                         width={84}
                         height={32}
                     />
                 </div>
-                <div className="FooterHelpSectionContainer">
+                <div className={styles.FooterHelpSectionContainer}>
                     <div
-                        className="FooterHelpSectionContainerAnchor"
+                        className={styles.FooterHelpSectionContainerAnchor}
                         onClick={() => redirectTo("/", "_self")}
                     >
                         Home
                     </div>
                     <div
-                        className="FooterHelpSectionContainerAnchor"
+                        className={styles.FooterHelpSectionContainerAnchor}
                         onClick={() => redirectTo("/contact", '_self')}
                     >
                         Contact us
                     </div>
                     <div
-                        className="FooterHelpSectionContainerAnchor"
+                        className={styles.FooterHelpSectionContainerAnchor}
                         onClick={() => redirectTo("/about", '_self')}
                     >
                         About us
                     </div>
                 </div>
             </div>
-            <div className="FooterContainer_Bottom">
+            <div className={styles.FooterContainer_Bottom}>
                 <div
-                    className="FooterFollowUsContainer"
+                    className={styles.FooterFollowUsContainer}
                     style={{
                         paddingLeft: 16,
                         paddingRight: 16,
                     }}
                 >
-                    <div className="FollowUsTextContainer">Follow us</div>
+                    <div className={styles.FollowUsTextContainer}>Follow us</div>
                     <div>
-                        <a className="shareAnchorContainer">
+                        <a className={styles.shareAnchorContainer}>
                             <img
-                                src={TwitterLogo}
+                                src={"/images/twitter.svg"}
                                 alt="twitter icon"
                                 width={32}
                                 height={32}
@@ -80,7 +78,7 @@ function Footer() {
                     <div>
                         <a>
                             <img
-                                src={InstagramLogo}
+                                src={"/images/Instagram.svg"}
                                 alt="instagram icon"
                                 width={32}
                                 height={32}
@@ -90,13 +88,13 @@ function Footer() {
                     </div>
                     <div>
                         <a
-                            href={EXTERNAL_URLS.LINKEDIN}
+                            href={Links.LINKEDIN}
                             target="_blank"
                             rel="noreferrer"
-                            className="shareAnchorContainer"
+                            className={styles.shareAnchorContainer}
                         >
                             <img
-                                src={LinkedInLogo}
+                                src={"/images/LinkedIn.svg"}
                                 alt="linkedIn icon"
                                 width={32}
                                 height={32}
@@ -107,7 +105,7 @@ function Footer() {
                 </div>
                 {!_isMobile ? (
                     <div
-                        className="FooterContainer_Bottom1"
+                        className={styles.FooterContainer_Bottom1}
                         style={{
                             width: "50%",
                             justifyContent: "flex-end",
@@ -117,7 +115,7 @@ function Footer() {
                     >
                         <div onClick={() => redirectTo(Links.STARTUP_INDIA)}>
                             <img
-                                src={StartUp}
+                                src={"/images/startUpIndia.svg"}
                                 alt={"Volt money startup India"}
                                 width={152}
                                 height={59}
@@ -125,7 +123,7 @@ function Footer() {
                         </div>
                         <div onClick={() => redirectTo(Links.DPIIT)}>
                             <img
-                                src={StartUpRegistratin}
+                                src={"/images/startUpRegistration.svg"}
                                 alt={"start up registration"}
                                 width={152}
                                 height={59}
@@ -137,7 +135,7 @@ function Footer() {
                 )}
             </div>
             {_isMobile ? (
-                <div className="FooterContainer_Bottom1">
+                <div className={styles.FooterContainer_Bottom1}>
                     <div onClick={() => redirectTo(Links.STARTUP_INDIA)}>
                         <img
                             src={StartUp}
@@ -160,27 +158,27 @@ function Footer() {
             )}
 
             {_isMobile ? (
-                <div className="VoltLegalContainer">
-                    <div className="VoltLegalT1" onClick={()=>redirectTo('/')}>
+                <div className={styles.VoltLegalContainer}>
+                    <div className={styles.VoltLegalT1} onClick={()=>redirectTo('/')}>
                         ©2023 SALTER TECHNOLOGIES PRIVATE LIMITED | Legal | Privacy
                     </div>
-                    <div className="VoltLegalT2">CIN: U72200KA2022PTC158631</div>
+                    <div className={styles.VoltLegalT2}>CIN: U72200KA2022PTC158631</div>
                 </div>
             ) : (
                 <div
-                    className="VoltLegalContainer"
+                    className={styles.VoltLegalContainer}
                     style={{
                         flexDirection: "row",
                         width: "100%",
                         justifyContent: "space-between",
                     }}
                 >
-                    <div className="VoltLegalT1"  onClick={()=>redirectToPrivacy()} style={{
+                    <div className={styles.VoltLegalT1}  onClick={()=>redirectToPrivacy()} style={{
                         cursor: 'pointer'
                     }}>
                         ©2023 SALTER TECHNOLOGIES PRIVATE LIMITED | Legal | Privacy
                     </div>
-                    <div className="VoltLegalT2">CIN: U72200KA2022PTC158631</div>
+                    <div className={styles.VoltLegalT2}>CIN: U72200KA2022PTC158631</div>
                 </div>
             )}
         </div>
