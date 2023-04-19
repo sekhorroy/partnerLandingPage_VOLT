@@ -11,6 +11,8 @@ import Eligible from "@/features/landingPage/eligible/eligible";
 import Faqs from "@/LandingPage/faqs/faqs";
 import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNumberFooter";
 import Footer from "@/features/landingPage/footer/footer";
+import {AppSection} from "@/features/landingPage/AppSection/appSection";
+import {isMobile} from "@/configs/utils";
 
 function VoltLandingPage() {
 
@@ -20,6 +22,8 @@ function VoltLandingPage() {
     const ref_Benefits = useRef();
     const ref_Faq = useRef();
     const ref_ContactUs = useRef();
+
+    const _isMobile = isMobile();
 
     const handleWhatAppClick = () => {
         window.open(WhatsAppLink.help, '_blank' )
@@ -70,6 +74,14 @@ function VoltLandingPage() {
                       </div>
                     */
                 }
+                <div id="" className={styles.AppStoreSection} style={_isMobile ? {
+                    paddingTop: 50,
+                    paddingBottom: 48
+                }: {
+                    paddingTop: 80
+                }}>
+                    <AppSection />
+                </div>
                 <div id="faq" ref={ref_Faq} className={styles.Faq_Container}>
                     <Faqs type={'INVESTOR'} />
                 </div>

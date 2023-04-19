@@ -1,0 +1,64 @@
+.appSectionContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.appSectionContainerC1 {
+    max-width: 1024px;
+    width: 100%;
+    background-color: #F3FAF6;
+    border-radius: 16px;
+}
+
+.appSectionContainerC1Left {
+    flex: 1;
+}
+
+.appSectionContainerC1LeftT1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-transform: uppercase;
+    /* Grey / Charcoal */
+    color: #667085;
+}
+
+.appSectionContainerC1LeftT2 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    /* or 125% */
+    /* Grey/Night */
+    color: #1D2939;
+}
+
+.appSectionContainerC1LeftT3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    /* Grey/Night */
+    color: #1D2939;
+    max-width: 200px;
+}
+
+.appSectionContainerC1Right {
+    flex: 1;
+}
+
+.appSectionContainerQRDivider {
+    width: 1px;
+    height: 60px;
+    background-color:  #667085;
+}
+
+.test {
+}

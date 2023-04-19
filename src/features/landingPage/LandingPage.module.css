@@ -58,6 +58,12 @@
     height: fit-content;
 }
 
+.AppStoreSection {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
 .phoneNumberFooter_Container {
     display: flex;
     width: 100%;
