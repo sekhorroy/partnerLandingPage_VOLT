@@ -6,6 +6,11 @@ import {WhatsAppLink} from "@/configs/constants";
 import PhoneNumberHeader from "@/features/landingPage/phoneNumberHeader/PhoneNumberHeader";
 import Partner from "@/LandingPage/partnerSection/partnerSection";
 import Howitworks from "@/features/landingPage/howitworks/howitworks";
+import VoltBenefits from "@/features/landingPage/voltBenefits/voltBenefits";
+import Eligible from "@/features/landingPage/eligible/eligible";
+import Faqs from "@/LandingPage/faqs/faqs";
+import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNumberFooter";
+import Footer from "@/LandingPage/footer/footer";
 
 function VoltLandingPage() {
 
@@ -52,12 +57,12 @@ function VoltLandingPage() {
                 <div id="how_it_works" ref={ref_HIW} className={styles.howitworks_Container}>
                     <Howitworks />
                 </div>
-                {/*<div id="volt_benefits" ref={ref_Benefits} className={styles.voltBenefits_Container}>*/}
-                {/*    <VoltBenefits />*/}
-                {/*</div>*/}
-                {/*<div id="eligible" className={styles.eligible_Container}>*/}
-                {/*    <Eligible />*/}
-                {/*</div>*/}
+                <div id="volt_benefits" ref={ref_Benefits} className={styles.voltBenefits_Container}>
+                    <VoltBenefits />
+                </div>
+                <div id="eligible" className={styles.eligible_Container}>
+                    <Eligible />
+                </div>
                 {
                     /*
                       <div id="customer_testimony" className="customerSays_Container">
@@ -65,18 +70,18 @@ function VoltLandingPage() {
                       </div>
                     */
                 }
-                {/*<div id="faq" ref={ref_Faq} className={styles.Faq_Container}>*/}
-                {/*    <Faqs />*/}
-                {/*</div>*/}
-                {/*<div id="" className={styles.phoneNumberFooter_Container}>*/}
-                {/*    <PhoneNumberFooter />*/}
-                {/*</div>*/}
-                {/*<div id="footer" ref={ref_ContactUs} className={styles.footer_Container}>*/}
-                {/*    <Footer />*/}
-                {/*</div>*/}
-                {/*<div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>*/}
-                {/*    <img style={{width: 75, height: 75}} src={whatsAppStick} alt="whatapp sticky mobile"/>*/}
-                {/*</div>*/}
+                <div id="faq" ref={ref_Faq} className={styles.Faq_Container}>
+                    <Faqs type={'INVESTOR'} />
+                </div>
+                <div id="" className={styles.phoneNumberFooter_Container}>
+                    <PhoneNumberFooter />
+                </div>
+                <div id="footer" ref={ref_ContactUs} className={styles.footer_Container}>
+                    <Footer />
+                </div>
+                <div className={styles.whatAppStickyMobileContainerHeader} onClick={()=>handleWhatAppClick()}>
+                    <img style={{width: 75, height: 75}} src={'./images/whatappSticky.svg'} alt="whatapp sticky mobile"/>
+                </div>
                 {
                     /*
                     <div className="whatAppStickyWebContainerHeader" onClick={() => handleWhatAppClick()}>

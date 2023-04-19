@@ -1,94 +1,81 @@
-import './voltBenefits.css';
-import MailIcon from './assets/MailIcon.svg';
-import clockIcon from './assets/clock.svg';
-import secureIcon from './assets/secure.svg';
-import rupeeIcon from './assets/rupeeVector.svg';
-import percentageIcon from './assets/percentageVector.svg';
-import {BASE_URL} from "../../configs/config";
-import getGoogleAnalyticsParamsFromQuery from "../../hooks/GetGoogleAnalyticsParamsFromQuery";
-import {getGoogleAnalyticsUrl} from "../../configs/utils";
-
+import styles from './voltBenefits.module.css';
+import {redirectToVoltApp} from "@/configs/utils";
 
 function VoltBenefits() {
-    const { utm_source, utm_medium, utm_campaign, utm_id, utm_content, setOtherParamsfromQuery }  = getGoogleAnalyticsParamsFromQuery();
-    const handleSubmit = () => {
-        window.open(`${BASE_URL}?${getGoogleAnalyticsUrl(utm_source, utm_medium, utm_campaign, utm_id, utm_content, setOtherParamsfromQuery())}`, "_blank");
-    }
-
     return(
-        <div className="VoltBenfitsContainer">
-            <div className="VoltBenfitsContainerLeftContainer">
-                <img className="VoltBenfitsContainerImageWeb" src={require("./assets/personHoldingPhone.png")} alt="man holding phone"/>
+        <div className={styles.VoltBenfitsContainer}>
+            <div className={styles.VoltBenfitsContainerLeftContainer}>
+                <img className={styles.VoltBenfitsContainerImageWeb} src={"./images/personHoldingPhone1.png"} alt="man holding phone"/>
             </div>
-            <div className="VoltBenfitsContainerRightContainer">
-                <div className="VoltBenfitsContainerRightContainerTitle">
+            <div className={styles.VoltBenfitsContainerRightContainer}>
+                <div className={styles.VoltBenfitsContainerRightContainerTitle}>
                     Volt Benefits
                 </div>
-                <h2 className="VoltBenfitsContainerRightContainerSubTitle">
+                <h2 className={styles.VoltBenfitsContainerRightContainerSubTitle}>
                     Funds at your fingertips
                 </h2>
-                <div className="VoltBenfitsContainerImageContainer">
-                    <img className="VoltBenfitsContainerImage" src={require("./assets/personHoldingPhone.png")} alt="man holding phone"/>
+                <div className={styles.VoltBenfitsContainerImageContainer}>
+                    <img className={styles.VoltBenfitsContainerImage} src={"./images/personHoldingPhone1.png"} alt="man holding phone"/>
                 </div>
-                <div className="VoltBenfitsContainerRightContainerStepItemsContainer">
-                    <div className="VoltBenfitsContainerRightContainerStepItems">
-                        <div className="VoltBenfitsContainerStepItemsLeft">
-                            <img className="VoltBenfitsContainerStepItemsLeftIcon" src={percentageIcon} alt="mail Icon"/>
+                <div className={styles.VoltBenfitsContainerRightContainerStepItemsContainer}>
+                    <div className={styles.VoltBenfitsContainerRightContainerStepItems}>
+                        <div className={styles.VoltBenfitsContainerStepItemsLeft}>
+                            <img className={styles.VoltBenfitsContainerStepItemsLeftIcon} src={'./images/percentageVector1.svg'} alt="mail Icon"/>
                         </div>
-                        <div className="VoltBenfitsContainerStepItemsRight">
-                            <h4 className="VoltBenfitsContainerStepItemsTitle">
-                                Interest rates starting at 9%
+                        <div className={styles.VoltBenfitsContainerStepItemsRight}>
+                            <h4 className={styles.VoltBenfitsContainerStepItemsTitle}>
+                                Interest rates starting at 9.95% p.a
                             </h4>
-                            <div className="VoltBenfitsContainerStepItemsSubTitle">
+                            <div className={styles.VoltBenfitsContainerStepItemsSubTitle}>
                                 Borrow from trusted banks or NBFCs at low interest rates.
                             </div>
-                           
                         </div>
                     </div>
 
-                    <div className="VoltBenfitsContainerRightContainerStepItems">
-                        <div className="VoltBenfitsContainerStepItemsLeft">
-                            <img className="VoltBenfitsContainerStepItemsLeftIcon" src={rupeeIcon} alt="mail Icon"/>
+                    <div className={styles.VoltBenfitsContainerRightContainerStepItems}>
+                        <div className={styles.VoltBenfitsContainerStepItemsLeft}>
+                            <img className={styles.VoltBenfitsContainerStepItemsLeftIcon} src={'./images/rupeeVector1.svg'} alt="mail Icon"/>
                         </div>
-                        <div className="VoltBenfitsContainerStepItemsRight">
-                            <h4 className="VoltBenfitsContainerStepItemsTitle">
+                        <div className={styles.VoltBenfitsContainerStepItemsRight}>
+                            <h4 className={styles.VoltBenfitsContainerStepItemsTitle}>
                                 Withdraw flexibly
                             </h4>
-                            <div className="VoltBenfitsContainerStepItemsSubTitle">
+                            <div className={styles.VoltBenfitsContainerStepItemsSubTitle}>
                                 Withdraw as per your need, and pay only as per usage. No hidden charges.
                             </div>
                         </div>
                     </div>
 
-                    <div className="VoltBenfitsContainerRightContainerStepItems">
-                        <div className="VoltBenfitsContainerStepItemsLeft">
-                            <img className="VoltBenfitsContainerStepItemsLeftIcon" src={clockIcon} alt="mail Icon"/>
+                    <div className={styles.VoltBenfitsContainerRightContainerStepItems}>
+                        <div className={styles.VoltBenfitsContainerStepItemsLeft}>
+                            <img className={styles.VoltBenfitsContainerStepItemsLeftIcon} src={'./images/clock1.svg'} alt="mail Icon"/>
                         </div>
-                        <div className="VoltBenfitsContainerStepItemsRight">
-                            <h4 className="VoltBenfitsContainerStepItemsTitle">
+                        <div className={styles.VoltBenfitsContainerStepItemsRight}>
+                            <h4 className={styles.VoltBenfitsContainerStepItemsTitle}>
                                 Repay easily
                             </h4>
-                            <div className="VoltBenfitsContainerStepItemsSubTitle">
+                            <div className={styles.VoltBenfitsContainerStepItemsSubTitle}>
                                 Make monthly interest only payments & repay principal as per convenience.
                             </div>
                         </div>
                     </div>
 
-                    <div className="VoltBenfitsContainerRightContainerStepItems">
-                        <div className="VoltBenfitsContainerStepItemsLeft">
-                            <img className="VoltBenfitsContainerStepItemsLeftIcon" src={secureIcon} alt="mail Icon"/>
+                    <div className={styles.VoltBenfitsContainerRightContainerStepItems}>
+                        <div className={styles.VoltBenfitsContainerStepItemsLeft}>
+                            <img className={styles.VoltBenfitsContainerStepItemsLeftIcon} src={'./images/secure1.svg'} alt="mail Icon"/>
                         </div>
-                        <div className="VoltBenfitsContainerStepItemsRight">
-                            <div className="VoltBenfitsContainerStepItemsTitle">
+                        <div className={styles.VoltBenfitsContainerStepItemsRight}>
+                            <h4 className={styles.VoltBenfitsContainerStepItemsTitle}>
                                 Secure & paperless
-                            </div>
-                            <div className="VoltBenfitsContainerStepItemsSubTitle">
+                            </h4>
+                            <div className={styles.VoltBenfitsContainerStepItemsSubTitle}>
                                 Hassle free usage from mobile phone. We ensure safety through secure integrations with partners.
                             </div>
                         </div>
                     </div>
-                    <div className="VoltBenfitsContainerRightContainerStepItems">
-                        <button className="VoltBenfitsContainerRightContainerFeatureButton" onClick={()=>handleSubmit()}>
+
+                    <div className={styles.VoltBenfitsContainerRightContainerStepItems}>
+                        <button className={styles.VoltBenfitsContainerRightContainerFeatureButton} onClick={()=>redirectToVoltApp()}>
                             Check available limit
                         </button>
                     </div>

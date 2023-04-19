@@ -1,32 +1,26 @@
-import "./phoneNumberFooter.css"
+import styles from "./phoneNumberFooter.module.css";
 import whatsAppIcon from "./assets/whatsAppIcon.svg";
-import {BASE_URL, REGEX_PATTERN} from "../../configs/config";
-import {WhatsAppLink} from "../../configs/links";
-import {getGoogleAnalyticsUrl} from "../../configs/utils";
-import getGoogleAnalyticsParamsFromQuery from "../../hooks/GetGoogleAnalyticsParamsFromQuery";
+import {redirectToVoltApp} from "@/configs/utils";
+import {WhatsAppLink} from "@/configs/constants";
 
 function PhoneNumberFooter() {
-    const { utm_source, utm_medium, utm_campaign, utm_id, utm_content, setOtherParamsfromQuery }  = getGoogleAnalyticsParamsFromQuery();
-    const handleClick = () => {
-        window.open(`${BASE_URL}?${getGoogleAnalyticsUrl(utm_source, utm_medium, utm_campaign, utm_id, utm_content, setOtherParamsfromQuery())}`, "_blank");
-    }
     
     const handleWhatAppClick = () => {
         window.open(WhatsAppLink.help, '_blank' )
     }
 
     return (
-        <div className="PhoneNumberFooterRoot">
-            <div className="PhoneNumberFooter_Container">
-                <div className="PhoneNumberFooterMobileInputContainer">
-                    <h2 className="PhoneNumberFooterMobileTitle">
+        <div className={styles.PhoneNumberFooterRoot}>
+            <div className={styles.PhoneNumberFooter_Container}>
+                <div className={styles.PhoneNumberFooterMobileInputContainer}>
+                    <h2 className={styles.PhoneNumberFooterMobileTitle}>
                         Join Volt money and get <br></br>funds in under 5 minutes
                     </h2>
-                    <div className="PhoneNumberFooterMobileInputWebContainer">
-                        <button className="PhoneNumberFooterMobileButtonContainer" onClick={()=>handleClick()}>Check available limit</button>
+                    <div className={styles.PhoneNumberFooterMobileInputWebContainer}>
+                        <button className={styles.PhoneNumberFooterMobileButtonContainer} onClick={()=>redirectToVoltApp()}>Check available limit</button>
                     </div>
                 </div>
-                <div className="PhoneNumberFooterMobileInputImageContainer">
+                <div className={styles.PhoneNumberFooterMobileInputImageContainer}>
 
                 </div>
                 {
@@ -43,21 +37,21 @@ function PhoneNumberFooter() {
                 }
 
             </div>
-            <div className="PhoneNumberFooter_WebContainer">
-                <div className="PhoneNumberFooter_WebContainer_Left">
-                    <h2 className="PhoneNumberFooter_WebContainer_Title">
+            <div className={styles.PhoneNumberFooter_WebContainer}>
+                <div className={styles.PhoneNumberFooter_WebContainer_Left}>
+                    <h2 className={styles.PhoneNumberFooter_WebContainer_Title}>
                         Quickly resolve your queries
                     </h2>
-                    <div className="PhoneNumberFooter_WebContainer_SubTitle">
+                    <div className={styles.PhoneNumberFooter_WebContainer_SubTitle}>
                         We are available in working days from 9.30 AM to 6.30 PM.
                     </div>
                 </div>
-                <button className="PhoneNumberFooterMobileWhatsAppContainerWeb" onClick={()=>handleWhatAppClick()}>
-                        <div className="PhoneNumberFooterMobileWhatsAppIconContainerWeb">
-                            <img src={whatsAppIcon} alt="whatapp image" />
+                <button className={styles.PhoneNumberFooterMobileWhatsAppContainerWeb} onClick={()=>handleWhatAppClick()}>
+                        <div className={styles.PhoneNumberFooterMobileWhatsAppIconContainerWeb}>
+                            <img src={'./images/Whatsapp.svg'} alt="whatapp image" />
                         </div>
-                        <div className="PhoneNumberFooterMobileWhatsAppTextContainerWeb">
-                            <span className="PhoneNumberFooterWebViewSpan">Chat with us</span>
+                        <div className={styles.PhoneNumberFooterMobileWhatsAppTextContainerWeb}>
+                            <span className={styles.PhoneNumberFooterWebViewSpan}>Chat with us</span>
                         </div>
                 </button>
             </div>
