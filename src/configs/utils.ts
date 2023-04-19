@@ -79,6 +79,10 @@ export const redirectToPrivacy = (Link: string) => {
   window.open(`${BaseLink}/privacy/`, '_blank' );
 }
 
+export const handleWhatAppClickInvestor = () => {
+  window.open(WhatsAppLink.default, '_blank' )
+}
+
 export const addDaysToEpochTime = (epochTime: number, days: number) => {
   const date = new Date(epochTime);
   const dateAfterAddingDays = date.setDate(date.getDate() + days);

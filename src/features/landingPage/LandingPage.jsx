@@ -12,7 +12,7 @@ import Faqs from "@/LandingPage/faqs/faqs";
 import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNumberFooter";
 import Footer from "@/features/landingPage/footer/footer";
 import {AppSection} from "@/features/landingPage/AppSection/appSection";
-import {isMobile} from "@/configs/utils";
+import {handleWhatAppClickInvestor, isMobile} from "@/configs/utils";
 
 function VoltLandingPage() {
 
@@ -29,9 +29,7 @@ function VoltLandingPage() {
         window.open(WhatsAppLink.help, '_blank' )
     }
 
-    const handleWhatAppClickInvestor = () => {
-        window.open(WhatsAppLink.default, '_blank' )
-    }
+
 
     useEffect(()=>{
         if (window &&

@@ -1,6 +1,6 @@
 import styles from "./phoneNumberFooter.module.css";
 import whatsAppIcon from "./assets/whatsAppIcon.svg";
-import {redirectToVoltApp} from "@/configs/utils";
+import {handleWhatAppClickInvestor, redirectToVoltApp} from "@/configs/utils";
 import {WhatsAppLink} from "@/configs/constants";
 
 function PhoneNumberFooter() {
@@ -46,7 +46,7 @@ function PhoneNumberFooter() {
                         We are available in working days from 9.30 AM to 6.30 PM.
                     </div>
                 </div>
-                <button className={styles.PhoneNumberFooterMobileWhatsAppContainerWeb} onClick={()=>handleWhatAppClick()}>
+                <button className={styles.PhoneNumberFooterMobileWhatsAppContainerWeb} onClick={()=>handleWhatAppClickInvestor()}>
                         <div className={styles.PhoneNumberFooterMobileWhatsAppIconContainerWeb}>
                             <img src={'./images/Whatsapp.svg'} alt="whatapp image" />
                         </div>
