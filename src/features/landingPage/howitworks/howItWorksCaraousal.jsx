@@ -32,7 +32,7 @@ function HowItWorksCarasoul({ howItWorksData }) {
         {howItWorksData && (
           <div className={styles.HowItWorksContainerImageCard}>
             <div
-              className={`styles.HowItWorksContainerImageCardIconNumber-${index}`}
+              className={styles[`HowItWorksContainerImageCardIconNumber-${index}`]}
             >
               <img src={howItWorksData[index].numberImage} alt="" />
             </div>

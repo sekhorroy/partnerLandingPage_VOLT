@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     background: #F3F5FC;
+    overflow: hidden;
 }
 .PhoneNumberHeader_Left_Container {
     display: flex;
@@ -36,6 +37,7 @@
 
 .titleSectionSubTitle {
     font-size: 25px;
+    font-weight: 500;
 }
 
 .PhoneNumberHeader_Right_Container {
@@ -160,7 +162,7 @@
         font-family: 'Poppins';
 
         font-style: normal;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 48px;
         line-height: 56px;
         /* or 117% */

@@ -126,7 +126,7 @@
     /* Mobile/Heading/H1/Bold */
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     /* or 125% */
@@ -286,6 +286,7 @@
         color: #1D2939;
 
         margin-top: 0px;
+        margin-bottom: 24px;
     }
     .VoltBenfitsContainerRightContainerFeatureButton {
         display: flex;

@@ -28,7 +28,7 @@
 .EligibleContainer_SubTitle {
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 32px;
     line-height: 40px;
     /* or 125% */
@@ -37,6 +37,7 @@
     color: #1D2939;
     mix-blend-mode: normal;
     margin-top: 9px;
+    margin-bottom: 24px;
 }
 
 .EligibleImageContainerWeb {
@@ -123,5 +124,7 @@
     }
     .EligibleContainer_SubTitle {
         text-align: left;
+        font-weight: 600;
+        margin-bottom: 24px;
     }
 }

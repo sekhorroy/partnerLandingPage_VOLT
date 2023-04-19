@@ -16,7 +16,9 @@ function PhoneNumberHeader() {
         <div
           className={styles.phoneNumberContainerAndTermsAndConditionContainer}
         >
-          <div className={styles.phoneNumberContainer}>
+          <div className={styles.phoneNumberContainer} style={{
+            paddingTop: 24
+          }}>
             <button
               className={styles.phoneNumberContainerContinueButton}
               onClick={() => redirectToVoltApp()}
@@ -42,7 +44,12 @@ function PhoneNumberHeader() {
                               }
                               src={"./images/manHoldingPhoneMobile.png"}
                               alt="man holding phone image"
+                              style={{
+                                position: 'relative',
+                                top: 20
+                              }}
                           />
+
                       </>
                   ) : (
                       <>
@@ -52,6 +59,10 @@ function PhoneNumberHeader() {
                               }
                               src={"./images/manHoldingPhoneWeb.png"}
                               alt="man holding phone image"
+                              style={{
+                                position: 'relative',
+                                top: 20
+                              }}
                           />
                       </>
                   )

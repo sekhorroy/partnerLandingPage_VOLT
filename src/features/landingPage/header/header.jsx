@@ -2,7 +2,12 @@ import styles from "./header.module.css";
 import * as React from "react";
 import MenuOutsideAlerter from "../../../configs/hooks/useMenuOutSideAlerter";
 import { useState } from "react";
-import { redirectTo, redirectToPartner, redirectToVoltApp} from "../../../configs/utils";
+import {
+  redirectTo,
+  redirectToPartner,
+  redirectToVoltApp,
+} from "../../../configs/utils";
+import {BaseLink} from "@/configs/constants";
 
 function Header() {
   const [showmenu, SetShowmenu] = useState(false);
@@ -12,7 +17,7 @@ function Header() {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerLeftContainer}>
-        <div className={styles.voltIconContainer}>
+        <div className={styles.voltIconContainer} onClick={()=>redirectTo('/', '_self')}>
           <img
             className={styles.voltIconContainerImage}
             src={"./images/VoltBlue.svg"}
@@ -23,13 +28,28 @@ function Header() {
       <div className={styles.headerRightContainer}>
         <div className={styles.headerLeftContainerWebItems}>
           <div className={styles.headerLeftContainerLinks}>
-            <a href="#how_it_works">How it works</a>
-            <a href="#volt_benefits">Benefits</a>
-            <a href="#faq">FAQs</a>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => redirectTo("#how_it_works", "_self")}
+            >
+              How it works
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => redirectTo("#volt_benefits", "_self")}
+            >
+              Benefits
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => redirectTo("#faq", "_self")}
+            >
+              FAQs
+            </div>
             <div
               href=""
               style={{ cursor: "pointer" }}
-              onClick={()=>redirectToPartner()}
+              onClick={() => redirectToPartner()}
               target="_blank"
               rel="noreferrer"
             >
@@ -59,7 +79,7 @@ function Header() {
           >
             <img
               className={styles.headerRightContainerMobileItems}
-              src={'./images/ThreeBar.svg'}
+              src={"./images/ThreeBar.svg"}
               alt="menu bar"
               style={{ width: "18px", height: "12px" }}
             />
@@ -67,31 +87,43 @@ function Header() {
 
           {showmenu ? (
             <div className={styles.headerLeftContainerLinksMobileMenu}>
-              <div className={styles.headerLeftContainerLinksMobileMenuItemsContainer}>
-                <a
+              <div
+                className={
+                  styles.headerLeftContainerLinksMobileMenuItemsContainer
+                }
+              >
+                <div
                   style={{
+                    cursor: "pointer",
                     fontSize: 14,
                     fontFamily: "Inter",
-                    cursor: "pointer",
                   }}
-                  href="#how_it_works"
+                  onClick={() => redirectTo("#how_it_works", "_self")}
                   className={styles.headerLeftContainerLinksMobileMenuItem}
                 >
                   How it works
-                </a>
-                <div className={styles.headerLeftContainerLinksMobileMenuItemDivider}></div>
-                <a
-                  style={{
-                    fontSize: 14,
-                    fontFamily: "Inter",
-                    cursor: "pointer",
-                  }}
-                  href="#volt_benefits"
-                  className={styles.headerLeftContainerLinksMobileMenuItem}
+                </div>
+                <div
+                  className={
+                    styles.headerLeftContainerLinksMobileMenuItemDivider
+                  }
+                ></div>
+                <div
+                    style={{
+                      cursor: "pointer",
+                      fontSize: 14,
+                      fontFamily: "Inter",
+                    }}
+                    onClick={() => redirectTo("#volt_benefits", "_self")}
+                    className={styles.headerLeftContainerLinksMobileMenuItem}
                 >
                   Benefits
-                </a>
-                <div className={styles.headerLeftContainerLinksMobileMenuItemDivider}></div>
+                </div>
+                <div
+                  className={
+                    styles.headerLeftContainerLinksMobileMenuItemDivider
+                  }
+                ></div>
                 <a
                   style={{
                     fontSize: 14,
@@ -103,21 +135,29 @@ function Header() {
                 >
                   FAQs
                 </a>
-                <div className={styles.headerLeftContainerLinksMobileMenuItemDivider}></div>
+                <div
+                  className={
+                    styles.headerLeftContainerLinksMobileMenuItemDivider
+                  }
+                ></div>
                 <div
                   style={{
                     fontSize: 14,
                     fontFamily: "Inter",
                     cursor: "pointer",
                   }}
-                  onClick={()=>redirectToPartner()}
+                  onClick={() => redirectTo(`${BaseLink}/partner`, '_self')}
                   target="_blank"
                   className={styles.headerLeftContainerLinksMobileMenuItem}
                   rel="noreferrer"
                 >
                   Partner with us
                 </div>
-                <div className={styles.headerLeftContainerLinksMobileMenuItemDivider}></div>
+                <div
+                  className={
+                    styles.headerLeftContainerLinksMobileMenuItemDivider
+                  }
+                ></div>
 
                 <div
                   style={{
