@@ -133,17 +133,17 @@ function Header() {
                           styles.headerLeftContainerLinksMobileMenuItemDivider
                         }
                     ></div>
-                    <a
+                    <div
                         style={{
+                          cursor: "pointer",
                           fontSize: 14,
                           fontFamily: "Inter",
-                          cursor: "pointer",
                         }}
-                        href="#faq"
+                        onClick={() => redirectTo("#faq", "_self")}
                         className={styles.headerLeftContainerLinksMobileMenuItem}
                     >
                       FAQs
-                    </a>
+                    </div>
                     <div
                         className={
                           styles.headerLeftContainerLinksMobileMenuItemDivider
