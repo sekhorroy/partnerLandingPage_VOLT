@@ -51,10 +51,10 @@
 
 .headerRightContainerMobileItems {
     visibility: visible;
-    height: 18px;
-    width: 16px;
+    height: 40px;
+    width: 60px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -177,15 +177,14 @@
     .headerLeftContainer {
         display: flex;
         justify-content: flex-start;
-        max-width: 400px;
+        max-width: 100px;
         width: 100%;
     }
     .headerRightContainer {
         margin-right: 16px;
         justify-content: flex-end;
-        width: 100%;
+        flex: 1;
         min-width: 600px;
-        max-width: 750px;
     }
     .headerRightContainerGetStartedButton {
         display: flex;

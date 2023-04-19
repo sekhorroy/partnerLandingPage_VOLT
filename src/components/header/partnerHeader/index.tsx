@@ -101,9 +101,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 onClick={handleMenuOpenClose}
                 style={{
                   width: 70,
+                  height: 40,
                   display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "flex-end",
+                  flexDirection: "column",
+                  alignItems: "flex-end",
+                  justifyContent: "center",
                   cursor: "pointer",
                 }}
               >

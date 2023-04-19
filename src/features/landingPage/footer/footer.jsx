@@ -138,7 +138,7 @@ function Footer() {
                 <div className={styles.FooterContainer_Bottom1}>
                     <div onClick={() => redirectTo(Links.STARTUP_INDIA)}>
                         <img
-                            src={StartUp}
+                            src={'/images/startUpIndia.svg'}
                             alt={"Volt money startup India"}
                             width={152}
                             height={59}
@@ -146,7 +146,7 @@ function Footer() {
                     </div>
                     <div onClick={() => redirectTo(Links.DPIIT)}>
                         <img
-                            src={StartUpRegistratin}
+                            src={"/images/startUpRegistration.svg"}
                             alt={"start up registration"}
                             width={152}
                             height={59}
