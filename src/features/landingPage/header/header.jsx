@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   redirectTo,
   redirectToPartner,
-  redirectToVoltApp,
+  redirectToVoltApp, redirectToWithQueryParam,
 } from "../../../configs/utils";
 import {BaseLink} from "@/configs/constants";
 
@@ -17,7 +17,7 @@ function Header() {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerLeftContainer}>
-        <div className={styles.voltIconContainer} onClick={()=>redirectTo('/', '_self')}>
+        <div className={styles.voltIconContainer} onClick={()=>redirectToWithQueryParam('/', '_self')}>
           <img
             className={styles.voltIconContainerImage}
             src={"./images/VoltBlue.svg"}
@@ -49,7 +49,7 @@ function Header() {
             <div
               href=""
               style={{ cursor: "pointer" }}
-              onClick={() => redirectToPartner()}
+              onClick={() => redirectToWithQueryParam('/partner', '_self')}
               target="_blank"
               rel="noreferrer"
             >

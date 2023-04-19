@@ -15,15 +15,6 @@ import {useRouter} from "next/router";
 import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
 
 export default function PartnerLandingPage() {
-  const ref_Header = createRef();
-  const ref_Partner = createRef();
-  const ref_HIW = createRef();
-  const ref_Benefits = createRef();
-  const ref_Faq = createRef();
-  const ref_ContactUs = createRef();
-
-  const router = useRouter();
-  console.log("router: ", router);
 
   const partnerChild = useMemo(() => {
     return (
@@ -32,9 +23,6 @@ export default function PartnerLandingPage() {
         style={{
           width: '100%'
         }}
-        // style={{
-        //   width: width
-        // }}
       >
         <Header />
         <TopSection />

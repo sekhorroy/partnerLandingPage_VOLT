@@ -53,7 +53,7 @@ export const redirectToPartner = (url?: string) => {
   window.open(`${PartnerLink}${getParamsLink()}`, '_self');
 };
 export const redirectToVoltApp = () => {
-  window.open(`${AppLink}`, '_blank');
+  window.open(`${AppLink}${getParamsLink()}`, '_blank');
 };
 export const handleWhatAppClick = () => {
   window.open(WhatsAppLink.help, '_blank' )
@@ -61,11 +61,18 @@ export const handleWhatAppClick = () => {
 export const handleOurPartnerLinks = (Link: string) => {
   window.open(Link, '_blank' );
 }
-export const redirectTo = (url: string, target?: string) =>{
+export const redirectTo = (url: string, target?: string, passQueryParams?: boolean) =>{
   if(target) {
     window.open(url, target);
   } else {
     window.open(url, '_blank');
+  }
+}
+export const redirectToWithQueryParam = (url: string, target?: string) =>{
+  if(target) {
+    window.open(`${url}${getParamsLink()}`, target);
+  } else {
+    window.open(`${url}${getParamsLink()}`, '_blank');
   }
 }
 export const redirectToPrivacy = (Link: string) => {
