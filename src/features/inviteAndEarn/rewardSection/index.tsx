@@ -103,10 +103,10 @@ const RewardSection = () => {
               }}
             >
               <div
-                style={{
+                style={_isMobile ? {
                   position: "relative",
                   left: 12,
-                }}
+                } : {}}
               >
                 <StepperRewards data={stepperRewardData} />
               </div>

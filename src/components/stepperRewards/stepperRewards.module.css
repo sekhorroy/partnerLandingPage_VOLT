@@ -12,13 +12,17 @@
   border-radius: 24px;
 }
 
-.stepperRewardContainer2 {
+.stepperRewardContainerProgressBarWeb {
+  background-color: #ffffff;
   width: 100%;
-  min-width: 242px;
+  height: 24px;
+  border-radius: 24px;
 
   position: relative;
-  right: 29px;
+  bottom: 50px;
+}
 
+.stepperRewardContainer2 {
 }
 
 .stepperRewardContainerPoints {
@@ -30,10 +34,15 @@
   justify-content: center;
   align-items: center;
   border-radius: 100px;
+  z-index: 5;
 }
 
 .stepperRewardContainerItem {
   background-color: #FFFFFF;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+}
+
+.test {
+
 }

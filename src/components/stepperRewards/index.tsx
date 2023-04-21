@@ -21,20 +21,57 @@ export const StepperRewards: React.FunctionComponent<StepperRewardsProps> = ({
                       display: "flex",
                       flexDirection: "row",
                     }
-                  : {}
+                  : {
+                      display: "flex",
+                      flexDirection: "column",
+                    }
               }
             >
-              <div className={styles.stepperRewardContainerProgressBar} />
-              <div className={styles.stepperRewardContainer2}>
+              {_isMobile ? (
+                <>
+                  <div className={styles.stepperRewardContainerProgressBar} />
+                </>
+              ) : (
+                <></>
+              )}
+              <div
+                className={styles.stepperRewardContainer2}
+                style={
+                  _isMobile
+                    ? {
+                        width: "100%",
+                        minWidth: 242,
+                        position: "relative",
+                        right: 29,
+                      }
+                    : {
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: 120,
+                        position: "relative",
+                        top: 12,
+                      }
+                }
+              >
                 {data.map((item, key) => {
                   return (
                     <>
                       <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          height: 80
-                        }}
+                        style={
+                          _isMobile
+                            ? {
+                                display: "flex",
+                                flexDirection: "row",
+                                height: 80,
+                              }
+                            : {
+                                display: "flex",
+                                flexDirection: "column-reverse",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }
+                        }
+                        className={styles.test}
                       >
                         <div
                           className={styles.stepperRewardContainerPoints}
@@ -47,20 +84,44 @@ export const StepperRewards: React.FunctionComponent<StepperRewardsProps> = ({
                           {item.points}
                         </div>
                         <div
-                          style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            width: "100%",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            paddingLeft: 16,
-                            paddingRight: 16,
-                            marginTop: 24,
-                            height: 48,
-                          }}
+                          style={
+                            _isMobile
+                              ? {
+                                  display: "flex",
+                                  flexDirection: "row",
+                                  width: "100%",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  paddingLeft: 16,
+                                  paddingRight: 16,
+                                  marginTop: 24,
+                                  height: 48,
+                                }
+                              : {
+                                  display: "flex",
+                                  flexDirection: "column-reverse",
+                                  width: 140,
+                                  height: 106,
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  paddingLeft: 16,
+                                  paddingRight: 16,
+                                  marginTop: 24,
+                                }
+                          }
                           className={styles.stepperRewardContainerItem}
                         >
-                          <div>{item.title}</div>
+                          <div
+                            style={
+                              _isMobile
+                                ? {}
+                                : {
+                                    textAlign: "center",
+                                  }
+                            }
+                          >
+                            {item.title}
+                          </div>
                           <div>
                             <img src={item.imageUrl} width={40} height={40} />
                           </div>
@@ -70,6 +131,15 @@ export const StepperRewards: React.FunctionComponent<StepperRewardsProps> = ({
                   );
                 })}
               </div>
+              {!_isMobile ? (
+                <>
+                  <div
+                    className={styles.stepperRewardContainerProgressBarWeb}
+                  />
+                </>
+              ) : (
+                <></>
+              )}
             </div>
           </>
         ) : (
