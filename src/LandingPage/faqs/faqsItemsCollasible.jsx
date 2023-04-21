@@ -2,8 +2,8 @@ import styles from "./faqs.module.css"
 import React, { useState } from "react";
 import Image from "next/image";
 import {isMobile} from "@/configs/utils";
-const DownArrowVector =  "./images/chevron-down.svg";
-const UpArrowVector = "./images/chevron-up1.svg";
+const DownArrowVector =  "/images/chevron-down.svg";
+const UpArrowVector = "/images/chevron-up1.svg";
 
 const FaqCollapsible = (props) => {
   const [open, setOPen] = useState(false);
