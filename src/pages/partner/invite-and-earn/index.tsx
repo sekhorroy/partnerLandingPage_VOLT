@@ -14,7 +14,6 @@ export default function InviteAndEarn() {
         />
       </Head>
       <InviteAndEarnFeature />
-      <HowItWorks />
     </>
   );
 }

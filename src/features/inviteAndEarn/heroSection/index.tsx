@@ -23,6 +23,7 @@ const HeroSection = () => {
                 }
               : {
                   paddingTop: 44,
+                  height: 514,
                 }
           }
         >
