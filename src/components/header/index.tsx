@@ -5,6 +5,7 @@ import { ContactUsHeader } from "@/components/header/contactUsHeader";
 import { PartnerHeader } from "@/components/header/partnerHeader";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import {AboutHeader} from "@/components/header/aboutHeader";
+import {InvestorHeader} from "@/components/header/investorHeader";
 
 export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
 
@@ -13,6 +14,8 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
       return <ContactUsHeader type={HeaderType.CONTACT_US} />;
     } else if (type === HeaderType.ABOUT) {
       return <AboutHeader type={HeaderType.ABOUT} />;
+    } else if (type === HeaderType.INVESTOR) {
+      return <InvestorHeader type={HeaderType.INVESTOR} />;
     } else {
       return <PartnerHeader type={HeaderType.DEFAULT} />;
     }

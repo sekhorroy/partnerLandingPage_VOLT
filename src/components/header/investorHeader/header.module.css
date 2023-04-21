@@ -8,7 +8,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
 }
 
 .headerContactUs {
@@ -24,7 +23,7 @@
 }
 .headerContent {
     width: 100%;
-    max-width: 1024px;
+
     background-color: #FFFFFF;
     display: flex;
     flex-direction: row;
@@ -44,13 +43,13 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-left: 16px;
 }
 .headerRight {
     flex: 2;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    padding-right: 19px;
 }
 
 .headerWeb {
@@ -85,6 +84,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
 }
 .headerLeftWeb {
     flex: 1;
@@ -114,6 +114,7 @@
     background-color: #FFFFFF;
     border: 1px solid #CFEADA;
 }
+
 .menuItem {
     font-family: 'Inter';
     font-size: 14px;

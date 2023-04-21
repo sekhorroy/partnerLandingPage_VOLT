@@ -1,6 +1,5 @@
 import styles from './LandingPage.module.css';
 import * as React from "react";
-import Header from './header/header';
 import {useEffect, useRef} from "react";
 import {WhatsAppLink} from "@/configs/constants";
 import PhoneNumberHeader from "@/features/landingPage/phoneNumberHeader/PhoneNumberHeader";
@@ -13,6 +12,8 @@ import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNum
 import Footer from "@/features/landingPage/footer/footer";
 import {AppSection} from "@/features/landingPage/AppSection/appSection";
 import {handleWhatAppClickInvestor, isMobile} from "@/configs/utils";
+import {HeaderType} from "@/components/header/type";
+import {InvestorHeader} from "@/components/header/investorHeader";
 
 function VoltLandingPage() {
 
@@ -52,7 +53,7 @@ function VoltLandingPage() {
     return (
             <div className="App">
                 <div id="header" ref={ref_Header} className={styles.header_Container}>
-                    <Header />
+                    <InvestorHeader maxWidth={1250}/>
                 </div>
                 <div id="header" className={styles.phoneNumberHeader_Container}>
                     <PhoneNumberHeader />

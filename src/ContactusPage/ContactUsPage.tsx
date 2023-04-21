@@ -20,7 +20,7 @@ export default function ContactUsPage() {
           width: '100%',
         }}
       >
-        <Header type={HeaderType.CONTACT_US}/>
+        <Header type={HeaderType.INVESTOR}/>
         <TopSectionContactUs />
         <ConnectSection />
         <div id='faq' style={{

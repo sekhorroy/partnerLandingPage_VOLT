@@ -1,101 +1,62 @@
 import styles from "./header.module.css";
 import Image from "next/image";
 import {
-  getParamsLink,
   getScreenX,
   isMobile,
   redirectTo,
-  redirectToFaq,
   redirectToPartner,
   redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
 import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
-import { useState } from "react";
 import { Divider } from "@/components/divider";
-import voltPartnerLogo from "../../../../public/images/VoltPartnerLogo.svg";
-import { useRouter } from "next/router";
-import { BaseLink } from "@/configs/constants";
+import { useState } from "react";
 
-export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
+export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
   type,
+    maxWidth,
 }) => {
-  const [open, setOpen] = useState(false);
   const _isMobile: boolean = isMobile();
-  const url = useRouter().asPath;
-
+  const [open, setOpen] = useState(false);
+  const width = getScreenX();
   const handleMenuOpenClose = () => {
     open ? setOpen(false) : setOpen(true);
   };
-
   return (
     <>
       <div
-        className={
-          _isMobile
-            ? type === HeaderType.CONTACT_US
-              ? styles.headerContactUs
-              : styles.header
-            : type === HeaderType.CONTACT_US
-            ? styles.headerWebContactUs
-            : styles.headerWeb
-        }
+        className={_isMobile ? styles.header : styles.headerWeb}
         style={{
           width: "100%",
-          position: "sticky",
-          top: 0,
-          left: 0,
-          right: 0,
         }}
       >
-        <div
-          className={
-            type === HeaderType.CONTACT_US
-              ? styles.headerContentContactUs
-              : styles.headerContent
-          }
-        >
+        <div className={styles.headerContent} style={{
+          maxWidth: maxWidth ? maxWidth : 1024
+        }}>
           <div
             className={styles.headerLeft}
-            style={
-              _isMobile
-                ? {
-                    paddingLeft: 0,
-                  }
-                : {}
-            }
+            style={_isMobile ? { paddingLeft: 0 } : { paddingLeft: 16 }}
           >
             <div
-              onClick={() => redirectTo("/partner", "_self")}
+              onClick={() => redirectTo("/", "_self")}
               style={{
                 cursor: "pointer",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-                top: 2,
               }}
             >
               <Image
                 priority
-                src="/images/VoltPartnerLogo.svg"
-                height={_isMobile ? 20 : 29}
-                width={120}
-                alt="Volt partner logo"
+                src="/images/VoltBlue.svg"
+                height={_isMobile ? 20 : 24}
+                width={94}
+                alt="Volt money logo"
+                style={{
+                  paddingLeft: 16,
+                }}
               />
             </div>
           </div>
-          <div
-            className={styles.headerRight}
-            style={
-              _isMobile
-                ? {
-                    paddingRight: 16,
-                  }
-                : {}
-            }
-          >
+          <div className={styles.headerRight}>
             {_isMobile ? (
               <div
                 onClick={handleMenuOpenClose}
@@ -109,7 +70,8 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   cursor: "pointer",
                 }}
               >
-                <img
+                <Image
+                  priority
                   src="/images/ThreeBar.svg"
                   height={12}
                   width={18}
@@ -123,21 +85,21 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               <div className={styles.headerRightWebContent}>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("/partner", "_self")}
+                  onClick={() => redirectTo("#volt_benefits", "_self")}
                 >
-                  Home
+                  Benefits
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`${BaseLink}/partner/faq`, "_self")}
+                  onClick={() => redirectTo("#faq", "_self")}
                 >
                   FAQs
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("/about", "_self")}
+                  onClick={() => redirectTo("/partner", "_self")}
                 >
-                  About us
+                  Partner with us
                 </div>
                 <div
                   className={styles.headerLinksContainer}
@@ -145,23 +107,19 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 >
                   Contact us
                 </div>
-                <div
-                  className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartner(url)}
-                >
+                <div>
                   <ButtonComponent
-                    label="Log in"
-                    type={ButtonTypeTokens.OUTLINE_LARGE}
+                    label="Sign in"
+                    type={ButtonTypeTokens.OUTLINE_TRANSPARENT_LARGE}
+                    onClick={() => redirectToVoltApp()}
                     fontSize={14}
                   />
                 </div>
-                <div
-                  className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartner(url)}
-                >
+                <div>
                   <ButtonComponent
-                    label="Empanel now"
+                    label="Check available limit"
                     type={ButtonTypeTokens.PRIMARY_LARGE}
+                    onClick={() => redirectToVoltApp()}
                     fontSize={14}
                   />
                 </div>
@@ -189,9 +147,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo("/", "_self")}
+            onClick={() => redirectTo("/aboutus")}
           >
-            Home
+            Benefits
           </div>
           <Divider />
           <div
@@ -201,7 +159,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo(`${BaseLink}/partner/faq`, "_self")}
+            onClick={() => redirectTo("#faq", "_self")}
           >
             FAQs
           </div>
@@ -213,9 +171,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo("/about", "_self")}
+            onClick={() => redirectTo("/partner", "_self")}
           >
-            About us
+            Partner with us
           </div>
           <Divider />
           <div
@@ -237,10 +195,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner(url)}
+            onClick={() => redirectToVoltApp()}
           >
-            Log in
+            Sign in
           </div>
+          <Divider />
           <div
             className={styles.menuItem}
             style={{
@@ -248,9 +207,9 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner(url)}
+            onClick={() => redirectToVoltApp()}
           >
-            Empanel now
+            Check available limit
           </div>
         </div>
       ) : (

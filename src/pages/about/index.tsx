@@ -17,7 +17,7 @@ export default function About() {
         />
       </Head>
 
-      <Header type={HeaderType.ABOUT} />
+      <Header type={HeaderType.INVESTOR} />
       <AboutTopSection />
       <TeamSection />
       <InvestorSection />

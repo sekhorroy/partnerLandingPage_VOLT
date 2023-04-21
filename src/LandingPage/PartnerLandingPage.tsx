@@ -1,7 +1,8 @@
 import styles from "./PartnerLandingPage.module.css";
-import { Header } from "@/components/header";
-import {getScreenX, handleWhatAppClick} from "@/configs/utils";
-import {createRef, useEffect, useMemo, useRef, useState} from "react";
+import {Header} from "@/components/header";
+import {handleWhatAppClick} from "@/configs/utils";
+import * as React from "react";
+import {useMemo} from "react";
 import TopSection from "@/LandingPage/topSection/topSection";
 import PartnerSection from "@/LandingPage/partnerSection/partnerSection";
 import VoltBenefit from "@/LandingPage/voltBenefitSection/voltBenefit";
@@ -11,9 +12,8 @@ import Faq, {FaqType} from "./faqs/faqs";
 
 
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
-import {useRouter} from "next/router";
 import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
-import * as React from "react";
+import {HeaderType} from "@/components/header/type";
 
 export default function PartnerLandingPage() {
 
