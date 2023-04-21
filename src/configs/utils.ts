@@ -50,7 +50,7 @@ export const redirectToFaq = () => {
 };
 export const redirectToPartner = (url?: string) => {
   // console.log("partner link: ", `${PartnerLink}${getParamsLink()}`);
-  window.open(`${PartnerLink}${getParamsLink()}`, '_self');
+  window.open(`${PartnerLink}?${getParamsLink()}`, '_self');
 };
 export const redirectToVoltApp = () => {
   window.open(`${AppLink}${getParamsLink()}`, '_blank');
@@ -176,7 +176,7 @@ export const getParamsLink = (url?: string) => {
 
     console.log('resultString: ', resultString);
 
-  return `?${resultString}`;
+  return `${resultString}`;
 };
 
 export const convertTo2DArray = (data: any, count:number) => {

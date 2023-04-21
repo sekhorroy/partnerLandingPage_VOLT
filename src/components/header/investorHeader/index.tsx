@@ -12,6 +12,7 @@ import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import { Divider } from "@/components/divider";
 import { useState } from "react";
+import {BaseLink} from "@/configs/constants";
 
 export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -85,7 +86,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               <div className={styles.headerRightWebContent}>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("#volt_benefits", "_self")}
+                  onClick={() => redirectTo(`${BaseLink}/#volt_benefits`, "_self")}
                 >
                   Benefits
                 </div>
