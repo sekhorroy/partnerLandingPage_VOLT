@@ -47,9 +47,11 @@ export const StepperRewards: React.FunctionComponent<StepperRewardsProps> = ({
                     : {
                         display: "flex",
                         flexDirection: "row",
-                        gap: 120,
+                        gap: 95,
                         position: "relative",
                         top: 12,
+                        paddingLeft: 64,
+                        paddingRight: 64,
                       }
                 }
               >
@@ -75,10 +77,18 @@ export const StepperRewards: React.FunctionComponent<StepperRewardsProps> = ({
                       >
                         <div
                           className={styles.stepperRewardContainerPoints}
-                          style={{
+                          style={_isMobile ? {
                             marginRight: 14,
                             marginTop: 28,
                             marginBottom: 28,
+                            width: 50,
+                            height: 40
+                          } : {
+                            marginRight: 14,
+                            marginTop: 28,
+                            marginBottom: 28,
+                            width: 50,
+                            height: 50
                           }}
                         >
                           {item.points}
