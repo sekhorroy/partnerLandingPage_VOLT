@@ -11,7 +11,7 @@ export const StorageKeys = Object.freeze({
     UTM_PARAMS: 'UTM_PARAMS'
 });
 
-export const AppBuildType = BuildTypes.STAGING
+export const AppBuildType = BuildTypes.PRODUCTION
 
 export const EXTERNAL_URLS = {
     "INSTAGRAM" : "",

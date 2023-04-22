@@ -123,13 +123,13 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               <div className={styles.headerRightWebContent}>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("/partner", "_self")}
+                  onClick={() => redirectTo("/", "_self")}
                 >
                   Home
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`${BaseLink}/partner/faq`, "_self")}
+                  onClick={() => redirectTo(`/partner/#faq`, "_self")}
                 >
                   FAQs
                 </div>
@@ -181,6 +181,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             width: "100%",
             boxSizing: "border-box",
           }}
+          onClick={()=>handleMenuOpenClose()}
         >
           <div
             className={styles.menuItem}
@@ -201,7 +202,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo(`${BaseLink}/partner/faq`, "_self")}
+            onClick={() => redirectTo(`/partner/#faq`, "_self")}
           >
             FAQs
           </div>
