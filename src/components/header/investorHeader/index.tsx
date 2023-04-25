@@ -134,6 +134,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
       {open ? (
         <div
           className={styles.menuContainer}
+          onClick={()=>handleMenuOpenClose()}
           style={{
             position: "absolute",
             top: 44,

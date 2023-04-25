@@ -53,7 +53,6 @@ export const redirectToPartner = (url?: string) => {
   window.open(`${PartnerLink}?${getParamsLink()}`, '_self');
 };
 export const redirectToPartnerLanding = (url?: string) => {
-  // console.log("partner link: ", `${PartnerLink}${getParamsLink()}`);
   window.open(`${BaseLink}/partner?${getParamsLink()}`, '_self');
 };
 export const redirectToVoltApp = () => {

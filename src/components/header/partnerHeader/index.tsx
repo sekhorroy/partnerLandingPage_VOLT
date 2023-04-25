@@ -14,9 +14,7 @@ import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import { useState } from "react";
 import { Divider } from "@/components/divider";
-import voltPartnerLogo from "../../../../public/images/VoltPartnerLogo.svg";
 import { useRouter } from "next/router";
-import { BaseLink } from "@/configs/constants";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -129,7 +127,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`/partner/#faq`, "_self")}
+                  onClick={() => redirectTo(`/partner#faq`, "_self")}
                 >
                   FAQs
                 </div>
@@ -202,7 +200,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo(`/partner/#faq`, "_self")}
+            onClick={() => redirectTo(`/partner#faq`, "_self")}
           >
             FAQs
           </div>
