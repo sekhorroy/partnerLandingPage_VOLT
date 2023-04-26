@@ -7,6 +7,7 @@ import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySection
 import Faqs, { FaqType } from "@/LandingPage/faqs/faqs";
 import Footer from "@/LandingPage/footer/footer";
 import {isMobile} from "@/configs/utils";
+import HowItWorksReferAndEarn from "@/features/inviteAndEarn/howItWorksInviteAndEarn/HowItWorks";
 
 const InviteAndEarnFeature = () => {
 
@@ -17,7 +18,7 @@ const InviteAndEarnFeature = () => {
       <div>
         <Header type={HeaderType.INVESTOR} />
         <HeroSection />
-        <HowItWorks />
+        <HowItWorksReferAndEarn />
         <RewardSection />
         <div style={_isMobile ? {
           paddingTop: 48

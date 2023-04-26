@@ -35,6 +35,7 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
                         style={{
                           paddingLeft: 16,
                           paddingRight: 16,
+                          cursor: 'pointer'
                         }}
                         onClick={() => handleClick(index)}
                     >
@@ -80,7 +81,7 @@ export const StepperBenefit: React.FunctionComponent<StepperBenefitProps> = ({
                                   } : {
                                     height: 55,
                                     position: "relative",
-                                    bottom: 20,
+                                    bottom: 15,
                                     left: 35,
                                   }
                             }

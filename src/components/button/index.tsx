@@ -17,6 +17,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
   imageUrl,
   fontSize,
   loading = false,
+  maxWidth,
 }) => {
   const handleClick = () => {
     if (type !== ButtonTypeTokens.DISABLED_LARGE) {
@@ -39,6 +40,7 @@ export const ButtonComponent: React.FunctionComponent<ButtonProps> = ({
           width: "100%",
           paddingRight: 0,
           paddingLeft: 0,
+          maxWidth: maxWidth ? maxWidth : "100%",
         }
       : {
           width: "fit-content",

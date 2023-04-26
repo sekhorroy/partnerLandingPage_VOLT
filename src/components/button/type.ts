@@ -27,4 +27,5 @@ export type ButtonProps = {
     imageUrl?: string,
     fontSize?: number,
     loading?: boolean,
+    maxWidth?: number | string,
 }

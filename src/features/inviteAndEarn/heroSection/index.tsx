@@ -20,6 +20,7 @@ const HeroSection = () => {
             _isMobile
               ? {
                   paddingTop: 32,
+                  paddingBottom: 32
                 }
               : {
                   paddingTop: 44,
