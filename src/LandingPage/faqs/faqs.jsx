@@ -2,7 +2,7 @@ import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
 import { isMobile } from "@/configs/utils";
 import { helpLineNumberLink, PartnerLink } from "@/configs/constants";
-import {ButtonComponent} from "@/components/button";
+import { ButtonComponent } from "@/components/button";
 
 const faqsItem = [
   {
@@ -165,173 +165,353 @@ const faqsItem = [
 ];
 
 const faqItemInvestor = [
-    {
-      question: 'What is loan against Mutual Funds?',
-      answer: () => {return <span>Loan Against Mutual Funds (LAMF) allows you to borrow cash against your mutual fund investments as collateral. You can use Volt to lien mark your mutual funds digitally to avail an instant limit without losing the ownership of your mutual funds and all the associated benefits with it.
-            Funds will be made available in the form of an overdraft facility. You can utilize the required amount and repay anytime without any prepayment charges. Interest is charged only on the utilized amount and for the duration the funds are utilized.
-            You can select from a list of 4500+ approved mutual funds from different asset management companies (AMCs) in India. You can lien mark mutual funds registered with both CAMS & KFintech (earlier known as KARVY), Registrars & Transfer Agents (RTAs). We recommend digital LAMF to meet any of your financial requirements like travel, gadget purchase, balance transfer for your high interest loans, medical emergency.</span>}
+  {
+    question: "What is loan against Mutual Funds?",
+    answer: () => {
+      return (
+        <span>
+          Loan Against Mutual Funds (LAMF) allows you to borrow cash against
+          your mutual fund investments as collateral. You can use Volt to lien
+          mark your mutual funds digitally to avail an instant limit without
+          losing the ownership of your mutual funds and all the associated
+          benefits with it. Funds will be made available in the form of an
+          overdraft facility. You can utilize the required amount and repay
+          anytime without any prepayment charges. Interest is charged only on
+          the utilized amount and for the duration the funds are utilized. You
+          can select from a list of 4500+ approved mutual funds from different
+          asset management companies (AMCs) in India. You can lien mark mutual
+          funds registered with both CAMS & KFintech (earlier known as KARVY),
+          Registrars & Transfer Agents (RTAs). We recommend digital LAMF to meet
+          any of your financial requirements like travel, gadget purchase,
+          balance transfer for your high interest loans, medical emergency.
+        </span>
+      );
     },
-    {
-      question: 'What are the conditions to get a loan from Volt?\n',
-      answer: ()=>{
-        return (
-            <>
-              <ul>
-                <li>
-                  You should be between 18 and 65 years of age.
-                </li>
-                <li>
-                  Your entire mutual fund portfolio should not be less than ₹50,000.
-                </li>
-                <li>
-                  You should hold Mutual Funds approved with CAMS & Kfintech (RTAs). Debt & ELSS funds (units held greater than 3 years) are also eligible.
-                </li>
-                <li>
-                  Joint mutual fund holders are not eligible for loan.
-                </li>
-                <li>
-                  You should be an Indian resident.
-                </li>
-              </ul>
-              <span>There is no minimum credit score and income requirement.</span>
-            </>
-        )
-      }
+  },
+  {
+    question: "What are the conditions to get a loan from Volt?\n",
+    answer: () => {
+      return (
+        <>
+          <ul>
+            <li>You should be between 18 and 65 years of age.</li>
+            <li>
+              Your entire mutual fund portfolio should not be less than ₹50,000.
+            </li>
+            <li>
+              You should hold Mutual Funds approved with CAMS & Kfintech (RTAs).
+              Debt & ELSS funds (units held greater than 3 years) are also
+              eligible.
+            </li>
+            <li>Joint mutual fund holders are not eligible for loan.</li>
+            <li>You should be an Indian resident.</li>
+          </ul>
+          <span>There is no minimum credit score and income requirement.</span>
+        </>
+      );
+    },
+  },
+  {
+    question: "How much money can I borrow as a loan?",
+    answer: () => {
+      return (
+        <>
+          You can choose to set up any line amount ranging from Rs. 25,000 to
+          Rs. 1 crore. <br></br>Yes! You read it right, you can create line up
+          to 1 crore digitally in 5 minutes.
+        </>
+      );
+    },
+  },
+  {
+    question: "Can I choose any date for my monthly loan repayment?",
+    answer: () => {
+      return (
+        <>
+          Yes, you can choose to repay when you want. The credit line facility
+          offers 100% flexibility for principal repayment. Only the interest
+          needs to be repaid after month ends.
+        </>
+      );
+    },
+  },
+  {
+    question: "Do I have to pay interest on the complete line amount?",
+    answer: () => {
+      return (
+        <>
+          No, you do not have to pay interest on the complete line amount. Volt
+          in completed flexible for the customer and interest is only to be paid
+          on the amount used. Interest is calculated daily based on the loan
+          outstanding you have day end. Some scenarios to explain:
+          <ul>
+            <li>
+              If loan amount at day end is zero, there will be no interest
+              charged for that day.
+            </li>
+            <li>
+              If amount is withdrawn, used and repaid in 10 days, you’ll be only
+              charged interest for 10 days.
+            </li>
+          </ul>
+        </>
+      );
+    },
+  },
+  {
+    question: "What are the documents required?",
+    answer: () => {
+      return (
+        <>
+          The whole process if 100% digital, hence you don’t need any document
+          in physical form. For quick processing, please keep below handy:
+          <ul>
+            <li>PAN card number</li>
+            <li>Email ID associated with CAMS and KARVY</li>
+            <li>
+              Bank accounts details for account verification and receiving money
+            </li>
+            <li>Debit card or net banking details for mandate set up</li>
+          </ul>
+        </>
+      );
+    },
+  },
+  {
+    question: "What is lien marking/pledging of Mutual Funds?",
+    answer: () => {
+      return (
+        <>
+          When you take a loan against your mutual fund units, we lien
+          mark/pledge your mutual fund units in the name of the lender, so that
+          it cannot be redeemed/sell until you pay back the loan. The lien
+          marking process is done 100% digitally and in real-time.
+        </>
+      );
+    },
+  },
+  {
+    question: "How to update your mobile number or email address in your CAS?",
+    answer: () => {
+      return (
+        <>
+          You can change your email/mobile number though MFCentral. Steps to
+          change email/mobile number:
+          <ul>
+            <li>Sign up at MFCentral</li>
+            <li>Put a service request.</li>
+            <li>
+              MFCentral will update the email/mobile number on your behalf
+              within 1-2 days.
+            </li>
+          </ul>
+        </>
+      );
+    },
+  },
+  {
+    question: "Which mutual fund schemes are eligible to take loans?",
+    answer: () => {
+      return (
+        <>
+          More than 4500+ mutual funds from different asset management companies
+          (AMCs) in India are eligible to take loans with Volt. Not eligible -
+          Tax Saving Fund units with date of purchase less than 3 years, i.e.,
+          not matured.
+        </>
+      );
+    },
+  },
+  {
+    question: "How do I check my limit with Volt?",
+    answer: () => {
+      return (
+        <>
+          We just need your PAN, mobile number and MF registered email ID to
+          check your limit. This is done just after signing up in the journey so
+          you know during the journey what you are getting.
+        </>
+      );
+    },
+  },
+  {
+    question: "Do I need to upload CAS to get my limit?",
+    answer: () => {
+      return <>No. This is done automatically while checking the limit.</>;
+    },
+  },
+  {
+    question: "Can I lien mark any mutual fund units of my choice?",
+    answer: () => {
+      return (
+        <>
+          Volt is completely flexible in choosing which mutual funds units you
+          want to lien mark for setting up the limit. You can change the schemes
+          and units and have your own allocation for lien marking.
+        </>
+      );
+    },
+  },
+  {
+    question: "When will my funds be unlienmarked?",
+    answer: () => {
+      return (
+        <>
+          This can be done any time upon customer request conditional on current
+          loan amount pending against your mutual fund units. Depending on your
+          current loan amount/utilisation, you can remove lien from some mutual
+          fund units or all mutual funds units you’ve pledged.
+        </>
+      );
+    },
+  },
+];
 
+const ReferalItem = [
+  {
+    question: "Who is the referrer and referee?",
+    answer: () => {
+      return (
+        <>
+          <ul>
+            <li>
+              A referrer is a Volt Money partner who refers fellow MFDs to
+              empanel with Volt Money by sharing their unique invite link.
+            </li>
+            <li>
+              The Referee is a MFD who empanelled with Volt Money using the
+              invite link shared by the referrer.
+              <br />
+              Example: Suppose Mr. Amit is our partner, and he invite Mr.
+              Suresh, a fellow MFD, to empanel with Volt Money using his
+              referral link. Here, Amit is the referrer, and Suresh is the
+              referee.
+            </li>
+          </ul>
+        </>
+      );
     },
-    {
-      question: 'How much money can I borrow as a loan?',
-      answer: ()=> {
-        return (
-            <>
-              You can choose to set up any line amount ranging from Rs. 25,000 to Rs. 1 crore. <br></br>Yes! You read it right, you can create line up to 1 crore digitally in 5 minutes.
-            </>
-        )
-      }
+  },
+  {
+    question: "What is the definition of active referral?",
+    answer: () => {
+      return (
+        <>
+          When any MFD empanel with Volt Money using the referral link and sets
+          up at least one LAMF limit of Rs. 1 lakh or higher with us, the
+          referral will be considered successful.
+        </>
+      );
     },
-    {
-      question: 'Can I choose any date for my monthly loan repayment?',
-      answer: ()=> {
-        return (
-            <>
-              Yes, you can choose to repay when you want. The credit line facility offers 100% flexibility for principal repayment. Only the interest needs to be repaid after month ends.
-            </>
-        )
-      }
+  },
+  {
+    question: "How and when will I get the reward?",
+    answer: () => {
+      return (
+        <>
+          <p>
+            Eligible Partners will receive rewards within 45 calendar days on
+            their registered eMail / SMS / WhatsApp with rewards details
+            mentioned in it.
+          </p>
+        </>
+      );
     },
-    {
-      question: 'Do I have to pay interest on the complete line amount?',
-      answer: ()=> {
-        return (
-            <>
-              No, you do not have to pay interest on the complete line amount. Volt in completed flexible for the customer and interest is only to be paid on the amount used.
-              Interest is calculated daily based on the loan outstanding you have day end. Some scenarios to explain:
-              <ul>
-                <li>
-                  If loan amount at day end is zero, there will be no interest charged for that day.
-                </li>
-                <li>
-                  If amount is withdrawn, used and repaid in 10 days, you’ll be only charged interest for 10 days.
-                </li>
-              </ul>
-            </>
-        )
-      }
+  },
+  {
+    question: "Where will I find my invite link?",
+    answer: () => {
+      return (
+        <>
+          <p>You can get the invite link 2 ways:</p>
+          <ul>
+            <li>
+              {`Login on partner dashboard to get the invite link {{dashboard_url}}`}
+            </li>
+            <li>
+              {`Request for invite link on whatsapp number {{partner_whatsapp_number_url}}`}
+            </li>
+          </ul>
+        </>
+      );
     },
-    {
-      question: 'What are the documents required?',
-      answer: ()=> {
-        return (
-            <>
-              The whole process if 100% digital, hence you don’t need any document in physical form. For quick processing, please keep below handy:
-              <ul>
-                <li>PAN card number</li>
-                <li>Email ID associated with CAMS and KARVY</li>
-                <li>Bank accounts details for account verification and receiving money</li>
-                <li>Debit card or net banking details for mandate set up</li>
-              </ul>
-            </>
-        )
-      }
+  },
+  {
+    question: "Is there a way for me to track the status of my referrals?",
+    answer: () => {
+      return (
+        <>
+          <p>
+            {`Yes, you can check the status of your referral on our partner dashboard here {{dashboard_URL}}`}
+          </p>
+        </>
+      );
     },
-    {
-      question: 'What is lien marking/pledging of Mutual Funds?',
-      answer: ()=> {
-        return (
-            <>
-              When you take a loan against your mutual fund units, we lien mark/pledge your mutual fund units in the name of the lender, so that it cannot be redeemed/sell until you pay back the loan. The lien marking process is done 100% digitally and in real-time.
-            </>
-        )
-      }
+  },
+  {
+    question: "Am I eligible for the program if I refer my client?",
+    answer: () => {
+      return (
+        <>
+          <p>
+            No, in order to be eligible for this referral program, you need to
+            invite other MFDs to enroll with Volt Money.
+          </p>
+        </>
+      );
     },
-    {
-      question: 'How to update your mobile number or email address in your CAS?',
-      answer: ()=> {
-        return (
-            <>
-              You can change your email/mobile number though MFCentral.
-              Steps to change email/mobile number:
-              <ul>
-                <li>Sign up at MFCentral</li>
-                <li>Put a service request.</li>
-                <li>MFCentral will update the email/mobile number on your behalf within 1-2 days.</li>
-              </ul>
-            </>
-        )
-      }
+  },
+  {
+    question:
+      "Is there a limit to how many MFD I can refer or the rewards I can earn?",
+    answer: () => {
+      return (
+        <>
+          <p>
+            The maximum reward we offer is an iPad for referring to 25 MDFs.
+            However, you may share as many reference leads as you like, and we
+            will get in touch with you if you exceed the 25-referral limit.
+          </p>
+        </>
+      );
     },
-    {
-      question: 'Which mutual fund schemes are eligible to take loans?',
-      answer: ()=> {
-        return (
-            <>
-              More than 4500+ mutual funds from different asset management companies (AMCs) in India are eligible to take loans with Volt.
-              Not eligible - Tax Saving Fund units with date of purchase less than 3 years, i.e., not matured.
-            </>
-        )
-      }
+  },
+  {
+    question: "How do I know when I've successfully referred someone?",
+    answer: () => {
+      return (
+        <>
+          <ul>
+            <li>
+              We will notify you via WhatsApp and email when your referral
+              enrolls and opens a line with Volt Money.
+            </li>
+            <li>
+              {`You can also check status on our partner dashboard. {{dashboard_URL}}`}
+            </li>
+          </ul>
+        </>
+      );
     },
-    {
-      question: 'How do I check my limit with Volt?',
-      answer: ()=> {
-        return (
-            <>
-              We just need your PAN, mobile number and MF registered email ID to check your limit. This is done just after signing up in the journey so you know during the journey what you are getting.
-            </>
-        )
-      }
+  },
+  {
+    question: "Where can I reach out if my question wasn't answered here?",
+    answer: () => {
+      return (
+        <>
+          <p>
+            You can write to us at {' '}
+            <a href="mailto:support@voltmoney.in">support@voltmoney.in</a> {' '} or
+            can call on {' '}
+            <a href={helpLineNumberLink} target="_parent">
+              09611-749-295.
+            </a>{" "}
+          </p>
+        </>
+      );
     },
-    {
-      question: 'Do I need to upload CAS to get my limit?',
-      answer: ()=> {
-        return (
-            <>
-              No. This is done automatically while checking the limit.
-            </>
-        )
-      }
-    },
-    {
-      question: 'Can I lien mark any mutual fund units of my choice?',
-      answer: ()=> {
-        return (
-            <>
-              Volt is completely flexible in choosing which mutual funds units you want to lien mark for setting up the limit. You can change the schemes and units and have your own allocation for lien marking.
-            </>
-        )
-      }
-    },
-    {
-      question: 'When will my funds be unlienmarked?',
-      answer: ()=> {
-        return (
-            <>
-              This can be done any time upon customer request conditional on current loan amount pending against your mutual fund units. Depending on your current loan amount/utilisation, you can remove lien from some mutual fund units or all mutual funds units you’ve pledged.
-            </>
-        )
-      }
-    },
-]
+  },
+];
 
 const LASItems = [
   {
@@ -578,11 +758,12 @@ const AboutVoltMoneyItem = [
 ];
 
 export const FaqType = {
-  PARTNER: 'PARTNER',
-  INVESTOR : 'INVESTOR'
-}
+  PARTNER: "PARTNER",
+  INVESTOR: "INVESTOR",
+  INVITE_AND_EARN: "INVITE_AND_EARN",
+};
 
-function Faqs({type}) {
+function Faqs({ type }) {
   const _isMobile = isMobile();
 
   return (
@@ -628,7 +809,8 @@ function Faqs({type}) {
         Frequently asked questions
       </h2>
       <div className={styles.Faqs_ContainerQuestionItemsContainer}>
-        {type === FaqType.PARTNER && faqsItem &&
+        {type === FaqType.PARTNER &&
+          faqsItem &&
           faqsItem.map((item, key) => {
             return (
               <FaqCollapsible
@@ -638,20 +820,29 @@ function Faqs({type}) {
               />
             );
           })}
-        {type === FaqType.INVESTOR && faqsItem &&
-            faqItemInvestor.map((item, key) => {
-              return (
-                  <FaqCollapsible
-                      key={key}
-                      question={item.question}
-                      answer={item.answer}
-                  />
-              );
-            })}
+        {type === FaqType.INVESTOR &&
+          faqsItem &&
+          faqItemInvestor.map((item, key) => {
+            return (
+              <FaqCollapsible
+                key={key}
+                question={item.question}
+                answer={item.answer}
+              />
+            );
+          })}
+        {type === FaqType.INVITE_AND_EARN &&
+          faqsItem &&
+            ReferalItem.map((item, key) => {
+            return (
+              <FaqCollapsible
+                key={key}
+                question={item.question}
+                answer={item.answer}
+              />
+            );
+          })}
       </div>
-      {/*<div>*/}
-      {/*  <ButtonComponent label={} type={} />*/}
-      {/*</div>*/}
     </div>
   );
 }

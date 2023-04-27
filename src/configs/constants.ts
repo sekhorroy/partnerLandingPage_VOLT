@@ -79,3 +79,8 @@ export enum GoogleUtmParams {
 export enum QUERY_PARAMS {
   REFERRED_PARTNER = 'referredpartner'
 }
+
+export const ImageLinks = {
+  rewardStructureWeb: 'https://volt-images.s3.ap-south-1.amazonaws.com/rewardStructure_Web.png',
+  rewardStructureMob: 'https://volt-images.s3.ap-south-1.amazonaws.com/rewadStructure_mobile.png'
+}

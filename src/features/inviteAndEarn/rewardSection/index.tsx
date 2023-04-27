@@ -12,7 +12,7 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import { Links } from "@/configs/constants";
+import { ImageLinks, Links } from "@/configs/constants";
 
 const stepperRewardData: StepperRewardsData[] = [
   {
@@ -112,17 +112,25 @@ const RewardSection = () => {
                 marginTop: 24,
               }}
             >
-              <div
-                style={
-                  _isMobile
-                    ? {
-                        position: "relative",
-                        left: 12,
-                      }
-                    : {}
-                }
-              >
-                <StepperRewards data={stepperRewardData} />
+              <div style={_isMobile ? {} : {}}>
+                <div>
+                  <img
+                    src={
+                      _isMobile
+                        ? ImageLinks.rewardStructureMob
+                        : ImageLinks.rewardStructureWeb
+                    }
+                    width={_isMobile ? "100%" : 1000}
+                    height={_isMobile ? "100%" : 200}
+                    style={
+                      _isMobile
+                        ? {
+                            maxWidth: 400,
+                          }
+                        : {}
+                    }
+                  />
+                </div>
               </div>
             </div>
             <div

@@ -26,7 +26,7 @@ const InviteAndEarnFeature = () => {
         }}>
           <TestimoneySection />
         </div>
-        <Faqs type={FaqType.PARTNER} />
+        <Faqs type={FaqType.INVITE_AND_EARN} />
         <Footer />
       </div>
     </>
