@@ -1,8 +1,18 @@
 import styles from "./rewardSection.module.css";
-import { isMobile } from "@/configs/utils";
+import {
+  isMobile,
+  redirectTo,
+  redirectToPartnerInviteAndEarn,
+} from "@/configs/utils";
 import { useMemo } from "react";
 import { StepperRewards } from "@/components/stepperRewards";
 import { StepperRewardsData } from "@/components/stepperRewards/type";
+import { ButtonComponent } from "@/components/button";
+import {
+  ButtonTypeTokens,
+  ButtonWidthTypeTokens,
+} from "@/components/button/type";
+import { Links } from "@/configs/constants";
 
 const stepperRewardData: StepperRewardsData[] = [
   {
@@ -103,13 +113,59 @@ const RewardSection = () => {
               }}
             >
               <div
-                style={_isMobile ? {
-                  position: "relative",
-                  left: 12,
-                } : {}}
+                style={
+                  _isMobile
+                    ? {
+                        position: "relative",
+                        left: 12,
+                      }
+                    : {}
+                }
               >
                 <StepperRewards data={stepperRewardData} />
               </div>
+            </div>
+            <div
+              style={
+                _isMobile
+                  ? {
+                      width: "100%",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 16,
+                      marginTop: 24,
+                      maxWidth: 400,
+                    }
+                  : {
+                      display: "flex",
+                      flexDirection: "row",
+                      gap: 16,
+                      marginTop: 40,
+                    }
+              }
+            >
+              <ButtonComponent
+                label={"Share invite link"}
+                type={ButtonTypeTokens.PRIMARY_LARGE}
+                width={
+                  _isMobile
+                    ? ButtonWidthTypeTokens.FULL
+                    : ButtonWidthTypeTokens.CONTENT
+                }
+                onClick={() => redirectToPartnerInviteAndEarn()}
+              />
+              <ButtonComponent
+                label={"View all T&C"}
+                type={ButtonTypeTokens.OUTLINE_LARGE}
+                width={
+                  _isMobile
+                    ? ButtonWidthTypeTokens.FULL
+                    : ButtonWidthTypeTokens.CONTENT
+                }
+                onClick={() =>
+                  redirectTo(Links.InviteAndEarnTermsAndConditions)
+                }
+              />
             </div>
           </div>
         </div>
