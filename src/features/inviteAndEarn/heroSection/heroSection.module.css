@@ -29,6 +29,16 @@
     /* Grey/Night */
     color: #109648;
 }
+
+.heroSectionContainer1LeftT2Web {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    /* Grey/Night */
+    color: #109648;
+    line-height: 60px;
+}
+
 .heroSectionContainer1LeftT3 {
     font-family: 'Inter';
     font-style: normal;

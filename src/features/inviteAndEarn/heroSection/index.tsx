@@ -142,7 +142,7 @@ const HeroSection = () => {
                 Join the mission to stop redemptions!
               </div>
               <div
-                className={styles.heroSectionContainer1LeftT2}
+                className={_isMobile ? styles.heroSectionContainer1LeftT2 : styles.heroSectionContainer1LeftT2Web}
                 style={
                   _isMobile
                     ? {
