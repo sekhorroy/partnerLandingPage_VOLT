@@ -74,13 +74,11 @@ export default function HowItWorksReferAndEarn() {
                   paddingTop: 48,
                   paddingLeft: 16,
                   paddingRight: 16,
-                  paddingBottom: 48,
                 }
               : {
                   paddingTop: 80,
                   paddingLeft: 16,
                   paddingRight: 16,
-                  paddingBottom: 40,
                 }
           }
         >
@@ -219,7 +217,6 @@ export default function HowItWorksReferAndEarn() {
                       ? {
                           maxWidth: 400,
                           width: "100%",
-                          paddingTop: 24,
                         }
                       : {
                           width: "100%",
@@ -238,6 +235,8 @@ export default function HowItWorksReferAndEarn() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                position: 'relative',
+                bottom: 40
               }}
             >
               <div

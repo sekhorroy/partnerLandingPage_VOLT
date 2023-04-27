@@ -247,6 +247,9 @@ const HeroSection = () => {
                         justifyContent: "flex-end",
                       }
                 }
+                onClick={() =>
+                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
+                }
               >
                 <span
                   style={{
@@ -254,9 +257,6 @@ const HeroSection = () => {
                     cursor: "pointer",
                     fontWeight: 500,
                   }}
-                  onClick={() =>
-                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
-                  }
                 >
                   T&C Apply.
                 </span>
