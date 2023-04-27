@@ -25,7 +25,10 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
     <>
       <div style={{
         width: '100%',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        position: 'sticky',
+        top: 0,
+        zIndex: 10
       }}>{_child}</div>
     </>
   );

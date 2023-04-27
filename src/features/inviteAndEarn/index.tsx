@@ -2,7 +2,6 @@ import { Header } from "@/components/header";
 import { HeaderType } from "@/components/header/type";
 import HeroSection from "@/features/inviteAndEarn/heroSection";
 import RewardSection from "@/features/inviteAndEarn/rewardSection";
-import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 import Faqs, { FaqType } from "@/LandingPage/faqs/faqs";
 import Footer from "@/LandingPage/footer/footer";

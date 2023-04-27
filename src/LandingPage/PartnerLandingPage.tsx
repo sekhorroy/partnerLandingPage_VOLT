@@ -14,6 +14,7 @@ import Faq, {FaqType} from "./faqs/faqs";
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
 import {HeaderType} from "@/components/header/type";
+import {InvestorHeader} from "@/components/header/investorHeader";
 
 export default function PartnerLandingPage() {
 
@@ -25,7 +26,7 @@ export default function PartnerLandingPage() {
           width: '100%'
         }}
       >
-        <Header />
+          <Header />
         <TopSection />
         <PartnerSection />
         <VoltBenefit/>

@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import {isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn,} from "@/configs/utils";
+import {getParamsLink, isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn,} from "@/configs/utils";
 import {ButtonComponent} from "@/components/button";
 import {ButtonTypeTokens} from "@/components/button/type";
 import {HeaderProps, HeaderType} from "@/components/header/type";
@@ -143,7 +143,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
+                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectTo(`/invite_and_earn?${getParamsLink()}`)}
                 >
                   <ButtonComponent
                     label="Log in"
