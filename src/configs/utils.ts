@@ -52,7 +52,7 @@ export const redirectToPartner = (url?: string) => {
   window.open(`${PartnerLink}?${getParamsLink()}`, '_self');
 };
 export const redirectToPartnerInviteAndEarn = (url?: string) => {
-  window.open(`${BaseLink}?${QUERY_PARAMS.REFERRED_PARTNER}=true&${getParamsLink()}`, '_self');
+  window.open(`${PartnerLink}?${QUERY_PARAMS.REFERRED_PARTNER}=true&${getParamsLink()}`, '_self');
 };
 export const redirectToPartnerLanding = (url?: string) => {
   window.open(`${BaseLink}/partner?${getParamsLink()}`, '_self');

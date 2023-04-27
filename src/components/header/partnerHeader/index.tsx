@@ -137,13 +137,13 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo("/invite-and-earn", "_self")}
+                  onClick={() => redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")}
                 >
                   Invite & Get iPad
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectTo(`/invite_and_earn?${getParamsLink()}`)}
+                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner()}
                 >
                   <ButtonComponent
                     label="Log in"
@@ -234,7 +234,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo("/invite-and-earn", "_self")}
+            onClick={() => redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")}
           >
             Invite & Get iPad
           </div>
