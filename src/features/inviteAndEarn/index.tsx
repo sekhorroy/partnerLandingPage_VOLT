@@ -16,7 +16,7 @@ const InviteAndEarnFeature = () => {
   return (
     <>
       <div>
-        <Header type={HeaderType.INVESTOR} />
+        <Header type={HeaderType.INVITE_AND_EARN} />
         <HeroSection />
         <HowItWorksReferAndEarn />
         <RewardSection />

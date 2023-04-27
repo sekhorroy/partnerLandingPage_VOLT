@@ -5,7 +5,7 @@ import {
   BUILD_TYPE,
   getBuildType,
   GoogleUtmParams,
-  PartnerLink,
+  PartnerLink, QUERY_PARAMS,
   StoreKey,
   WhatsAppLink
 } from "@/configs/constants";
@@ -49,8 +49,10 @@ export const redirectToFaq = () => {
   window.open(`${PartnerLink}faq`, '_blank');
 };
 export const redirectToPartner = (url?: string) => {
-  // console.log("partner link: ", `${PartnerLink}${getParamsLink()}`);
   window.open(`${PartnerLink}?${getParamsLink()}`, '_self');
+};
+export const redirectToPartnerInviteAndEarn = (url?: string) => {
+  window.open(`${PartnerLink}?${QUERY_PARAMS.REFERRED_PARTNER}=true&${getParamsLink()}`, '_self');
 };
 export const redirectToPartnerLanding = (url?: string) => {
   window.open(`${BaseLink}/partner?${getParamsLink()}`, '_self');

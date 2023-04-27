@@ -1,4 +1,4 @@
-import { isMobile, redirectToPartner } from "@/configs/utils";
+import {isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn} from "@/configs/utils";
 import styles from "./HowItWorks.module.css";
 import { useMemo, useState } from "react";
 import { StepperBenefit } from "@/components/stepperBenefit";
@@ -12,6 +12,7 @@ import {
 } from "@/components/button/type";
 import { Divider } from "@/components/divider";
 import { useRouter } from "next/router";
+import { Links } from "@/configs/constants";
 
 export default function HowItWorksReferAndEarn() {
   const _isMobile: boolean = isMobile();
@@ -259,7 +260,11 @@ export default function HowItWorksReferAndEarn() {
                     fontWeight: "400",
                     fontSize: 14,
                     color: "#1434CB",
+                    cursor: "pointer",
                   }}
+                  onClick={() =>
+                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
+                  }
                 >
                   T&Cs apply
                 </span>
@@ -279,7 +284,7 @@ export default function HowItWorksReferAndEarn() {
                     : ButtonWidthTypeTokens.FULL
                 }
                 maxWidth={_isMobile ? 400 : 248}
-                onClick={() => redirectToPartner(url)}
+                onClick={() => redirectToPartnerInviteAndEarn()}
               />
             </div>
           </div>
@@ -299,7 +304,6 @@ export default function HowItWorksReferAndEarn() {
                   }
             }
           >
-            <Divider />
           </div>
         </div>
       </>

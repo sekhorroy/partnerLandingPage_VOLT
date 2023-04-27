@@ -1,20 +1,12 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import {
-  getParamsLink,
-  getScreenX,
-  isMobile,
-  redirectTo,
-  redirectToFaq,
-  redirectToPartner,
-  redirectToVoltApp,
-} from "@/configs/utils";
-import { ButtonComponent } from "@/components/button";
-import { ButtonTypeTokens } from "@/components/button/type";
-import { HeaderProps, HeaderType } from "@/components/header/type";
-import { useState } from "react";
-import { Divider } from "@/components/divider";
-import { useRouter } from "next/router";
+import {isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn,} from "@/configs/utils";
+import {ButtonComponent} from "@/components/button";
+import {ButtonTypeTokens} from "@/components/button/type";
+import {HeaderProps, HeaderType} from "@/components/header/type";
+import {useState} from "react";
+import {Divider} from "@/components/divider";
+import {useRouter} from "next/router";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -145,7 +137,13 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartner(url)}
+                  onClick={() => redirectTo("/invite-and-earn", "_self")}
+                >
+                  Invite & Get iPad
+                </div>
+                <div
+                  className={styles.headerLinksContainer}
+                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
                 >
                   <ButtonComponent
                     label="Log in"
@@ -155,7 +153,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartner(url)}
+                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
                 >
                   <ButtonComponent
                     label="Empanel now"
@@ -179,7 +177,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             width: "100%",
             boxSizing: "border-box",
           }}
-          onClick={()=>handleMenuOpenClose()}
+          onClick={() => handleMenuOpenClose()}
         >
           <div
             className={styles.menuItem}
@@ -236,7 +234,19 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner(url)}
+            onClick={() => redirectTo("/invite-and-earn", "_self")}
+          >
+            Invite & Get iPad
+          </div>
+          <Divider />
+          <div
+            className={styles.menuItem}
+            style={{
+              paddingLeft: 16,
+              paddingTop: 16,
+              paddingBottom: 16,
+            }}
+            onClick={() => type === HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
           >
             Log in
           </div>
@@ -247,7 +257,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartner(url)}
+            onClick={() => type === HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
           >
             Empanel now
           </div>

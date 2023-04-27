@@ -4,12 +4,38 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import { isMobile } from "@/configs/utils";
-import { useMemo } from "react";
+import {
+  isMobile,
+  redirectTo,
+  redirectToPartnerInviteAndEarn,
+} from "@/configs/utils";
+import {useEffect, useMemo, useState} from "react";
+import { Links } from "@/configs/constants";
+
+const partnerImages = [
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png",
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kalpesh_patel.png",
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ram_pravesh.png",
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kl_korah.png",
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ashok_kar.png",
+  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/harish_krishnani.png",
+];
 
 const HeroSection = () => {
   const _isMobile = isMobile();
-  console.log("isMobile: ", _isMobile);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const changeImageWithDelay = async () => {
+      for(let i = 0; i < partnerImages.length; i++) {
+          setTimeout(() => {
+              setImageIndex(i);
+          }, 1000);
+      }
+  };
+
+  useEffect(()=>{
+      changeImageWithDelay();
+  }, [])
 
   const _child = useMemo(
     () => (
@@ -20,7 +46,7 @@ const HeroSection = () => {
             _isMobile
               ? {
                   paddingTop: 32,
-                  paddingBottom: 32
+                  paddingBottom: 32,
                 }
               : {
                   paddingTop: 44,
@@ -106,7 +132,7 @@ const HeroSection = () => {
                   label={"Get invite link"}
                   type={ButtonTypeTokens.PRIMARY_LARGE}
                   width={ButtonWidthTypeTokens.FULL}
-                  onClick={() => {}}
+                  onClick={() => redirectToPartnerInviteAndEarn()}
                 />
               </div>
               <div
@@ -132,7 +158,12 @@ const HeroSection = () => {
                     paddingRight: 8,
                   }}
                 >
-                  <img src={"/images/team1.svg"} width={32} height={32} />
+                  <img
+                    src={partnerImages[imageIndex]}
+                    alt={"MFD advisors images"}
+                    width={32}
+                    height={32}
+                  />
                 </div>
                 <div className={styles.heroSectionContainer1LeftT3}>
                   1000+ MFDs have joined the mission
@@ -168,15 +199,17 @@ const HeroSection = () => {
                       }
                 }
               >
-                Terms and conditions applied.{"  "}
                 <span
                   style={{
                     color: "#1434CB",
                     cursor: "pointer",
                     fontWeight: 500,
                   }}
+                  onClick={() =>
+                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
+                  }
                 >
-                  Learn more
+                  T&C Apply.
                 </span>
               </div>
             </div>
@@ -184,7 +217,7 @@ const HeroSection = () => {
         </div>
       </>
     ),
-    [_isMobile]
+    [_isMobile, imageIndex]
   );
 
   return <>{_child}</>;

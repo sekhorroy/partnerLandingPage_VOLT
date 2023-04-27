@@ -52,7 +52,8 @@ export const Links = {
   Youtube: "https://www.youtube.com/@VoltMoney_In",
   OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7",
   DPIIT: "https://dpiit.gov.in/",
-  AppPlayStore : 'https://voltm.app.link/get_volt_money'
+  AppPlayStore : 'https://voltm.app.link/get_volt_money',
+  InviteAndEarnTermsAndConditions: 'https://voltmoney.in/invite-mfd-terms-and-condition'
 };
 
 export const api = {
@@ -73,4 +74,8 @@ export enum GoogleUtmParams {
   UTM_ID = "utm_id",
   UTM_MEDIUM = "utm_medium",
   UTM_SOURCE = "utm_source",
+}
+
+export enum QUERY_PARAMS {
+  REFERRED_PARTNER = 'referredpartner'
 }

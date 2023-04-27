@@ -17,7 +17,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ type, ref }) => {
     } else if (type === HeaderType.INVESTOR) {
       return <InvestorHeader type={HeaderType.INVESTOR} />;
     } else {
-      return <PartnerHeader type={HeaderType.DEFAULT} />;
+      return <PartnerHeader type={type} />;
     }
   }, [type]);
 
