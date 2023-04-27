@@ -79,9 +79,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
                   alt="Volt partner logo"
                 />
               </div>
-            ) : (
-              <></>
-            )}
+            ) : (<></>)}
             {!_isMobile ? (
               <div className={styles.headerRightWebContent}>
                 <div

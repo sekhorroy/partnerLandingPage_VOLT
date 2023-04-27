@@ -243,7 +243,13 @@ const HeroSection = () => {
                 className={styles.heroSectionContainer1RightTandC}
                 style={
                   _isMobile
-                    ? {}
+                    ? {
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        zIndex: 5,
+                      }
                     : {
                         width: "100%",
                         display: "flex",

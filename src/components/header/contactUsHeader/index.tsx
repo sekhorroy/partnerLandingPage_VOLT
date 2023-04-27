@@ -4,10 +4,7 @@ import {
   getScreenX,
   isMobile,
   redirectTo,
-  redirectToPartner,
 } from "@/configs/utils";
-import { ButtonComponent } from "@/components/button";
-import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import { Divider } from "@/components/divider";
 import { useState } from "react";
