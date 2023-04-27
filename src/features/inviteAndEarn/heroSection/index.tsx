@@ -9,8 +9,12 @@ import {
   redirectTo,
   redirectToPartnerInviteAndEarn,
 } from "@/configs/utils";
-import {useEffect, useMemo, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import { Links } from "@/configs/constants";
+import Slide from "@mui/material/Slide";
+import Box from '@mui/material/Box';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const partnerImages = [
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png",
@@ -21,21 +25,60 @@ const partnerImages = [
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/harish_krishnani.png",
 ];
 
+const SlideFromContainer = () => {
+    const [checked, setChecked] = useState(false);
+    const containerRef = useRef(null);
+
+    const handleChange = () => {
+        setChecked((prev) => !prev);
+    };
+
+    return (
+        <Box
+            sx={{
+                height: 'fit-content',
+                width: 'fit-content',
+                display: 'flex',
+                padding: 2,
+                borderRadius: 1,
+                bgcolor: 'red',
+                overflow: 'hidden',
+            }}
+            ref={containerRef}
+        >
+            <Box sx={{ width: 'fit-content' }}>
+                <FormControlLabel
+                    control={<Switch checked={checked} onChange={handleChange} />}
+                    label="Show from target"
+                />
+                <Slide direction="up" in={checked} container={containerRef.current}>
+                    <img
+                        src={'https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png'}
+                        alt={"MFD advisors images"}
+                        width={32}
+                        height={32}
+                    />
+                </Slide>
+            </Box>
+        </Box>
+    );
+}
+
 const HeroSection = () => {
   const _isMobile = isMobile();
   const [imageIndex, setImageIndex] = useState(0);
 
   const changeImageWithDelay = async () => {
-      for(let i = 0; i < partnerImages.length; i++) {
-          setTimeout(() => {
-              setImageIndex(i);
-          }, 1000);
-      }
+    for (let i = 0; i < partnerImages.length; i++) {
+      setTimeout(() => {
+        setImageIndex(i);
+      }, 1000);
+    }
   };
 
-  useEffect(()=>{
-      changeImageWithDelay();
-  }, [])
+  useEffect(() => {
+    changeImageWithDelay();
+  }, []);
 
   const _child = useMemo(
     () => (
@@ -155,15 +198,15 @@ const HeroSection = () => {
               >
                 <div
                   style={{
-                    paddingRight: 8,
+                      paddingRight: 8,
                   }}
                 >
-                  <img
-                    src={partnerImages[imageIndex]}
-                    alt={"MFD advisors images"}
-                    width={32}
-                    height={32}
-                  />
+                    <img
+                        src={'https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png'}
+                        alt={"MFD advisors images"}
+                        width={32}
+                        height={32}
+                    />
                 </div>
                 <div className={styles.heroSectionContainer1LeftT3}>
                   1000+ MFDs have joined the mission
@@ -181,7 +224,9 @@ const HeroSection = () => {
             >
               <div>
                 <img
-                  src={"/images/ipadPromotionImage1.svg"}
+                  src={
+                    "https://volt-images.s3.ap-south-1.amazonaws.com/ipadPromo2.png"
+                  }
                   width={_isMobile ? 342 : 502}
                   height={_isMobile ? 270 : 394}
                 />
