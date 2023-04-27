@@ -142,7 +142,11 @@ const HeroSection = () => {
                 Join the mission to stop redemptions!
               </div>
               <div
-                className={_isMobile ? styles.heroSectionContainer1LeftT2 : styles.heroSectionContainer1LeftT2Web}
+                className={
+                  _isMobile
+                    ? styles.heroSectionContainer1LeftT2
+                    : styles.heroSectionContainer1LeftT2Web
+                }
                 style={
                   _isMobile
                     ? {
@@ -229,7 +233,7 @@ const HeroSection = () => {
               <div>
                 <img
                   src={
-                    "https://volt-images.s3.ap-south-1.amazonaws.com/ipadPromo2.png"
+                    "https://volt-images.s3.ap-south-1.amazonaws.com/ipadPromoV2.png"
                   }
                   width={_isMobile ? 342 : 502}
                   height={_isMobile ? 270 : 394}
@@ -248,7 +252,7 @@ const HeroSection = () => {
                       }
                 }
                 onClick={() =>
-                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
+                  redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
                 }
               >
                 <span
