@@ -1,4 +1,9 @@
-import {isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn} from "@/configs/utils";
+import {
+  isMobile,
+  redirectTo,
+  redirectToPartner,
+  redirectToPartnerInviteAndEarn,
+} from "@/configs/utils";
 import styles from "./HowItWorks.module.css";
 import { useMemo, useState } from "react";
 import { StepperBenefit } from "@/components/stepperBenefit";
@@ -131,7 +136,7 @@ export default function HowItWorksReferAndEarn() {
                       }
                 }
               >
-                How does the Volt partner program work?
+                Spread the word & get rewards
               </h2>
             </div>
             <div
@@ -303,8 +308,7 @@ export default function HowItWorksReferAndEarn() {
                     paddingBottom: 40,
                   }
             }
-          >
-          </div>
+          ></div>
         </div>
       </>
     );

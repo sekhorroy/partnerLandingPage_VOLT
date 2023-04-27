@@ -209,7 +209,7 @@ const HeroSection = () => {
                     />
                 </div>
                 <div className={styles.heroSectionContainer1LeftT3}>
-                  1000+ MFDs have joined the mission
+                  2000+ MFDs have joined the mission
                 </div>
               </div>
             </div>
