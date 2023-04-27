@@ -3,7 +3,7 @@ export enum BUILD_TYPE {
   PARTNER_STAGING = "PARTNER_STAGING",
 }
 export const getBuildType = () => {
-  const buildType = BUILD_TYPE.PARTNER_STAGING;
+  const buildType = BUILD_TYPE.PARTNER_PRODUCTION;
   return buildType;
 };
 // export const PartnerLink =
@@ -13,8 +13,8 @@ export const getBuildType = () => {
 
 export const PartnerLink =
     getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION
-        ? "http://voltmoney.in/partner/signup"
-        : "http://staging.voltmoney.in/partner/signup";
+        ? "https://voltmoney.in/partner/signup"
+        : "https://staging.voltmoney.in/partner/signup";
 
 export const AppLink =
   getBuildType() === BUILD_TYPE.PARTNER_PRODUCTION

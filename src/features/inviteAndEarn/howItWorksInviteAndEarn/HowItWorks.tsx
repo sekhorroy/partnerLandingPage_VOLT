@@ -36,7 +36,7 @@ export default function HowItWorksReferAndEarn() {
     {
       title: "Get ₹2000 cash",
       subTitle:
-        "Invite 2 MFDs and get cash rewards of ₹2000. Earn higher rewards by inviting more MFDs",
+        "Invite 2 MFDs and get cash rewards of ₹2000 on successfull activation. Earn higher rewards by inviting more MFDs",
     },
     {
       title: "Win Apple iPad",

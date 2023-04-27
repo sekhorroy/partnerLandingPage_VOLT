@@ -20,9 +20,6 @@ const partnerImages = [
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png",
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kalpesh_patel.png",
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ram_pravesh.png",
-  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kl_korah.png",
-  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ashok_kar.png",
-  "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/harish_krishnani.png",
 ];
 
 const SlideFromContainer = () => {
@@ -205,16 +202,52 @@ const HeroSection = () => {
                 <div
                   style={{
                     paddingRight: 8,
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
-                  <img
-                    src={
-                      "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png"
-                    }
-                    alt={"MFD advisors images"}
-                    width={32}
-                    height={32}
-                  />
+                  <div className={styles.heroImageContainer}>
+                    <img
+                      src={
+                        "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png"
+                      }
+                      alt={"MFD advisors images"}
+                      width={32}
+                      height={32}
+                    />
+                  </div>
+                  <div
+                    className={styles.heroImageContainer}
+                    style={{
+                      position: "relative",
+                      right: 5,
+                    }}
+                  >
+                    <img
+                      src={
+                        "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kalpesh_patel.png"
+                      }
+                      alt={"MFD advisors images"}
+                      width={32}
+                      height={32}
+                    />
+                  </div>
+                  <div
+                    className={styles.heroImageContainer}
+                    style={{
+                      position: "relative",
+                      right: 10,
+                    }}
+                  >
+                    <img
+                      src={
+                        "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ram_pravesh.png"
+                      }
+                      alt={"MFD advisors images"}
+                      width={32}
+                      height={32}
+                    />
+                  </div>
                 </div>
                 <div className={styles.heroSectionContainer1LeftT3}>
                   2000+ MFDs have joined the mission

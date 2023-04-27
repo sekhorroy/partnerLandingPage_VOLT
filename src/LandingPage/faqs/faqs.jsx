@@ -1,6 +1,6 @@
 import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
-import { isMobile } from "@/configs/utils";
+import { getParamsLink, isMobile } from "@/configs/utils";
 import { helpLineNumberLink, PartnerLink } from "@/configs/constants";
 import { ButtonComponent } from "@/components/button";
 
@@ -426,10 +426,14 @@ const ReferalItem = [
           <p>You can get the invite link 2 ways:</p>
           <ul>
             <li>
-              {`Login on partner dashboard to get the invite link {{dashboard_url}}`}
+              Login on partner dashboard to get the invite link{" "}
+              <a href={`${PartnerLink}?${getParamsLink()}`}>{PartnerLink}</a>
             </li>
             <li>
-              {`Request for invite link on whatsapp number {{partner_whatsapp_number_url}}`}
+              Request for invite link on whatsapp number{" "}
+              <a href={"https://api.whatsapp.com/send?phone=919611749295"}>
+                https://api.whatsapp.com/send?phone=919611749295
+              </a>
             </li>
           </ul>
         </>
@@ -487,7 +491,10 @@ const ReferalItem = [
               enrolls and opens a line with Volt Money.
             </li>
             <li>
-              {`You can also check status on our partner dashboard. {{dashboard_URL}}`}
+              You can also check status on our partner dashboard.{" "}
+              <a
+                href={`${PartnerLink}?${getParamsLink()}`}
+              >{`${PartnerLink}`}</a>
             </li>
           </ul>
         </>
@@ -500,9 +507,9 @@ const ReferalItem = [
       return (
         <>
           <p>
-            You can write to us at {' '}
-            <a href="mailto:support@voltmoney.in">support@voltmoney.in</a> {' '} or
-            can call on {' '}
+            You can write to us at{" "}
+            <a href="mailto:support@voltmoney.in">support@voltmoney.in</a> or
+            can call on{" "}
             <a href={helpLineNumberLink} target="_parent">
               09611-749-295.
             </a>{" "}
@@ -833,7 +840,7 @@ function Faqs({ type }) {
           })}
         {type === FaqType.INVITE_AND_EARN &&
           faqsItem &&
-            ReferalItem.map((item, key) => {
+          ReferalItem.map((item, key) => {
             return (
               <FaqCollapsible
                 key={key}

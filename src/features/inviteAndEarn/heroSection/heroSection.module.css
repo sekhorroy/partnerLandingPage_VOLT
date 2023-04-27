@@ -61,3 +61,10 @@
     color: #667085;
 
 }
+
+.heroImageContainer {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 34px;
+    height: 34px;
+}
