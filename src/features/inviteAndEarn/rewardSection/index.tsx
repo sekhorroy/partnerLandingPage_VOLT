@@ -91,7 +91,7 @@ const RewardSection = () => {
             }
           >
             <div>
-              <img src={"/images/rewardBlue1.svg"} width={80} height={80} />
+              <img src={"/images/rewardBlue1.svg"} width={80} height={80}/>
             </div>
             <div
               className={styles.rewardSectionContainerC1T1}
@@ -141,6 +141,7 @@ const RewardSection = () => {
                           }
                         : {}
                     }
+                    alt={'Volt_money_reward_structure'}
                   />
                 </div>
               </div>

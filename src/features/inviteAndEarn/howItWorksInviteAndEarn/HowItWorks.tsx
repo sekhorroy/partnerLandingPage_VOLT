@@ -58,19 +58,19 @@ export default function HowItWorksReferAndEarn() {
   const imageData = [
     {
       url: "/images/howItWorksImagesInviteAndEarn1.svg",
-      alt: "Empanel with volt money",
+      alt: "Volt_money_Share_Invite_Link",
     },
     {
       url: "/images/howItWorksImagesInviteAndEarn2.svg",
-      alt: "Refer client on volt money",
+      alt: "Volt_money_Invite_MFD",
     },
     {
       url: "/images/howItWorksImagesInviteAndEarn3.svg",
-      alt: "Check credit line on volt money",
+      alt: "Volt_money_get_2000_cash",
     },
     {
       url: "/images/howItWorksImagesInviteAndEarn4.svg",
-      alt: "Track referral on volt money dashboard",
+      alt: "Volt_money_win_apple_ipad",
     },
   ];
 

@@ -178,7 +178,7 @@ const HeroSection = () => {
                       src={
                         "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png"
                       }
-                      alt={"MFD advisors images"}
+                      alt={"Volt_Money_MFD_advisors_images_1"}
                       width={32}
                       height={32}
                     />
@@ -194,7 +194,7 @@ const HeroSection = () => {
                       src={
                         "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kalpesh_patel.png"
                       }
-                      alt={"MFD advisors images"}
+                      alt={"Volt_Money_MFD_advisors_images_2"}
                       width={32}
                       height={32}
                     />
@@ -210,7 +210,7 @@ const HeroSection = () => {
                       src={
                         "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ram_pravesh.png"
                       }
-                      alt={"MFD advisors images"}
+                      alt={"Volt_Money_MFD_advisors_images_3"}
                       width={32}
                       height={32}
                     />
@@ -237,6 +237,7 @@ const HeroSection = () => {
                   }
                   width={_isMobile ? 342 : 502}
                   height={_isMobile ? 270 : 394}
+                  alt={'volt_money_ipad'}
                 />
               </div>
               <div

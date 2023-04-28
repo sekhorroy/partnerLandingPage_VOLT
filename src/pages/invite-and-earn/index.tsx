@@ -1,7 +1,6 @@
 import Head from "next/head";
 import * as React from "react";
 import InviteAndEarnFeature from "@/features/inviteAndEarn";
-import HowItWorks from "@/LandingPage/howItWorksSection/HowItWorks";
 
 export default function InviteAndEarn() {
   return (
