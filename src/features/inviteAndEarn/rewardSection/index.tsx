@@ -1,5 +1,6 @@
 import styles from "./rewardSection.module.css";
 import {
+  GoogleAnalytics,
   isMobile,
   redirectTo,
   redirectToPartnerInviteAndEarn,
@@ -12,7 +13,7 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import { ImageLinks, Links } from "@/configs/constants";
+import { AnalyticsEventName, ImageLinks, Links } from "@/configs/constants";
 
 const stepperRewardData: StepperRewardsData[] = [
   {
@@ -39,6 +40,17 @@ const stepperRewardData: StepperRewardsData[] = [
 
 const RewardSection = () => {
   const _isMobile = isMobile();
+
+  const handleRedirectToPartnerWithGoogleAnalytics = () => {
+    GoogleAnalytics(AnalyticsEventName.INVITE_CTA_CLICKED, {
+      button_name: "Share invite link",
+    });
+    redirectToPartnerInviteAndEarn();
+  };
+  const handleTermAndCondition = () => {
+    GoogleAnalytics(AnalyticsEventName.T_And_C_CTA_CLICKED, {});
+    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank");
+  };
 
   const _child = useMemo(
     () => (
@@ -160,7 +172,7 @@ const RewardSection = () => {
                     ? ButtonWidthTypeTokens.FULL
                     : ButtonWidthTypeTokens.CONTENT
                 }
-                onClick={() => redirectToPartnerInviteAndEarn()}
+                onClick={() => handleRedirectToPartnerWithGoogleAnalytics()}
               />
               <ButtonComponent
                 label={"View all T&C"}
@@ -170,9 +182,7 @@ const RewardSection = () => {
                     ? ButtonWidthTypeTokens.FULL
                     : ButtonWidthTypeTokens.CONTENT
                 }
-                onClick={() =>
-                  redirectTo(Links.InviteAndEarnTermsAndConditions)
-                }
+                onClick={() => handleTermAndCondition()}
               />
             </div>
           </div>

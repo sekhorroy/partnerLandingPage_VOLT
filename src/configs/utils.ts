@@ -1,6 +1,7 @@
 import {Breakpoints, UTM_expiry_days} from "@/configs/config";
 import { UseWindowSize } from "@/configs/windowSizeHook";
 import {
+  AnalyticsEventName,
   AppLink, BaseLink,
   BUILD_TYPE,
   getBuildType,
@@ -198,3 +199,11 @@ export const checkRegexEmail = (email: string) => {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   return regex.test(email);
 };
+
+export const GoogleAnalytics = (eventName: string, customData: {[keys in string]: any}) => {
+  //@ts-ignore
+  window.dataLayer.push({
+    'event': eventName,
+    customData
+  });
+}

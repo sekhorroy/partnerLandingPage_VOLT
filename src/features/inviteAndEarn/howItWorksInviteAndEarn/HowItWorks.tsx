@@ -1,4 +1,5 @@
 import {
+  GoogleAnalytics,
   isMobile,
   redirectTo,
   redirectToPartner,
@@ -17,12 +18,22 @@ import {
 } from "@/components/button/type";
 import { Divider } from "@/components/divider";
 import { useRouter } from "next/router";
-import { Links } from "@/configs/constants";
+import { AnalyticsEventName, Links } from "@/configs/constants";
 
 export default function HowItWorksReferAndEarn() {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
-  const url = useRouter().asPath;
+
+  const handleRedirectToPartnerWithGoogleAnalytics = () => {
+    GoogleAnalytics(AnalyticsEventName.INVITE_CTA_CLICKED, {
+      button_name: "Invite MFD",
+    });
+    redirectToPartnerInviteAndEarn();
+  };
+  const handleTermAndCondition = () => {
+    GoogleAnalytics(AnalyticsEventName.T_And_C_CTA_CLICKED, {});
+    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank");
+  };
 
   const stepperData: StepperBenefitData[] = [
     {
@@ -235,8 +246,8 @@ export default function HowItWorksReferAndEarn() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                position: 'relative',
-                bottom: 40
+                position: "relative",
+                bottom: 40,
               }}
             >
               <div
@@ -266,9 +277,7 @@ export default function HowItWorksReferAndEarn() {
                     color: "#1434CB",
                     cursor: "pointer",
                   }}
-                  onClick={() =>
-                    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
-                  }
+                  onClick={() => handleTermAndCondition()}
                 >
                   T&Cs apply
                 </span>
@@ -288,7 +297,7 @@ export default function HowItWorksReferAndEarn() {
                     : ButtonWidthTypeTokens.FULL
                 }
                 maxWidth={_isMobile ? 400 : 248}
-                onClick={() => redirectToPartnerInviteAndEarn()}
+                onClick={() => handleRedirectToPartnerWithGoogleAnalytics()}
               />
             </div>
           </div>

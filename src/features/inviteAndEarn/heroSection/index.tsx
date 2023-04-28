@@ -5,63 +5,19 @@ import {
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
 import {
+  GoogleAnalytics,
   isMobile,
   redirectTo,
   redirectToPartnerInviteAndEarn,
 } from "@/configs/utils";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Links } from "@/configs/constants";
-import Slide from "@mui/material/Slide";
-import Box from "@mui/material/Box";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import { AnalyticsEventName, Links } from "@/configs/constants";
 
 const partnerImages = [
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png",
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/kalpesh_patel.png",
   "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/ram_pravesh.png",
 ];
-
-const SlideFromContainer = () => {
-  const [checked, setChecked] = useState(false);
-  const containerRef = useRef(null);
-
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-  };
-
-  return (
-    <Box
-      sx={{
-        height: "fit-content",
-        width: "fit-content",
-        display: "flex",
-        padding: 2,
-        borderRadius: 1,
-        bgcolor: "red",
-        overflow: "hidden",
-      }}
-      ref={containerRef}
-    >
-      <Box sx={{ width: "fit-content" }}>
-        <FormControlLabel
-          control={<Switch checked={checked} onChange={handleChange} />}
-          label="Show from target"
-        />
-        <Slide direction="up" in={checked} container={containerRef.current}>
-          <img
-            src={
-              "https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial/samir_desai.png"
-            }
-            alt={"MFD advisors images"}
-            width={32}
-            height={32}
-          />
-        </Slide>
-      </Box>
-    </Box>
-  );
-};
 
 const HeroSection = () => {
   const _isMobile = isMobile();
@@ -73,6 +29,17 @@ const HeroSection = () => {
         setImageIndex(i);
       }, 1000);
     }
+  };
+
+  const handleRedirectToPartnerWithGoogleAnalytics = () => {
+    GoogleAnalytics(AnalyticsEventName.INVITE_CTA_CLICKED, {
+      button_name: "Get Invite Link",
+    });
+    redirectToPartnerInviteAndEarn()
+  };
+  const handleTermAndCondition = () => {
+    GoogleAnalytics(AnalyticsEventName.T_And_C_CTA_CLICKED, {});
+    redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank");
   };
 
   useEffect(() => {
@@ -178,7 +145,7 @@ const HeroSection = () => {
                   label={"Get invite link"}
                   type={ButtonTypeTokens.PRIMARY_LARGE}
                   width={ButtonWidthTypeTokens.FULL}
-                  onClick={() => redirectToPartnerInviteAndEarn()}
+                  onClick={() => handleRedirectToPartnerWithGoogleAnalytics()}
                 />
               </div>
               <div
@@ -290,9 +257,7 @@ const HeroSection = () => {
                         justifyContent: "flex-end",
                       }
                 }
-                onClick={() =>
-                  redirectTo(Links.InviteAndEarnTermsAndConditions, "_blank")
-                }
+                onClick={() => handleTermAndCondition()}
               >
                 <span
                   style={{

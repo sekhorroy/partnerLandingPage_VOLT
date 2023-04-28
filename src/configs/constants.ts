@@ -3,7 +3,7 @@ export enum BUILD_TYPE {
   PARTNER_STAGING = "PARTNER_STAGING",
 }
 export const getBuildType = () => {
-  const buildType = BUILD_TYPE.PARTNER_PRODUCTION;
+  const buildType = BUILD_TYPE.PARTNER_STAGING;
   return buildType;
 };
 // export const PartnerLink =
@@ -83,4 +83,9 @@ export enum QUERY_PARAMS {
 export const ImageLinks = {
   rewardStructureWeb: 'https://volt-images.s3.ap-south-1.amazonaws.com/rewardStructure_Web.png',
   rewardStructureMob: 'https://volt-images.s3.ap-south-1.amazonaws.com/rewadStructure_mobile.png'
+}
+
+export enum AnalyticsEventName {
+  INVITE_CTA_CLICKED = 'INVITE_CTA_CLICKED',
+  T_And_C_CTA_CLICKED = 'T&C_CTA_CLICKED'
 }
