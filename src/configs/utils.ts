@@ -207,3 +207,7 @@ export const GoogleAnalytics = (
     customData,
   });
 };
+
+export const lottieLinks = {
+  gift: ''
+}

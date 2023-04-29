@@ -1,12 +1,21 @@
 import styles from "./header.module.css";
 import Image from "next/image";
-import {getParamsLink, isMobile, redirectTo, redirectToPartner, redirectToPartnerInviteAndEarn,} from "@/configs/utils";
-import {ButtonComponent} from "@/components/button";
-import {ButtonTypeTokens} from "@/components/button/type";
-import {HeaderProps, HeaderType} from "@/components/header/type";
-import {useState} from "react";
-import {Divider} from "@/components/divider";
-import {useRouter} from "next/router";
+import {
+  getParamsLink,
+  isMobile,
+  lottieLinks,
+  redirectTo,
+  redirectToPartner,
+  redirectToPartnerInviteAndEarn,
+} from "@/configs/utils";
+import { ButtonComponent } from "@/components/button";
+import { ButtonTypeTokens } from "@/components/button/type";
+import { HeaderProps, HeaderType } from "@/components/header/type";
+import { useState } from "react";
+import { Divider } from "@/components/divider";
+import { useRouter } from "next/router";
+import Lottie from "lottie-react";
+import Giftlottie from "../../../configs/lottie/gift.json";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -136,14 +145,38 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   Contact us
                 </div>
                 <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")}
+                  onClick={() =>
+                    redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")
+                  }
                 >
                   Invite & Get iPad
+                  <div>
+                    <Lottie
+                      animationData={Giftlottie}
+                      loop={true}
+                      style={{
+                        width: 25,
+                        height: 25,
+                        position: "relative",
+                        bottom: 5,
+                      }}
+                    />
+                    {/*<img src={'./images/blinker.gif'} alt={'red blinker'} width={25} height={25} />*/}
+                  </div>
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner()}
+                  onClick={() =>
+                    type === HeaderType.INVITE_AND_EARN
+                      ? redirectToPartnerInviteAndEarn()
+                      : redirectToPartner()
+                  }
                 >
                   <ButtonComponent
                     label="Log in"
@@ -153,7 +186,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => type ===HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
+                  onClick={() =>
+                    type === HeaderType.INVITE_AND_EARN
+                      ? redirectToPartnerInviteAndEarn()
+                      : redirectToPartner(url)
+                  }
                 >
                   <ButtonComponent
                     label="Empanel now"
@@ -233,10 +270,27 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingLeft: 16,
               paddingTop: 16,
               paddingBottom: 16,
+              display: "flex",
+              flexDirection: "row",
             }}
-            onClick={() => redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")}
+            onClick={() =>
+              redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")
+            }
           >
             Invite & Get iPad
+            <div>
+              <Lottie
+                animationData={Giftlottie}
+                loop={true}
+                style={{
+                  width: 25,
+                  height: 25,
+                  position: "relative",
+                  bottom: 7,
+                }}
+              />
+              {/*<img src={'./images/blinker.gif'} alt={'red blinker'} width={25} height={25} />*/}
+            </div>
           </div>
           <Divider />
           <div
@@ -246,10 +300,15 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => type === HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
+            onClick={() =>
+              type === HeaderType.INVITE_AND_EARN
+                ? redirectToPartnerInviteAndEarn()
+                : redirectToPartner(url)
+            }
           >
             Log in
           </div>
+          <Divider />
           <div
             className={styles.menuItem}
             style={{
@@ -257,7 +316,11 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => type === HeaderType.INVITE_AND_EARN ? redirectToPartnerInviteAndEarn() : redirectToPartner(url)}
+            onClick={() =>
+              type === HeaderType.INVITE_AND_EARN
+                ? redirectToPartnerInviteAndEarn()
+                : redirectToPartner(url)
+            }
           >
             Empanel now
           </div>
