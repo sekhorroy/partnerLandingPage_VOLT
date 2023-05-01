@@ -8,6 +8,7 @@ export default function Contactus() {
        <>
            <Head>
                <title>Volt Money | Partner with us</title>
+               <link rel="canonical" href="https://www.voltmoney.in/partner" />
                <meta
                    name="description"
                    content="Help your clients meet short term cash needs by pledging mutual funds | Stop redemptions & grow mutual fund AUM"
