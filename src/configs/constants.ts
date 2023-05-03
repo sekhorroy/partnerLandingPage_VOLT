@@ -53,6 +53,7 @@ export const Links = {
   OfficeLocation: "https://goo.gl/maps/ZoPQPJZa1FoEfoqw7",
   DPIIT: "https://dpiit.gov.in/",
   AppPlayStore : 'https://voltm.app.link/get_volt_money',
+  IosAppStore: 'https://apps.apple.com/in/app/volt-money-mutual-fund-loan/id6446775789',
   InviteAndEarnTermsAndConditions: 'https://voltmoney.in/invite-mfd-terms-and-condition'
 };
 

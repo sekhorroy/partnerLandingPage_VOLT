@@ -1,6 +1,6 @@
 import styles from "./appSection.module.css";
-import {isMobile, redirectTo} from "@/configs/utils";
-import {Links} from "@/configs/constants";
+import { isMobile, redirectTo } from "@/configs/utils";
+import { Links } from "@/configs/constants";
 export const AppSection = () => {
   const _isMobile = isMobile();
 
@@ -82,19 +82,23 @@ export const AppSection = () => {
                 src={"./images/getItOnGoogle.svg"}
                 width={_isMobile ? 139 : 166}
                 height={_isMobile ? 40 : 48}
-                onClick={()=>redirectTo(Links.AppPlayStore, '_blank')}
+                onClick={() => redirectTo(Links.AppPlayStore, "_blank")}
                 style={{
-                    cursor: 'pointer'
+                  cursor: "pointer",
                 }}
               />
             </div>
-            {/*<div>*/}
-            {/*  <img*/}
-            {/*    src={"./images/downloadOnAppStore.svg"}*/}
-            {/*    width={_isMobile ? 139 : 166}*/}
-            {/*    height={_isMobile ? 40 : 48}*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div>
+              <img
+                src={"./images/downloadOnAppStore.svg"}
+                width={_isMobile ? 139 : 166}
+                height={_isMobile ? 40 : 48}
+                onClick={() => redirectTo(Links.IosAppStore, "_blank")}
+                style={{
+                  cursor: "pointer",
+                }}
+              />
+            </div>
           </div>
           {!_isMobile ? (
             <>
