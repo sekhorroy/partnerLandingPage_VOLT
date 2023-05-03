@@ -9,6 +9,7 @@ import Image from "next/image";
 import axios from "axios";
 import { Simulate } from "react-dom/test-utils";
 import load = Simulate.load;
+import dynamic from "next/dynamic";
 // import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
 
 const customerData: CardProps[] = [
@@ -70,14 +71,14 @@ const customerData: CardProps[] = [
   },
 ];
 
-export default function TestimoneySection({testimoneyPartnerData}:any) {
+const  TestimoneySectionWithoutSSR = () => {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
   const scrollRef = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
   const [scrollLeftEnd, setScrollLeftEnd] = useState(true);
-  const [_data, setData] = useState<CardProps[]>(testimoneyPartnerData ? testimoneyPartnerData : []);
+  const [_data, setData] = useState<CardProps[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleClick = (direction: string) => {
@@ -403,3 +404,9 @@ export default function TestimoneySection({testimoneyPartnerData}:any) {
 
   return !loading ? _child : <></>;
 }
+
+const TestimoneySection = dynamic(() => Promise.resolve(TestimoneySectionWithoutSSR), {
+  ssr: false
+});
+
+export default TestimoneySection;

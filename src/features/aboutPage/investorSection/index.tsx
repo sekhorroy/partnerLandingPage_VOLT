@@ -1,12 +1,15 @@
 import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
 import { Card } from "@/components/card";
 import { CardProps, CardTypes } from "@/components/card/types";
-import { useMemo, useRef, useState } from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import styles from "./investorSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
 import Image from "next/image";
+import {api} from "@/configs/constants";
+import axios from "axios";
+import dynamic from "next/dynamic";
 
-export default function InvestorSection({data}: any) {
+function InvestorSectionWithoutSSR({data}: any) {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
   const [_data, setData] = useState<CardProps[]>(data ? data : []);
@@ -18,28 +21,27 @@ export default function InvestorSection({data}: any) {
 
   const dataTransform = convertTo2DArray(_data, 5);
 
-  // const getData = async () => {
-  //   await setLoading(true);
-  //   const response = await axios.get(
-  //     // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
-  //     `${api.investorApi}`
-  //   );
-  //   const Data = response.data.data;
-  //   let data: CardProps[] = [];
-  //   //@ts-ignore
-  //   Data.map((item, index) => {
-  //     data.push({
-  //       type: CardTypes.TEAM_CARD,
-  //       title: item?.name,
-  //       subTitle: item?.bio,
-  //       imageUrl: item?.image,
-  //       linkedInUrl: item?.linkedin_url,
-  //     });
-  //   });
-  //
-  //   await setData(data);
-  //   await setLoading(false);
-  // };
+  const getData = async () => {
+    await setLoading(true);
+    const response = await axios.get(
+      `${api.investorApi}`
+    );
+    const Data = response.data.data;
+    let data: CardProps[] = [];
+    //@ts-ignore
+    Data.map((item, index) => {
+      data.push({
+        type: CardTypes.TEAM_CARD,
+        title: item?.name,
+        subTitle: item?.bio,
+        imageUrl: item?.image,
+        linkedInUrl: item?.linkedin_url,
+      });
+    });
+
+    await setData(data);
+    await setLoading(false);
+  };
 
   const handleClick = (direction: string) => {
     console.log("handle Click");
@@ -67,8 +69,6 @@ export default function InvestorSection({data}: any) {
         setScrollLeftEnd(false);
       }
 
-      // console.log("scrollRef.current.scrollWidth: ", scrollRef.current.scrollWidth - scrollRef.current.scrollLeft);
-      // console.log("scrollRef.current.offsetWidth: ", scrollRef.current.offsetWidth);
       if (
         //@ts-ignore
         Math.floor(
@@ -87,9 +87,9 @@ export default function InvestorSection({data}: any) {
     }
   };
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    getData();
+  }, []);
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (
@@ -374,3 +374,9 @@ export default function InvestorSection({data}: any) {
 
   return _child;
 }
+
+const InvestorSection = dynamic(() => Promise.resolve(InvestorSectionWithoutSSR), {
+    ssr: false
+});
+
+export default InvestorSection;

@@ -6,6 +6,7 @@ import styles from "./teamSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
 import axios from "axios";
 import { api } from "@/configs/constants";
+import dynamic from "next/dynamic";
 
 const TeamData = [
   {
@@ -83,40 +84,40 @@ const TeamData = [
 ];
 
 //@ts-ignore
-export default function TeamSection({ data }) {
+function TeamSectionWithoutSSR() {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
-  const [_data, setData] = useState<CardProps[]>(data ? data : []);
-  // const [loading, setLoading] = useState(false);
+  const [_data, setData] = useState<CardProps[]>([]);
+  const [loading, setLoading] = useState(false);
 
   const dataTransform = convertTo2DArray(_data, 6);
 
-  // const getData = async () => {
-  //     await setLoading(true);
-  //     const response = await axios.get(
-  //         // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
-  //         `${api.teamApi}`
-  //     );
-  //     const Data = response.data.data;
-  //     let data: CardProps[] = [];
-  //     //@ts-ignore
-  //     Data.map((item, index) => {
-  //         data.push({
-  //             type: CardTypes.TEAM_CARD,
-  //             name: item?.name,
-  //             title: item?.role,
-  //             subTitle: item?.bio,
-  //             imageUrl: item?.image,
-  //             linkedInUrl: item?.linkedin_url
-  //         });
-  //     });
-  //     await setData(data);
-  //     await setLoading(false);
-  // };
-  //
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  const getData = async () => {
+      await setLoading(true);
+      const response = await axios.get(
+          // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+          `${api.teamApi}`
+      );
+      const Data = response.data.data;
+      let data: CardProps[] = [];
+      //@ts-ignore
+      Data.map((item, index) => {
+          data.push({
+              type: CardTypes.TEAM_CARD,
+              name: item?.name,
+              title: item?.role,
+              subTitle: item?.bio,
+              imageUrl: item?.image,
+              linkedInUrl: item?.linkedin_url
+          });
+      });
+      await setData(data);
+      await setLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (
@@ -268,3 +269,9 @@ export default function TeamSection({ data }) {
 
   return _child;
 }
+
+const TeamSection = dynamic(() => Promise.resolve(TeamSectionWithoutSSR), {
+    ssr: false
+});
+
+export default TeamSection;
