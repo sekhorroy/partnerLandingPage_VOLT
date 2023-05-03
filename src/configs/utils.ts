@@ -53,6 +53,9 @@ export const redirectToPartnerInviteAndEarn = (url?: string) => {
 export const redirectToPartnerLanding = (url?: string) => {
   window.open(`${BaseLink}/partner?${getParamsLink()}`, "_self");
 };
+export const redirectToPartnerLandingWithoutBase = (url?: string) => {
+  window.open(`/partner?${getParamsLink()}`, "_self");
+};
 export const redirectToVoltApp = () => {
   window.open(`${AppLink}${getParamsLink()}`, "_blank");
 };

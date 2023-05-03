@@ -4,7 +4,7 @@ import {
   getScreenX,
   isMobile,
   redirectTo,
-  redirectToPartner, redirectToPartnerLanding,
+  redirectToPartner, redirectToPartnerLanding, redirectToPartnerLandingWithoutBase,
   redirectToVoltApp,
 } from "@/configs/utils";
 import { ButtonComponent } from "@/components/button";
@@ -84,19 +84,19 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               <div className={styles.headerRightWebContent}>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`${BaseLink}/#volt_benefits`, "_self")}
+                  onClick={() => redirectTo(`/#volt_benefits`, "_self")}
                 >
                   Benefits
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectTo(`${BaseLink}/#faq`, "_self")}
+                  onClick={() => redirectTo(`/#faq`, "_self")}
                 >
                   FAQs
                 </div>
                 <div
                   className={styles.headerLinksContainer}
-                  onClick={() => redirectToPartnerLanding()}
+                  onClick={() => redirectToPartnerLandingWithoutBase()}
                 >
                   Partner with us
                 </div>
@@ -147,7 +147,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo(`${BaseLink}/#volt_benefits`, "_self")}
+            onClick={() => redirectTo(`/#volt_benefits`, "_self")}
           >
             Benefits
           </div>
@@ -159,7 +159,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectTo(`${BaseLink}/#faq`, "_self")}
+            onClick={() => redirectTo(`/#faq`, "_self")}
           >
             FAQs
           </div>
@@ -171,7 +171,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               paddingTop: 16,
               paddingBottom: 16,
             }}
-            onClick={() => redirectToPartnerLanding()}
+            onClick={() => redirectToPartnerLandingWithoutBase()}
           >
             Partner with us
           </div>
