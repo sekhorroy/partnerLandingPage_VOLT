@@ -1,7 +1,12 @@
-import {getScreenX} from "@/configs/utils";
 import ContactUsPage from "@/ContactusPage/ContactUsPage";
 import Head from "next/head";
 import * as React from "react";
+
+export async function getServerSideProps(context: any) {
+    return {
+        props: {}, // will be passed to the page component as props
+    }
+}
 
 export default function Contactus() {
     return (

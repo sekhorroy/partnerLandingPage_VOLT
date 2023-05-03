@@ -1,76 +1,15 @@
 import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
 import { Card } from "@/components/card";
 import { CardProps, CardTypes } from "@/components/card/types";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import styles from "./investorSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
-import axios from "axios";
-import { api } from "@/configs/constants";
 import Image from "next/image";
-import {TextInput} from "@/components/input";
 
-// const TeamData = [
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-//   {
-//     title: "Lalit Bihani",
-//     subTitle: "Co-founder & CEO",
-//     imageUrl: "/images/team1.svg",
-//   },
-// ];
-
-export default function InvestorSection() {
+export default function InvestorSection({data}: any) {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
-  const [_data, setData] = useState<CardProps[]>([]);
+  const [_data, setData] = useState<CardProps[]>(data ? data : []);
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef(null);
   const [scrollX, setscrollX] = useState(0);
@@ -79,28 +18,28 @@ export default function InvestorSection() {
 
   const dataTransform = convertTo2DArray(_data, 5);
 
-  const getData = async () => {
-    await setLoading(true);
-    const response = await axios.get(
-      // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
-      `${api.investorApi}`
-    );
-    const Data = response.data.data;
-    let data: CardProps[] = [];
-    //@ts-ignore
-    Data.map((item, index) => {
-      data.push({
-        type: CardTypes.TEAM_CARD,
-        title: item?.name,
-        subTitle: item?.bio,
-        imageUrl: item?.image,
-        linkedInUrl: item?.linkedin_url,
-      });
-    });
-
-    await setData(data);
-    await setLoading(false);
-  };
+  // const getData = async () => {
+  //   await setLoading(true);
+  //   const response = await axios.get(
+  //     // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
+  //     `${api.investorApi}`
+  //   );
+  //   const Data = response.data.data;
+  //   let data: CardProps[] = [];
+  //   //@ts-ignore
+  //   Data.map((item, index) => {
+  //     data.push({
+  //       type: CardTypes.TEAM_CARD,
+  //       title: item?.name,
+  //       subTitle: item?.bio,
+  //       imageUrl: item?.image,
+  //       linkedInUrl: item?.linkedin_url,
+  //     });
+  //   });
+  //
+  //   await setData(data);
+  //   await setLoading(false);
+  // };
 
   const handleClick = (direction: string) => {
     console.log("handle Click");
@@ -148,9 +87,9 @@ export default function InvestorSection() {
     }
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   const _renderTeamViewMob = (data: CardProps[]) => {
     return (

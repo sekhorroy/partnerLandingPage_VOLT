@@ -2,6 +2,12 @@ import Head from "next/head";
 import * as React from "react";
 import InviteAndEarnFeature from "@/features/inviteAndEarn";
 
+export async function getServerSideProps(context: any) {
+    return {
+        props: {}, // will be passed to the page component as props
+    }
+}
+
 export default function InviteAndEarn() {
   return (
     <>

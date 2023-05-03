@@ -2,7 +2,7 @@ import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
 import { getParamsLink, isMobile } from "@/configs/utils";
 import { helpLineNumberLink, PartnerLink } from "@/configs/constants";
-import { ButtonComponent } from "@/components/button";
+import {useState} from "react";
 
 const faqsItem = [
   {
@@ -772,7 +772,7 @@ export const FaqType = {
 
 function Faqs({ type }) {
   const _isMobile = isMobile();
-
+  const [_hide, setHide] = useState(true);
   return (
     <div className={styles.Faqs_Container}>
       <div

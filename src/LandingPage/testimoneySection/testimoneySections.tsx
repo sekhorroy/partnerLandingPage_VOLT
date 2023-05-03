@@ -70,14 +70,14 @@ const customerData: CardProps[] = [
   },
 ];
 
-export default function TestimoneySection() {
+export default function TestimoneySection({testimoneyPartnerData}:any) {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
   const scrollRef = useRef(null);
   const [scrollX, setscrollX] = useState(0);
   const [scrolEnd, setscrolEnd] = useState(false);
   const [scrollLeftEnd, setScrollLeftEnd] = useState(true);
-  const [_data, setData] = useState<CardProps[]>([]);
+  const [_data, setData] = useState<CardProps[]>(testimoneyPartnerData ? testimoneyPartnerData : []);
   const [loading, setLoading] = useState(false);
 
   const handleClick = (direction: string) => {
