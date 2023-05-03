@@ -12,7 +12,7 @@ import Faq, { FaqType } from "./faqs/faqs";
 import TestimoneySection from "@/LandingPage/testimoneySection/testimoneySections";
 import NewsLetterSection from "@/LandingPage/newsLetterSection/newsLetterSection";
 
-export default function PartnerLandingPage({ testimoneyPartnerData }: any) {
+export default function PartnerLandingPage() {
   const partnerChild = useMemo(() => {
     return (
       <div
@@ -26,7 +26,7 @@ export default function PartnerLandingPage({ testimoneyPartnerData }: any) {
         <PartnerSection />
         <VoltBenefit />
         <HowItWorks />
-        <TestimoneySection testimoneyPartnerData={testimoneyPartnerData} />
+        <TestimoneySection />
         <div
           id="faq"
           style={{

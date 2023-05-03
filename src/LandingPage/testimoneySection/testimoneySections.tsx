@@ -156,7 +156,7 @@ export default function TestimoneySection({testimoneyPartnerData}:any) {
   };
 
   useEffect(() => {
-    console.log("get data : ", getData());
+    getData();
   }, []);
 
   const _scrollButton = useMemo(() => {
