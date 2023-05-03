@@ -2,7 +2,7 @@ import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
 import { getParamsLink, isMobile } from "@/configs/utils";
 import { helpLineNumberLink, PartnerLink } from "@/configs/constants";
-import {useState} from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const faqsItem = [
   {
@@ -773,6 +773,7 @@ export const FaqType = {
 function Faqs({ type }) {
   const _isMobile = isMobile();
   const [_hide, setHide] = useState(true);
+
   return (
     <div className={styles.Faqs_Container}>
       <div
@@ -828,7 +829,7 @@ function Faqs({ type }) {
             );
           })}
         {type === FaqType.INVESTOR &&
-          faqsItem &&
+          faqItemInvestor &&
           faqItemInvestor.map((item, key) => {
             return (
               <FaqCollapsible
@@ -839,7 +840,7 @@ function Faqs({ type }) {
             );
           })}
         {type === FaqType.INVITE_AND_EARN &&
-          faqsItem &&
+          ReferalItem &&
           ReferalItem.map((item, key) => {
             return (
               <FaqCollapsible
