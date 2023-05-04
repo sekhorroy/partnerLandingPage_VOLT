@@ -12,7 +12,6 @@ import PhoneNumberFooter from "@/features/landingPage/phoneNumberFooter/phoneNum
 import Footer from "@/features/landingPage/footer/footer";
 import {AppSection} from "@/features/landingPage/AppSection/appSection";
 import {handleWhatAppClickInvestor, isMobile} from "@/configs/utils";
-import {HeaderType} from "@/components/header/type";
 import {InvestorHeader} from "@/components/header/investorHeader";
 
 function VoltLandingPage() {

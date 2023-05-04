@@ -1,5 +1,6 @@
 import styles from "./PhoneNumberHeader.module.css";
 import {isMobile, redirectToVoltApp} from "@/configs/utils";
+import {Icons} from "@/configs/imageRegistry";
 
 function PhoneNumberHeader() {
     const _isMobile = isMobile();
@@ -42,8 +43,8 @@ function PhoneNumberHeader() {
                               className={
                                   styles.PhoneNumberHeader_Right_Container_Man_Holding_Phone_Image_Mobile
                               }
-                              src={"./images/manHoldingPhoneMobile.png"}
-                              alt="man holding phone image"
+                              src={Icons.INVESTOR_HERO_IMAGE1_MOB}
+                              alt="volt_money_hero_image_1"
                               style={{
                                 position: 'relative',
                                 top: 20
@@ -57,8 +58,8 @@ function PhoneNumberHeader() {
                               className={
                                   styles.PhoneNumberHeader_Right_Container_Man_Holding_Phone_Image_Web
                               }
-                              src={"./images/manHoldingPhoneWeb.png"}
-                              alt="man holding phone image"
+                              src={Icons.INVESTOR_HERO_IMAGE1_WEB}
+                              alt="volt_money_hero_image_2"
                               style={{
                                 position: 'relative',
                                 top: 20

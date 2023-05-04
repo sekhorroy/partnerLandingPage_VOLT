@@ -2,8 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
-    domains: ["https://volt-images.s3.ap-south-1.amazonaws.com/partner_images/testimonial"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'volt-images-alpha.s3.ap-south-1.amazonaws.com',
+        port: '',
+        pathname: '/*',
+      },
+    ],
   },
 }
 module.exports = nextConfig

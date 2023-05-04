@@ -1,6 +1,8 @@
 import styles from "./appSection.module.css";
 import { isMobile, redirectTo } from "@/configs/utils";
 import { Links } from "@/configs/constants";
+import { Icons } from "@/configs/imageRegistry";
+import Image from "next/image";
 export const AppSection = () => {
   const _isMobile = isMobile();
 
@@ -78,25 +80,27 @@ export const AppSection = () => {
             }
           >
             <div>
-              <img
-                src={"./images/getItOnGoogle.svg"}
+              <Image
+                src={Icons.GET_IT_ON_GOOGLE}
                 width={_isMobile ? 139 : 166}
                 height={_isMobile ? 40 : 48}
                 onClick={() => redirectTo(Links.AppPlayStore, "_blank")}
                 style={{
                   cursor: "pointer",
                 }}
+                alt={"volt_money_play_store_image"}
               />
             </div>
             <div>
-              <img
-                src={"./images/downloadOnAppStore.svg"}
+              <Image
+                src={Icons.GET_IT_ON_IOS}
                 width={_isMobile ? 139 : 166}
                 height={_isMobile ? 40 : 48}
                 onClick={() => redirectTo(Links.IosAppStore, "_blank")}
                 style={{
                   cursor: "pointer",
                 }}
+                alt={"volt_money_ios_image"}
               />
             </div>
           </div>
@@ -112,10 +116,11 @@ export const AppSection = () => {
                 }}
               >
                 <div>
-                  <img
-                    src={"./images/voltAppQrCode.svg"}
+                  <Image
+                    src={Icons.VOLT_APP_QR_CODE}
                     width={75}
                     height={75}
+                    alt={"Volt app qr code"}
                   />
                 </div>
                 <div className={styles.appSectionContainerQRDivider}></div>
@@ -131,11 +136,12 @@ export const AppSection = () => {
         {!_isMobile ? (
           <>
             <div className={styles.appSectionContainerC1Right}>
-              <img
-                src={"./images/iPhoneDoubleStylizedMockup.svg"}
+              <Image
+                src={Icons.IPHONE_DOUBLE_MOCK}
                 width={424}
                 height={400}
                 className={styles.test}
+                alt={"Volt_money_iphone_mock"}
               />
             </div>
           </>
@@ -149,11 +155,12 @@ export const AppSection = () => {
                 paddingTop: 12,
               }}
             >
-              <img
-                src={"./images/iPhoneDoubleStylizedMockup.svg"}
+              <Image
+                src={Icons.IPHONE_DOUBLE_MOCK}
                 width={300}
                 height={283}
                 className={styles.test}
+                alt={"Volt_money_iphone_mock"}
               />
             </div>
           </>
