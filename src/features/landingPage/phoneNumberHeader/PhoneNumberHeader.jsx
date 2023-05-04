@@ -51,6 +51,8 @@ function PhoneNumberHeader() {
                                 position: 'relative',
                                 top: 20
                               }}
+                              width={345}
+                              height={367}
                           />
 
                       </>
@@ -67,6 +69,8 @@ function PhoneNumberHeader() {
                                 position: 'relative',
                                 top: 20
                               }}
+                              width={540}
+                              height={555}
                           />
                       </>
                   )

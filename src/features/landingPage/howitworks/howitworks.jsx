@@ -1,8 +1,9 @@
 import styles from "./howitworks.module.css";
 import { useRef, useState } from "react";
 import HowItWorksCarasoul from "./howItWorksCaraousal";
-import { redirectToVoltApp } from "@/configs/utils";
+import {isMobile, redirectToVoltApp} from "@/configs/utils";
 import {Icons} from "@/configs/imageRegistry";
+import Image from "next/image";
 
 const howItWorksData = [
   {
@@ -67,10 +68,10 @@ function HowItWorks() {
             return (
               <div key={index} className={styles.HowItWorksContainerImageCard}>
                 <div className={styles.HowItWorksContainerImageCardIconNumber1}>
-                  <img src={item.numberImage} alt="" />
+                  <Image src={item.numberImage} alt="" width={38} height={42}/>
                 </div>
                 <div className={styles.HowItWorksContainerImageCardIcon}>
-                  <img src={item.itemImage} alt="" />
+                  <Image src={item.itemImage} alt="" width={64} height={64}/>
                 </div>
                 <div className={styles.HowItWorksContainerImageCardTitle}>
                   {item.title}
