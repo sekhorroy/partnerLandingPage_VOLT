@@ -6,7 +6,6 @@ export enum IconToken {
   WHATSAPP = "WHATSAPP",
   GOLDEN_SHIELD = "GOLDEN_SHIELD",
   VOLT_PARTNER = "VOLT_PARTNER",
-  THREE_BAR = "THREE_BAR",
   VOLT_ICON = "VOLT_ICON",
   INVESTOR_HERO_IMAGE1_MOB = "INVESTOR_HERO_IMAGE1_MOB",
   INVESTOR_HERO_IMAGE1_WEB = "INVESTOR_HERO_IMAGE1_WEB",
@@ -44,6 +43,8 @@ export enum IconToken {
   LINKED_IN = "LINKED_IN",
   STARTUP_INDIA = "STARTUP_INDIA",
   DPIIT = "DPIIT",
+  THREE_BAR = 'THREE_BAR',
+  WHATSAPP_STICKY = 'WHATSAPP_STICKY'
 }
 
 export type IconRegistryType = {
@@ -53,7 +54,6 @@ export type IconRegistryType = {
 export const Icons: IconRegistryType = {
   [IconToken.BAJAJ]: "../../public/images/BajajFinserv.svg",
   [IconToken.GOLDEN_SHIELD]: "/images/GoldenShield.svg",
-  [IconToken.THREE_BAR]: "",
   [IconToken.TOPSECTIONIMAGE1]: "/images/topSectionImage1.svg",
   [IconToken.VOLT_PARTNER]: "/images/topSectionImage1.svg",
   [IconToken.WHATSAPP]: `${ImageS3Link}/Whatsapp.svg`,
@@ -94,4 +94,6 @@ export const Icons: IconRegistryType = {
   [IconToken.LINKED_IN]: `${ImageS3Link}/LinkedIn.svg`,
   [IconToken.STARTUP_INDIA]: `${ImageS3Link}/startUpIndia.svg`,
   [IconToken.DPIIT]: `${ImageS3Link}/startUpRegistration.svg`,
+  [IconToken.THREE_BAR]: `${ImageS3Link}/ThreeBar.svg`,
+  [IconToken.WHATSAPP_STICKY]: `${ImageS3Link}/whatappSticky.svg`,
 };

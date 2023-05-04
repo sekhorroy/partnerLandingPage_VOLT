@@ -73,10 +73,10 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               >
                 <Image
                   priority
-                  src="/images/ThreeBar.svg"
+                  src={Icons.THREE_BAR}
                   height={12}
                   width={18}
-                  alt="Volt partner logo"
+                  alt="Volt_image_partner_logo"
                 />
               </div>
             ) : (<></>)}
