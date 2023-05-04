@@ -1,9 +1,7 @@
 import styles from "./faqs.module.css";
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import { isMobile } from "@/configs/utils";
-const DownArrowVector = "/images/chevron-down.svg";
-const UpArrowVector = "/images/chevron-up1.svg";
+import {Icons} from "@/configs/imageRegistry";
 
 const FaqCollapsible = (props) => {
   const [open, setOPen] = useState( true);
@@ -27,13 +25,13 @@ const FaqCollapsible = (props) => {
         <div className={styles.Faqs_ContainerQuestionArrowVector}>
           {!open ? (
             <Image
-              src={DownArrowVector}
+              src={Icons.CHEVRON_DOWN}
               alt="down vector"
               height={20}
               width={20}
             />
           ) : (
-            <Image src={UpArrowVector} alt="up vector" height={20} width={20} />
+            <Image src={Icons.CHEVRON_UP} alt="up vector" height={20} width={20} />
           )}
         </div>
       </div>

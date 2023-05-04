@@ -22,7 +22,6 @@ export const ContactUsCard: React.FunctionComponent<CardProps> = ({
   const _isMobile: boolean = isMobile();
 
   const handleClick = () => {
-    console.log("click: test");
     onClickCta && onClickCta();
   }
 

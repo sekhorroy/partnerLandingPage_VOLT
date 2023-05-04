@@ -2,32 +2,33 @@ import styles from "./howitworks.module.css";
 import { useRef, useState } from "react";
 import HowItWorksCarasoul from "./howItWorksCaraousal";
 import { redirectToVoltApp } from "@/configs/utils";
+import {Icons} from "@/configs/imageRegistry";
 
 const howItWorksData = [
   {
     title: "Check credit limit",
     subTitle:
       "We’ll evaluate your mutual fund portfolio & confirm credit limit",
-    numberImage: './images/01_1.svg',
-    itemImage: './images/SignUpIcon.svg',
+    numberImage:  `${Icons.N1_1}`,
+    itemImage: `${Icons.SIGN_UP_ICON}`,
   },
   {
     title: "Pledge your assets",
     subTitle: "Mark your mutual funds as a security with a trusted lender",
-    numberImage: './images/02_1.svg',
-    itemImage: "./images/PledgeIcon.svg",
+    numberImage: `${Icons.N1_2}`,
+    itemImage: `${Icons.PLEDGE_ICON}`,
   },
   {
     title: "Instant KYC",
     subTitle: "Complete digital KYC process. No paperwork required!",
-    numberImage: './images/03_1.svg',
-    itemImage: "./images/KycIcon.svg",
+    numberImage: `${Icons.N1_3}`,
+    itemImage: `${Icons.KYC_ICON}`,
   },
   {
     title: "Withdraw money",
     subTitle: "Withdraw & repay as per you requirement. No hidden charges.",
-    numberImage: './images/04_1.svg',
-    itemImage: "./images/WithdrawIcon.svg",
+    numberImage: `${Icons.N1_4}`,
+    itemImage: `${Icons.WITHDRAW_ICON}`,
   },
 ];
 

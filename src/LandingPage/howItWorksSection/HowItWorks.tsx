@@ -12,6 +12,7 @@ import {
 } from "@/components/button/type";
 import { Divider } from "@/components/divider";
 import { useRouter } from "next/router";
+import { Icons } from "@/configs/imageRegistry";
 
 export default function HowItWorks() {
   const _isMobile: boolean = isMobile();
@@ -42,14 +43,20 @@ export default function HowItWorks() {
   ];
 
   const imageData = [
-    { url: "/images/howItWorksImage1.svg", alt: "Empanel with volt money" },
-    { url: "/images/howItWorksImage2.svg", alt: "Refer client on volt money" },
     {
-      url: "/images/howItWorksImage3.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_PARTNER_1}`,
+      alt: "Empanel with volt money",
+    },
+    {
+      url: `${Icons.HOW_IT_WORKS_IMAGE_PARTNER_2}`,
+      alt: "Refer client on volt money",
+    },
+    {
+      url: `${Icons.HOW_IT_WORKS_IMAGE_PARTNER_3}`,
       alt: "Check credit line on volt money",
     },
     {
-      url: "/images/howItWorksImage4.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_PARTNER_4}`,
       alt: "Track referral on volt money dashboard",
     },
   ];
@@ -191,16 +198,18 @@ export default function HowItWorks() {
                     : {}
                 }
               >
-                  <div style={{
-                      height: 500,
-                      paddingTop: 24
-                  }}>
-                      <StepperBenefit
-                          activeId={0}
-                          data={stepperData}
-                          setActive={setActiveId}
-                      />
-                  </div>
+                <div
+                  style={{
+                    height: 500,
+                    paddingTop: 24,
+                  }}
+                >
+                  <StepperBenefit
+                    activeId={0}
+                    data={stepperData}
+                    setActive={setActiveId}
+                  />
+                </div>
 
                 <div
                   style={
@@ -208,7 +217,7 @@ export default function HowItWorks() {
                       ? {
                           maxWidth: 400,
                           width: "100%",
-                          paddingTop: 24
+                          paddingTop: 24,
                         }
                       : {
                           width: "100%",
@@ -234,18 +243,24 @@ export default function HowItWorks() {
               </div>
             </div>
           </div>
-            <div style={_isMobile ? {
-                width: '100%',
-                maxWidth: 1024,
-                paddingTop: 20
-            } : {
-                width: '100%',
-                maxWidth: 1024,
-                paddingTop: 48, paddingBottom: 40
-            }}>
-                <Divider />
-            </div>
-
+          <div
+            style={
+              _isMobile
+                ? {
+                    width: "100%",
+                    maxWidth: 1024,
+                    paddingTop: 20,
+                  }
+                : {
+                    width: "100%",
+                    maxWidth: 1024,
+                    paddingTop: 48,
+                    paddingBottom: 40,
+                  }
+            }
+          >
+            <Divider />
+          </div>
         </div>
       </>
     );

@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import styles from "./teamComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
 import Image from "next/image";
+import {Icons} from "@/configs/imageRegistry";
 
 export const TeamCard: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -65,7 +66,7 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
                 }
               >
                 <Image
-                  src={"/images/userGrey.svg"}
+                  src={Icons.USER_GREY}
                   alt={"user grey image"}
                   width={48}
                   height={48}
@@ -78,8 +79,8 @@ export const TeamCard: React.FunctionComponent<CardProps> = ({
               height: 0,
             }}
           >
-            <img
-              src={"/images/LinkedIn2.svg"}
+            <Image
+              src={Icons.LINKED_IN_2}
               alt={"LinkedIn teams icon"}
               width={_isMobile ? 32 : 36}
               height={_isMobile ? 32 : 36}

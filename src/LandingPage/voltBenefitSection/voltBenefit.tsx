@@ -11,11 +11,12 @@ import {
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
 import {useRouter} from "next/router";
+import {Icons} from "@/configs/imageRegistry";
 
 const partnerCards: CardProps[] = [
   {
     leftIcon: {
-      url: "/images/greenCancel.svg",
+      url: `${Icons.GREEN_CANCEL}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -27,7 +28,7 @@ const partnerCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenShield.svg",
+      url: `${Icons.GREEN_SHIELD}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -39,7 +40,7 @@ const partnerCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenRupees.svg",
+      url: `${Icons.GREEN_RUPEE}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -51,7 +52,7 @@ const partnerCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenContact.svg",
+      url: `${Icons.GREEN_CONTACT}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -66,7 +67,7 @@ const partnerCards: CardProps[] = [
 const clientsCards: CardProps[] = [
   {
     leftIcon: {
-      url: "/images/greenPercentage.svg",
+      url: `${Icons.GREEN_PERCENTAGE}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -77,7 +78,7 @@ const clientsCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenRupees.svg",
+      url: `${Icons.GREEN_RUPEE}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -89,7 +90,7 @@ const clientsCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenClock.svg",
+      url: `${Icons.GREEN_CLOCK}`,
       width: 64,
       height: 64,
       alt: "image1",
@@ -101,7 +102,7 @@ const clientsCards: CardProps[] = [
   },
   {
     leftIcon: {
-      url: "/images/greenShield.svg",
+      url: `${Icons.GREEN_SHIELD}`,
       width: 64,
       height: 64,
       alt: "image1",

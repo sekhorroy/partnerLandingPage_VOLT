@@ -2,6 +2,8 @@ import styles from "./footer.module.css";
 import React from "react";
 import {isMobile, redirectTo, redirectToPrivacy} from "@/configs/utils";
 import {Links} from "@/configs/constants";
+import Image from "next/image";
+import {Icons} from "@/configs/imageRegistry";
 
 function Footer() {
     const _isMobile = isMobile();
@@ -21,9 +23,9 @@ function Footer() {
                 }}
             >
                 <div className={styles.VoltLogoContainer}>
-                    <img
-                        src={"/images/VoltIcon.svg"}
-                        alt="linkedIn icon"
+                    <Image
+                        src={Icons.VOLT_ICON_WHITE}
+                        alt="volt_money_logo"
                         width={84}
                         height={32}
                     />
@@ -60,8 +62,8 @@ function Footer() {
                     <div className={styles.FollowUsTextContainer}>Follow us</div>
                     <div>
                         <a className={styles.shareAnchorContainer}>
-                            <img
-                                src={"/images/twitter.svg"}
+                            <Image
+                                src={Icons.TWITTER}
                                 alt="twitter icon"
                                 width={32}
                                 height={32}
@@ -71,8 +73,8 @@ function Footer() {
                     </div>
                     <div>
                         <a>
-                            <img
-                                src={"/images/Instagram.svg"}
+                            <Image
+                                src={Icons.INSTAGRAM}
                                 alt="instagram icon"
                                 width={32}
                                 height={32}
@@ -87,8 +89,8 @@ function Footer() {
                             rel="noreferrer"
                             className={styles.shareAnchorContainer}
                         >
-                            <img
-                                src={"/images/LinkedIn.svg"}
+                            <Image
+                                src={Icons.LINKED_IN}
                                 alt="linkedIn icon"
                                 width={32}
                                 height={32}
@@ -108,16 +110,16 @@ function Footer() {
                         }}
                     >
                         <div onClick={() => redirectTo(Links.STARTUP_INDIA)}>
-                            <img
-                                src={"/images/startUpIndia.svg"}
+                            <Image
+                                src={Icons.STARTUP_INDIA}
                                 alt={"Volt money startup India"}
                                 width={152}
                                 height={59}
                             />
                         </div>
                         <div onClick={() => redirectTo(Links.DPIIT)}>
-                            <img
-                                src={"/images/startUpRegistration.svg"}
+                            <Image
+                                src={Icons.DPIIT}
                                 alt={"start up registration"}
                                 width={152}
                                 height={59}
@@ -131,16 +133,16 @@ function Footer() {
             {_isMobile ? (
                 <div className={styles.FooterContainer_Bottom1}>
                     <div onClick={() => redirectTo(Links.STARTUP_INDIA)}>
-                        <img
-                            src={'/images/startUpIndia.svg'}
+                        <Image
+                            src={Icons.STARTUP_INDIA}
                             alt={"Volt money startup India"}
                             width={152}
                             height={59}
                         />
                     </div>
                     <div onClick={() => redirectTo(Links.DPIIT)}>
-                        <img
-                            src={"/images/startUpRegistration.svg"}
+                        <Image
+                            src={Icons.DPIIT}
                             alt={"start up registration"}
                             width={152}
                             height={59}

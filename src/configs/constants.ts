@@ -90,3 +90,5 @@ export enum AnalyticsEventName {
   INVITE_CTA_CLICKED = 'INVITE_CTA_CLICKED',
   T_And_C_CTA_CLICKED = 'T&C_CTA_CLICKED'
 }
+
+export const ImageS3Link = 'https://volt-images-alpha.s3.ap-south-1.amazonaws.com'

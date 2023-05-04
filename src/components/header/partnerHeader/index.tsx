@@ -16,6 +16,7 @@ import { Divider } from "@/components/divider";
 import { useRouter } from "next/router";
 import Lottie from "lottie-react";
 import Giftlottie from "../../../configs/lottie/gift.json";
+import { Icons } from "@/configs/imageRegistry";
 
 export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -78,10 +79,10 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
             >
               <Image
                 priority
-                src="/images/VoltPartnerLogo.svg"
+                src={Icons.VOLT_PARTNER_1}
                 height={_isMobile ? 20 : 29}
                 width={120}
-                alt="Volt partner logo"
+                alt="Volt_money_partner_logo"
               />
             </div>
           </div>
@@ -108,8 +109,8 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   cursor: "pointer",
                 }}
               >
-                <img
-                  src="/images/ThreeBar.svg"
+                <Image
+                  src={Icons.THREE_BAR}
                   height={12}
                   width={18}
                   alt="Volt partner logo"
@@ -151,9 +152,10 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                     alignItems: "center",
                   }}
                   className={styles.headerLinksContainer}
-                  onClick={() =>
-                    redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")
-                      // redirectTo(`/invite-and-earn?`, "_self")
+                  onClick={
+                    () =>
+                      redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")
+                    // redirectTo(`/invite-and-earn?`, "_self")
                   }
                 >
                   Invite & Get iPad

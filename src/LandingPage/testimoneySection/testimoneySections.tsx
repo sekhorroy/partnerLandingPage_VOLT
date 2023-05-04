@@ -10,6 +10,7 @@ import axios from "axios";
 import { Simulate } from "react-dom/test-utils";
 import load = Simulate.load;
 import dynamic from "next/dynamic";
+import { Icons } from "@/configs/imageRegistry";
 // import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
 
 const customerData: CardProps[] = [
@@ -71,7 +72,7 @@ const customerData: CardProps[] = [
   },
 ];
 
-const  TestimoneySectionWithoutSSR = () => {
+const TestimoneySectionWithoutSSR = () => {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
   const scrollRef = useRef(null);
@@ -107,8 +108,6 @@ const  TestimoneySectionWithoutSSR = () => {
         setScrollLeftEnd(false);
       }
 
-      // console.log("scrollRef.current.scrollWidth: ", scrollRef.current.scrollWidth - scrollRef.current.scrollLeft);
-      // console.log("scrollRef.current.offsetWidth: ", scrollRef.current.offsetWidth);
       if (
         //@ts-ignore
         Math.floor(
@@ -119,10 +118,8 @@ const  TestimoneySectionWithoutSSR = () => {
         scrollRef.current.offsetWidth
       ) {
         setscrolEnd(true);
-        console.log("setscrolEnd: ", scrolEnd);
       } else {
         setscrolEnd(false);
-        console.log("setscrolEnd: ", scrolEnd);
       }
     }
   };
@@ -130,7 +127,6 @@ const  TestimoneySectionWithoutSSR = () => {
   const getData = async () => {
     await setLoading(true);
     const response = await axios.get(
-      // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
       "https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=partner_testimonials"
     );
     const Data = response.data.data;
@@ -184,7 +180,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/leftGrey.svg"}
+                  src={Icons.LEFT_GREY}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -204,7 +200,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 onClick={() => handleClick("left")}
               >
                 <Image
-                  src={"/images/leftBlack.svg"}
+                  src={Icons.LEFT_BLACK}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -225,7 +221,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/rightGrey.svg"}
+                  src={Icons.RIGHT_GREY}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -245,7 +241,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 onClick={() => handleClick("right")}
               >
                 <Image
-                  src={"/images/rigthBlack.svg"}
+                  src={Icons.RIGHT_BLACK}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -403,10 +399,13 @@ const  TestimoneySectionWithoutSSR = () => {
   }, [_isMobile, _activeId, loading, scrollLeftEnd, scrolEnd]);
 
   return !loading ? _child : <></>;
-}
+};
 
-const TestimoneySection = dynamic(() => Promise.resolve(TestimoneySectionWithoutSSR), {
-  ssr: false
-});
+const TestimoneySection = dynamic(
+  () => Promise.resolve(TestimoneySectionWithoutSSR),
+  {
+    ssr: false,
+  }
+);
 
 export default TestimoneySection;

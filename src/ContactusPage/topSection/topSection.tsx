@@ -11,6 +11,7 @@ import {
     supportEmail,
     WhatsAppLink,
 } from "@/configs/constants";
+import {Icons} from "@/configs/imageRegistry";
 
 export default function TopSectionContactUs() {
   const _isMobile: boolean = isMobile();
@@ -87,7 +88,7 @@ export default function TopSectionContactUs() {
                 }
                 ctaLabel={"Chat with us"}
                 cta={true}
-                imageUrl={"/images/Whatsapp.svg"}
+                imageUrl={Icons.WHATSAPP}
                 onClickCta={() => redirectTo(WhatsAppLink.default)}
               />
               <Card
@@ -98,7 +99,7 @@ export default function TopSectionContactUs() {
                 }
                 ctaLabel={"Let's talk"}
                 cta={true}
-                imageUrl={"/images/call.svg"}
+                imageUrl={Icons.SUPPORT_CALL}
                 onClickCta={() => redirectTo(partnerHelpLineNumber, "_self")}
               />
               <Card
@@ -109,7 +110,7 @@ export default function TopSectionContactUs() {
                 }
                 ctaLabel={"Mail us"}
                 cta={true}
-                imageUrl={"/images/mail.svg"}
+                imageUrl={Icons.MAIL}
                 onClickCta={() => redirectTo(supportEmail)}
               />
             </div>

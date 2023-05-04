@@ -1,7 +1,8 @@
 import styles from "./phoneNumberFooter.module.css";
-import whatsAppIcon from "./assets/whatsAppIcon.svg";
 import {handleWhatAppClickInvestor, redirectToVoltApp} from "@/configs/utils";
 import {WhatsAppLink} from "@/configs/constants";
+import {Icons} from "@/configs/imageRegistry";
+import Image from "next/image";
 
 function PhoneNumberFooter() {
     
@@ -48,7 +49,7 @@ function PhoneNumberFooter() {
                 </div>
                 <button className={styles.PhoneNumberFooterMobileWhatsAppContainerWeb} onClick={()=>handleWhatAppClickInvestor()}>
                         <div className={styles.PhoneNumberFooterMobileWhatsAppIconContainerWeb}>
-                            <img src={'./images/Whatsapp.svg'} alt="whatapp image" />
+                            <Image src={Icons.WHATSAPP} alt="volt_money_whatapp_image" width={24} height={24}/>
                         </div>
                         <div className={styles.PhoneNumberFooterMobileWhatsAppTextContainerWeb}>
                             <span className={styles.PhoneNumberFooterWebViewSpan}>Chat with us</span>

@@ -12,7 +12,7 @@ import { ButtonTypeTokens } from "@/components/button/type";
 import { HeaderProps, HeaderType } from "@/components/header/type";
 import { Divider } from "@/components/divider";
 import { useState } from "react";
-import {BaseLink} from "@/configs/constants";
+import {Icons} from "@/configs/imageRegistry";
 
 export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
   type,
@@ -47,7 +47,7 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
             >
               <Image
                 priority
-                src="/images/VoltBlue.svg"
+                src={Icons.VOLT_ICON}
                 height={_isMobile ? 20 : 24}
                 width={94}
                 alt="Volt money logo"
@@ -73,10 +73,10 @@ export const InvestorHeader: React.FunctionComponent<HeaderProps> = ({
               >
                 <Image
                   priority
-                  src="/images/ThreeBar.svg"
+                  src={Icons.THREE_BAR}
                   height={12}
                   width={18}
-                  alt="Volt partner logo"
+                  alt="Volt_image_partner_logo"
                 />
               </div>
             ) : (<></>)}

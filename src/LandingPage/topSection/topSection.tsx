@@ -1,4 +1,9 @@
-import {getScreenY, handleWhatAppClick, isMobile, redirectToPartner} from "@/configs/utils";
+import {
+  getScreenY,
+  handleWhatAppClick,
+  isMobile,
+  redirectToPartner,
+} from "@/configs/utils";
 import styles from "./topSection.module.css";
 import { ButtonComponent } from "@/components/button";
 import {
@@ -7,116 +12,115 @@ import {
 } from "@/components/button/type";
 import Image from "next/image";
 import { Divider } from "@/components/divider";
-import {useEffect, useMemo, useState} from "react";
-import {useRouter} from "next/router";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { Icons } from "@/configs/imageRegistry";
 
 export default function TopSection() {
-    const _isMobile = isMobile()
-    const [_style, setStyle] = useState({});
-    const url = useRouter().asPath;
+  const _isMobile = isMobile();
+  const [_style, setStyle] = useState({});
+  const url = useRouter().asPath;
 
-    useEffect(()=>{
-        console.log("height 123: ", screen.height - 44);
-        if(screen && screen.height) {
-            setStyle({
-                height: (screen.height - 44 - 50)
-            })
-        }
-    }, []);
+  useEffect(() => {
+    if (screen && screen.height) {
+      setStyle({
+        height: screen.height - 44 - 50,
+      });
+    }
+  }, []);
 
   const _child = useMemo(() => {
     return _isMobile ? (
       <>
         <div className={styles.topSectionMob}>
-            <div className={styles.topSectionMobC1}>
-                <div
-                    className={styles.topSectionMobFont1}
-                    style={{
-                        paddingTop: 24,
-                    }}
-                >
-                    Stop redemption &
-                </div>
-                <div className={styles.topSectionMobFont2}>retain your AUM</div>
-                <div
-                    className={styles.topSectionMobFont3}
-                    style={{
-                        paddingTop: 8,
-                    }}
-                >
-                    Help your clients meet short term cash needs
-                </div>
-                <div
-                    className={styles.topSectionMobBtn}
-                    style={{
-                        paddingTop: 32,
-                    }}
-                >
-                    <ButtonComponent
-                        label={"EMPANEL NOW"}
-                        type={ButtonTypeTokens.PRIMARY_LARGE}
-                        width={ButtonWidthTypeTokens.FULL}
-                        onClick={()=>redirectToPartner(url)}
-                    />
-                </div>
-                <div
-                    style={{
-                        paddingTop: 16,
-                        paddingBottom: 24,
-                    }}
-                    className={styles.topSectionMssgContainer1}
-                >
-                    <Image
-                        priority
-                        src="/images/GoldenShield.svg"
-                        height={20}
-                        width={20}
-                        alt="Volt partner logo"
-                    />
-                    <div>
-                        Over{" "}
-                        <span
-                            style={{
-                                color: "#1434CB",
-                            }}
-                        >
-                1,000+ partners
-              </span>{" "}
-                        trust us
-                    </div>
-                </div>
-                <Divider />
-                <div
-                    className={styles.lendingPartnerContainer1}
-                    style={{
-                        paddingTop: 24,
-                    }}
-                >
-                    <div>Lending partner</div>
-                    <Image
-                        priority
-                        src="/images/BajajFinserv.svg"
-                        height={20}
-                        width={76}
-                        alt="Volt money lending partner"
-                    />
-                </div>
-
+          <div className={styles.topSectionMobC1}>
+            <div
+              className={styles.topSectionMobFont1}
+              style={{
+                paddingTop: 24,
+              }}
+            >
+              Stop redemption &
+            </div>
+            <div className={styles.topSectionMobFont2}>retain your AUM</div>
+            <div
+              className={styles.topSectionMobFont3}
+              style={{
+                paddingTop: 8,
+              }}
+            >
+              Help your clients meet short term cash needs
             </div>
             <div
-                className={styles.lendingPartnerContainer1}
-                style={{
-                    paddingTop: 20,
-                }}
+              className={styles.topSectionMobBtn}
+              style={{
+                paddingTop: 32,
+              }}
             >
-                <Image
-                    priority
-                    src="/images/hero_section_image.png"
-                    height={287}
-                    width={326}
-                    alt="volt money partner"
-                />
+              <ButtonComponent
+                label={"EMPANEL NOW"}
+                type={ButtonTypeTokens.PRIMARY_LARGE}
+                width={ButtonWidthTypeTokens.FULL}
+                onClick={() => redirectToPartner(url)}
+              />
             </div>
+            <div
+              style={{
+                paddingTop: 16,
+                paddingBottom: 24,
+              }}
+              className={styles.topSectionMssgContainer1}
+            >
+              <Image
+                priority
+                src={Icons.GOLDEN_SHIELD_1}
+                height={20}
+                width={20}
+                alt="Volt partner logo"
+              />
+              <div>
+                Over{" "}
+                <span
+                  style={{
+                    color: "#1434CB",
+                  }}
+                >
+                  1,000+ partners
+                </span>{" "}
+                trust us
+              </div>
+            </div>
+            <Divider />
+            <div
+              className={styles.lendingPartnerContainer1}
+              style={{
+                paddingTop: 24,
+              }}
+            >
+              <div>Lending partner</div>
+              <Image
+                priority
+                src={Icons.BAJAJ_PARTNER_1}
+                height={20}
+                width={76}
+                alt="Volt money lending partner"
+              />
+            </div>
+          </div>
+          <div
+            className={styles.lendingPartnerContainer1}
+            style={{
+              paddingTop: 20,
+            }}
+          >
+            <Image
+              priority
+              src={Icons.PARTNER_HERO_SECTION}
+              height={287}
+              width={326}
+              alt="volt money partner"
+            />
+          </div>
         </div>
         <div className={styles.topSectionHelpContainer1}>
           <h3
@@ -141,8 +145,8 @@ export default function TopSection() {
             label={"Chat with us"}
             type={ButtonTypeTokens.OUTLINE_LARGE}
             width={ButtonWidthTypeTokens.FULL}
-            imageUrl="/images/Whatsapp.svg"
-            onClick={()=>handleWhatAppClick()}
+            imageUrl={Icons.WHATSAPP}
+            onClick={() => handleWhatAppClick()}
           />
         </div>
       </>
@@ -178,7 +182,7 @@ export default function TopSection() {
                 label={"EMPANEL NOW"}
                 type={ButtonTypeTokens.PRIMARY_LARGE}
                 width={ButtonWidthTypeTokens.CONTENT}
-                onClick={()=>redirectToPartner(url)}
+                onClick={() => redirectToPartner(url)}
               />
             </div>
             <div
@@ -190,7 +194,7 @@ export default function TopSection() {
             >
               <Image
                 priority
-                src="/images/GoldenShield.svg"
+                src={Icons.GOLDEN_SHIELD}
                 height={20}
                 width={20}
                 alt="Volt partner logo"
@@ -212,13 +216,13 @@ export default function TopSection() {
               className={styles.lendingPartnerContainer1}
               style={{
                 paddingTop: 40,
-                  paddingBottom: 40
+                paddingBottom: 40,
               }}
             >
               <div>Lending partner</div>
               <Image
                 priority
-                src="/images/BajajFinserv.svg"
+                src={Icons.BAJAJ_PARTNER_1}
                 height={20}
                 width={76}
                 alt="Volt money lending partner"
@@ -228,7 +232,7 @@ export default function TopSection() {
           <div className={styles.topSectionWebRight}>
             <div>
               <Image
-                src={"/images/hero_section_image.png"}
+                src={Icons.PARTNER_HERO_SECTION}
                 alt={"volt money partner"}
                 width={544}
                 height={468}
@@ -237,35 +241,34 @@ export default function TopSection() {
           </div>
         </div>
         <div className={styles.topSectionHelpContainer1Web}>
-            <div className={styles.topSectionHelpContainer2Web} >
-                <div className={styles.topSectionHelpContainer2WebLeft}>
-                    <h3
-                        className={styles.topSectionHelpContainerChild1Web}
-                        style={{
-                            marginTop: 0,
-                            marginBottom: 0,
-                        }}
-                    >
-                        Get immediate answers from our experts
-                    </h3>
-                    <div
-                        className={styles.topSectionHelpContainerChild2Web}
-                        style={{
-                            paddingTop: 12
-                        }}
-                    >
-                        We are available Monday through Saturday from 9:30 AM to 8 PM.
-                    </div>
-                </div>
-                <ButtonComponent
-                    label={"Chat with us"}
-                    type={ButtonTypeTokens.OUTLINE_LARGE}
-                    width={ButtonWidthTypeTokens.CONTENT}
-                    imageUrl="/images/Whatsapp.svg"
-                    onClick={()=>handleWhatAppClick()}
-                />
+          <div className={styles.topSectionHelpContainer2Web}>
+            <div className={styles.topSectionHelpContainer2WebLeft}>
+              <h3
+                className={styles.topSectionHelpContainerChild1Web}
+                style={{
+                  marginTop: 0,
+                  marginBottom: 0,
+                }}
+              >
+                Get immediate answers from our experts
+              </h3>
+              <div
+                className={styles.topSectionHelpContainerChild2Web}
+                style={{
+                  paddingTop: 12,
+                }}
+              >
+                We are available Monday through Saturday from 9:30 AM to 8 PM.
+              </div>
             </div>
-
+            <ButtonComponent
+              label={"Chat with us"}
+              type={ButtonTypeTokens.OUTLINE_LARGE}
+              width={ButtonWidthTypeTokens.CONTENT}
+              imageUrl={Icons.WHATSAPP}
+              onClick={() => handleWhatAppClick()}
+            />
+          </div>
         </div>
       </>
     );

@@ -3,8 +3,14 @@ import React, { location } from "react";
 import { EXTERNAL_URLS } from "../../configs/config";
 import { Links, privacyLink } from "../../configs/constants";
 import Image from "next/image";
-import {handleOurPartnerLinks, isMobile, redirectTo, redirectToPrivacy} from "@/configs/utils";
+import {
+  handleOurPartnerLinks,
+  isMobile,
+  redirectTo,
+  redirectToPrivacy,
+} from "@/configs/utils";
 import Link from "next/link";
+import { Icons } from "@/configs/imageRegistry";
 
 function Footer() {
   const _isMobile = isMobile();
@@ -25,7 +31,7 @@ function Footer() {
       >
         <div className={styles.VoltLogoContainer}>
           <img
-            src={"/images/VoltIcon.svg"}
+            src={Icons.VOLT_ICON_WHITE}
             alt="Volt money logo"
             width={84}
             height={32}
@@ -35,27 +41,27 @@ function Footer() {
           <div
             className={styles.FooterHelpSectionContainerAnchor}
             style={{
-              cursor: 'pointer'
+              cursor: "pointer",
             }}
-            onClick={() => redirectTo("/", '_self')}
+            onClick={() => redirectTo("/", "_self")}
           >
             Home
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
             style={{
-              cursor: 'pointer'
+              cursor: "pointer",
             }}
-            onClick={() => redirectTo("/contact", '_self')}
+            onClick={() => redirectTo("/contact", "_self")}
           >
             Contact us
           </div>
           <div
             className={styles.FooterHelpSectionContainerAnchor}
             style={{
-              cursor: 'pointer'
+              cursor: "pointer",
             }}
-            onClick={() => redirectTo("/about", '_self')}
+            onClick={() => redirectTo("/about", "_self")}
           >
             About us
           </div>
@@ -73,22 +79,22 @@ function Footer() {
           <div>
             <a className={styles.shareAnchorContainer}>
               <Image
-                src={"/images/twitter.svg"}
+                src={Icons.TWITTER}
                 alt="Volt money twitter icon"
                 width={32}
                 height={32}
-                onClick={()=>handleOurPartnerLinks(Links.Twitter)}
+                onClick={() => handleOurPartnerLinks(Links.Twitter)}
               />
             </a>
           </div>
           <div>
             <a>
               <img
-                src={"/images/Instagram.svg"}
+                src={Icons.INSTAGRAM}
                 alt="Volt money instagram icon"
                 width={32}
                 height={32}
-                onClick={()=>handleOurPartnerLinks(Links.Instagram)}
+                onClick={() => handleOurPartnerLinks(Links.Instagram)}
               />
             </a>
           </div>
@@ -100,11 +106,11 @@ function Footer() {
               className={styles.shareAnchorContainer}
             >
               <img
-                src={"/images/LinkedIn.svg"}
+                src={Icons.LINKED_IN}
                 alt="volt money linkedIn icon"
                 width={32}
                 height={32}
-                onClick={()=>handleOurPartnerLinks(Links.Linkedin)}
+                onClick={() => handleOurPartnerLinks(Links.Linkedin)}
               />
             </a>
           </div>
@@ -121,7 +127,7 @@ function Footer() {
           >
             <div onClick={() => handleOurPartnerLinks(Links.STARTUP_INDIA)}>
               <Image
-                src={"/images/startUpIndia.svg"}
+                src={Icons.STARTUP_INDIA}
                 alt={"Volt money startup India"}
                 width={152}
                 height={59}
@@ -129,7 +135,7 @@ function Footer() {
             </div>
             <div onClick={() => handleOurPartnerLinks(Links.DPIIT)}>
               <Image
-                src={"/images/startUpRegistration.svg"}
+                src={Icons.DPIIT}
                 alt={"start up registration"}
                 width={152}
                 height={59}
@@ -144,7 +150,7 @@ function Footer() {
         <div className={styles.FooterContainer_Bottom1}>
           <div onClick={() => handleOurPartnerLinks(Links.STARTUP_INDIA)}>
             <Image
-              src={"/images/startUpIndia.svg"}
+              src={Icons.STARTUP_INDIA}
               alt={"Volt money startup India"}
               width={152}
               height={59}
@@ -152,7 +158,7 @@ function Footer() {
           </div>
           <div onClick={() => handleOurPartnerLinks(Links.DPIIT)}>
             <Image
-              src={"/images/startUpRegistration.svg"}
+              src={Icons.DPIIT}
               alt={"start up registration"}
               width={152}
               height={59}
@@ -180,7 +186,11 @@ function Footer() {
             maxWidth: 1024,
           }}
         >
-          <div className={styles.VoltLegalT1} style={{cursor: 'pointer'}} onClick={()=>redirectToPrivacy()}>
+          <div
+            className={styles.VoltLegalT1}
+            style={{ cursor: "pointer" }}
+            onClick={() => redirectToPrivacy()}
+          >
             ©2023 SALTER TECHNOLOGIES PRIVATE LIMITED | Legal | Privacy
           </div>
           <div className={styles.VoltLegalT2}>CIN: U72200KA2022PTC158631</div>
