@@ -6,8 +6,6 @@ import {
   redirectToPartnerInviteAndEarn,
 } from "@/configs/utils";
 import { useMemo } from "react";
-import { StepperRewards } from "@/components/stepperRewards";
-import { StepperRewardsData } from "@/components/stepperRewards/type";
 import { ButtonComponent } from "@/components/button";
 import {
   ButtonTypeTokens,
@@ -15,28 +13,28 @@ import {
 } from "@/components/button/type";
 import { AnalyticsEventName, ImageLinks, Links } from "@/configs/constants";
 
-const stepperRewardData: StepperRewardsData[] = [
-  {
-    points: "2",
-    title: "₹2,000",
-    imageUrl: "/images/greenMoney1.svg",
-  },
-  {
-    points: "5",
-    title: "₹5,000",
-    imageUrl: "/images/greenMoney1.svg",
-  },
-  {
-    points: "10",
-    title: "Apple AirPods",
-    imageUrl: "/images/airpods1.svg",
-  },
-  {
-    points: "25",
-    title: "Apple iPad",
-    imageUrl: "/images/ipad1.png",
-  },
-];
+// const stepperRewardData: StepperRewardsData[] = [
+//   {
+//     points: "2",
+//     title: "₹2,000",
+//     imageUrl: "/images/greenMoney1.svg",
+//   },
+//   {
+//     points: "5",
+//     title: "₹5,000",
+//     imageUrl: "/images/greenMoney1.svg",
+//   },
+//   {
+//     points: "10",
+//     title: "Apple AirPods",
+//     imageUrl: "/images/airpods1.svg",
+//   },
+//   {
+//     points: "25",
+//     title: "Apple iPad",
+//     imageUrl: "/images/ipad1.png",
+//   },
+// ];
 
 const RewardSection = () => {
   const _isMobile = isMobile();
