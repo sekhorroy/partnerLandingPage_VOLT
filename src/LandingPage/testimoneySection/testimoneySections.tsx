@@ -108,8 +108,6 @@ const TestimoneySectionWithoutSSR = () => {
         setScrollLeftEnd(false);
       }
 
-      // console.log("scrollRef.current.scrollWidth: ", scrollRef.current.scrollWidth - scrollRef.current.scrollLeft);
-      // console.log("scrollRef.current.offsetWidth: ", scrollRef.current.offsetWidth);
       if (
         //@ts-ignore
         Math.floor(
@@ -131,7 +129,6 @@ const TestimoneySectionWithoutSSR = () => {
   const getData = async () => {
     await setLoading(true);
     const response = await axios.get(
-      // "https://v1.nocodeapi.com/voltmoney/google_sheets/IwjmEWFMjLgGfPdV?tabId=Sheet1"
       "https://v1.nocodeapi.com/admin8volt/google_sheets/HfvGfmNemhksFKOg?tabId=partner_testimonials"
     );
     const Data = response.data.data;

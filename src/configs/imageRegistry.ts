@@ -62,7 +62,12 @@ export enum IconToken {
   LEFT_GREY = 'LEFT_GREY',
   LEFT_BLACK = 'LEFT_BLACK',
   RIGHT_GREY = 'RIGHT_GREY',
-  RIGHT_BLACK = 'RIGHT_BLACK'
+  RIGHT_BLACK = 'RIGHT_BLACK',
+  HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_1 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_1',
+  HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2',
+  HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3',
+  HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4',
+  REWARD_BLUE_1 = 'REWARD_BLUE_1'
 }
 
 export type IconRegistryType = {
@@ -132,4 +137,9 @@ export const Icons: IconRegistryType = {
   [IconToken.LEFT_BLACK]: `${ImageS3Link}/leftBlack.svg`,
   [IconToken.RIGHT_GREY]: `${ImageS3Link}/rightGrey.svg`,
   [IconToken.RIGHT_BLACK]: `${ImageS3Link}/rigthBlack.svg`,
+  [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_1]: `${ImageS3Link}/howItWorksImagesInviteAndEarn1.svg`,
+  [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2]: `${ImageS3Link}/howItWorksImagesInviteAndEarn2.svg`,
+  [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3]: `${ImageS3Link}/howItWorksImagesInviteAndEarn3.svg`,
+  [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4]: `${ImageS3Link}/howItWorksImagesInviteAndEarn4.svg`,
+  [IconToken.REWARD_BLUE_1]: `${ImageS3Link}/rewardBlue1.svg`,
 };

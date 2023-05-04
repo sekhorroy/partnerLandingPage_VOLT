@@ -2,7 +2,6 @@ import {
   GoogleAnalytics,
   isMobile,
   redirectTo,
-  redirectToPartner,
   redirectToPartnerInviteAndEarn,
 } from "@/configs/utils";
 import styles from "./HowItWorks.module.css";
@@ -16,9 +15,8 @@ import {
   ButtonTypeTokens,
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
-import { Divider } from "@/components/divider";
-import { useRouter } from "next/router";
 import { AnalyticsEventName, Links } from "@/configs/constants";
+import {Icons} from "@/configs/imageRegistry";
 
 export default function HowItWorksReferAndEarn() {
   const _isMobile: boolean = isMobile();
@@ -57,19 +55,19 @@ export default function HowItWorksReferAndEarn() {
 
   const imageData = [
     {
-      url: "/images/howItWorksImagesInviteAndEarn1.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_1}`,
       alt: "Volt_money_Share_Invite_Link",
     },
     {
-      url: "/images/howItWorksImagesInviteAndEarn2.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2}`,
       alt: "Volt_money_Invite_MFD",
     },
     {
-      url: "/images/howItWorksImagesInviteAndEarn3.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3}`,
       alt: "Volt_money_get_2000_cash",
     },
     {
-      url: "/images/howItWorksImagesInviteAndEarn4.svg",
+      url: `${Icons.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4}`,
       alt: "Volt_money_win_apple_ipad",
     },
   ];

@@ -14,6 +14,8 @@ import {
   ButtonWidthTypeTokens,
 } from "@/components/button/type";
 import { AnalyticsEventName, ImageLinks, Links } from "@/configs/constants";
+import Image from "next/image";
+import { Icons } from "@/configs/imageRegistry";
 
 const stepperRewardData: StepperRewardsData[] = [
   {
@@ -91,7 +93,12 @@ const RewardSection = () => {
             }
           >
             <div>
-              <img src={"/images/rewardBlue1.svg"} width={80} height={80}/>
+              <Image
+                src={Icons.REWARD_BLUE_1}
+                width={80}
+                height={80}
+                alt={"volt_money_reward_blue_image"}
+              />
             </div>
             <div
               className={styles.rewardSectionContainerC1T1}
@@ -141,7 +148,7 @@ const RewardSection = () => {
                           }
                         : {}
                     }
-                    alt={'Volt_money_reward_structure'}
+                    alt={"Volt_money_reward_structure"}
                   />
                 </div>
               </div>
