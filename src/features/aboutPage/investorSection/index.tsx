@@ -1,15 +1,16 @@
 import { convertTo2DArray, getScreenX, isMobile } from "@/configs/utils";
 import { Card } from "@/components/card";
 import { CardProps, CardTypes } from "@/components/card/types";
-import {useEffect, useMemo, useRef, useState} from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./investorSection.module.css";
 import { Carousal, CarousalItem } from "@/components/carousal";
 import Image from "next/image";
-import {api} from "@/configs/constants";
+import { api } from "@/configs/constants";
 import axios from "axios";
 import dynamic from "next/dynamic";
+import { Icons } from "@/configs/imageRegistry";
 
-function InvestorSectionWithoutSSR({data}: any) {
+function InvestorSectionWithoutSSR({ data }: any) {
   const _isMobile: boolean = isMobile();
   const width = getScreenX();
   const [_data, setData] = useState<CardProps[]>(data ? data : []);
@@ -23,9 +24,7 @@ function InvestorSectionWithoutSSR({data}: any) {
 
   const getData = async () => {
     await setLoading(true);
-    const response = await axios.get(
-      `${api.investorApi}`
-    );
+    const response = await axios.get(`${api.investorApi}`);
     const Data = response.data.data;
     let data: CardProps[] = [];
     //@ts-ignore
@@ -165,7 +164,7 @@ function InvestorSectionWithoutSSR({data}: any) {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/leftGrey.svg"}
+                  src={Icons.LEFT_GREY}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -185,7 +184,7 @@ function InvestorSectionWithoutSSR({data}: any) {
                 onClick={() => handleClick("left")}
               >
                 <Image
-                  src={"/images/leftBlack.svg"}
+                  src={Icons.LEFT_BLACK}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -206,7 +205,7 @@ function InvestorSectionWithoutSSR({data}: any) {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/rightGrey.svg"}
+                  src={Icons.RIGHT_GREY}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -226,7 +225,7 @@ function InvestorSectionWithoutSSR({data}: any) {
                 onClick={() => handleClick("right")}
               >
                 <Image
-                  src={"/images/rigthBlack.svg"}
+                  src={Icons.RIGHT_BLACK}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -341,32 +340,6 @@ function InvestorSectionWithoutSSR({data}: any) {
               )}
             </div>
           </div>
-          {/*<div className={styles.BottomContainer}>*/}
-          {/*  {_isMobile ? (*/}
-          {/*    <>*/}
-          {/*      <div className={styles.BottomContainerC1Mob}>*/}
-          {/*        <div className={styles.BottomContainerT1Mob}>*/}
-          {/*          DREAM BIG AT VOLT*/}
-          {/*        </div>*/}
-          {/*        <div*/}
-          {/*          className={styles.BottomContainerT2Mob}*/}
-          {/*          style={{*/}
-          {/*            paddingTop: 12,*/}
-          {/*          }}*/}
-          {/*        >*/}
-          {/*          Join us in making loans easier for millions of Indian*/}
-          {/*        </div>*/}
-          {/*        <div style={{*/}
-          {/*            paddingTop: 24*/}
-          {/*        }}>*/}
-          {/*          <TextInput />*/}
-          {/*        </div>*/}
-          {/*      </div>*/}
-          {/*    </>*/}
-          {/*  ) : (*/}
-          {/*    <></>*/}
-          {/*  )}*/}
-          {/*</div>*/}
         </div>
       </>
     );
@@ -375,8 +348,11 @@ function InvestorSectionWithoutSSR({data}: any) {
   return _child;
 }
 
-const InvestorSection = dynamic(() => Promise.resolve(InvestorSectionWithoutSSR), {
-    ssr: false
-});
+const InvestorSection = dynamic(
+  () => Promise.resolve(InvestorSectionWithoutSSR),
+  {
+    ssr: false,
+  }
+);
 
 export default InvestorSection;

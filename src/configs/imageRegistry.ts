@@ -67,7 +67,15 @@ export enum IconToken {
   HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_2',
   HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3',
   HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4 = 'HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4',
-  REWARD_BLUE_1 = 'REWARD_BLUE_1'
+  REWARD_BLUE_1 = 'REWARD_BLUE_1',
+  USER_GREY = 'USER_GREY',
+  LINKED_IN_2 = 'LINKED_IN_2',
+  SUPPORT_CALL = 'SUPPORT_CALL',
+  MAIL = 'MAIL',
+  INSTAGRAM_CONTACT_US = 'INSTAGRAM_CONTACT_US',
+  LINKEDIN_CONTACT_US = 'LINKEDIN_CONTACT_US',
+  TWITTER_CONTACT_US = 'TWITTER_CONTACT_US',
+  YOUTUBE_CONTACT_US = 'YOUTUBE_CONTACT_US'
 }
 
 export type IconRegistryType = {
@@ -142,4 +150,12 @@ export const Icons: IconRegistryType = {
   [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_3]: `${ImageS3Link}/howItWorksImagesInviteAndEarn3.svg`,
   [IconToken.HOW_IT_WORKS_IMAGE_INVITE_AND_EARN_4]: `${ImageS3Link}/howItWorksImagesInviteAndEarn4.svg`,
   [IconToken.REWARD_BLUE_1]: `${ImageS3Link}/rewardBlue1.svg`,
+  [IconToken.USER_GREY]: `${ImageS3Link}/userGrey.svg`,
+  [IconToken.LINKED_IN_2]: `${ImageS3Link}/LinkedIn2.svg`,
+  [IconToken.SUPPORT_CALL]: `${ImageS3Link}/call.svg`,
+  [IconToken.MAIL]: `${ImageS3Link}/mail.svg`,
+  [IconToken.INSTAGRAM_CONTACT_US]: `${ImageS3Link}/instagramContactUs.svg`,
+  [IconToken.LINKEDIN_CONTACT_US]: `${ImageS3Link}/linkedInContactUs.svg`,
+  [IconToken.TWITTER_CONTACT_US]: `${ImageS3Link}/twitterContactUs.svg`,
+  [IconToken.YOUTUBE_CONTACT_US]: `${ImageS3Link}/youtubeContactUs.svg`,
 };

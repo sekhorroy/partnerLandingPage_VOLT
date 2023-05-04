@@ -118,10 +118,8 @@ const TestimoneySectionWithoutSSR = () => {
         scrollRef.current.offsetWidth
       ) {
         setscrolEnd(true);
-        console.log("setscrolEnd: ", scrolEnd);
       } else {
         setscrolEnd(false);
-        console.log("setscrolEnd: ", scrolEnd);
       }
     }
   };

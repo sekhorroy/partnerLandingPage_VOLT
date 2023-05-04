@@ -4,6 +4,7 @@ import styles from "./connectSection.module.css";
 import { Divider } from "@/components/divider";
 import Image from "next/image";
 import { Links } from "@/configs/constants";
+import {Icons} from "@/configs/imageRegistry";
 
 export default function ConnectSection() {
   const _isMobile: boolean = isMobile();
@@ -58,7 +59,7 @@ export default function ConnectSection() {
                 onClick={() => redirectTo(Links.Instagram)}
               >
                 <Image
-                  src={"./images/instagramContactUs.svg"}
+                  src={Icons.INSTAGRAM_CONTACT_US}
                   alt={"contact image 1"}
                   width={48}
                   height={48}
@@ -71,7 +72,7 @@ export default function ConnectSection() {
                 onClick={() => redirectTo(Links.Linkedin)}
               >
                 <Image
-                  src={"./images/linkedInContactUs.svg"}
+                  src={Icons.LINKEDIN_CONTACT_US}
                   alt={"contact image 1"}
                   width={48}
                   height={48}
@@ -84,7 +85,7 @@ export default function ConnectSection() {
                 onClick={() => redirectTo(Links.Twitter)}
               >
                 <Image
-                  src={"./images/twitterContactUs.svg"}
+                  src={Icons.TWITTER_CONTACT_US}
                   alt={"contact image 1"}
                   width={48}
                   height={48}
@@ -97,7 +98,7 @@ export default function ConnectSection() {
                 onClick={() => redirectTo(Links.Youtube)}
               >
                 <Image
-                  src={"./images/youtubeContactUs.svg"}
+                  src={Icons.YOUTUBE_CONTACT_US}
                   alt={"contact image 1"}
                   width={48}
                   height={48}

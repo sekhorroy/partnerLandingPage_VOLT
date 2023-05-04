@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import styles from "./investorComponentCard.module.css";
 import { CardProps, CardTypes } from "@/components/card/types";
 import Image from "next/image";
+import {Icons} from "@/configs/imageRegistry";
 
 export const InvestorCard: React.FunctionComponent<CardProps> = ({
   leftIcon = null,
@@ -59,7 +60,7 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
                 }
               >
                 <Image
-                  src={"/images/userGrey.svg"}
+                  src={Icons.USER_GREY}
                   alt={"user grey image"}
                   width={48}
                   height={48}
@@ -72,7 +73,7 @@ export const InvestorCard: React.FunctionComponent<CardProps> = ({
               }}
             >
               <img
-                src={"/images/LinkedIn2.svg"}
+                src={Icons.LINKED_IN_2}
                 alt={"LinkedIn teams icon"}
                 width={_isMobile ? 32 : 36}
                 height={_isMobile ? 32 : 36}
