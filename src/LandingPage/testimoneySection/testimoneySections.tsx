@@ -10,6 +10,7 @@ import axios from "axios";
 import { Simulate } from "react-dom/test-utils";
 import load = Simulate.load;
 import dynamic from "next/dynamic";
+import { Icons } from "@/configs/imageRegistry";
 // import CarouselComponent, {CarouselItem} from "@/components/carousal/carousalComponent/carousal";
 
 const customerData: CardProps[] = [
@@ -71,7 +72,7 @@ const customerData: CardProps[] = [
   },
 ];
 
-const  TestimoneySectionWithoutSSR = () => {
+const TestimoneySectionWithoutSSR = () => {
   const _isMobile: boolean = isMobile();
   const [_activeId, setActiveId] = useState(0);
   const scrollRef = useRef(null);
@@ -184,7 +185,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/leftGrey.svg"}
+                  src={Icons.LEFT_GREY}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -204,7 +205,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 onClick={() => handleClick("left")}
               >
                 <Image
-                  src={"/images/leftBlack.svg"}
+                  src={Icons.LEFT_BLACK}
                   alt={"arrow"}
                   width={32}
                   height={32}
@@ -225,7 +226,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 className={styles.buttonNotActive}
               >
                 <Image
-                  src={"/images/rightGrey.svg"}
+                  src={Icons.RIGHT_GREY}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -245,7 +246,7 @@ const  TestimoneySectionWithoutSSR = () => {
                 onClick={() => handleClick("right")}
               >
                 <Image
-                  src={"/images/rigthBlack.svg"}
+                  src={Icons.RIGHT_BLACK}
                   alt={"right"}
                   width={32}
                   height={32}
@@ -403,10 +404,13 @@ const  TestimoneySectionWithoutSSR = () => {
   }, [_isMobile, _activeId, loading, scrollLeftEnd, scrolEnd]);
 
   return !loading ? _child : <></>;
-}
+};
 
-const TestimoneySection = dynamic(() => Promise.resolve(TestimoneySectionWithoutSSR), {
-  ssr: false
-});
+const TestimoneySection = dynamic(
+  () => Promise.resolve(TestimoneySectionWithoutSSR),
+  {
+    ssr: false,
+  }
+);
 
 export default TestimoneySection;
