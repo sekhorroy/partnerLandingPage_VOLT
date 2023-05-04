@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-          <link rel="canonical" href="https://www.voltmoney.in" />
+          {/*<link rel="canonical" href="https://www.voltmoney.in" />*/}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

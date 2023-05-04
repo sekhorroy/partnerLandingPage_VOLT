@@ -77,30 +77,30 @@ function Footer() {
         >
           <div className={styles.FollowUsTextContainer}>Follow us</div>
           <div>
-            <a className={styles.shareAnchorContainer}>
+            <a className={styles.shareAnchorContainer} href={Links.Twitter} target={'_blank'}>
               <Image
                 src={Icons.TWITTER}
                 alt="Volt money twitter icon"
                 width={32}
                 height={32}
-                onClick={() => handleOurPartnerLinks(Links.Twitter)}
+                // onClick={() => handleOurPartnerLinks(Links.Twitter)}
               />
             </a>
           </div>
           <div>
-            <a>
+            <a href={Links.Instagram} target={'_blank'}>
               <img
                 src={Icons.INSTAGRAM}
                 alt="Volt money instagram icon"
                 width={32}
                 height={32}
-                onClick={() => handleOurPartnerLinks(Links.Instagram)}
+                // onClick={() => handleOurPartnerLinks(Links.Instagram)}
               />
             </a>
           </div>
           <div>
             <a
-              href={EXTERNAL_URLS.LINKEDIN}
+              href={Links.Linkedin}
               target="_blank"
               rel="noreferrer"
               className={styles.shareAnchorContainer}
@@ -110,7 +110,7 @@ function Footer() {
                 alt="volt money linkedIn icon"
                 width={32}
                 height={32}
-                onClick={() => handleOurPartnerLinks(Links.Linkedin)}
+                // onClick={() => handleOurPartnerLinks(Links.Linkedin)}
               />
             </a>
           </div>
