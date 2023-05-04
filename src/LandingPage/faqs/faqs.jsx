@@ -2,7 +2,7 @@ import styles from "./faqs.module.css";
 import FaqCollapsible from "./faqsItemsCollasible";
 import { getParamsLink, isMobile } from "@/configs/utils";
 import { helpLineNumberLink, PartnerLink } from "@/configs/constants";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
 const faqsItem = [
   {
@@ -427,7 +427,7 @@ const ReferalItem = [
           <ul>
             <li>
               Login on partner dashboard to get the invite link{" "}
-              <a href={`${PartnerLink}?${getParamsLink()}`}>{PartnerLink}</a>
+              <a href={`${PartnerLink}`}>{PartnerLink}</a>
             </li>
             <li>
               Request for invite link on whatsapp number{" "}
@@ -493,7 +493,7 @@ const ReferalItem = [
             <li>
               You can also check status on our partner dashboard.{" "}
               <a
-                href={`${PartnerLink}?${getParamsLink()}`}
+                href={`${PartnerLink}`}
               >{`${PartnerLink}`}</a>
             </li>
           </ul>

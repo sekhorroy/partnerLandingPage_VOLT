@@ -153,6 +153,7 @@ export const PartnerHeader: React.FunctionComponent<HeaderProps> = ({
                   className={styles.headerLinksContainer}
                   onClick={() =>
                     redirectTo(`/invite-and-earn?${getParamsLink()}`, "_self")
+                      // redirectTo(`/invite-and-earn?`, "_self")
                   }
                 >
                   Invite & Get iPad

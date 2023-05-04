@@ -71,7 +71,7 @@ export const redirectTo = (
   passQueryParams?: boolean
 ) => {
   if (target) {
-    window.open(url, target);
+    window.open(`${url}?${passQueryParams ? getParamsLink() : ''}`, target);
   } else {
     window.open(url, "_blank");
   }
@@ -113,15 +113,17 @@ export const isGoogleUTMParams: (param: string) => boolean = (param) => {
 export const getParameters: () => {
   [key in string]: string;
 } = () => {
-  const url = window.location.href;
   const params = {};
-  const paramString = url.split("?")[1];
-  const queryString = new URLSearchParams(paramString);
-  //@ts-ignore
-  for (const pair of queryString.entries()) {
+  if(window) {
+    const url = window.location.href;
+    const paramString = url.split("?")[1];
+    const queryString = new URLSearchParams(paramString);
     //@ts-ignore
-    params[pair[0].includes("/") ? pair[0].split("/")[1] : pair[0]] =
-      pair[1].includes("/") ? pair[1].split("/")[0] : pair[1];
+    for (const pair of queryString.entries()) {
+      //@ts-ignore
+      params[pair[0].includes("/") ? pair[0].split("/")[1] : pair[0]] =
+          pair[1].includes("/") ? pair[1].split("/")[0] : pair[1];
+    }
   }
   return params;
 };
